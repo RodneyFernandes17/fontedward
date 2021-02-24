@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_classificacao/Lista_de_classificacao.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Lista_de_classificacao</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Lista_de_classificacao</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=84</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Lista de Classificação</title>
+        <table_1 type="table" xml-type="table" title="Lista de Classificados em formação igrpweb" gen-type="container" gen-group="true">
+            <fields>
+                <foto name="p_foto" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Foto</label>
+                </foto>
+                <nome name="p_nome" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <formacao name="p_formacao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Formação</label>
+                </formacao>
+                <edicao name="p_edicao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Edição</label>
+                </edicao>
+                <data_de_realizacao name="p_data_de_realizacao" type="date" range="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Data de Realização</label>
+                </data_de_realizacao>
+                <classificacao name="p_classificacao" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Classificação (máximo 40 Pontos)</label>
+                </classificacao>
+                <id_teste name="p_id_teste" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_teste"/>
+                <id_avaliado name="p_id_avaliado" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_avaliado"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Stract rem consectetur unde al</nome>
+                        <formacao name="p_formacao">Aperiam rem accusantium lorem</formacao>
+                        <edicao name="p_edicao">Mollit labore totam sit lorem</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">03-05-2012</data_de_realizacao>
+                        <classificacao name="p_classificacao">Deserunt ipsum ut accusantium</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-e659_84b3</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-d22c_0944</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Officia dolor omnis voluptatem</nome>
+                        <formacao name="p_formacao">Natus sit laudantium stract si</formacao>
+                        <edicao name="p_edicao">Dolor rem stract aliqua unde a</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">08-03-2014</data_de_realizacao>
+                        <classificacao name="p_classificacao">Voluptatem elit labore adipisc</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-59eb_7d0d</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-342f_9a4c</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Perspiciatis consectetur aperi</nome>
+                        <formacao name="p_formacao">Sit dolor mollit aperiam elit</formacao>
+                        <edicao name="p_edicao">Ut voluptatem consectetur ut u</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">05-05-2015</data_de_realizacao>
+                        <classificacao name="p_classificacao">Ut officia ut deserunt sed</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-5cc7_a98b</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-0893_fb60</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Aliqua dolor adipiscing anim u</nome>
+                        <formacao name="p_formacao">Officia sed iste ut sit unde s</formacao>
+                        <edicao name="p_edicao">Magna elit rem doloremque amet</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">08-01-2011</data_de_realizacao>
+                        <classificacao name="p_classificacao">Natus omnis sit voluptatem ut</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-2c87_afe5</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-7a06_f478</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Sed voluptatem magna unde amet</nome>
+                        <formacao name="p_formacao">Amet elit sit doloremque rem l</formacao>
+                        <edicao name="p_edicao">Natus mollit stract sit natus</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">04-04-2011</data_de_realizacao>
+                        <classificacao name="p_classificacao">Unde sed perspiciatis unde lor</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-e254_6a1d</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-32d0_a2b1</id_avaliado>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_3ef4_b061" type="specific" code="" class="warning" rel="ver" refresh_components="">
+                        <title>Ver</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Formulario_de_inscricao</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml?</parameter>
+                        <target>_blank</target>
+                        <img>warning|fa-eye</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml</preview>
+                    </item>
+                    <item id="button_c93d_97f1" type="specific" code="" flg_transaction="true" class="danger" rel="emitir_certificado" custom_return="true" refresh_components="">
+                        <title>Emitir Certificado</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Criacao_de_certificado</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_de_certificado/Criacao_de_certificado.xml?</parameter>
+                        <target>mpsubmit|refresh</target>
+                        <img>danger|fa-graduation-cap</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_de_certificado/Criacao_de_certificado.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="287" y="88"></block>
+        </xml>
+    </blockly>
+</rows>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_perguntas_e_respostas/Parametrizacao_perguntas_e_respostas.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Parametrizacao_perguntas_e_respostas</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Parametrizacao_perguntas_e_respostas</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=170</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Parametrização Perguntas e Respostas</title>
+        <form_1 type="form" xml-type="form" title="Pergunta" gen-type="container" gen-group="">
+            <fields>
+                <conceito name="p_conceito" type="select" multiple="false" tags="false" domain="conceitos « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
+                    <label>Conceito</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>IGRP Studio</text>
+                            <value>igrp_studio</value>
+                        </option>
+                        <option>
+                            <text>BPMN e Report Designer</text>
+                            <value>bpmn_report</value>
+                        </option>
+                        <option>
+                            <text>Page Designer</text>
+                            <value>page_designer</value>
+                        </option>
+                        <option>
+                            <text>Gerador e Blockly</text>
+                            <value>gerador_blockly</value>
+                        </option>
+                        <option>
+                            <text>Eclipse e Git</text>
+                            <value>eclipse_git</value>
+                        </option>
+                        <option>
+                            <text>Base de Dados e DAO</text>
+                            <value>base_dados_dao</value>
+                        </option>
+                        <option>
+                            <text>Java</text>
+                            <value>java</value>
+                        </option>
+                    </list>
+                </conceito>
+                <nivel name="p_nivel" type="select" multiple="false" tags="false" domain="" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
+                    <label>Nivel</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </nivel>
+                <pergunta name="p_pergunta" type="textarea" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Pergunta</label>
+                    <value>Omnis sed iste anim consectetur mollit laudantium sit dolor mollit officia iste ipsum sit officia</value>
+                </pergunta>
+                <hidden name="p_id_pergunta" type="hidden" maxlength="250" java-type="" tag="id_pergunta"/>
+            </fields>
+        </form_1>
+        <separatorlist_1 type="separatorlist" xml-type="separatorlist" title="Respostas" gen-clean="true" gen-type="container" gen-group="true">
+            <fields>
+                <resposta name="p_resposta" type="textarea" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
+                    <label>Resposta</label>
+                    <value>Accusantium elit doloremque sit consectetur sit perspiciatis sit mollit officia perspiciatis labore laudantium labore adipiscing</value>
+                </resposta>
+                <resposta_certa name="p_resposta_certa" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" check="true" desc="true">
+                    <label>Resposta certa</label>
+                    <value>1</value>
+                </resposta_certa>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <resposta name="p_resposta" desc="true">Totam stract aperiam sed aperiam totam rem laudantium natus doloremque totam anim unde elit labore</resposta>
+                        <resposta_desc name="p_resposta_desc">Totam stract aperiam sed aperiam totam rem laudantium natus doloremque totam anim unde elit labore</resposta_desc>
+                        <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
+                        <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
+                    </row>
+                    <row>
+                        <resposta name="p_resposta" desc="true">Ipsum dolor perspiciatis rem totam ut ipsum anim natus magna anim ipsum sit doloremque totam</resposta>
+                        <resposta_desc name="p_resposta_desc">Ipsum dolor perspiciatis rem totam ut ipsum anim natus magna anim ipsum sit doloremque totam</resposta_desc>
+                        <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
+                        <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
+                    </row>
+                    <row>
+                        <resposta name="p_resposta" desc="true">Ut doloremque consectetur accusantium amet stract labore unde labore natus adipiscing laudantium adipiscing labore laudantium</resposta>
+                        <resposta_desc name="p_resposta_desc">Ut doloremque consectetur accusantium amet stract labore unde labore natus adipiscing laudantium adipiscing labore laudantium</resposta_desc>
+                        <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
+                        <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
+                    </row>
+                    <row>
+                        <resposta name="p_resposta" desc="true">Anim iste rem officia totam unde sit aperiam natus unde aperiam doloremque perspiciatis anim doloremque</resposta>
+                        <resposta_desc name="p_resposta_desc">Anim iste rem officia totam unde sit aperiam natus unde aperiam doloremque perspiciatis anim doloremque</resposta_desc>
+                        <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
+                        <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
+                    </row>
+                    <row>
+                        <resposta name="p_resposta" desc="true">Adipiscing unde consectetur ipsum omnis natus aperiam omnis ut rem accusantium deserunt mollit iste stract</resposta>
+                        <resposta_desc name="p_resposta_desc">Adipiscing unde consectetur ipsum omnis natus aperiam omnis ut rem accusantium deserunt mollit iste stract</resposta_desc>
+                        <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
+                        <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
+                    </row>
+                </value>
+            </table>
+        </separatorlist_1>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="salvar" refresh_components="">
+                <title>Salvar</title>
+                <app>sistema_de_avaliacao_igrpweb</app>
+                <page>Parametrizacao_perguntas_e_respostas</page>
+                <link>index</link>
+                <target>submit</target>
+                <img>primary|fa-save</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_perguntas_e_respostas/Parametrizacao_perguntas_e_respostas.xml</preview>
+            </item>
+        </toolsbar_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

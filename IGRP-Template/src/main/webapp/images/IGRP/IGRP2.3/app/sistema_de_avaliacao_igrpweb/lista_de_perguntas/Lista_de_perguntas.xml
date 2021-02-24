@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_perguntas/Lista_de_perguntas.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Lista_de_perguntas</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Lista_de_perguntas</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=284</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Lista de Perguntas</title>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="novo" refresh_components="">
+                <title>Novo</title>
+                <app>sistema_de_avaliacao_igrpweb</app>
+                <page>Parametrizacao_perguntas_e_respostas</page>
+                <link>index</link>
+                <target>modal|refresh</target>
+                <img>success|fa-plus-square</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_perguntas_e_respostas/Parametrizacao_perguntas_e_respostas.xml</preview>
+            </item>
+        </toolsbar_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <conceito name="p_conceito" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Conceito</label>
+                </conceito>
+                <pergunta name="p_pergunta" type="textarea" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Pergunta</label>
+                </pergunta>
+                <id_pergunta name="p_id_pergunta" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_pergunta"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <conceito name="p_conceito">Officia amet lorem unde volupt</conceito>
+                        <pergunta name="p_pergunta">Omnis doloremque rem unde aper</pergunta>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-e834_ad66</id_pergunta>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <conceito name="p_conceito">Stract consectetur anim natus</conceito>
+                        <pergunta name="p_pergunta">Deserunt stract consectetur an</pergunta>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-8daf_68f2</id_pergunta>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <conceito name="p_conceito">Doloremque unde lorem amet adi</conceito>
+                        <pergunta name="p_pergunta">Omnis stract omnis ipsum sed u</pergunta>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-bc05_4a8b</id_pergunta>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <conceito name="p_conceito">Deserunt lorem anim adipiscing</conceito>
+                        <pergunta name="p_pergunta">Doloremque dolor sit ut amet o</pergunta>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-ca88_035e</id_pergunta>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <conceito name="p_conceito">Magna iste totam perspiciatis</conceito>
+                        <pergunta name="p_pergunta">Laudantium amet sed perspiciat</pergunta>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-ee69_1f45</id_pergunta>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_4996_428b" type="specific" code="" class="warning" rel="editar" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Parametrizacao_perguntas_e_respostas</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_perguntas_e_respostas/Parametrizacao_perguntas_e_respostas.xml?</parameter>
+                        <target>mpsubmit|refresh</target>
+                        <img>warning|fa-pencil-square-o</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_perguntas_e_respostas/Parametrizacao_perguntas_e_respostas.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="463" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/informacoes/Informacoes.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Informacoes</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Informacoes</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=283</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Resultados Finais</title>
+        <sectionheader_1 type="sectionheader" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <sectionheader_1_text type="text" name="p_sectionheader_1_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[<p>Classifica&ccedil;&atilde;o Final Avalia&ccedil;&atilde;o igrpweb&nbsp;</p>
+]]>
+                    </value>
+                </sectionheader_1_text>
+            </fields>
+        </sectionheader_1>
+        <view_1 type="view" xml-type="view" title="Informações do Avaliado" gen-type="container" gen-group="">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Nome</label>
+                    <value>Totam voluptatem laudantium natus sed</value>
+                </nome>
+                <teste_nivel name="p_teste_nivel" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Teste Nível</label>
+                    <value>Sit elit voluptatem natus magna</value>
+                </teste_nivel>
+                <igrp_studio name="p_igrp_studio" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontuação em IGRP Studio (máximo 5)</label>
+                    <value>Accusantium laudantium magna anim aperiam elit totam consectetur dolor lorem sit accusantium magna accusantium anim aliqua ipsum doloremque elit lorem unde ipsum dolor omnis laudantium</value>
+                </igrp_studio>
+                <page_designer name="p_page_designer" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontuação em Page Designer (máximo 5)</label>
+                    <value>Elit officia aperiam rem totam labore doloremque voluptatem mollit adipiscing sit natus unde ut lorem amet unde sit mollit elit sit labore adipiscing elit aliqua</value>
+                </page_designer>
+                <bpmn_e_report_designer name="p_bpmn_e_report_designer" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontuação em BPMN e Report Designer (máximo 5)</label>
+                    <value>Doloremque aperiam laudantium unde accusantium unde consectetur dolor lorem ipsum lorem aperiam labore aperiam mollit natus mollit dolor accusantium officia rem laudantium rem sit voluptatem</value>
+                </bpmn_e_report_designer>
+                <gerador_de_codigo_e_blockly name="p_gerador_de_codigo_e_blockly" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontuação em Gerador de Código e Blockly (máximo 5)</label>
+                    <value>Sit ut consectetur deserunt natus accusantium sit consectetur omnis accusantium adipiscing sit sit officia natus omnis mollit aliqua stract iste magna natus doloremque lorem officia</value>
+                </gerador_de_codigo_e_blockly>
+                <eclipse_e_git name="p_eclipse_e_git" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontuação em Eclipse e Git (máximo 5)</label>
+                    <value>Sit amet consectetur anim aliqua sed sit totam anim deserunt deserunt consectetur labore unde labore amet sit officia aperiam omnis lorem adipiscing totam doloremque amet</value>
+                </eclipse_e_git>
+                <base_de_dados_e_dao name="p_base_de_dados_e_dao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontução em Base de Dados e DAO (máximo 5)</label>
+                    <value>Totam aperiam aliqua elit dolor consectetur iste mollit ipsum aliqua iste anim sit accusantium doloremque aliqua perspiciatis doloremque omnis dolor perspiciatis ut omnis dolor sed</value>
+                </base_de_dados_e_dao>
+                <java name="p_java" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontução em Java (máximo 5)</label>
+                    <value>Perspiciatis aperiam lorem sed magna mollit stract amet laudantium ut accusantium doloremque deserunt magna aperiam sit laudantium voluptatem omnis lorem consectetur aperiam sed ipsum accusantium</value>
+                </java>
+                <gestao_de_acessos name="p_gestao_de_acessos" type="plaintext" disable_output_escaping="false" html_class="" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Pontuação em Gestão de Acessos (máximo 5)</label>
+                    <value>Adipiscing magna lorem officia sit laudantium sed iste consectetur sit totam natus officia voluptatem ipsum aperiam adipiscing omnis officia laudantium totam sit rem ipsum aperiam</value>
+                </gestao_de_acessos>
+                <classificacao name="p_classificacao" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Classificação Final (máximo  40 pontos)</label>
+                    <value>Sed natus totam labore accusantium</value>
+                </classificacao>
+                <id_teste name="p_id_teste" type="hidden" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true" tag="id_teste"/>
+                <id_avaliado name="p_id_avaliado" type="hidden" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true" tag="id_avaliado"/>
+                <view_1_img type="text" name="p_view_1_img" maxlength="300">
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </view_1_img>
+            </fields>
+        </view_1>
+        <paragraph_1 type="paragraph" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <paragraph_1_text type="text" name="p_paragraph_1_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[<p>* N&iacute;vel 1 -&nbsp;Amador / N&iacute;vel 2&nbsp;- Interm&eacute;dio / N&iacute;vel 3&nbsp;- Profissional&nbsp;</p>
+]]>
+                    </value>
+                </paragraph_1_text>
+            </fields>
+        </paragraph_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="188" y="38"></block>
+        </xml>
+    </blockly>
+</rows>

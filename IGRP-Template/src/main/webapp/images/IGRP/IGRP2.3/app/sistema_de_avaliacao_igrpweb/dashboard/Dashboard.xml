@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/dashboard/Dashboard.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Dashboard</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Dashboard</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=289</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Dashboard</title>
+        <chart_2 type="chart" xml-type="chart" title="Teste Realizado por Universidade" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>column</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>437</col>
+                    <col>21</col>
+                    <col>180</col>
+                    <col>899</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>761</col>
+                    <col>622</col>
+                    <col>26</col>
+                    <col>229</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>983</col>
+                    <col>569</col>
+                    <col>717</col>
+                </row>
+            </value>
+            <colors>
+                <col>#67f260</col>
+                <col>#7073f9</col>
+                <col>#1c2c4e</col>
+                <col>#35ae83</col>
+            </colors>
+        </chart_2>
+        <chart_1 type="chart" xml-type="chart" title="Teste por Área de Formação" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>column</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>278</col>
+                    <col>815</col>
+                    <col>571</col>
+                    <col>29</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>164</col>
+                    <col>547</col>
+                    <col>596</col>
+                    <col>474</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>548</col>
+                    <col>48</col>
+                    <col>124</col>
+                </row>
+            </value>
+            <colors>
+                <col>#754f5d</col>
+                <col>#3fb1a3</col>
+                <col>#5ec5ac</col>
+                <col>#c01237</col>
+            </colors>
+        </chart_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="grafico">chart_1</import>
+            <import type="grafico">chart_2</import>
+            <import type="dao">TesteTbl</import>
+            <import type="dao">AvaliadoTbl</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13">
+                <statement name="index">
+                    <block type="grafico_chart_1" id="SxtPba)X3V;26qQi3{.{" inline="true">
+                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                        <field name="dao">TesteTbl</field>
+                        <statement name="value2">
+                            <block type="EixoX" id="xE!Vevna@(4[M,yYS7dP">
+                                <value name="eixo">
+                                    <block type="core_fun_get" id="]@n7s?0q?}o.x*RY9yjv">
+                                        <mutation hover_type="get_domain"></mutation>
+                                        <field name="CORE_FUNCTION">get_domain</field>
+                                        <value name="value1">
+                                            <block type="text" id="mt;srxA,?,;lY[@]@7@r">
+                                                <field name="TEXT">formacao</field>
+                                            </block>
+                                        </value>
+                                        <value name="value2">
+                                            <block type="get-dao-TesteTbl" id="CF@?}Bq6|kLE0fD14ZIf">
+                                                <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                                <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-AvaliadoTbl" id="GoJnGZvx]j!Q4vt#J)LR">
+                                                        <mutation hover_type="String::formacao"></mutation>
+                                                        <field name="DAO_FIELD">String::formacao</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="EixoY" id="`E0{LRTZNjD|KDsJ:Gd,">
+                                        <value name="eixo">
+                                            <block type="core_fun_get" id="K=B8-9!o3)RUP3^R7=Ot">
+                                                <mutation hover_type="get_domain"></mutation>
+                                                <field name="CORE_FUNCTION">get_domain</field>
+                                                <value name="value1">
+                                                    <block type="text" id="tq[5u*vS#1aP0@.tQqb:">
+                                                        <field name="TEXT">formacao</field>
+                                                    </block>
+                                                </value>
+                                                <value name="value2">
+                                                    <block type="get-dao-TesteTbl" id="%TAwC|XJ]hf9kT(^*@Mp">
+                                                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-AvaliadoTbl" id="Z`TWbn~J~ZFb%)[LcSh%">
+                                                                <mutation hover_type="String::formacao"></mutation>
+                                                                <field name="DAO_FIELD">String::formacao</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="EixoZ" id="E6*Fm|A_mRn|N6vrZ4!Y">
+                                                <value name="eixo">
+                                                    <block type="get-dao-TesteTbl" id="r%0m(/Uy8rHTtAM#Nw_u">
+                                                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-AvaliadoTbl" id="wHDwsF,pj4?wEpPPBm?8">
+                                                                <mutation hover_type="String::formacao"></mutation>
+                                                                <field name="DAO_FIELD">String::formacao</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="grafico_chart_2" id=").ITTvJC^)AXA@#Rnf?G" inline="true">
+                                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                                <field name="dao">TesteTbl</field>
+                                <statement name="value2">
+                                    <block type="EixoX" id="}W2hGkV+;j,c:/5z.)[)">
+                                        <value name="eixo">
+                                            <block type="core_fun_get" id="]x,^v#@vcovpeJq[1Twp">
+                                                <mutation hover_type="get_domain"></mutation>
+                                                <field name="CORE_FUNCTION">get_domain</field>
+                                                <value name="value1">
+                                                    <block type="text" id=":tD:J1n,3P|xjEt{+`ZG">
+                                                        <field name="TEXT">universidade</field>
+                                                    </block>
+                                                </value>
+                                                <value name="value2">
+                                                    <block type="get-dao-TesteTbl" id="d:L[`L+X9|yeWQ)H|xE{">
+                                                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-AvaliadoTbl" id=".I}4kaX6{#R`wE1@|d(L">
+                                                                <mutation hover_type="String::universidade"></mutation>
+                                                                <field name="DAO_FIELD">String::universidade</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="EixoY" id="MVvlMeElu:X:%N!_Yg.d">
+                                                <value name="eixo">
+                                                    <block type="core_fun_get" id="hJOl,VZZuw~bukvbTiP;">
+                                                        <mutation hover_type="get_domain"></mutation>
+                                                        <field name="CORE_FUNCTION">get_domain</field>
+                                                        <value name="value1">
+                                                            <block type="text" id="+Hr-rH-2)ONPDr_qJ1)6">
+                                                                <field name="TEXT">universidade</field>
+                                                            </block>
+                                                        </value>
+                                                        <value name="value2">
+                                                            <block type="get-dao-TesteTbl" id="r25lkq5R5x.u[N8p:0B5">
+                                                                <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                                                <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                                                <value name="dao_rela">
+                                                                    <block type="get-dao-AvaliadoTbl" id="zw|:F#]V^@crE}`R?SLB">
+                                                                        <mutation hover_type="String::universidade"></mutation>
+                                                                        <field name="DAO_FIELD">String::universidade</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="EixoZ" id="[lPKyPDxe_[WO_Yj^]zo">
+                                                        <value name="eixo">
+                                                            <block type="get-dao-TesteTbl" id="Z]k5dtykG?VC];4[,rYE">
+                                                                <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                                                <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                                                <value name="dao_rela">
+                                                                    <block type="get-dao-AvaliadoTbl" id="U|IarGwLcE7w?2#COt[1">
+                                                                        <mutation hover_type="String::universidade"></mutation>
+                                                                        <field name="DAO_FIELD">String::universidade</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>
