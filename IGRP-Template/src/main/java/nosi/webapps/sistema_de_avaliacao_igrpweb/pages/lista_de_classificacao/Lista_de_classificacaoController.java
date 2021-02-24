@@ -29,6 +29,7 @@ public class Lista_de_classificacaoController extends Controller {
 		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Sit dolor totam lorem iste omn' as nome,'Ipsum accusantium elit mollit' as formacao,'Stract adipiscing dolor sed ap' as edicao,'03-02-2013' as data_de_realizacao,'Unde doloremque perspiciatis l' as classificacao,'hidden-bcf4_27ca' as id_teste,'hidden-1e7d_67fa' as id_avaliado "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
+		
 		try{
 	
 	TesteTbl testetblfilter = new TesteTbl().find();
