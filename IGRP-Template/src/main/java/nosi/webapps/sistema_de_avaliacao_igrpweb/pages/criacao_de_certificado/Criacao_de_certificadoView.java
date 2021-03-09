@@ -14,9 +14,13 @@ public class Criacao_de_certificadoView extends View {
 	public Field avaliador;
 	public Field chave_de_validacao;
 	public Field horas_de_formacao;
+	public Field data;
 	public Field id_avaliado;
+	public Field fundo;
+	public Field logo;
 	public IGRPSectionHeader sectionheader_1;
 	public IGRPForm form_1;
+	public IGRPForm form_2;
 
 
 	public Criacao_de_certificadoView(){
@@ -26,6 +30,8 @@ public class Criacao_de_certificadoView extends View {
 		sectionheader_1 = new IGRPSectionHeader("sectionheader_1","");
 
 		form_1 = new IGRPForm("form_1","");
+
+		form_2 = new IGRPForm("form_2","");
 
 		sectionheader_1_text = new TextField(model,"sectionheader_1_text");
 		sectionheader_1_text.setLabel(gt(""));
@@ -53,9 +59,23 @@ public class Criacao_de_certificadoView extends View {
 		horas_de_formacao.setLabel(gt("Horas de Formação"));
 		horas_de_formacao.propertie().add("name","p_horas_de_formacao").add("type","number").add("min","").add("max","").add("calculation","false").add("mathcal","").add("numberformat","").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("java-type","");
 		
+		data = new DateField(model,"data");
+		data.setLabel(gt("Data"));
+		data.propertie().add("name","p_data").add("type","date").add("range","false").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("class","primary");
+		
 		id_avaliado = new HiddenField(model,"id_avaliado");
 		id_avaliado.setLabel(gt(""));
 		id_avaliado.propertie().add("name","p_id_avaliado").add("type","hidden").add("maxlength","250").add("java-type","").add("tag","id_avaliado");
+		
+		fundo = new TextField(model,"fundo");
+		fundo.setLabel(gt("Fundo"));
+		fundo.setValue(gt("../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg"));
+		fundo.propertie().add("name","p_fundo").add("type","img").add("img","../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg").add("width","").add("height","").add("croppie","false").add("rounded","false").add("autoupload","false").add("maxlength","250").add("placeholder",gt("")).add("desclabel","false");
+		
+		logo = new TextField(model,"logo");
+		logo.setLabel(gt("Logo"));
+		logo.setValue(gt("../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg"));
+		logo.propertie().add("name","p_logo").add("type","img").add("img","../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg").add("width","").add("height","").add("croppie","false").add("rounded","false").add("autoupload","false").add("maxlength","250").add("placeholder",gt("")).add("desclabel","false");
 		
 
 
@@ -72,10 +92,15 @@ public class Criacao_de_certificadoView extends View {
 		form_1.addField(avaliador);
 		form_1.addField(chave_de_validacao);
 		form_1.addField(horas_de_formacao);
+		form_1.addField(data);
 		form_1.addField(id_avaliado);
+
+		form_2.addField(fundo);
+		form_2.addField(logo);
 
 		this.addToPage(sectionheader_1);
 		this.addToPage(form_1);
+		this.addToPage(form_2);
 	}
 		
 	@Override
@@ -85,6 +110,7 @@ public class Criacao_de_certificadoView extends View {
 		avaliador.setValue(model);
 		chave_de_validacao.setValue(model);
 		horas_de_formacao.setValue(model);
+		data.setValue(model);
 		id_avaliado.setValue(model);	
 
 		}

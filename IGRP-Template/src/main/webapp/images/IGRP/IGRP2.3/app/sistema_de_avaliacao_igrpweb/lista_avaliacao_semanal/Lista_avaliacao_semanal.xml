@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_avaliacao_semanal/Lista_avaliacao_semanal.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Lista_avaliacao_semanal</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Lista_avaliacao_semanal</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=90</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Lista Avaliação Semanal</title>
+        <table_1 type="table" xml-type="table" title="Lista de Estagiários" gen-type="container" gen-group="true">
+            <fields>
+                <foto name="p_foto" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Foto</label>
+                </foto>
+                <nome name="p_nome" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <edicao name="p_edicao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Edição Nosi Akademia</label>
+                </edicao>
+                <area name="p_area" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Área ou Projeto</label>
+                </area>
+                <mentor name="p_mentor" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Mentor Principal</label>
+                </mentor>
+                <id_teste name="p_id_teste" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_teste"/>
+                <id_avaliado name="p_id_avaliado" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_avaliado"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Amet elit aperiam adipiscing l</nome>
+                        <edicao name="p_edicao">Accusantium elit rem aliqua do</edicao>
+                        <area name="p_area">Voluptatem aliqua consectetur</area>
+                        <mentor name="p_mentor">Magna sed sit omnis voluptatem</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-b27a_c292</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-5f2e_4c58</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Lorem mollit dolor aliqua offi</nome>
+                        <edicao name="p_edicao">Adipiscing sed totam amet cons</edicao>
+                        <area name="p_area">Deserunt ut aperiam accusantiu</area>
+                        <mentor name="p_mentor">Natus sit dolor sit aliqua</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-0bfa_340f</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-2e1d_99d8</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Sed magna totam stract sit ut</nome>
+                        <edicao name="p_edicao">Sit omnis mollit totam elit mo</edicao>
+                        <area name="p_area">Iste perspiciatis omnis aliqua</area>
+                        <mentor name="p_mentor">Stract consectetur officia mag</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-99a6_7ad3</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-3882_5b85</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Natus sed perspiciatis officia</nome>
+                        <edicao name="p_edicao">Ut sit labore adipiscing elit</edicao>
+                        <area name="p_area">Magna stract sit sit omnis</area>
+                        <mentor name="p_mentor">Laudantium ipsum rem mollit al</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-6fd8_1b4b</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-cea9_aada</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Lorem elit omnis natus sit acc</nome>
+                        <edicao name="p_edicao">Ut omnis anim elit aperiam lab</edicao>
+                        <area name="p_area">Totam lorem amet ut stract</area>
+                        <mentor name="p_mentor">Magna consectetur doloremque o</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-7716_b77a</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-5b6a_6ff7</id_avaliado>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_3ef4_b061" type="specific" code="" flg_transaction="true" class="warning" rel="ver" refresh_components="">
+                        <title>Ver</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Formulario_de_inscricao</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml?</parameter>
+                        <target>_blank</target>
+                        <img>warning|fa-eye</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml</preview>
+                    </item>
+                    <item id="button_49d2_25ad" type="specific" code="" flg_transaction="true" class="purple" rel="avaliacao_semanal" refresh_components="">
+                        <title>Avaliação Semanal</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Formulario_avaliacao_semanal</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_avaliacao_semanal/Formulario_avaliacao_semanal.xml?</parameter>
+                        <target>mpsubmit|refresh</target>
+                        <img>purple|fa-drivers-license</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_avaliacao_semanal/Formulario_avaliacao_semanal.xml</preview>
+                    </item>
+                    <item id="button_4fff_67f5" type="specific" code="" flg_transaction="true" class="danger" rel="inserir_tema" refresh_components="">
+                        <title>Inserir Tema</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Tema_semanal</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/tema_semanal/Tema_semanal.xml?</parameter>
+                        <target>mpsubmit|refresh</target>
+                        <img>danger|fa-legal</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/tema_semanal/Tema_semanal.xml</preview>
+                    </item>
+                    <item id="button_5a98_fd99" type="specific" code="" class="grey" rel="historico_de_avaliacoes" refresh_components="">
+                        <title>Histórico de Avaliações</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Historico_de_avaliacao</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/historico_de_avaliacao/Historico_de_avaliacao.xml?</parameter>
+                        <target>mpsubmit</target>
+                        <img>grey|fa-line-chart</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/historico_de_avaliacao/Historico_de_avaliacao.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

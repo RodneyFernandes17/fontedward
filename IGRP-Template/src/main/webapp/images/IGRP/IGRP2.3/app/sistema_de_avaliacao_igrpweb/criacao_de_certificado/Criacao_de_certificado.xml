@@ -55,7 +55,7 @@
                 </foto>
                 <nome name="p_nome" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Nome</label>
-                    <value>Aperiam magna consectetur iste doloremque</value>
+                    <value>Adipiscing dolor magna sed elit</value>
                 </nome>
                 <avaliador name="p_avaliador" type="select" multiple="false" tags="false" domain="avaliadores « sistema_de_avaliacao_igrpweb" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
                     <label>Avaliador</label>
@@ -81,15 +81,31 @@
                 </avaliador>
                 <chave_de_validacao name="p_chave_de_validacao" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Chave de Validacao</label>
-                    <value>Ipsum totam laudantium aperiam adipiscing</value>
+                    <value>Accusantium sed officia omnis consectetur</value>
                 </chave_de_validacao>
                 <horas_de_formacao name="p_horas_de_formacao" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
                     <label>Horas de Formação</label>
-                    <value>242</value>
+                    <value>18</value>
                 </horas_de_formacao>
+                <data name="p_data" type="date" range="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" class="primary">
+                    <label>Data</label>
+                    <value>07-05-2017</value>
+                </data>
                 <hidden name="p_id_avaliado" type="hidden" maxlength="250" java-type="" tag="id_avaliado"/>
             </fields>
         </form_1>
+        <form_2 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <fundo name="p_fundo" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="250" placeholder="" desclabel="false" right="false">
+                    <label>Fundo</label>
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </fundo>
+                <logo name="p_logo" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="250" placeholder="" desclabel="false" right="false">
+                    <label>Logo</label>
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </logo>
+            </fields>
+        </form_2>
     </content>
     <blockly>
         <imports></imports>

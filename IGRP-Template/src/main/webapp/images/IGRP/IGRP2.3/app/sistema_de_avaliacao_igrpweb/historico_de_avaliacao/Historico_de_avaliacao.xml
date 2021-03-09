@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/historico_de_avaliacao/Historico_de_avaliacao.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Historico_de_avaliacao</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Historico_de_avaliacao</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=93</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Histórico de Avaliação</title>
+        <view_1 type="view" xml-type="view" title="Avaliação Semanal" gen-type="container" gen-group="">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Nome</label>
+                    <value>Aliqua sit deserunt officia sit</value>
+                </nome>
+                <area name="p_area" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Área ou Projeto</label>
+                    <value>Sit consectetur lorem omnis voluptatem</value>
+                </area>
+                <view_1_img type="text" name="p_view_1_img" maxlength="300">
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </view_1_img>
+            </fields>
+        </view_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <media_tbl name="p_media_tbl" type="color" format="hex" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label/>
+                </media_tbl>
+                <semana name="p_semana" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" total_footer="false" group_in="" java-type="">
+                    <label>Semana</label>
+                </semana>
+                <data name="p_data" type="date" range="false" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="" disableWeekends="false" daysoff="false">
+                    <label>Data</label>
+                </data>
+                <tema name="p_tema" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Tema Semanal</label>
+                </tema>
+                <media_semanal name="p_media_semanal" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Média Semanal</label>
+                </media_semanal>
+                <conteudo name="p_conteudo" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Conteúdo</label>
+                </conteudo>
+                <pontualidade name="p_pontualidade" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Pontualidade</label>
+                </pontualidade>
+                <dominio name="p_dominio" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Língua</label>
+                </dominio>
+                <clareza name="p_clareza" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Clareza</label>
+                </clareza>
+                <proatividade name="p_proatividade" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Proatividade</label>
+                </proatividade>
+                <nivel name="p_nivel" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nível</label>
+                </nivel>
+                <tarefas name="p_tarefas" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
+                    <label>Tarefas</label>
+                </tarefas>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <media_tbl name="p_media_tbl">razoavel</media_tbl>
+                        <semana name="p_semana">15</semana>
+                        <data name="p_data">03-06-2012</data>
+                        <tema name="p_tema">Anim aliqua stract natus aperi</tema>
+                        <media_semanal name="p_media_semanal">Anim elit voluptatem perspicia</media_semanal>
+                        <conteudo name="p_conteudo">Sit anim ut totam amet</conteudo>
+                        <pontualidade name="p_pontualidade">Doloremque stract amet laudant</pontualidade>
+                        <dominio name="p_dominio">Doloremque amet mollit aliqua</dominio>
+                        <clareza name="p_clareza">Adipiscing omnis accusantium s</clareza>
+                        <proatividade name="p_proatividade">Ut labore officia perspiciatis</proatividade>
+                        <nivel name="p_nivel">Aliqua anim sed lorem iste</nivel>
+                        <tarefas name="p_tarefas">Anim ut anim ut ipsum</tarefas>
+                    </row>
+                    <row>
+                        <media_tbl name="p_media_tbl">fraco</media_tbl>
+                        <semana name="p_semana">29</semana>
+                        <data name="p_data">02-03-2014</data>
+                        <tema name="p_tema">Perspiciatis doloremque totam</tema>
+                        <media_semanal name="p_media_semanal">Officia unde voluptatem sit to</media_semanal>
+                        <conteudo name="p_conteudo">Lorem stract iste consectetur</conteudo>
+                        <pontualidade name="p_pontualidade">Adipiscing sit accusantium lab</pontualidade>
+                        <dominio name="p_dominio">Labore ut stract sed natus</dominio>
+                        <clareza name="p_clareza">Magna dolor elit dolor sed</clareza>
+                        <proatividade name="p_proatividade">Magna unde aperiam ipsum labor</proatividade>
+                        <nivel name="p_nivel">Ut amet aliqua iste sit</nivel>
+                        <tarefas name="p_tarefas">Accusantium consectetur labore</tarefas>
+                    </row>
+                    <row>
+                        <media_tbl name="p_media_tbl">fraco</media_tbl>
+                        <semana name="p_semana">14</semana>
+                        <data name="p_data">03-06-2010</data>
+                        <tema name="p_tema">Lorem voluptatem deserunt sit</tema>
+                        <media_semanal name="p_media_semanal">Voluptatem sit elit sit laudan</media_semanal>
+                        <conteudo name="p_conteudo">Lorem sit deserunt amet perspi</conteudo>
+                        <pontualidade name="p_pontualidade">Sed iste natus laudantium omni</pontualidade>
+                        <dominio name="p_dominio">Adipiscing iste lorem adipisci</dominio>
+                        <clareza name="p_clareza">Voluptatem sit natus officia m</clareza>
+                        <proatividade name="p_proatividade">Rem omnis labore adipiscing si</proatividade>
+                        <nivel name="p_nivel">Accusantium iste sit labore de</nivel>
+                        <tarefas name="p_tarefas">Mollit anim unde lorem omnis</tarefas>
+                    </row>
+                    <row>
+                        <media_tbl name="p_media_tbl">razoavel</media_tbl>
+                        <semana name="p_semana">17</semana>
+                        <data name="p_data">05-05-2014</data>
+                        <tema name="p_tema">Accusantium sit elit voluptate</tema>
+                        <media_semanal name="p_media_semanal">Omnis iste adipiscing amet vol</media_semanal>
+                        <conteudo name="p_conteudo">Anim dolor anim rem consectetu</conteudo>
+                        <pontualidade name="p_pontualidade">Sit accusantium deserunt dolor</pontualidade>
+                        <dominio name="p_dominio">Unde stract lorem perspiciatis</dominio>
+                        <clareza name="p_clareza">Lorem consectetur lorem perspi</clareza>
+                        <proatividade name="p_proatividade">Officia dolor aperiam accusant</proatividade>
+                        <nivel name="p_nivel">Laudantium ipsum magna anim ad</nivel>
+                        <tarefas name="p_tarefas">Labore ut doloremque magna mol</tarefas>
+                    </row>
+                    <row>
+                        <media_tbl name="p_media_tbl">fraco</media_tbl>
+                        <semana name="p_semana">21</semana>
+                        <data name="p_data">04-02-2010</data>
+                        <tema name="p_tema">Aperiam accusantium ipsum sit</tema>
+                        <media_semanal name="p_media_semanal">Officia ut totam sit rem</media_semanal>
+                        <conteudo name="p_conteudo">Omnis doloremque aliqua stract</conteudo>
+                        <pontualidade name="p_pontualidade">Labore voluptatem sed stract l</pontualidade>
+                        <dominio name="p_dominio">Laudantium natus elit accusant</dominio>
+                        <clareza name="p_clareza">Omnis doloremque sit ipsum ut</clareza>
+                        <proatividade name="p_proatividade">Magna lorem magna doloremque i</proatividade>
+                        <nivel name="p_nivel">Laudantium aperiam ut adipisci</nivel>
+                        <tarefas name="p_tarefas">Sit unde aperiam dolor natus</tarefas>
+                    </row>
+                </value>
+                <legend_color>
+                    <item>
+                        <label>Fraco</label>
+                        <value>fraco</value>
+                        <color>#dc2b2b</color>
+                    </item>
+                    <item>
+                        <label>Razoável</label>
+                        <value>razoavel</value>
+                        <color>#e6ea26</color>
+                    </item>
+                    <item>
+                        <label>Bom</label>
+                        <value>bom</value>
+                        <color>#1f7dc1</color>
+                    </item>
+                    <item>
+                        <label>Muito Bom</label>
+                        <value>mto_bom</value>
+                        <color>#49e600</color>
+                    </item>
+                </legend_color>
+            </table>
+        </table_1>
+        <paragraph_1 type="paragraph" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <paragraph_1_text type="text" name="p_paragraph_1_text" persist="true" maxlength="4000">
+                    <value>
+                        <![CDATA[<p><b>Conteudo do Powerpoint</b> &ndash; avaliar a qualidade da apresenta&ccedil;&atilde;o em termos de quantidades de imagens, textos, estruturas;</p><p><b>Pontualidade</b> &ndash; respeito ao tempo estipulado como dura&ccedil;&atilde;o da apresenta&ccedil;&atilde;o.</p><p><b>Dom&iacute;nio da l&iacute;ngua</b> &ndash; dom&iacute;nio para com a l&iacute;ngua escolhida para a realiza&ccedil;&atilde;o da apresenta&ccedil;&atilde;o, ingl&ecirc;s, portugu&ecirc;s, etc.</p><p><b>Clareza no discurso</b> &ndash; forma de apresenta&ccedil;&atilde;o clara com dom&iacute;nio do conte&uacute;do e de conceitos apresentados;</p><p><b>Proactividade</b> &ndash; n&iacute;vel de proactividade nas tarefas em que lhes foram submetidas;</p><p><b>Nivel de aprendizagem</b> &ndash; qual a margem de aprendizagem que alcan&ccedil;ou durante a semana;</p><p><b>Tarefas futuras</b> &ndash; planos que tem para realiza&ccedil;&atilde;o de tarefas futuras e quais os impedimentos;</p><p>*Avalia&ccedil;&atilde;o M&aacute;xima por Categoria 10, M&iacute;nima 0.</p>
+]]>
+                    </value>
+                </paragraph_1_text>
+            </fields>
+        </paragraph_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

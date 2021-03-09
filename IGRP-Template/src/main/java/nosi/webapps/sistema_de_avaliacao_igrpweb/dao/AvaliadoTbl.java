@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 
 /**
- * @author: Nositeste 24-02-2021
+ * @author: Nositeste 09-03-2021
 */
 
 @Entity
@@ -26,34 +26,38 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_avaliado", updatable = false, nullable = false)
  	private Integer idAvaliado;
+	@Column(name = "id_foto", nullable = false, length = 2147483647)
+	private String idFoto;
+	@Column(name = "nome", nullable = false, length = 2147483647)
+	private String nome;
+	@Column(name = "ilha", nullable = false, length = 2147483647)
+	private String ilha;
+	@Column(name = "edicao", nullable = false, length = 2147483647)
+	private String edicao;
+	@Column(name = "formacao", nullable = false, length = 2147483647)
+	private String formacao;
+	@Column(name = "universidade", nullable = false, length = 2147483647)
+	private String universidade;
+	@Column(name = "outra_form", length = 2147483647)
+	private String outraForm;
+	@Column(name = "outra_univ", length = 2147483647)
+	private String outraUniv;
 	@Column(name = "contacto", nullable = false)
 	private Integer contacto;
-	@Column(name = "edicao", nullable = false, length = 255)
-	private String edicao;
-	@Column(name = "email", nullable = false, length = 255)
+	@Column(name = "email", nullable = false, length = 2147483647)
 	private String email;
-	@Column(name = "formacao", nullable = false, length = 255)
-	private String formacao;
-	@Column(name = "id_foto", nullable = false, length = 255)
-	private String idFoto;
-	@Column(name = "ilha", nullable = false, length = 255)
-	private String ilha;
 	@Column(name = "nivel", nullable = false)
 	private Integer nivel;
-	@Column(name = "nome", nullable = false, length = 255)
-	private String nome;
-	@Column(name = "outra_form", length = 255)
-	private String outraForm;
-	@Column(name = "outra_univ", length = 255)
-	private String outraUniv;
-	@Column(name = "universidade", nullable = false, length = 255)
-	private String universidade;
-	@Column(name = "formador", length = 2147483647)
+	@Column(name = "formador", nullable = false, length = 2147483647)
 	private String formador;
-	@Column(name = "horas")
+	@Column(name = "horas", nullable = false)
 	private Integer horas;
-	@Column(name = "chave_aut", length = 2147483647)
+	@Column(name = "chave_aut", nullable = false, length = 2147483647)
 	private String chaveAut;
+	@Column(name = "area_estagio", length = 2147483647)
+	private String areaEstagio;
+	@Column(name = "mentor", length = 2147483647)
+	private String mentor;
 
 	public Integer getIdAvaliado() { 
 		return this.idAvaliado;
@@ -61,38 +65,6 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 
 	public void setIdAvaliado(Integer idAvaliado) {
 		 this.idAvaliado = idAvaliado;
-	}
-
-	public Integer getContacto() { 
-		return this.contacto;
-	}
-
-	public void setContacto(Integer contacto) {
-		 this.contacto = contacto;
-	}
-
-	public String getEdicao() { 
-		return this.edicao;
-	}
-
-	public void setEdicao(String edicao) {
-		 this.edicao = edicao;
-	}
-
-	public String getEmail() { 
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		 this.email = email;
-	}
-
-	public String getFormacao() { 
-		return this.formacao;
-	}
-
-	public void setFormacao(String formacao) {
-		 this.formacao = formacao;
 	}
 
 	public String getIdFoto() { 
@@ -103,6 +75,14 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 		 this.idFoto = idFoto;
 	}
 
+	public String getNome() { 
+		return this.nome;
+	}
+
+	public void setNome(String nome) {
+		 this.nome = nome;
+	}
+
 	public String getIlha() { 
 		return this.ilha;
 	}
@@ -111,20 +91,28 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 		 this.ilha = ilha;
 	}
 
-	public Integer getNivel() { 
-		return this.nivel;
+	public String getEdicao() { 
+		return this.edicao;
 	}
 
-	public void setNivel(Integer nivel) {
-		 this.nivel = nivel;
+	public void setEdicao(String edicao) {
+		 this.edicao = edicao;
 	}
 
-	public String getNome() { 
-		return this.nome;
+	public String getFormacao() { 
+		return this.formacao;
 	}
 
-	public void setNome(String nome) {
-		 this.nome = nome;
+	public void setFormacao(String formacao) {
+		 this.formacao = formacao;
+	}
+
+	public String getUniversidade() { 
+		return this.universidade;
+	}
+
+	public void setUniversidade(String universidade) {
+		 this.universidade = universidade;
 	}
 
 	public String getOutraForm() { 
@@ -143,12 +131,28 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 		 this.outraUniv = outraUniv;
 	}
 
-	public String getUniversidade() { 
-		return this.universidade;
+	public Integer getContacto() { 
+		return this.contacto;
 	}
 
-	public void setUniversidade(String universidade) {
-		 this.universidade = universidade;
+	public void setContacto(Integer contacto) {
+		 this.contacto = contacto;
+	}
+
+	public String getEmail() { 
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		 this.email = email;
+	}
+
+	public Integer getNivel() { 
+		return this.nivel;
+	}
+
+	public void setNivel(Integer nivel) {
+		 this.nivel = nivel;
 	}
 
 	public String getFormador() { 
@@ -173,6 +177,22 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 
 	public void setChaveAut(String chaveAut) {
 		 this.chaveAut = chaveAut;
+	}
+
+	public String getAreaEstagio() { 
+		return this.areaEstagio;
+	}
+
+	public void setAreaEstagio(String areaEstagio) {
+		 this.areaEstagio = areaEstagio;
+	}
+
+	public String getMentor() { 
+		return this.mentor;
+	}
+
+	public void setMentor(String mentor) {
+		 this.mentor = mentor;
 	}
 
 }

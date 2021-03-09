@@ -26,10 +26,9 @@ public class Lista_de_classificacaoController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Sit dolor totam lorem iste omn' as nome,'Ipsum accusantium elit mollit' as formacao,'Stract adipiscing dolor sed ap' as edicao,'03-02-2013' as data_de_realizacao,'Unde doloremque perspiciatis l' as classificacao,'hidden-bcf4_27ca' as id_teste,'hidden-1e7d_67fa' as id_avaliado "));
+		model.loadTable_1(Core.query(null,"SELECT '4' as aprovacao,'../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Iste sed adipiscing voluptatem' as nome,'Rem lorem voluptatem ut sit am' as formacao,'Officia laudantium sit amet is' as edicao,'02-01-2016' as data_de_realizacao,'Officia voluptatem natus sed a' as classificacao,'hidden-9791_7a9c' as id_teste,'hidden-412d_25bd' as id_avaliado "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
-		
 		try{
 	
 	TesteTbl testetblfilter = new TesteTbl().find();
@@ -44,6 +43,7 @@ public class Lista_de_classificacaoController extends Controller {
 			row.setFormacao(Core.findDomainDescByKey("formacao", testetbl.getIdAvaliadoFk().getFormacao()) );
 			row.setClassificacao(testetbl.getValorFinal()+" Pontos");
 			row.setId_teste(""+testetbl.getIdTeste());
+			row.setAprovacao(testetbl.getAprovacao()+"");
           	row.setData_de_realizacao(testetbl.getDataRealizacao()+"");
           	row.setEdicao(Core.findDomainDescByKey("edicao", testetbl.getIdAvaliadoFk()!=null?testetbl.getIdAvaliadoFk().getEdicao():null ));
 			testetblTable.add(row);
@@ -92,7 +92,13 @@ public class Lista_de_classificacaoController extends Controller {
 		  ----#gen-example */
 		/*----#start-code(emitir_certificado)----*/
 		
-		return Core.getLinkReport("certificado_igrpweb", new Report().addParam("value_array", Core.getParam("p_id_avaliado")));
+		AvaliadoTbl avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
+
+		String contraprova = avaliadotbl.getChaveAut();
+
+		return Core.getLinkReport("certificado_igrpweb",
+				new Report().addParam("value_array", Core.getParam("p_id_avaliado")).setContraProva("IGRPWEB_"+contraprova));
+		
 		/*----#end-code----*/
 			
 	}

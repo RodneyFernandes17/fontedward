@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/validar_certificado/Validar_certificado.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Validar_certificado</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Validar_certificado</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=88</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Validar Certificado</title>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <contra_prova name="p_contra_prova" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Insere a Contra-Prova</label>
+                    <value>Elit lorem totam deserunt unde</value>
+                </contra_prova>
+            </fields>
+            <tools-bar>
+                <item id="button_ea80_4dcf" type="form" code="" class="primary" rel="validar" custom_return="true" refresh_components="iframe_1">
+                    <title>Validar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Validar_certificado</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/validar_certificado/Validar_certificado.xml?</parameter>
+                    <target>submit_ajax</target>
+                    <img>primary|fa-mortar-board</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/validar_certificado/Validar_certificado.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <iframe_1 type="iframe" xml-type="iframe" gen-type="container" gen-group="">
+            <fields>
+                <iframe_1_src name="p_iframe_1_src" type="text" maxlength="4000">
+                    <label>Iframe Source</label>
+                    <value>/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml</value>
+                </iframe_1_src>
+            </fields>
+        </iframe_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

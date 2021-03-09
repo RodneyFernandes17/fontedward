@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/tema_semanal/Tema_semanal.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Tema_semanal</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Tema_semanal</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=94</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Inserção do Tema Semanal</title>
+        <form_1 type="form" xml-type="form" title="Inserção do Tema Semanal" gen-type="container" gen-group="">
+            <fields>
+                <area name="p_area" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Área ou Projeto Estágio</label>
+                    <value>Sit lorem amet dolor aliqua</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </area>
+                <mentor name="p_mentor" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Mentor(a) Principal</label>
+                    <value>Mollit dolor lorem stract sed</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </mentor>
+                <tema_semanal name="p_tema_semanal" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Tema Semanal</label>
+                    <value>Ipsum totam amet labore dolor</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </tema_semanal>
+                <nr_semana name="p_nr_semana" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
+                    <label>Nr de Semana</label>
+                    <value>173</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </nr_semana>
+                <hidden name="p_id_avaliado" type="hidden" maxlength="250" java-type="" tag="id_avaliado"/>
+            </fields>
+        </form_1>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="submeter" refresh_components="">
+                <title>Submeter</title>
+                <app>sistema_de_avaliacao_igrpweb</app>
+                <page>Tema_semanal</page>
+                <link>index</link>
+                <target>submit</target>
+                <img>purple|fa-save</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/tema_semanal/Tema_semanal.xml</preview>
+            </item>
+        </toolsbar_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="inserir_dao">Inserir Daos</import>
+            <import type="dao">TemalTbl</import>
+        </imports>
+        <xml>
+            <block type="save_formu_form_1" id="pVkpSR08Jh,0nRp@;T)*" x="0" y="0">
+                <mutation count="1" pxchecked="true"></mutation>
+                <field name="dao">TemalTbl</field>
+                <field name="EDIT">TRUE</field>
+                <value name="param_id">
+                    <block type="core_get_param" id="Z{MKRbr|0X{(ALTP,HUI">
+                        <field name="param">id_avaliado</field>
+                    </block>
+                </value>
+            </block>
+            <block type="set-dao-TemalTbl" id="_A{g1ga~U20xioYSA{pQ" x="0" y="0"></block>
+            <block type="controller" id="controller" x="188" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

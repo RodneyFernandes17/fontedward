@@ -703,7 +703,16 @@ public class Questoes_geraisController extends Controller {
 						+ valor_eclipse_git + valor_base_dados_dao + valor_java + valor_gestao_acesso;
 
 				testetbl.setValorFinal(valor_final);
-
+				
+				if(valor_final>=30) {
+					testetbl.setAprovacao(4);
+				}else if(valor_final>=20 && valor_final < 30) {
+					testetbl.setAprovacao(3);
+				}else if(valor_final>= 10 && valor_final < 20) {
+					testetbl.setAprovacao(2);
+				}else if(valor_final < 10) {
+					testetbl.setAprovacao(1);
+				}
 				session.persist(testetbl);
 				transaction.commit();
 				Core.setMessageSuccess();

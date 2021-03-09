@@ -10,7 +10,10 @@ import nosi.core.webapp.Response;//
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.ImagensTbl;
 import nosi.core.webapp.Report;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.ImagensTbl;
+import nosi.core.webapp.UploadedFile;
 /*----#end-code----*/
 		
 public class Criacao_de_certificadoController extends Controller {
@@ -36,8 +39,18 @@ public class Criacao_de_certificadoController extends Controller {
 				model.setHoras_de_formacao(avaliadotbl.getHoras());
 				model.setAvaliador(avaliadotbl.getFormador());
 				model.setChave_de_validacao(avaliadotbl.getChaveAut());
+				model.setData(Core.getCurrentDate());
 				
 			}
+			ImagensTbl imagenslogo = new ImagensTbl().findOne(1);
+			if (imagenslogo != null && !imagenslogo.hasError()) {
+				view.logo.setValue(Core.getLinkFileByUuid(imagenslogo.getIdFoto()));
+			}
+			ImagensTbl imagensfundo = new ImagensTbl().findOne(2);
+			if (imagensfundo != null && !imagensfundo.hasError()) {
+				view.fundo.setValue(Core.getLinkFileByUuid(imagensfundo.getIdFoto()));
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

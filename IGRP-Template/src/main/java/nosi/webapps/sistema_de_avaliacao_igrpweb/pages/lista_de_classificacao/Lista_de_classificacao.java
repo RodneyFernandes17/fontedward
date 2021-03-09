@@ -20,6 +20,7 @@ public class Lista_de_classificacao extends Model{
 
 
 	public static class Table_1 extends IGRPTable.Table{
+		private String aprovacao;
 		private String foto="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg";
 		private String foto_uuid;
 		private String nome;
@@ -29,6 +30,13 @@ public class Lista_de_classificacao extends Model{
 		private String classificacao;
 		private String id_teste;
 		private String id_avaliado;
+		public void setAprovacao(String aprovacao){
+			this.aprovacao = aprovacao;
+		}
+		public String getAprovacao(){
+			return this.aprovacao;
+		}
+
 		public void setFoto(String foto){
 			this.foto = foto;
 		}

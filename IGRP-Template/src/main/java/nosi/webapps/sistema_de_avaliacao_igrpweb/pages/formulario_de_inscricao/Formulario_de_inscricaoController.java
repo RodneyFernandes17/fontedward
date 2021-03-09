@@ -55,12 +55,14 @@ public class Formulario_de_inscricaoController extends Controller {
 					view.ilha_natural.propertie().add("disabled", "true");
 					view.edicao_de_nosiakademia.propertie().add("disabled", "true");
 					view.formacao.propertie().add("disabled", "true");
+					view.formador.propertie().add("disabled", "true");
 					view.outra_formacao.propertie().add("disabled", "true");
 					view.universidade.propertie().add("disabled", "true");
 					view.outra_universidade.propertie().add("disabled", "true");
 					view.contacto.propertie().add("disabled", "true");
 					view.email.propertie().add("disabled", "true");
 					view.nivel.propertie().add("disabled", "true");
+					view.horas.propertie().add("disabled", "true");
 					view.btn_seguinte.setVisible(false);
 
 				}

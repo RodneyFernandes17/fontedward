@@ -33,6 +33,9 @@
 		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.PerguntaTbl"/>
 		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.RespostaTbl"/>
 		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TesteTbl"/>
+		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.ImagensTbl"/>
+		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanalTbl"/>
+		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TemaTbl"/>
 		<!-- Mapping your class here... 
 		Ex: <mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.Employee"/> 		-->
 	</session-factory>

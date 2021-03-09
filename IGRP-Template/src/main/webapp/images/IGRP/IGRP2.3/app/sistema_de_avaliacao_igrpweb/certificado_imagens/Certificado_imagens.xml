@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/certificado_imagens/Certificado_imagens.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Certificado_imagens</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Certificado_imagens</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=89</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Certificado Imagens</title>
+        <form_1 type="form" xml-type="form" title="Inserir Imagem de Fundo" gen-type="container" gen-group="">
+            <fields>
+                <fundo name="p_fundo" type="file" accept="" targetrend="" multiple="false" rendvalue="false" maxlength="250" required="false" disabled="false" right="false" class="primary">
+                    <label>Fundo</label>
+                    <value/>
+                </fundo>
+            </fields>
+            <tools-bar>
+                <item id="button_f71f_c1ca" type="form" code="" class="primary" rel="salvar_fundo" refresh_components="">
+                    <title>Salvar Fundo</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Certificado_imagens</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/certificado_imagens/Certificado_imagens.xml?</parameter>
+                    <target>submit_form</target>
+                    <img>primary|fa-save</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/certificado_imagens/Certificado_imagens.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <form_2 type="form" xml-type="form" title="Inserir Logo" gen-type="container" gen-group="">
+            <fields>
+                <logo name="p_logo" type="file" accept="" targetrend="" multiple="false" rendvalue="false" maxlength="250" required="false" disabled="false" right="false" class="primary">
+                    <label>Logo</label>
+                    <value/>
+                </logo>
+            </fields>
+            <tools-bar>
+                <item id="button_4568_70be" type="form" code="" class="primary" rel="salvar_logo" refresh_components="">
+                    <title>Salvar Logo</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Certificado_imagens</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/certificado_imagens/Certificado_imagens.xml?</parameter>
+                    <target>submit_form</target>
+                    <img>primary|fa-save</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/certificado_imagens/Certificado_imagens.xml</preview>
+                </item>
+            </tools-bar>
+        </form_2>
+        <form_3 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <fundo_view name="p_fundo_view" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="250" placeholder="" desclabel="false" right="false">
+                    <label>Fundo_view</label>
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </fundo_view>
+                <logo_view name="p_logo_view" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="250" placeholder="" desclabel="false" right="false">
+                    <label>Logo_view</label>
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </logo_view>
+            </fields>
+        </form_3>
+    </content>
+    <blockly>
+        <imports>
+            <import type="dao">ImagensTbl</import>
+            <import type="fields">File</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="update_simple_dao" id="]8?1[~;I{%7R{A-Z%%B." inline="true" x="1037" y="13">
+                <field name="dao">ImagensTbl</field>
+                <value name="param_edit">
+                    <block type="math_number" id=",=LlvNx^_7YDQ?Q}yTZ+">
+                        <field name="NUM">2</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="set-dao-ImagensTbl" id="_tE,#Mb3]GZ=g]KRKDJ)" inline="false">
+                        <mutation hover_type="String::idFoto"></mutation>
+                        <field name="DAO_FIELD">String::idFoto</field>
+                        <value name="value1">
+                            <block type="mod_formform_1" id="/(1[G81=fPT{8-0|vRso">
+                                <field name="get_model">File::fundo</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="set-dao-ImagensTbl" id="mk=S*T`:Q(B0jN-h;A31" inline="false">
+                                <mutation hover_type="String::descricao"></mutation>
+                                <field name="DAO_FIELD">String::descricao</field>
+                                <value name="value1">
+                                    <block type="text" id="FHpfex^sx*Tez-g1]YKt">
+                                        <field name="TEXT">fundo</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="update_simple_dao" id="-011sJjMK6:heJVVCOuT" inline="true" x="987" y="288">
+                <field name="dao">ImagensTbl</field>
+                <value name="param_edit">
+                    <block type="math_number" id="G;fuR(tZ!sr|Yrb3_*Lx">
+                        <field name="NUM">1</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="set-dao-ImagensTbl" id="uy3Vbesp}XU7i=(r)P#7" inline="false">
+                        <mutation hover_type="String::idFoto"></mutation>
+                        <field name="DAO_FIELD">String::idFoto</field>
+                        <value name="value1">
+                            <block type="mod_formform_2" id="dC/!H,Zm8h,E5{8PQLuL">
+                                <field name="get_model">File::logo</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="set-dao-ImagensTbl" id="TP_fZ=BhY3M+%-ZJA{.1" inline="false">
+                                <mutation hover_type="String::descricao"></mutation>
+                                <field name="DAO_FIELD">String::descricao</field>
+                                <value name="value1">
+                                    <block type="text" id=",j2QE]4e@rx33[^jL{4v">
+                                        <field name="TEXT">logo</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="formuu_form_3" id="m5n!u#i/=EO)bfotUy;d" inline="true" x="388" y="362">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">ImagensTbl</field>
+                <value name="get_pa">
+                    <block type="core_get_param" id="_y-~TG@Fs:qskd_1V8I@">
+                        <field name="param">fgfg</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="model_form_fundo_view" id="Image::fundo_view">
+                        <value name="value1">
+                            <block type="get-dao-ImagensTbl" id="/J|VjpUx(|y.aOGH3VGD">
+                                <mutation hover_type="String::idFoto"></mutation>
+                                <field name="DAO_FIELD">String::idFoto</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="model_form_logo_view" id="Image::logo_view">
+                                <value name="value1">
+                                    <block type="get-dao-ImagensTbl" id="Wn#lz.uxMyRxv@U4K_gh">
+                                        <mutation hover_type="String::idFoto"></mutation>
+                                        <field name="DAO_FIELD">String::idFoto</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>

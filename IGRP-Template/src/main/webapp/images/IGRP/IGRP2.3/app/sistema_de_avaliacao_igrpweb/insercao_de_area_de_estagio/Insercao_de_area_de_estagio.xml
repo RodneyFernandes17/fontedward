@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/insercao_de_area_de_estagio/Insercao_de_area_de_estagio.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Insercao_de_area_de_estagio</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Insercao_de_area_de_estagio</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=92</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Inserção de Área de Estágio</title>
+        <form_1 type="form" xml-type="form" title="Inserção de Área e Mentor" gen-type="container" gen-group="">
+            <fields>
+                <estagiario name="p_estagiario" type="select" multiple="false" tags="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Estagiário</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </estagiario>
+                <area name="p_area" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Área</label>
+                    <value>Iste omnis sit anim amet</value>
+                </area>
+                <mentor name="p_mentor" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Mentor</label>
+                    <value>Sed ipsum totam iste omnis</value>
+                </mentor>
+            </fields>
+            <tools-bar>
+                <item id="button_1b50_16d4" type="form" code="" class="primary" rel="salvar" refresh_components="">
+                    <title>Salvar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Insercao_de_area_de_estagio</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/insercao_de_area_de_estagio/Insercao_de_area_de_estagio.xml?</parameter>
+                    <target>submit_form</target>
+                    <img>primary|fa-save</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/insercao_de_area_de_estagio/Insercao_de_area_de_estagio.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <area_tbl name="p_area_tbl" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Área</label>
+                </area_tbl>
+                <mentor_tbl name="p_mentor_tbl" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Mentor</label>
+                </mentor_tbl>
+                <id_avaliado name="p_id_avaliado" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_avaliado"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Omnis labore stract aliqua acc</nome>
+                        <area_tbl name="p_area_tbl">Adipiscing mollit consectetur</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Consectetur totam voluptatem s</mentor_tbl>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-1e8a_4f70</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Natus anim labore aliqua persp</nome>
+                        <area_tbl name="p_area_tbl">Totam sit adipiscing voluptate</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Elit sed amet anim rem</mentor_tbl>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-7c18_89c4</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Sit deserunt voluptatem mollit</nome>
+                        <area_tbl name="p_area_tbl">Rem laudantium consectetur ut</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Ipsum dolor aliqua officia ame</mentor_tbl>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-cba1_7963</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Dolor labore unde stract dolor</nome>
+                        <area_tbl name="p_area_tbl">Sit aliqua consectetur dolor s</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Ipsum adipiscing sit aliqua la</mentor_tbl>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-7a0b_d199</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Anim mollit laudantium anim un</nome>
+                        <area_tbl name="p_area_tbl">Perspiciatis stract ut magna o</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Amet unde officia stract dolor</mentor_tbl>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-d23f_e847</id_avaliado>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_f991_e05e" type="specific" code="" class="warning" rel="editar" custom_return="true" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Insercao_de_area_de_estagio</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/insercao_de_area_de_estagio/Insercao_de_area_de_estagio.xml?</parameter>
+                        <target>submit</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/insercao_de_area_de_estagio/Insercao_de_area_de_estagio.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="combo_dao">Combo Dao</import>
+            <import type="dao">AvaliadoTbl</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="363" y="163">
+                <statement name="index">
+                    <block type="combo_dao" id="y)k)q,7}?Do}8(cQf5D*" inline="true">
+                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                        <field name="selecao">estagiario</field>
+                        <field name="dao">AvaliadoTbl</field>
+                        <field name="selecionar">TRUE</field>
+                        <statement name="key_val">
+                            <block type="option_dao" id="pF)enrFc8mvO#(F(orG5" inline="true">
+                                <value name="key_val">
+                                    <block type="get-dao-AvaliadoTbl" id="Xo`w2n]+xKah5jAg-j|(">
+                                        <mutation hover_type="Integer::idAvaliado"></mutation>
+                                        <field name="DAO_FIELD">Integer::idAvaliado</field>
+                                    </block>
+                                </value>
+                                <value name="value_val">
+                                    <block type="get-dao-AvaliadoTbl" id="t)9!m(DZZeu6qiN7(%ug">
+                                        <mutation hover_type="String::nome"></mutation>
+                                        <field name="DAO_FIELD">String::nome</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="controls_if" id="H{vH1iC^RnbjbaLN7fJC">
+                                <value name="IF0">
+                                    <block type="logic_compare" id="{sJCxzT|9%5AWBBe|nFS">
+                                        <field name="OP">NEQ</field>
+                                        <value name="A">
+                                            <block type="core_get_param" id="]tN^N*,JTS^=UGYw;tlP">
+                                                <field name="param">id_avaliado</field>
+                                            </block>
+                                        </value>
+                                        <value name="B">
+                                            <block type="logic_null" id="5nS;JCS`S,GI[z(C(}g?"></block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="DO0">
+                                    <block type="formuu_form_1" id="k~QfxGSv{.~+7AC9_p1Q" inline="true">
+                                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                                        <field name="dao">AvaliadoTbl</field>
+                                        <value name="get_pa">
+                                            <block type="core_get_param" id="tJZ]{S~KHp3(^wNd|X4S">
+                                                <field name="param">id_avaliado</field>
+                                            </block>
+                                        </value>
+                                        <statement name="value2">
+                                            <block type="model_form_estagiario" id="String::estagiario">
+                                                <value name="value1">
+                                                    <block type="get-dao-AvaliadoTbl" id="/|Xdf(/UY;eFQ?24,hwf">
+                                                        <mutation hover_type="Integer::idAvaliado"></mutation>
+                                                        <field name="DAO_FIELD">Integer::idAvaliado</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="model_form_area" id="String::area">
+                                                        <value name="value1">
+                                                            <block type="get-dao-AvaliadoTbl" id="g~@JU2Jm5.SlSsJ^lBxw">
+                                                                <mutation hover_type="String::areaEstagio"></mutation>
+                                                                <field name="DAO_FIELD">String::areaEstagio</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="model_form_mentor" id="String::mentor">
+                                                                <value name="value1">
+                                                                    <block type="get-dao-AvaliadoTbl" id="!xRfvG1Rb^i[p7dGz{i,">
+                                                                        <mutation hover_type="String::mentor"></mutation>
+                                                                        <field name="DAO_FIELD">String::mentor</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </statement>
+                                <next>
+                                    <block type="listar_table_1" id="table_1" inline="true">
+                                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                                        <field name="dao">AvaliadoTbl</field>
+                                        <field name="FILL">FALSE</field>
+                                        <field name="find">TODOSS</field>
+                                        <field name="limit"></field>
+                                        <statement name="value2">
+                                            <block type="rowtablenome" id="String::nome">
+                                                <value name="fields_model">
+                                                    <block type="get-dao-AvaliadoTbl" id="D8}X14xlN6Nq.Z`F(^#]">
+                                                        <mutation hover_type="String::nome"></mutation>
+                                                        <field name="DAO_FIELD">String::nome</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="rowtablearea_tbl" id="String::area_tbl">
+                                                        <value name="fields_model">
+                                                            <block type="get-dao-AvaliadoTbl" id="+xo%d|.h#T62[=4N9kTg">
+                                                                <mutation hover_type="String::areaEstagio"></mutation>
+                                                                <field name="DAO_FIELD">String::areaEstagio</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="rowtablementor_tbl" id="String::mentor_tbl">
+                                                                <value name="fields_model">
+                                                                    <block type="get-dao-AvaliadoTbl" id="oIHRrPnYs=Cn?gaeAV+)">
+                                                                        <mutation hover_type="String::mentor"></mutation>
+                                                                        <field name="DAO_FIELD">String::mentor</field>
+                                                                    </block>
+                                                                </value>
+                                                                <next>
+                                                                    <block type="rowtableid_avaliado" id="String::id_avaliado">
+                                                                        <value name="fields_model">
+                                                                            <block type="get-dao-AvaliadoTbl" id="mHs|R:vx~HDnx[8v@=:j">
+                                                                                <mutation hover_type="Integer::idAvaliado"></mutation>
+                                                                                <field name="DAO_FIELD">Integer::idAvaliado</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <statement name="salvar">
+                    <block type="update_simple_dao" id="]e]j)CGCd%w3Gm*6V5hy" inline="true">
+                        <field name="dao">AvaliadoTbl</field>
+                        <value name="param_edit">
+                            <block type="mod_formform_1" id="sFu_059szF=~tJCbYSx!">
+                                <field name="get_model">String::estagiario</field>
+                            </block>
+                        </value>
+                        <statement name="value2">
+                            <block type="set-dao-AvaliadoTbl" id="(C-]d%y1!az9GJ#Clc}w" inline="false">
+                                <mutation hover_type="String::areaEstagio"></mutation>
+                                <field name="DAO_FIELD">String::areaEstagio</field>
+                                <value name="value1">
+                                    <block type="mod_formform_1" id="(mu@9,)m_{wp%[l}~--B">
+                                        <field name="get_model">String::area</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="set-dao-AvaliadoTbl" id="p-%,t22Fv@XTW=Imw8Rl" inline="false">
+                                        <mutation hover_type="String::mentor"></mutation>
+                                        <field name="DAO_FIELD">String::mentor</field>
+                                        <value name="value1">
+                                            <block type="mod_formform_1" id="+-Ca}xP?:,o/x}}pAC4[">
+                                                <field name="get_model">String::mentor</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                    </block>
+                </statement>
+                <statement name="editar">
+                    <block type="enviar_p" id="avXKPi~R7;`cB)}b.3V4">
+                        <field name="iskey">id_avaliado</field>
+                        <next>
+                            <block type="editar_dao" id="s~8*8c3{vIzJCK/;+%[!">
+                                <next>
+                                    <block type="custombutton" id="Z=KZjJ.{Spm*Z@=1[Ym]" inline="true">
+                                        <field name="return">forward</field>
+                                        <field name="page">Insercao_de_area_de_estagio</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>
