@@ -24,7 +24,11 @@
 
 				formlist 	     = element.parents('.IGRP_formlist')[0],
 
-				value 			 = element.val() || '';
+				value 			 = element.val() || '',
+				
+				disableWeekends  = element.is('[disableWeekends="true"]') ? true : false,
+
+				datesDisabled    = element.is('[daysoff]') && element.attr('daysoff') != '' ? element.attr('daysoff').split(',') : [];
 
 
 			element.daterangepicker({
@@ -42,6 +46,15 @@
 			    minDate			 : "01/01/1900",
 
 			    maxDate			 : "01/01/2099",
+
+				isInvalidDate: function(date) {
+					var _date = date.format('DD-MM-YYYY');
+
+					if ((disableWeekends && (date.day() === 0 || date.day() === 6)) || $.inArray(_date,datesDisabled) !== -1)
+						return true;
+
+					return false;
+				}
 
 			    //opens	  		 : "left"
 
