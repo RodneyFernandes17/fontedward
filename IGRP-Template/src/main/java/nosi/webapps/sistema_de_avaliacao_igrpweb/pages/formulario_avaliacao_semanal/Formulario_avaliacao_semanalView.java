@@ -10,6 +10,7 @@ public class Formulario_avaliacao_semanalView extends View {
 
 	public Field nome;
 	public Field area;
+	public Field mentor;
 	public Field view_1_img;
 	public Field semana;
 	public Field tema_semanal;
@@ -23,6 +24,7 @@ public class Formulario_avaliacao_semanalView extends View {
 	public Field tarefas;
 	public Field id_avaliado;
 	public Field id_semanal;
+	public Field id_tema;
 	public Field paragraph_1_text;
 	public IGRPView view_1;
 	public IGRPForm form_1;
@@ -47,6 +49,10 @@ public class Formulario_avaliacao_semanalView extends View {
 		area = new TextField(model,"area");
 		area.setLabel(gt("Área ou Projeto"));
 		area.propertie().add("name","p_area").add("type","text").add("maxlength","250").add("class","default").add("img","").add("showlabel","true");
+		
+		mentor = new TextField(model,"mentor");
+		mentor.setLabel(gt("Mentor"));
+		mentor.propertie().add("name","p_mentor").add("type","text").add("maxlength","250").add("class","default").add("img","").add("showlabel","true");
 		
 		view_1_img = new TextField(model,"view_1_img");
 		view_1_img.setLabel(gt(""));
@@ -100,6 +106,10 @@ public class Formulario_avaliacao_semanalView extends View {
 		id_semanal.setLabel(gt(""));
 		id_semanal.propertie().add("name","p_id_semanal").add("type","hidden").add("maxlength","250").add("java-type","").add("tag","id_semanal");
 		
+		id_tema = new HiddenField(model,"id_tema");
+		id_tema.setLabel(gt(""));
+		id_tema.propertie().add("name","p_id_tema").add("type","hidden").add("maxlength","250").add("java-type","int").add("tag","id_tema");
+		
 		paragraph_1_text = new TextField(model,"paragraph_1_text");
 		paragraph_1_text.setLabel(gt(""));
 		paragraph_1_text.setValue(gt("<p><b>Conteudo do Powerpoint</b> &ndash; avaliar a qualidade da apresenta&ccedil;&atilde;o em termos de quantidades de imagens, textos, estruturas;</p> <p><b>Pontualidade</b> &ndash; respeito ao tempo estipulado como dura&ccedil;&atilde;o da apresenta&ccedil;&atilde;o.</p> <p><b>Dom&iacute;nio da l&iacute;ngua</b> &ndash; dom&iacute;nio para com a l&iacute;ngua escolhida para a realiza&ccedil;&atilde;o da apresenta&ccedil;&atilde;o, ingl&ecirc;s, portugu&ecirc;s, etc.</p> <p><b>Clareza no discurso</b> &ndash; forma de apresenta&ccedil;&atilde;o clara com dom&iacute;nio do conte&uacute;do e de conceitos apresentados;</p> <p><b>Proactividade</b> &ndash; n&iacute;vel de proactividade nas tarefas em que lhes foram submetidas;</p> <p><b>Nivel de aprendizagem</b> &ndash; qual a margem de aprendizagem que alcan&ccedil;ou durante a semana;</p> <p><b>Tarefas futuras</b> &ndash; planos que tem para realiza&ccedil;&atilde;o de tarefas futuras e quais os impedimentos;</p>"));
@@ -118,6 +128,7 @@ public class Formulario_avaliacao_semanalView extends View {
 		
 		view_1.addField(nome);
 		view_1.addField(area);
+		view_1.addField(mentor);
 		view_1.addField(view_1_img);
 
 		form_1.addField(semana);
@@ -132,6 +143,7 @@ public class Formulario_avaliacao_semanalView extends View {
 		form_1.addField(tarefas);
 		form_1.addField(id_avaliado);
 		form_1.addField(id_semanal);
+		form_1.addField(id_tema);
 
 		paragraph_1.addField(paragraph_1_text);
 
@@ -146,6 +158,7 @@ public class Formulario_avaliacao_semanalView extends View {
 		
 		nome.setValue(model);
 		area.setValue(model);
+		mentor.setValue(model);
 		view_1_img.setValue(model);
 		semana.setValue(model);
 		tema_semanal.setValue(model);
@@ -158,7 +171,8 @@ public class Formulario_avaliacao_semanalView extends View {
 		aprendizagem.setValue(model);
 		tarefas.setValue(model);
 		id_avaliado.setValue(model);
-		id_semanal.setValue(model);	
+		id_semanal.setValue(model);
+		id_tema.setValue(model);	
 
 		}
 }

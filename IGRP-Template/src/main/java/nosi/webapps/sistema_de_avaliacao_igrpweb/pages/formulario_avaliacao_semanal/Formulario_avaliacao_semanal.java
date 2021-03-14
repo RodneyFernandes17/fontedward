@@ -13,6 +13,9 @@ public class Formulario_avaliacao_semanal extends Model{
 	@RParam(rParamName = "p_area")
 	private String area;
 
+	@RParam(rParamName = "p_mentor")
+	private String mentor;
+
 	@RParam(rParamName = "p_view_1_img")
 	private String view_1_img;
 
@@ -55,6 +58,10 @@ public class Formulario_avaliacao_semanal extends Model{
 	@RParam(rParamName = "p_id_semanal")
 	private String id_semanal;
 
+	@NotNull()
+	@RParam(rParamName = "p_id_tema")
+	private int id_tema;
+
 	@RParam(rParamName = "p_paragraph_1_text")
 	private String paragraph_1_text;
 	
@@ -70,6 +77,13 @@ public class Formulario_avaliacao_semanal extends Model{
 	}
 	public String getArea(){
 		return this.area;
+	}
+	
+	public void setMentor(String mentor){
+		this.mentor = mentor;
+	}
+	public String getMentor(){
+		return this.mentor;
 	}
 	
 	public void setView_1_img(String view_1_img){
@@ -161,6 +175,13 @@ public class Formulario_avaliacao_semanal extends Model{
 	}
 	public String getId_semanal(){
 		return this.id_semanal;
+	}
+	
+	public void setId_tema(int id_tema){
+		this.id_tema = id_tema;
+	}
+	public int getId_tema(){
+		return this.id_tema;
 	}
 	
 	public void setParagraph_1_text(String paragraph_1_text){

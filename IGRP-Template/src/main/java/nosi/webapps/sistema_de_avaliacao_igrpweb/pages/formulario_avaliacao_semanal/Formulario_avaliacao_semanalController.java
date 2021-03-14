@@ -29,17 +29,18 @@ public class Formulario_avaliacao_semanalController extends Controller {
 		Integer id_avaliado = Core.getParamInt("p_id_avaliado");
 
 		TemaTbl tema = new TemaTbl().find().andWhere("idAvaliadoFk", "=", id_avaliado)
-				.andWhere("estadoAtual", "=", true).one();
+				.andWhere("nrSemana.atual", "=", true).one();
 		if (tema != null && !tema.hasError()) {
 			model.setNome(tema.getIdAvaliadoFk().getNome());
-			model.setArea(tema.getIdAvaliadoFk().getAreaEstagio());
+			model.setArea(tema.getIdAvaliadoFk().getIdMentorFk()!=null?tema.getIdAvaliadoFk().getIdMentorFk().getIdAreaFk().getAreaDesc():"");
+			model.setMentor(tema.getIdAvaliadoFk().getIdMentorFk()!=null?tema.getIdAvaliadoFk().getIdMentorFk().getNome():"");
 			model.setView_1_img(
 					tema.getIdAvaliadoFk() != null ? Core.getLinkFileByUuid(tema.getIdAvaliadoFk().getIdFoto()) : null);
-			model.setSemana(tema.getNrSemana());
+			model.setSemana(tema.getNrSemana().getNrSemana());
 			model.setTema_semanal(tema.getTema());
+			model.setId_tema(tema.getId());
 			model.setId_avaliado(tema.getIdAvaliadoFk().getIdAvaliado() + "");
-		} else
-			Core.setMessageError("O Estagiário não enviou o Tema Semanal!");
+		}
 
 		/*----#end-code----*/
 		view.setModel(model);
@@ -76,7 +77,6 @@ public class Formulario_avaliacao_semanalController extends Controller {
 						AvaliadoTbl avaliadotbl_foreign = session.find(AvaliadoTbl.class,
 								Core.toInt(model.getId_avaliado()));
 						semanaltbl.setIdAvaliadoFk(avaliadotbl_foreign);
-						semanaltbl.setNrSemana(model.getSemana());
 						semanaltbl.setConteudo(model.getConteudo());
 						semanaltbl.setPontualidade(model.getPontualidade());
 						semanaltbl.setDominio(model.getDominio());
@@ -87,18 +87,12 @@ public class Formulario_avaliacao_semanalController extends Controller {
 						semanaltbl.setData(LocalDate.now());
 						semanaltbl.setIdAvaliador(Core.getCurrentUser().getId());
 						semanaltbl.setNomeAvaliador(Core.getCurrentUser().getName());
-						semanaltbl.setTemaSemanal(model.getTema_semanal());
+						TemaTbl tema_for = session.find(TemaTbl.class, model.getId_tema());
+						semanaltbl.setIdTemaFk(tema_for);
+						
 					}
 					session.persist(semanaltbl);
 					transaction.commit();
-
-					TemaTbl tema = new TemaTbl().find().andWhere("idAvaliadoFk", "=", Core.toInt(model.getId_avaliado()))
-							.andWhere("estadoAtual", "=", true).one();
-
-					if (Core.isNotNull(tema)) {
-						tema.setEstadoAtual(false);
-						tema.update();
-					}
 
 					Core.setMessageSuccess();
 				} else

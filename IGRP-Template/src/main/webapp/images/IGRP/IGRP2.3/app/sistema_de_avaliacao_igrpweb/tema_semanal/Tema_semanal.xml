@@ -37,45 +37,38 @@
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
     <content>
         <title>Inserção do Tema Semanal</title>
+        <view_1 type="view" xml-type="view" title="Avaliação Semanal" gen-type="container" gen-group="">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Nome</label>
+                    <value>Rem mollit perspiciatis omnis anim</value>
+                </nome>
+                <area name="p_area" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Área ou Projeto</label>
+                    <value>Adipiscing totam rem dolor mollit</value>
+                </area>
+                <mentor name="p_mentor" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Mentor</label>
+                    <value>Aperiam magna labore sed accusantium</value>
+                </mentor>
+                <view_1_img type="text" name="p_view_1_img" maxlength="300">
+                    <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
+                </view_1_img>
+            </fields>
+        </view_1>
         <form_1 type="form" xml-type="form" title="Inserção do Tema Semanal" gen-type="container" gen-group="">
             <fields>
-                <area name="p_area" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
-                    <label>Área ou Projeto Estágio</label>
-                    <value>Sit lorem amet dolor aliqua</value>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </area>
-                <mentor name="p_mentor" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
-                    <label>Mentor(a) Principal</label>
-                    <value>Mollit dolor lorem stract sed</value>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </mentor>
                 <tema_semanal name="p_tema_semanal" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Tema Semanal</label>
-                    <value>Ipsum totam amet labore dolor</value>
+                    <value>Totam accusantium aperiam aliqua omnis</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
                         </validation>
                     </validations>
                 </tema_semanal>
-                <nr_semana name="p_nr_semana" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
-                    <label>Nr de Semana</label>
-                    <value>173</value>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </nr_semana>
                 <hidden name="p_id_avaliado" type="hidden" maxlength="250" java-type="" tag="id_avaliado"/>
+                <hidden name="p_id_semana" type="hidden" maxlength="250" java-type="int" tag="id_semana"/>
             </fields>
         </form_1>
         <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
@@ -92,22 +85,82 @@
     </content>
     <blockly>
         <imports>
-            <import type="inserir_dao">Inserir Daos</import>
-            <import type="dao">TemalTbl</import>
+            <import type="dao">AvaliadoTbl</import>
+            <import type="dao">MentorTbl</import>
+            <import type="dao">AreaTbl</import>
         </imports>
         <xml>
-            <block type="save_formu_form_1" id="pVkpSR08Jh,0nRp@;T)*" x="0" y="0">
-                <mutation count="1" pxchecked="true"></mutation>
-                <field name="dao">TemalTbl</field>
-                <field name="EDIT">TRUE</field>
-                <value name="param_id">
-                    <block type="core_get_param" id="Z{MKRbr|0X{(ALTP,HUI">
-                        <field name="param">id_avaliado</field>
+            <block type="controller" id="controller" x="363" y="38">
+                <statement name="index">
+                    <block type="vieww_view_1" id="zXNY;Kf:CzYRLHXQmwDz" inline="true">
+                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                        <field name="dao">AvaliadoTbl</field>
+                        <value name="get_pa">
+                            <block type="core_get_param" id="AySy@zV9Ei2o!.PZp^Hn">
+                                <field name="param">id_avaliado</field>
+                            </block>
+                        </value>
+                        <statement name="value2">
+                            <block type="model_form_nome" id="String::nome">
+                                <value name="value1">
+                                    <block type="get-dao-AvaliadoTbl" id="SeC#hiF(PX1Z8-*s7;7L">
+                                        <mutation hover_type="String::nome"></mutation>
+                                        <field name="DAO_FIELD">String::nome</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="model_form_area" id="String::area">
+                                        <value name="value1">
+                                            <block type="get-dao-AvaliadoTbl" id="[[Mo]@KXJCm5vbzWEe=j">
+                                                <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
+                                                <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-MentorTbl" id="w8s;!@^3xn(Jh7oI]Fc~">
+                                                        <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
+                                                        <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-AreaTbl" id="i6*6sPuTwz~4BvU*CAD#">
+                                                                <mutation hover_type="String::areaDesc"></mutation>
+                                                                <field name="DAO_FIELD">String::areaDesc</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="model_form_mentor" id="String::mentor">
+                                                <value name="value1">
+                                                    <block type="get-dao-AvaliadoTbl" id=".-ic[2E-C:ea@Rs-Hn#f">
+                                                        <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
+                                                        <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-MentorTbl" id="9FK-15EY+BY7.^q0*.Uy">
+                                                                <mutation hover_type="String::nome"></mutation>
+                                                                <field name="DAO_FIELD">String::nome</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="model_form_view_1_img" id="Image_View::view_1_img">
+                                                        <value name="value1">
+                                                            <block type="get-dao-AvaliadoTbl" id="bAW^,f,nhcNAI[kW56N5">
+                                                                <mutation hover_type="String::idFoto"></mutation>
+                                                                <field name="DAO_FIELD">String::idFoto</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
                     </block>
-                </value>
+                </statement>
             </block>
-            <block type="set-dao-TemalTbl" id="_A{g1ga~U20xioYSA{pQ" x="0" y="0"></block>
-            <block type="controller" id="controller" x="188" y="13"></block>
         </xml>
     </blockly>
 </rows>

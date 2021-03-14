@@ -56,6 +56,7 @@
                 </mentor>
                 <id_teste name="p_id_teste" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_teste"/>
                 <id_avaliado name="p_id_avaliado" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_avaliado"/>
+                <id_utilizador name="p_id_utilizador" type="hidden" maxlength="30" showLabel="true" iskey="false" group_in="" java-type="" tag="id_utilizador"/>
             </fields>
             <table>
                 <value>
@@ -65,12 +66,13 @@
                             <param>p2=linha1</param>
                         </context-menu>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Amet elit aperiam adipiscing l</nome>
-                        <edicao name="p_edicao">Accusantium elit rem aliqua do</edicao>
-                        <area name="p_area">Voluptatem aliqua consectetur</area>
-                        <mentor name="p_mentor">Magna sed sit omnis voluptatem</mentor>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-b27a_c292</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-5f2e_4c58</id_avaliado>
+                        <nome name="p_nome">Mollit laudantium perspiciatis</nome>
+                        <edicao name="p_edicao">Perspiciatis omnis amet lorem</edicao>
+                        <area name="p_area">Dolor ipsum ut lorem consectet</area>
+                        <mentor name="p_mentor">Adipiscing rem sit ipsum offic</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-86d1_e735</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-b1f8_59d7</id_avaliado>
+                        <id_utilizador name="p_id_utilizador" tag="id_utilizador">hidden-08e4_0948</id_utilizador>
                     </row>
                     <row>
                         <context-menu>
@@ -78,12 +80,13 @@
                             <param>p2=linha1</param>
                         </context-menu>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Lorem mollit dolor aliqua offi</nome>
-                        <edicao name="p_edicao">Adipiscing sed totam amet cons</edicao>
-                        <area name="p_area">Deserunt ut aperiam accusantiu</area>
-                        <mentor name="p_mentor">Natus sit dolor sit aliqua</mentor>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-0bfa_340f</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-2e1d_99d8</id_avaliado>
+                        <nome name="p_nome">Unde doloremque deserunt anim</nome>
+                        <edicao name="p_edicao">Anim adipiscing laudantium eli</edicao>
+                        <area name="p_area">Ipsum totam aperiam elit rem</area>
+                        <mentor name="p_mentor">Mollit magna ipsum doloremque</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-6bc1_08ee</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-1185_550a</id_avaliado>
+                        <id_utilizador name="p_id_utilizador" tag="id_utilizador">hidden-696d_3a50</id_utilizador>
                     </row>
                     <row>
                         <context-menu>
@@ -91,12 +94,13 @@
                             <param>p2=linha1</param>
                         </context-menu>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Sed magna totam stract sit ut</nome>
-                        <edicao name="p_edicao">Sit omnis mollit totam elit mo</edicao>
-                        <area name="p_area">Iste perspiciatis omnis aliqua</area>
-                        <mentor name="p_mentor">Stract consectetur officia mag</mentor>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-99a6_7ad3</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-3882_5b85</id_avaliado>
+                        <nome name="p_nome">Officia sed anim adipiscing el</nome>
+                        <edicao name="p_edicao">Unde totam iste perspiciatis n</edicao>
+                        <area name="p_area">Officia aliqua aperiam iste ac</area>
+                        <mentor name="p_mentor">Laudantium sit consectetur mag</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-1a73_7530</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-2631_08bc</id_avaliado>
+                        <id_utilizador name="p_id_utilizador" tag="id_utilizador">hidden-258e_837a</id_utilizador>
                     </row>
                     <row>
                         <context-menu>
@@ -104,12 +108,13 @@
                             <param>p2=linha1</param>
                         </context-menu>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Natus sed perspiciatis officia</nome>
-                        <edicao name="p_edicao">Ut sit labore adipiscing elit</edicao>
-                        <area name="p_area">Magna stract sit sit omnis</area>
-                        <mentor name="p_mentor">Laudantium ipsum rem mollit al</mentor>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-6fd8_1b4b</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-cea9_aada</id_avaliado>
+                        <nome name="p_nome">Unde aperiam anim stract sit v</nome>
+                        <edicao name="p_edicao">Accusantium iste stract sed ut</edicao>
+                        <area name="p_area">Voluptatem amet officia totam</area>
+                        <mentor name="p_mentor">Omnis dolor sit iste labore</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-7aa0_aab1</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-c778_ea7f</id_avaliado>
+                        <id_utilizador name="p_id_utilizador" tag="id_utilizador">hidden-a88d_5c0e</id_utilizador>
                     </row>
                     <row>
                         <context-menu>
@@ -117,12 +122,13 @@
                             <param>p2=linha1</param>
                         </context-menu>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Lorem elit omnis natus sit acc</nome>
-                        <edicao name="p_edicao">Ut omnis anim elit aperiam lab</edicao>
-                        <area name="p_area">Totam lorem amet ut stract</area>
-                        <mentor name="p_mentor">Magna consectetur doloremque o</mentor>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-7716_b77a</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-5b6a_6ff7</id_avaliado>
+                        <nome name="p_nome">Sit mollit anim deserunt elit</nome>
+                        <edicao name="p_edicao">Totam labore unde aperiam offi</edicao>
+                        <area name="p_area">Accusantium consectetur volupt</area>
+                        <mentor name="p_mentor">Rem magna officia aperiam lore</mentor>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-10e6_3eec</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-a86c_438a</id_avaliado>
+                        <id_utilizador name="p_id_utilizador" tag="id_utilizador">hidden-1710_5bc4</id_utilizador>
                     </row>
                 </value>
                 <context-menu>

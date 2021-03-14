@@ -14,7 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ForeignKey;
 
 /**
- * @author: Nositeste 09-03-2021
+ * @author: Nositeste 13-03-2021
 */
 
 @Entity
@@ -30,18 +30,13 @@ public class TemaTbl extends BaseActiveRecord<TemaTbl> {
 	private String tema;
 	@Column(name = "data", nullable = false)
 	private LocalDateTime data;
-	@Column(name = "nr_semana", nullable = false)
-	private Integer nrSemana;
-	@Column(name = "id_utilizador", nullable = false)
-	private Integer idUtilizador;
-	@Column(name = "nome_utilizador", nullable = false, length = 2147483647)
-	private String nomeUtilizador;
+	@ManyToOne
+	@JoinColumn(name = "nr_semana", foreignKey = @ForeignKey(name = "semana_fk"))
+	private SemanaTbl nrSemana;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
  	private Integer id;
-	@Column(name = "estado_atual")
-	private Boolean estadoAtual;
 	@ManyToOne
 	@JoinColumn(name = "id_avaliado_fk", foreignKey = @ForeignKey(name = "avaliado_fkk"))
 	private AvaliadoTbl idAvaliadoFk;
@@ -62,28 +57,12 @@ public class TemaTbl extends BaseActiveRecord<TemaTbl> {
 		 this.data = data;
 	}
 
-	public Integer getNrSemana() { 
+	public SemanaTbl getNrSemana() { 
 		return this.nrSemana;
 	}
 
-	public void setNrSemana(Integer nrSemana) {
+	public void setNrSemana(SemanaTbl nrSemana) {
 		 this.nrSemana = nrSemana;
-	}
-
-	public Integer getIdUtilizador() { 
-		return this.idUtilizador;
-	}
-
-	public void setIdUtilizador(Integer idUtilizador) {
-		 this.idUtilizador = idUtilizador;
-	}
-
-	public String getNomeUtilizador() { 
-		return this.nomeUtilizador;
-	}
-
-	public void setNomeUtilizador(String nomeUtilizador) {
-		 this.nomeUtilizador = nomeUtilizador;
 	}
 
 	public Integer getId() { 
@@ -92,14 +71,6 @@ public class TemaTbl extends BaseActiveRecord<TemaTbl> {
 
 	public void setId(Integer id) {
 		 this.id = id;
-	}
-
-	public Boolean getEstadoAtual() { 
-		return this.estadoAtual;
-	}
-
-	public void setEstadoAtual(Boolean estadoAtual) {
-		 this.estadoAtual = estadoAtual;
 	}
 
 	public AvaliadoTbl getIdAvaliadoFk() { 

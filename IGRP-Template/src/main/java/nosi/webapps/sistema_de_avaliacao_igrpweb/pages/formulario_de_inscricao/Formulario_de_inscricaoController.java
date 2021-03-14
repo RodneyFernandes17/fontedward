@@ -114,6 +114,7 @@ public class Formulario_de_inscricaoController extends Controller {
 					avaliadotbl.setNivel(Core.toInt(model.getNivel()));
 					avaliadotbl.setFormador(model.getFormador());
 					avaliadotbl.setHoras(model.getHoras());
+					avaliadotbl.setIdUtilizador(Core.getCurrentUser().getId());
 					avaliadotbl.setChaveAut("first_key");
 					session.persist(avaliadotbl);
 					

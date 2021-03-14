@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.List;
 import java.util.LinkedHashMap;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.MentorTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AreaTbl;
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
@@ -29,8 +31,9 @@ public class Insercao_de_area_de_estagioController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT 'Ut sit lorem aliqua mollit' as nome,'Laudantium mollit rem iste adi' as area_tbl,'Sed magna doloremque sit adipi' as mentor_tbl,'hidden-b177_307f' as id_avaliado "));
+		model.loadTable_1(Core.query(null,"SELECT 'Labore mollit labore sed magna' as nome,'Adipiscing rem perspiciatis do' as area_tbl,'Adipiscing labore magna sit ip' as mentor_tbl,'hidden-38e1_7c93' as id_avaliado "));
 		view.estagiario.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
+		view.mentor.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
 	try{
 	AvaliadoTbl avaliadotblfilter = new AvaliadoTbl().find();
@@ -41,23 +44,30 @@ public class Insercao_de_area_de_estagioController extends Controller {
 		e.printStackTrace();
 	}
 	
-	if(Core.getParamInt("p_id_avaliado") != null){
-		
+	try{
+	MentorTbl mentortblfilter = new MentorTbl().find();
+	
+	List<MentorTbl> mentortblList = mentortblfilter.all();
+	view.mentor.setValue(Core.toMap(mentortblList, "id","nome","-- Selecionar --"));
+	}catch ( Exception e ) {
+		e.printStackTrace();
+	}
+	
 	try{
 	String isEdit = Core.getParam("isEdit");
 	if (Core.isNotNull(isEdit)) {
 		AvaliadoTbl avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
 		if (avaliadotbl!=null && !avaliadotbl.hasError()) {
 			model.setEstagiario(""+avaliadotbl.getIdAvaliado());
-			model.setArea(avaliadotbl.getAreaEstagio());
-			model.setMentor(avaliadotbl.getMentor());
+			model.setMentor(""+avaliadotbl.getIdMentorFk().getId());
+			model.setId_avaliado_pk(avaliadotbl.getIdAvaliado());
+	
+	view.btn_salvar.addParameter("isEdit", "true");
 		}
 	}
 	}catch ( Exception e ) {
 		e.printStackTrace();
 	}
-	}
-	
 	
 	try{
 	
@@ -68,8 +78,8 @@ public class Insercao_de_area_de_estagioController extends Controller {
 		for(AvaliadoTbl avaliadotbl : avaliadotblList){
 			Insercao_de_area_de_estagio.Table_1 row = new Insercao_de_area_de_estagio.Table_1();
 			row.setNome(avaliadotbl.getNome());
-			row.setArea_tbl(avaliadotbl.getAreaEstagio());
-			row.setMentor_tbl(avaliadotbl.getMentor());
+			row.setArea_tbl(avaliadotbl.getIdMentorFk()!=null?avaliadotbl.getIdMentorFk().getIdAreaFk().getAreaDesc():null);
+			row.setMentor_tbl(avaliadotbl.getIdMentorFk()!=null?avaliadotbl.getIdMentorFk().getNome():null);
 			row.setId_avaliado(""+avaliadotbl.getIdAvaliado());
 			avaliadotblTable.add(row);
 		}
@@ -98,11 +108,13 @@ public class Insercao_de_area_de_estagioController extends Controller {
 		  return this.forward("sistema_de_avaliacao_igrpweb","Insercao_de_area_de_estagio","index",this.queryString()); //if submit, loads the values
 		  Use model.validate() to validate your model
 		  ----#gen-example */
-	try{
+		/*----#start-code(salvar)----*/
+	
+		try{
 		AvaliadoTbl avaliadotbl  = new AvaliadoTbl().findOne(Core.toInt(model.getEstagiario()));
 		if(Core.isNotNull(avaliadotbl)){
-			avaliadotbl.setAreaEstagio(model.getArea());
-			avaliadotbl.setMentor(model.getMentor());
+	MentorTbl mentortbl_foreign = new MentorTbl().findOne(Core.toInt(model.getMentor()));
+	avaliadotbl.setIdMentorFk(mentortbl_foreign);
 			avaliadotbl.update();
 			Core.setMessageSuccess();
 		}
@@ -112,9 +124,6 @@ public class Insercao_de_area_de_estagioController extends Controller {
 		e.printStackTrace();
 		Core.setMessageError("Error: "+ e.getMessage());
 	}	
-		/*----#start-code(salvar)----*/
-	
-		
 		/*----#end-code----*/
 		return this.redirect("sistema_de_avaliacao_igrpweb","Insercao_de_area_de_estagio","index", this.queryString());	
 	}
@@ -133,13 +142,11 @@ public class Insercao_de_area_de_estagioController extends Controller {
 	this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 	
 	this.addQueryString("isEdit", "true");
-	
-	return this.forward("sistema_de_avaliacao_igrpweb","Insercao_de_area_de_estagio","index",this.queryString());
 		/*----#start-code(editar)----*/
 		
 		
 		/*----#end-code----*/
-			
+		return this.redirect("sistema_de_avaliacao_igrpweb","Insercao_de_area_de_estagio","index", this.queryString());	
 	}
 	
 		

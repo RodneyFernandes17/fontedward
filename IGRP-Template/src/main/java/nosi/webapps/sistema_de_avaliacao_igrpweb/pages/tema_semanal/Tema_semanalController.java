@@ -7,8 +7,9 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+
+
+
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import org.hibernate.Session;
@@ -16,14 +17,34 @@ import org.hibernate.Transaction;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TemaTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
 import java.time.LocalDateTime;
-
+import java.util.List;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanaTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AreaTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.MentorTbl;
 /*----#end-code----*/
 		
 public class Tema_semanalController extends Controller {
 	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Tema_semanal model = new Tema_semanal();
 		model.load();
+		model.setView_1_img("../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg");
 		Tema_semanalView view = new Tema_semanalView();
+	try{
+		
+		SemanaTbl semana_atual = new SemanaTbl().find().andWhere("atual","=",true).one();
+		model.setId_semana(semana_atual.getNrSemana());
+	
+		AvaliadoTbl avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
+		if (avaliadotbl!=null && !avaliadotbl.hasError()) {
+			model.setNome(avaliadotbl.getNome());
+			model.setArea(""+avaliadotbl.getIdMentorFk().getIdAreaFk().getAreaDesc());
+			model.setMentor(avaliadotbl.getIdMentorFk().getNome());
+			model.setView_1_img(Core.getLinkFileByUuid(avaliadotbl.getIdFoto()));
+		}
+		
+	}catch ( Exception e ) {
+		e.printStackTrace();
+	}
 		/*----#start-code(index)----*/
 		
 		
@@ -46,7 +67,6 @@ public class Tema_semanalController extends Controller {
 		Session session = null;
 		Transaction transaction = null;
 		String isEdit = Core.getParam("isEdit");
-		Integer id_avaliado = Core.getParamInt("p_id_avaliado");
 		try {
 			if (model.validate()) {
 				session = Core.getSession(Core.defaultConnection());
@@ -54,19 +74,17 @@ public class Tema_semanalController extends Controller {
 				if (!transaction.isActive())
 					transaction.begin();
 				TemaTbl temaltbl = new TemaTbl();
+				AvaliadoTbl avaliadotbl_foreign = session.find(AvaliadoTbl.class, Core.toInt(model.getId_avaliado()));
+				temaltbl.setIdAvaliadoFk(avaliadotbl_foreign);
 				temaltbl.setTema(model.getTema_semanal());
 				temaltbl.setData(LocalDateTime.now());
-				temaltbl.setNrSemana(model.getNr_semana());
-				temaltbl.setNomeUtilizador(Core.getCurrentUser().getName());
-				temaltbl.setIdUtilizador(Core.getCurrentUser().getId());
-				temaltbl.setEstadoAtual(true);
-				AvaliadoTbl avaliadotbl = session.find(AvaliadoTbl.class, id_avaliado);
-				temaltbl.setIdAvaliadoFk(avaliadotbl);
+				SemanaTbl semana = new SemanaTbl().findOne(model.getId_semana());
+				temaltbl.setNrSemana(semana);
+				
+//				List<TemaTbl> semanaList = new TemaTbl().orderByAsc("nrSemana").findAll();		
+//				int nr_semana = semanaList.get(0).getNrSemana() +1;
+				
 				session.persist(temaltbl);
-
-				avaliadotbl.setAreaEstagio(model.getArea());
-				avaliadotbl.setMentor(model.getMentor());
-				session.update(avaliadotbl);
 				transaction.commit();
 				Core.setMessageSuccess();
 			} else
@@ -86,7 +104,6 @@ public class Tema_semanalController extends Controller {
 			this.addQueryString("isEdit", "true");
 			return this.forward("sistema_de_avaliacao_igrpweb", "Tema_semanal", "index", this.queryString());
 		}
-		
 		/*----#end-code----*/
 		return this.redirect("sistema_de_avaliacao_igrpweb","Tema_semanal","index", this.queryString());	
 	}

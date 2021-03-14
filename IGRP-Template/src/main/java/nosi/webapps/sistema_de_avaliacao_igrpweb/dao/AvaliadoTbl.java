@@ -8,9 +8,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ForeignKey;
 
 /**
- * @author: Nositeste 09-03-2021
+ * @author: Nositeste 13-03-2021
 */
 
 @Entity
@@ -54,10 +57,11 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 	private Integer horas;
 	@Column(name = "chave_aut", nullable = false, length = 2147483647)
 	private String chaveAut;
-	@Column(name = "area_estagio", length = 2147483647)
-	private String areaEstagio;
-	@Column(name = "mentor", length = 2147483647)
-	private String mentor;
+	@Column(name = "id_utilizador")
+	private Integer idUtilizador;
+	@ManyToOne
+	@JoinColumn(name = "id_mentor_fk", foreignKey = @ForeignKey(name = "mentor_fk"))
+	private MentorTbl idMentorFk;
 
 	public Integer getIdAvaliado() { 
 		return this.idAvaliado;
@@ -179,20 +183,20 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 		 this.chaveAut = chaveAut;
 	}
 
-	public String getAreaEstagio() { 
-		return this.areaEstagio;
+	public Integer getIdUtilizador() { 
+		return this.idUtilizador;
 	}
 
-	public void setAreaEstagio(String areaEstagio) {
-		 this.areaEstagio = areaEstagio;
+	public void setIdUtilizador(Integer idUtilizador) {
+		 this.idUtilizador = idUtilizador;
 	}
 
-	public String getMentor() { 
-		return this.mentor;
+	public MentorTbl getIdMentorFk() { 
+		return this.idMentorFk;
 	}
 
-	public void setMentor(String mentor) {
-		 this.mentor = mentor;
+	public void setIdMentorFk(MentorTbl idMentorFk) {
+		 this.idMentorFk = idMentorFk;
 	}
 
 }

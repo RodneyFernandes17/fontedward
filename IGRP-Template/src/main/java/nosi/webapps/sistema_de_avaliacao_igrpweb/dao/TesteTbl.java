@@ -14,7 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ForeignKey;
 
 /**
- * @author: Nositeste 02-03-2021
+ * @author: Nositeste 13-03-2021
 */
 
 @Entity

@@ -30,7 +30,7 @@ public class Lista_avaliacao_semanalController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Omnis sit natus adipiscing des' as nome,'Labore adipiscing amet anim to' as edicao,'Elit aperiam totam elit sit' as area,'Ipsum magna anim natus dolor' as mentor,'hidden-9b5a_a8e0' as id_teste,'hidden-2082_9bf0' as id_avaliado "));
+		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Dolor ut labore amet consectet' as nome,'Aperiam stract sit ipsum sit l' as edicao,'Aliqua stract sit unde sit' as area,'Perspiciatis unde deserunt ali' as mentor,'hidden-fbfd_3294' as id_teste,'hidden-1fca_ae7d' as id_avaliado,'hidden-3f4c_8876' as id_utilizador "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		try {
@@ -44,25 +44,30 @@ public class Lista_avaliacao_semanalController extends Controller {
 					row.setId_avaliado(avaliado.getIdAvaliado() + "");
 					row.setFoto(avaliado.getIdFoto() != null ? Core.getLinkFileByUuid(avaliado.getIdFoto()) : null);
 					row.setNome(avaliado.getNome());
-					row.setEdicao(Core.findDomainDescByKey("edicao",
-							avaliado.getEdicao() != null ? avaliado.getEdicao() : null));
-					SemanalTbl data = new SemanalTbl().find().andWhere("data", "=", LocalDate.now())
-							.andWhere("idAvaliador", "=", Core.getCurrentUser().getId())
-							.andWhere("idAvaliadoFk", "=", avaliado.getIdAvaliado()).one();
+					row.setArea(avaliado.getIdMentorFk()!=null?avaliado.getIdMentorFk().getIdAreaFk().getAreaDesc():null);
+					row.setMentor(avaliado.getIdMentorFk()!=null?avaliado.getIdMentorFk().getNome():null);
+					row.setEdicao(Core.findDomainDescByKey("edicao",avaliado.getEdicao() != null ? avaliado.getEdicao() : null));
+//					row.setId_utilizador(avaliado.getIdUtilizador().toString());
+									
+					SemanalTbl data = new SemanalTbl().find().andWhere("idAvaliador", "=", Core.getCurrentUser().getId())
+							.andWhere("idAvaliadoFk", "=", avaliado.getIdAvaliado()).andWhere("idTemaFk.nrSemana.atual","=",true)
+							.one();
 					if (Core.isNotNull(data)) {
 						row.hiddenButton(view.btn_avaliacao_semanal);
 					}
 					TemaTbl tema = new TemaTbl().find().andWhere("idAvaliadoFk", "=", avaliado.getIdAvaliado())
-							.andWhere("estadoAtual", "=", true).one();
-					if (Core.isNull(tema)) {
-						row.hiddenButton(view.btn_avaliacao_semanal);
-					}
+							.andWhere("nrSemana.atual", "=", true).one();
 					if (Core.isNotNull(tema)) {
 						row.hiddenButton(view.btn_inserir_tema);
 					}
-					
-					row.setArea(avaliado.getAreaEstagio());
-					row.setMentor(avaliado.getMentor());
+					if (Core.isNull(tema)) {
+						row.hiddenButton(view.btn_avaliacao_semanal);
+					}
+//					AvaliadoTbl iduser = new AvaliadoTbl().find().andWhere("idUtilizador", "=", avaliado.getIdUtilizador()).one();
+//					if (Core.isNull(iduser)) {
+//						row.hiddenButton(view.btn_avaliacao_semanal);
+//						row.hiddenButton(view.btn_inserir_tema);
+//					}
 					
 					testetblTable.add(row);
 				}

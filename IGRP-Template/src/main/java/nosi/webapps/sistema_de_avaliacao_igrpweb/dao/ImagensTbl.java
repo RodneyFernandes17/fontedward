@@ -10,11 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 
 /**
- * @author: Rodney Fernandes 02-03-2021
+ * @author: Nositeste 13-03-2021
 */
 
 @Entity
-@Table(name = "imagens_tbl", schema = "public")
+@Table(name = "imagens_tbl", schema = "")
 @NamedQuery(name = "ImagensTbl.findAll", query = "SELECT t FROM ImagensTbl t")
 public class ImagensTbl extends BaseActiveRecord<ImagensTbl> {
 
@@ -26,9 +26,9 @@ public class ImagensTbl extends BaseActiveRecord<ImagensTbl> {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_imagem", updatable = false, nullable = false)
  	private Integer idImagem;
-	@Column(name = "id_foto", nullable = false, length = 2147483647)
+	@Column(name = "id_foto", length = 2147483647)
 	private String idFoto;
-	@Column(name = "descricao", nullable = false, length = 2147483647)
+	@Column(name = "descricao", length = 2147483647)
 	private String descricao;
 
 	public Integer getIdImagem() { 

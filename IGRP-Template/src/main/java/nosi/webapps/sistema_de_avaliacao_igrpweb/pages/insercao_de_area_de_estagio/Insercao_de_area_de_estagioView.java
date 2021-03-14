@@ -9,8 +9,8 @@ import static nosi.core.i18n.Translator.gt;
 public class Insercao_de_area_de_estagioView extends View {
 
 	public Field estagiario;
-	public Field area;
 	public Field mentor;
+	public Field id_avaliado_pk;
 	public Field nome;
 	public Field area_tbl;
 	public Field mentor_tbl;
@@ -33,13 +33,13 @@ public class Insercao_de_area_de_estagioView extends View {
 		estagiario.setLabel(gt("Estagiário"));
 		estagiario.propertie().add("name","p_estagiario").add("type","select").add("multiple","false").add("tags","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
 		
-		area = new TextField(model,"area");
-		area.setLabel(gt("Área"));
-		area.propertie().add("name","p_area").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
-		
-		mentor = new TextField(model,"mentor");
+		mentor = new ListField(model,"mentor");
 		mentor.setLabel(gt("Mentor"));
-		mentor.propertie().add("name","p_mentor").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
+		mentor.propertie().add("name","p_mentor").add("type","select").add("multiple","false").add("tags","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
+		
+		id_avaliado_pk = new HiddenField(model,"id_avaliado_pk");
+		id_avaliado_pk.setLabel(gt(""));
+		id_avaliado_pk.propertie().add("name","p_id_avaliado_pk").add("type","hidden").add("maxlength","250").add("java-type","int").add("tag","id_avaliado_pk");
 		
 		nome = new TextField(model,"nome");
 		nome.setLabel(gt("Nome"));
@@ -72,8 +72,8 @@ public class Insercao_de_area_de_estagioView extends View {
 	public void render(){
 		
 		form_1.addField(estagiario);
-		form_1.addField(area);
 		form_1.addField(mentor);
+		form_1.addField(id_avaliado_pk);
 
 		table_1.addField(nome);
 		table_1.addField(area_tbl);
@@ -90,8 +90,8 @@ public class Insercao_de_area_de_estagioView extends View {
 	public void setModel(Model model) {
 		
 		estagiario.setValue(model);
-		area.setValue(model);
 		mentor.setValue(model);
+		id_avaliado_pk.setValue(model);
 		nome.setValue(model);
 		area_tbl.setValue(model);
 		mentor_tbl.setValue(model);

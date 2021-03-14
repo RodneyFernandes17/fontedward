@@ -28,6 +28,7 @@ public class Lista_avaliacao_semanal extends Model{
 		private String mentor;
 		private String id_teste;
 		private String id_avaliado;
+		private String id_utilizador;
 		public void setFoto(String foto){
 			this.foto = foto;
 		}
@@ -81,6 +82,13 @@ public class Lista_avaliacao_semanal extends Model{
 		}
 		public String getId_avaliado(){
 			return this.id_avaliado;
+		}
+
+		public void setId_utilizador(String id_utilizador){
+			this.id_utilizador = id_utilizador;
+		}
+		public String getId_utilizador(){
+			return this.id_utilizador;
 		}
 
 	}

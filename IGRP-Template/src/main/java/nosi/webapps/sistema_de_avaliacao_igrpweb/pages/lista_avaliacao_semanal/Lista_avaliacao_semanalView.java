@@ -15,6 +15,7 @@ public class Lista_avaliacao_semanalView extends View {
 	public Field mentor;
 	public Field id_teste;
 	public Field id_avaliado;
+	public Field id_utilizador;
 	public IGRPTable table_1;
 
 	public IGRPButton btn_ver;
@@ -57,6 +58,10 @@ public class Lista_avaliacao_semanalView extends View {
 		id_avaliado.setLabel(gt(""));
 		id_avaliado.propertie().add("name","p_id_avaliado").add("type","hidden").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","").add("tag","id_avaliado");
 		
+		id_utilizador = new HiddenField(model,"id_utilizador");
+		id_utilizador.setLabel(gt(""));
+		id_utilizador.propertie().add("name","p_id_utilizador").add("type","hidden").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","").add("tag","id_utilizador");
+		
 
 
 		btn_ver = new IGRPButton("Ver","sistema_de_avaliacao_igrpweb","Lista_avaliacao_semanal","ver","_blank","warning|fa-eye","","");
@@ -84,6 +89,7 @@ public class Lista_avaliacao_semanalView extends View {
 		table_1.addField(mentor);
 		table_1.addField(id_teste);
 		table_1.addField(id_avaliado);
+		table_1.addField(id_utilizador);
 
 		table_1.addButton(btn_ver);
 		table_1.addButton(btn_avaliacao_semanal);
@@ -100,7 +106,8 @@ public class Lista_avaliacao_semanalView extends View {
 		area.setValue(model);
 		mentor.setValue(model);
 		id_teste.setValue(model);
-		id_avaliado.setValue(model);	
+		id_avaliado.setValue(model);
+		id_utilizador.setValue(model);	
 
 		table_1.loadModel(((Lista_avaliacao_semanal) model).getTable_1());
 		}

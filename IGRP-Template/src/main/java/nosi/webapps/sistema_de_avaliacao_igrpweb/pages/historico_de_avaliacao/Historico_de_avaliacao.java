@@ -6,6 +6,7 @@ import nosi.core.webapp.RParam;
 import nosi.core.webapp.databse.helpers.BaseQueryInterface;
 import java.util.ArrayList;
 import java.util.List;
+import nosi.core.gui.components.IGRPChart3D;
 
 public class Historico_de_avaliacao extends Model{		
 
@@ -27,6 +28,15 @@ public class Historico_de_avaliacao extends Model{
 	}
 	public List<Table_1> getTable_1(){
 		return this.table_1;
+	}
+
+	
+	private List<Chart_1> chart_1 = new ArrayList<>();	
+	public void setChart_1(List<Chart_1> chart_1){
+		this.chart_1 = chart_1;
+	}
+	public List<Chart_1> getChart_1(){
+		return this.chart_1;
 	}
 
 	
@@ -72,6 +82,7 @@ public class Historico_de_avaliacao extends Model{
 		private String proatividade;
 		private String nivel;
 		private String tarefas;
+		private String id_avaliado;
 		public void setMedia_tbl(String media_tbl){
 			this.media_tbl = media_tbl;
 		}
@@ -156,10 +167,28 @@ public class Historico_de_avaliacao extends Model{
 			return this.tarefas;
 		}
 
+		public void setId_avaliado(String id_avaliado){
+			this.id_avaliado = id_avaliado;
+		}
+		public String getId_avaliado(){
+			return this.id_avaliado;
+		}
+
+	}
+	public static class Chart_1 extends IGRPChart3D{
+		public Chart_1(String eixoX, String eixoY, Object eixoZ) {
+			super(eixoX, eixoY,eixoZ);
+		}
+		public Chart_1() {
+		}
 	}
 
 	public void loadTable_1(BaseQueryInterface query) {
 		this.setTable_1(this.loadTable(query,Table_1.class));
+	}
+
+	public void loadChart_1(BaseQueryInterface query) {
+		this.setChart_1(this.loadTable(query,Chart_1.class));
 	}
 
 }

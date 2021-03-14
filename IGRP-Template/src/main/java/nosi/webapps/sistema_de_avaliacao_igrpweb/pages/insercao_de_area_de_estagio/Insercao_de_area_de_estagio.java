@@ -12,11 +12,11 @@ public class Insercao_de_area_de_estagio extends Model{
 	@RParam(rParamName = "p_estagiario")
 	private String estagiario;
 
-	@RParam(rParamName = "p_area")
-	private String area;
-
 	@RParam(rParamName = "p_mentor")
 	private String mentor;
+
+	@RParam(rParamName = "p_id_avaliado_pk")
+	private int id_avaliado_pk;
 	
 	private List<Table_1> table_1 = new ArrayList<>();	
 	public void setTable_1(List<Table_1> table_1){
@@ -34,18 +34,18 @@ public class Insercao_de_area_de_estagio extends Model{
 		return this.estagiario;
 	}
 	
-	public void setArea(String area){
-		this.area = area;
-	}
-	public String getArea(){
-		return this.area;
-	}
-	
 	public void setMentor(String mentor){
 		this.mentor = mentor;
 	}
 	public String getMentor(){
 		return this.mentor;
+	}
+	
+	public void setId_avaliado_pk(int id_avaliado_pk){
+		this.id_avaliado_pk = id_avaliado_pk;
+	}
+	public int getId_avaliado_pk(){
+		return this.id_avaliado_pk;
 	}
 
 

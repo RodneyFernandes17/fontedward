@@ -7,24 +7,34 @@ import nosi.core.validator.constraints.*;
 
 public class Tema_semanal extends Model{		
 
-	@NotNull()
+	@RParam(rParamName = "p_nome")
+	private String nome;
+
 	@RParam(rParamName = "p_area")
 	private String area;
 
-	@NotNull()
 	@RParam(rParamName = "p_mentor")
 	private String mentor;
+
+	@RParam(rParamName = "p_view_1_img")
+	private String view_1_img;
 
 	@NotNull()
 	@RParam(rParamName = "p_tema_semanal")
 	private String tema_semanal;
 
-	@NotNull()
-	@RParam(rParamName = "p_nr_semana")
-	private Integer nr_semana;
-
 	@RParam(rParamName = "p_id_avaliado")
 	private String id_avaliado;
+
+	@RParam(rParamName = "p_id_semana")
+	private int id_semana;
+	
+	public void setNome(String nome){
+		this.nome = nome;
+	}
+	public String getNome(){
+		return this.nome;
+	}
 	
 	public void setArea(String area){
 		this.area = area;
@@ -40,6 +50,13 @@ public class Tema_semanal extends Model{
 		return this.mentor;
 	}
 	
+	public void setView_1_img(String view_1_img){
+		this.view_1_img = view_1_img;
+	}
+	public String getView_1_img(){
+		return this.view_1_img;
+	}
+	
 	public void setTema_semanal(String tema_semanal){
 		this.tema_semanal = tema_semanal;
 	}
@@ -47,18 +64,18 @@ public class Tema_semanal extends Model{
 		return this.tema_semanal;
 	}
 	
-	public void setNr_semana(Integer nr_semana){
-		this.nr_semana = nr_semana;
-	}
-	public Integer getNr_semana(){
-		return this.nr_semana;
-	}
-	
 	public void setId_avaliado(String id_avaliado){
 		this.id_avaliado = id_avaliado;
 	}
 	public String getId_avaliado(){
 		return this.id_avaliado;
+	}
+	
+	public void setId_semana(int id_semana){
+		this.id_semana = id_semana;
+	}
+	public int getId_semana(){
+		return this.id_semana;
 	}
 
 

@@ -14,7 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ForeignKey;
 
 /**
- * @author: Nositeste 02-03-2021
+ * @author: Nositeste 13-03-2021
 */
 
 @Entity
@@ -33,8 +33,6 @@ public class SemanalTbl extends BaseActiveRecord<SemanalTbl> {
 	@ManyToOne
 	@JoinColumn(name = "id_avaliado_fk", foreignKey = @ForeignKey(name = "avaliado_fkey"), nullable = false)
 	private AvaliadoTbl idAvaliadoFk;
-	@Column(name = "nr_semana", nullable = false)
-	private Integer nrSemana;
 	@Column(name = "conteudo", nullable = false)
 	private Integer conteudo;
 	@Column(name = "pontualidade", nullable = false)
@@ -53,10 +51,11 @@ public class SemanalTbl extends BaseActiveRecord<SemanalTbl> {
 	private LocalDate data;
 	@Column(name = "id_avaliador", nullable = false)
 	private Integer idAvaliador;
-	@Column(name = "nome_avaliador", nullable = false)
+	@Column(name = "nome_avaliador", length = 2147483647)
 	private String nomeAvaliador;
-	@Column(name = "tema_semanal", nullable = false, length = 2147483647)
-	private String temaSemanal;
+	@ManyToOne
+	@JoinColumn(name = "id_tema_fk", foreignKey = @ForeignKey(name = "tema_fk"))
+	private TemaTbl idTemaFk;
 
 	public Integer getIdSemanal() { 
 		return this.idSemanal;
@@ -72,14 +71,6 @@ public class SemanalTbl extends BaseActiveRecord<SemanalTbl> {
 
 	public void setIdAvaliadoFk(AvaliadoTbl idAvaliadoFk) {
 		 this.idAvaliadoFk = idAvaliadoFk;
-	}
-
-	public Integer getNrSemana() { 
-		return this.nrSemana;
-	}
-
-	public void setNrSemana(Integer nrSemana) {
-		 this.nrSemana = nrSemana;
 	}
 
 	public Integer getConteudo() { 
@@ -162,12 +153,12 @@ public class SemanalTbl extends BaseActiveRecord<SemanalTbl> {
 		 this.nomeAvaliador = nomeAvaliador;
 	}
 
-	public String getTemaSemanal() { 
-		return this.temaSemanal;
+	public TemaTbl getIdTemaFk() { 
+		return this.idTemaFk;
 	}
 
-	public void setTemaSemanal(String temaSemanal) {
-		 this.temaSemanal = temaSemanal;
+	public void setIdTemaFk(TemaTbl idTemaFk) {
+		 this.idTemaFk = idTemaFk;
 	}
 
 }

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_mentores/Parametrizacao_mentores.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Parametrizacao_mentores</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Parametrizacao_mentores</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=96</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Parametrização Mentores</title>
+        <form_1 type="form" xml-type="form" title="Inserção de Mentores" gen-type="container" gen-group="">
+            <fields>
+                <area name="p_area" type="select" multiple="false" tags="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Nome da Área</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </area>
+                <mentor name="p_mentor" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Mentor</label>
+                    <value>Magna ipsum officia natus amet</value>
+                </mentor>
+                <hidden name="p_id_mentor" type="hidden" maxlength="250" java-type="int" tag="id_mentor"/>
+            </fields>
+            <tools-bar>
+                <item id="button_1b50_16d4" type="form" code="" class="primary" rel="salvar" refresh_components="">
+                    <title>Salvar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Parametrizacao_mentores</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_mentores/Parametrizacao_mentores.xml?</parameter>
+                    <target>submit_form</target>
+                    <img>primary|fa-save</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_mentores/Parametrizacao_mentores.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <area_tbl name="p_area_tbl" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Área</label>
+                </area_tbl>
+                <mentor_tbl name="p_mentor_tbl" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Mentor</label>
+                </mentor_tbl>
+                <id_mentor_tbl name="p_id_mentor_tbl" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="int" tag="id_mentor_tbl"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <area_tbl name="p_area_tbl">Sit mollit anim stract iste</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Elit perspiciatis doloremque l</mentor_tbl>
+                        <id_mentor_tbl name="p_id_mentor_tbl" tag="id_mentor_tbl">hidden-cb8b_9de5</id_mentor_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <area_tbl name="p_area_tbl">Accusantium consectetur totam</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Aliqua ut stract consectetur a</mentor_tbl>
+                        <id_mentor_tbl name="p_id_mentor_tbl" tag="id_mentor_tbl">hidden-5d3e_117b</id_mentor_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <area_tbl name="p_area_tbl">Laudantium amet iste totam acc</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Amet aliqua voluptatem accusan</mentor_tbl>
+                        <id_mentor_tbl name="p_id_mentor_tbl" tag="id_mentor_tbl">hidden-b578_ba84</id_mentor_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <area_tbl name="p_area_tbl">Iste officia ipsum natus lorem</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Labore ut anim perspiciatis la</mentor_tbl>
+                        <id_mentor_tbl name="p_id_mentor_tbl" tag="id_mentor_tbl">hidden-86ee_612d</id_mentor_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <area_tbl name="p_area_tbl">Iste totam lorem voluptatem al</area_tbl>
+                        <mentor_tbl name="p_mentor_tbl">Totam voluptatem iste mollit p</mentor_tbl>
+                        <id_mentor_tbl name="p_id_mentor_tbl" tag="id_mentor_tbl">hidden-54c5_ff9e</id_mentor_tbl>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_f991_e05e" type="specific" code="" class="warning" rel="editar" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Parametrizacao_mentores</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_mentores/Parametrizacao_mentores.xml?</parameter>
+                        <target>submit</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_mentores/Parametrizacao_mentores.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="inserir_dao">Inserir Daos</import>
+            <import type="combo_dao">Combo Dao</import>
+            <import type="dao">AreaTbl</import>
+            <import type="dao">MentorTbl</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13">
+                <statement name="index">
+                    <block type="combo_dao" id="H6hPY8n)(Fz0Jzkt@v%X" inline="true">
+                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                        <field name="selecao">area</field>
+                        <field name="dao">AreaTbl</field>
+                        <field name="selecionar">TRUE</field>
+                        <statement name="key_val">
+                            <block type="option_dao" id="uQXguty]Ho_-Y/}zFG*a" inline="true">
+                                <value name="key_val">
+                                    <block type="get-dao-AreaTbl" id="{hI}r9D^u|8DSgt%Dn]r">
+                                        <mutation hover_type="Integer::id"></mutation>
+                                        <field name="DAO_FIELD">Integer::id</field>
+                                    </block>
+                                </value>
+                                <value name="value_val">
+                                    <block type="get-dao-AreaTbl" id="Z}Upuj!]K]jB%}lavh=_">
+                                        <mutation hover_type="String::areaDesc"></mutation>
+                                        <field name="DAO_FIELD">String::areaDesc</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="formuu_form_1" id="5%+.),Up1|BsW^lDutr;" inline="true">
+                                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                                <field name="dao">MentorTbl</field>
+                                <value name="get_pa">
+                                    <block type="core_get_param" id="iv%^HHeVDJ5_a|b).W0w">
+                                        <field name="param">id_mentor_tbl</field>
+                                    </block>
+                                </value>
+                                <statement name="value2">
+                                    <block type="model_form_area" id="String::area">
+                                        <value name="value1">
+                                            <block type="get-dao-MentorTbl" id=")gEKL}DCQNHSlp9VT%14">
+                                                <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
+                                                <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-AreaTbl" id="%|zn`0j0=Tby#S1jdc:l">
+                                                        <mutation hover_type="Integer::id"></mutation>
+                                                        <field name="DAO_FIELD">Integer::id</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="model_form_mentor" id="String::mentor">
+                                                <value name="value1">
+                                                    <block type="get-dao-MentorTbl" id="{_.~4|eIR=A8HEY:?qk^">
+                                                        <mutation hover_type="String::nome"></mutation>
+                                                        <field name="DAO_FIELD">String::nome</field>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="model_form_id_mentor" id="int::id_mentor">
+                                                        <value name="value1">
+                                                            <block type="get-dao-MentorTbl" id=":s`=9?9H[OIJfF0Cfhd4">
+                                                                <mutation hover_type="Integer::id"></mutation>
+                                                                <field name="DAO_FIELD">Integer::id</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="add_isedit" id="@/BhtGP#@/t%N{,3P_ko">
+                                                                <field name="button">salvar</field>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                                <next>
+                                    <block type="listar_table_1" id="table_1" inline="true">
+                                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                                        <field name="dao">MentorTbl</field>
+                                        <field name="FILL">FALSE</field>
+                                        <field name="find">TODOSS</field>
+                                        <field name="limit"></field>
+                                        <statement name="value2">
+                                            <block type="rowtablearea_tbl" id="String::area_tbl">
+                                                <value name="fields_model">
+                                                    <block type="get-dao-MentorTbl" id="!9L20vA=@8u.6hgdyB]n">
+                                                        <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
+                                                        <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-AreaTbl" id="`Qb9,9b3xmn7}D_fA1Z=">
+                                                                <mutation hover_type="String::areaDesc"></mutation>
+                                                                <field name="DAO_FIELD">String::areaDesc</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="rowtablementor_tbl" id="String::mentor_tbl">
+                                                        <value name="fields_model">
+                                                            <block type="get-dao-MentorTbl" id="-=iT)GM#YJ.Qf+F^AG2P">
+                                                                <mutation hover_type="String::nome"></mutation>
+                                                                <field name="DAO_FIELD">String::nome</field>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="rowtableid_mentor_tbl" id="int::id_mentor_tbl">
+                                                                <value name="fields_model">
+                                                                    <block type="get-dao-MentorTbl" id="V*NTp7Y^(g8UKe;ut:8w">
+                                                                        <mutation hover_type="Integer::id"></mutation>
+                                                                        <field name="DAO_FIELD">Integer::id</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <statement name="salvar">
+                    <block type="save_formu_form_1" id="+=K7V[h0i9n(XB+cn0;#" inline="true">
+                        <mutation count="0" pxchecked="true"></mutation>
+                        <field name="dao">MentorTbl</field>
+                        <field name="EDIT">TRUE</field>
+                        <value name="param_id">
+                            <block type="mod_formform_1" id="up0-AbmPFMa7`O(TFIY`">
+                                <field name="get_model">int::id_mentor</field>
+                            </block>
+                        </value>
+                        <statement name="value2">
+                            <block type="set-dao-MentorTbl" id="T;)Niz?2,XL4TmFM`y74" inline="false">
+                                <mutation hover_type="String::nome"></mutation>
+                                <field name="DAO_FIELD">String::nome</field>
+                                <value name="value1">
+                                    <block type="mod_formform_1" id="a:uSi2n-smoW+.H,qLlL">
+                                        <field name="get_model">String::mentor</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="set-dao-MentorTbl" id="!xFcCzO1g07LI;EmF-KC" inline="true">
+                                        <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
+                                        <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
+                                        <value name="value1">
+                                            <block type="mod_formform_1" id="YNEx_/d/9ESgA7hksqSq">
+                                                <field name="get_model">String::area</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                    </block>
+                </statement>
+                <statement name="editar">
+                    <block type="enviar_p" id="/4%2={SugCj@hC}Op`@0">
+                        <field name="iskey">id_mentor_tbl</field>
+                        <next>
+                            <block type="editar_dao" id="R7gy1EGzpn9`qD?:UU2I"></block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>

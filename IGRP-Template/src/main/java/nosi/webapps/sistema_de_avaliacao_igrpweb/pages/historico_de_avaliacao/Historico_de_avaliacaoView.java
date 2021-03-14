@@ -25,11 +25,14 @@ public class Historico_de_avaliacaoView extends View {
 	public Field proatividade;
 	public Field nivel;
 	public Field tarefas;
+	public Field id_avaliado;
 	public Field paragraph_1_text;
 	public IGRPView view_1;
 	public IGRPTable table_1;
+	public IGRPChart chart_1;
 	public IGRPParagraph paragraph_1;
 
+	public IGRPButton btn_classificacao_por_mentores;
 
 	public Historico_de_avaliacaoView(){
 
@@ -38,6 +41,8 @@ public class Historico_de_avaliacaoView extends View {
 		view_1 = new IGRPView("view_1","Avaliação Semanal");
 
 		table_1 = new IGRPTable("table_1","");
+
+		chart_1 = new IGRPChart("chart_1","Chart");
 
 		paragraph_1 = new IGRPParagraph("paragraph_1","");
 
@@ -101,6 +106,10 @@ public class Historico_de_avaliacaoView extends View {
 		tarefas.setLabel(gt("Tarefas"));
 		tarefas.propertie().add("name","p_tarefas").add("type","text").add("maxlength","30").add("showLabel","true").add("group_in","");
 		
+		id_avaliado = new HiddenField(model,"id_avaliado");
+		id_avaliado.setLabel(gt(""));
+		id_avaliado.propertie().add("name","p_id_avaliado").add("type","hidden").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","").add("tag","id_avaliado");
+		
 		paragraph_1_text = new TextField(model,"paragraph_1_text");
 		paragraph_1_text.setLabel(gt(""));
 		paragraph_1_text.setValue(gt("<p><b>Conteudo do Powerpoint</b> &ndash; avaliar a qualidade da apresenta&ccedil;&atilde;o em termos de quantidades de imagens, textos, estruturas;</p> <p><b>Pontualidade</b> &ndash; respeito ao tempo estipulado como dura&ccedil;&atilde;o da apresenta&ccedil;&atilde;o.</p> <p><b>Dom&iacute;nio da l&iacute;ngua</b> &ndash; dom&iacute;nio para com a l&iacute;ngua escolhida para a realiza&ccedil;&atilde;o da apresenta&ccedil;&atilde;o, ingl&ecirc;s, portugu&ecirc;s, etc.</p> <p><b>Clareza no discurso</b> &ndash; forma de apresenta&ccedil;&atilde;o clara com dom&iacute;nio do conte&uacute;do e de conceitos apresentados;</p> <p><b>Proactividade</b> &ndash; n&iacute;vel de proactividade nas tarefas em que lhes foram submetidas;</p> <p><b>Nivel de aprendizagem</b> &ndash; qual a margem de aprendizagem que alcan&ccedil;ou durante a semana;</p> <p><b>Tarefas futuras</b> &ndash; planos que tem para realiza&ccedil;&atilde;o de tarefas futuras e quais os impedimentos;</p> <p>*Avalia&ccedil;&atilde;o M&aacute;xima por Categoria 10, M&iacute;nima 0.</p>"));
@@ -108,7 +117,17 @@ public class Historico_de_avaliacaoView extends View {
 		
 
 
+		btn_classificacao_por_mentores = new IGRPButton("Classificação por Mentores","sistema_de_avaliacao_igrpweb","Historico_de_avaliacao","classificacao_por_mentores","_blank","info|fa-group","","");
+		btn_classificacao_por_mentores.propertie.add("id","button_c424_58e3").add("type","specific").add("class","info").add("rel","classificacao_por_mentores").add("refresh_components","");
+
 		
+		chart_1.setCaption("");
+		chart_1.setChart_type("line");
+		chart_1.setXaxys("Eixo de X");
+		chart_1.setYaxys("Eixo de Y");
+		chart_1.setUrl("#");
+		//ex: chart_1.addColor("#eab021").addColor("#c58818").addColor("#6ed5b4").addColor("#24c6d6");
+
 	}
 		
 	@Override
@@ -130,6 +149,7 @@ public class Historico_de_avaliacaoView extends View {
 		table_1.addField(proatividade);
 		table_1.addField(nivel);
 		table_1.addField(tarefas);
+		table_1.addField(id_avaliado);
 		/* start table_1 legend colors*/
 		Map<Object, Map<String, String>> table_1_colors= new LinkedHashMap<>();
 		Map<String, String> color_dc2b2b_table_1 = new LinkedHashMap<>();
@@ -146,10 +166,13 @@ public class Historico_de_avaliacaoView extends View {
 		table_1_colors.put("mto_bom",color_49e600_table_1);
 		this.table_1.setLegendColors(table_1_colors);
 		/* end table_1 legend colors*/
+
 		paragraph_1.addField(paragraph_1_text);
 
+		table_1.addButton(btn_classificacao_por_mentores);
 		this.addToPage(view_1);
 		this.addToPage(table_1);
+		this.addToPage(chart_1);
 		this.addToPage(paragraph_1);
 	}
 		
@@ -170,8 +193,10 @@ public class Historico_de_avaliacaoView extends View {
 		clareza.setValue(model);
 		proatividade.setValue(model);
 		nivel.setValue(model);
-		tarefas.setValue(model);	
+		tarefas.setValue(model);
+		id_avaliado.setValue(model);	
 
 		table_1.loadModel(((Historico_de_avaliacao) model).getTable_1());
+		chart_1.loadModel(((Historico_de_avaliacao) model).getChart_1());
 		}
 }

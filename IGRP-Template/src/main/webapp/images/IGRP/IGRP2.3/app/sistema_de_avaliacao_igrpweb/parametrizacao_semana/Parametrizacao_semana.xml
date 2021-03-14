@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_semana/Parametrizacao_semana.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Parametrizacao_semana</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Parametrizacao_semana</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=97</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Parametrização Semana</title>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <semana name="p_semana" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
+                    <label>Semana</label>
+                    <value>162</value>
+                </semana>
+                <atual name="p_atual" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" switch="false" check="true">
+                    <label>Atual</label>
+                    <value>1</value>
+                </atual>
+            </fields>
+            <tools-bar>
+                <item id="button_b7b2_a4a0" type="form" code="" class="primary" rel="salvar" refresh_components="">
+                    <title>Salvar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Parametrizacao_semana</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_semana/Parametrizacao_semana.xml?</parameter>
+                    <target>submit</target>
+                    <img>primary|fa-angle-right</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_semana/Parametrizacao_semana.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <semana_tbl name="p_semana_tbl" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" total_footer="false" group_in="" java-type="">
+                    <label>Semana</label>
+                </semana_tbl>
+                <atual_tbl name="p_atual_tbl" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Atual</label>
+                </atual_tbl>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <semana_tbl name="p_semana_tbl">25</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Aliqua omnis labore deserunt a</atual_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <semana_tbl name="p_semana_tbl">0</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Doloremque dolor ut dolor elit</atual_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <semana_tbl name="p_semana_tbl">0</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Iste laudantium sed anim dolor</atual_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <semana_tbl name="p_semana_tbl">6</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Stract sit consectetur ipsum a</atual_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <semana_tbl name="p_semana_tbl">19</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Officia iste accusantium elit</atual_tbl>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_f30d_e817" type="specific" code="" class="warning" rel="editar" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Parametrizacao_semana</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_semana/Parametrizacao_semana.xml?</parameter>
+                        <target>submit</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_semana/Parametrizacao_semana.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

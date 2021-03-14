@@ -41,12 +41,16 @@
             <fields>
                 <nome name="p_nome" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Nome</label>
-                    <value>Natus iste adipiscing officia elit</value>
+                    <value>Laudantium ut labore perspiciatis unde</value>
                 </nome>
                 <area name="p_area" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Área ou Projeto</label>
-                    <value>Anim mollit deserunt amet labore</value>
+                    <value>Stract amet unde accusantium deserunt</value>
                 </area>
+                <mentor name="p_mentor" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Mentor</label>
+                    <value>Laudantium sit mollit accusantium adipiscing</value>
+                </mentor>
                 <view_1_img type="text" name="p_view_1_img" maxlength="300">
                     <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
                 </view_1_img>
@@ -56,7 +60,7 @@
             <fields>
                 <semana name="p_semana" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="true" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
                     <label>Semana</label>
-                    <value>102</value>
+                    <value>90</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -65,7 +69,7 @@
                 </semana>
                 <tema_semanal name="p_tema_semanal" type="text" maxlength="250" required="true" change="false" readonly="true" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Tema Semanal</label>
-                    <value>Adipiscing iste omnis deserunt perspiciatis</value>
+                    <value>Doloremque aperiam labore doloremque sed</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -77,31 +81,31 @@
                 </form_1_separator_1>
                 <conteudo name="p_conteudo" type="range" rangeMin="0" rangeMax="10" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Conteúdo</label>
-                    <value>0</value>
+                    <value>5</value>
                 </conteudo>
                 <pontualidade name="p_pontualidade" type="range" rangeMin="0" rangeMax="10" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Pontualidade</label>
-                    <value>3</value>
+                    <value>2</value>
                 </pontualidade>
                 <dominio name="p_dominio" type="range" rangeMin="0" rangeMax="10" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Língua</label>
-                    <value>0</value>
+                    <value>9</value>
                 </dominio>
                 <clareza name="p_clareza" type="range" rangeMin="0" rangeMax="10" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Clareza</label>
-                    <value>3</value>
+                    <value>0</value>
                 </clareza>
                 <proactividade name="p_proactividade" type="range" rangeMin="0" rangeMax="10" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Proactividade</label>
-                    <value>6</value>
+                    <value>2</value>
                 </proactividade>
                 <aprendizagem name="p_aprendizagem" type="range" rangeMin="0" rangeMax="10" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Aprendizagem</label>
-                    <value>9</value>
+                    <value>7</value>
                 </aprendizagem>
                 <tarefas name="p_tarefas" type="range" rangeMin="0" rangeMax="10" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Tarefas</label>
-                    <value>0</value>
+                    <value>4</value>
                 </tarefas>
                 <hidden name="p_id_avaliado" type="hidden" maxlength="250" java-type="" tag="id_avaliado">
                     <validations>
@@ -111,6 +115,13 @@
                     </validations>
                 </hidden>
                 <hidden name="p_id_semanal" type="hidden" maxlength="250" java-type="" tag="id_semanal"/>
+                <hidden name="p_id_tema" type="hidden" maxlength="250" java-type="int" tag="id_tema">
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </hidden>
             </fields>
             <tools-bar>
                 <item id="button_4bb5_dd58" type="form" code="" class="info" rel="submeter_avaliacao" custom_return="true" refresh_components="">
