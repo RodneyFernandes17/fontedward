@@ -33,6 +33,7 @@ public class Classificacao_por_mentoresController extends Controller {
 			Integer semana_avv = Core.getParamInt("p_semana");
 			Integer id_avaliad = Core.getParamInt("p_id_avaliado");
 
+			
 			List<SemanalTbl> semanaList = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_avv)
 					.andWhere("idAvaliadoFk", "=", id_avaliad).all();
 			List<Classificacao_por_mentores.Table_1> semanaltblTable = new ArrayList<>();
