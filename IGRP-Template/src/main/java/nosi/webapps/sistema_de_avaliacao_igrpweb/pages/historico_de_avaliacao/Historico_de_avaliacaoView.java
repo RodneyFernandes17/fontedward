@@ -122,7 +122,7 @@ public class Historico_de_avaliacaoView extends View {
 		
 
 
-		btn_classificacao_por_mentores = new IGRPButton("Classificação por Mentores","sistema_de_avaliacao_igrpweb","Historico_de_avaliacao","classificacao_por_mentores","_blank","info|fa-group","","");
+		btn_classificacao_por_mentores = new IGRPButton("Classificação por Mentores","sistema_de_avaliacao_igrpweb","Historico_de_avaliacao","classificacao_por_mentores","mpsubmit","info|fa-group","","");
 		btn_classificacao_por_mentores.propertie.add("id","button_c424_58e3").add("type","specific").add("class","info").add("rel","classificacao_por_mentores").add("refresh_components","");
 
 		
@@ -131,7 +131,7 @@ public class Historico_de_avaliacaoView extends View {
 		chart_1.setXaxys("Eixo de X");
 		chart_1.setYaxys("Eixo de Y");
 		chart_1.setUrl("#");
-		//ex: chart_1.addColor("#2115ad").addColor("#e30d69").addColor("#70d158").addColor("#6376b1");
+		//ex: chart_1.addColor("#874749").addColor("#7b3532").addColor("#cff22a").addColor("#19429f");
 
 	}
 		

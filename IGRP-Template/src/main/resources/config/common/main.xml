@@ -8,7 +8,7 @@
 	<entry key="igrp.env">dev</entry>
 	
 	<!-- igrpweb workspace parameter (absolute path) -->
-	<entry key="igrp.workspace"></entry> 
+	<entry key="igrp.workspace">C:\Users\Rodney Fernandes\git\igrpweb-open-template\IGRP-Template</entry> 
 	
 	<!-- igrpweb authentication type parameter (db|ldap|oauth2-openid) -->
 	<entry key="igrp.authentication_type">db</entry> 

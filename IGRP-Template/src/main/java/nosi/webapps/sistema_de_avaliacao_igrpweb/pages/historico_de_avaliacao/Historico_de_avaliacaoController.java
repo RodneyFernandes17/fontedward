@@ -24,9 +24,9 @@ import java.util.LinkedHashMap;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.pages.historico_de_avaliacao.Historico_de_avaliacao.Chart_1;
 import java.util.Map;
 /*----#end-code----*/
-
+		
 public class Historico_de_avaliacaoController extends Controller {
-	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException {
+	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Historico_de_avaliacao model = new Historico_de_avaliacao();
 		model.load();
 		model.setView_1_img("../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg");
@@ -36,11 +36,11 @@ public class Historico_de_avaliacaoController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT 'fraco' as media_tbl,'29' as semana,'05-01-2014' as data,'Laudantium sit ut sit iste' as tema,'Elit adipiscing mollit consect' as media_semanal,'Omnis laudantium natus elit ma' as conteudo,'Stract adipiscing elit aliqua' as pontualidade,'Lorem sit anim officia volupta' as dominio,'Deserunt doloremque perspiciat' as clareza,'Adipiscing natus sit lorem dol' as proatividade,'Officia lorem sit omnis volupt' as nivel,'Aperiam rem consectetur aliqua' as tarefas,'hidden-ffd7_3249' as id_avaliado "));
+		model.loadTable_1(Core.query(null,"SELECT 'bom' as media_tbl,'6' as semana,'01-02-2017' as data,'Anim omnis sit perspiciatis re' as tema,'Consectetur sed lorem ipsum ap' as media_semanal,'Deserunt iste deserunt unde st' as conteudo,'Iste perspiciatis sit iste ape' as pontualidade,'Natus ipsum deserunt magna off' as dominio,'Ipsum doloremque dolor aliqua' as clareza,'Ut amet consectetur ipsum ut' as proatividade,'Ut unde labore ut dolor' as nivel,'Ipsum iste doloremque sed rem' as tarefas,'hidden-af50_1d67' as id_avaliado "));
 		view.chart_1.loadQuery(Core.query(null,"SELECT 'X1' as EixoX, 'Y1' as EixoY, 15 as EixoZ"
-		                              +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 10 as EixoZ"
-		                              +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 23 as EixoZ"
-		                              +" UNION SELECT 'X3' as EixoX, 'Y3' as EixoY, 40 as EixoZ"));
+                                      +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 10 as EixoZ"
+                                      +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 23 as EixoZ"
+                                      +" UNION SELECT 'X3' as EixoX, 'Y3' as EixoY, 40 as EixoZ"));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		Long max_semana = new SemanaTbl().find().getCount();
@@ -154,11 +154,10 @@ public class Historico_de_avaliacaoController extends Controller {
 
 		/*----#end-code----*/
 		view.setModel(model);
-		return this.renderView(view);
+		return this.renderView(view);	
 	}
-
-	public Response actionClassificacao_por_mentores()
-			throws IOException, IllegalArgumentException, IllegalAccessException {
+	
+	public Response actionClassificacao_por_mentores() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Historico_de_avaliacao model = new Historico_de_avaliacao();
 		model.load();
 		/*----#gen-example
@@ -175,10 +174,12 @@ public class Historico_de_avaliacaoController extends Controller {
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb", "Classificacao_por_mentores", "index", this.queryString());
+		return this.redirect("sistema_de_avaliacao_igrpweb","Classificacao_por_mentores","index", this.queryString());	
 	}
-
-	/*----#start-code(custom_actions)----*/
+	
+		
+		
+/*----#start-code(custom_actions)----*/
 
 	/*----#end-code----*/
 }

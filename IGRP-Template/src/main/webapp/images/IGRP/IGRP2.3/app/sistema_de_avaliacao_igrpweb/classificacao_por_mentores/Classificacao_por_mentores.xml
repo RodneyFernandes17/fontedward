@@ -63,60 +63,114 @@
                 <tarefas name="p_tarefas" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="false" group_in="">
                     <label>Tarefas</label>
                 </tarefas>
+                <id_semanal name="p_id_semanal" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_semanal"/>
+                <id_avaliado name="p_id_avaliado" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_avaliado"/>
             </fields>
             <table>
                 <value>
                     <row>
-                        <avaliador name="p_avaliador">Natus sed labore consectetur i</avaliador>
-                        <conteudo name="p_conteudo">Iste natus magna laudantium un</conteudo>
-                        <pontualidade name="p_pontualidade">Sit adipiscing deserunt dolor</pontualidade>
-                        <dominio name="p_dominio">Accusantium consectetur labore</dominio>
-                        <clareza name="p_clareza">Amet sed adipiscing totam amet</clareza>
-                        <proatividade name="p_proatividade">Laudantium deserunt sit totam</proatividade>
-                        <nivel name="p_nivel">Deserunt accusantium sit labor</nivel>
-                        <tarefas name="p_tarefas">Accusantium rem ipsum lorem si</tarefas>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <avaliador name="p_avaliador">Sed sit ipsum labore lorem</avaliador>
+                        <conteudo name="p_conteudo">Mollit dolor unde natus sit</conteudo>
+                        <pontualidade name="p_pontualidade">Omnis doloremque sit natus sit</pontualidade>
+                        <dominio name="p_dominio">Accusantium ipsum voluptatem a</dominio>
+                        <clareza name="p_clareza">Omnis ipsum labore deserunt al</clareza>
+                        <proatividade name="p_proatividade">Laudantium consectetur natus d</proatividade>
+                        <nivel name="p_nivel">Ut aliqua sit totam anim</nivel>
+                        <tarefas name="p_tarefas">Stract dolor iste mollit lorem</tarefas>
+                        <id_semanal name="p_id_semanal" tag="id_semanal">hidden-e989_538c</id_semanal>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-4325_dfa7</id_avaliado>
                     </row>
                     <row>
-                        <avaliador name="p_avaliador">Omnis aliqua mollit perspiciat</avaliador>
-                        <conteudo name="p_conteudo">Perspiciatis amet aliqua anim</conteudo>
-                        <pontualidade name="p_pontualidade">Officia unde sit omnis volupta</pontualidade>
-                        <dominio name="p_dominio">Perspiciatis elit deserunt ali</dominio>
-                        <clareza name="p_clareza">Sit aliqua totam ipsum omnis</clareza>
-                        <proatividade name="p_proatividade">Officia deserunt unde perspici</proatividade>
-                        <nivel name="p_nivel">Deserunt ipsum lorem ipsum lau</nivel>
-                        <tarefas name="p_tarefas">Stract iste natus sit adipisci</tarefas>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <avaliador name="p_avaliador">Voluptatem totam aliqua perspi</avaliador>
+                        <conteudo name="p_conteudo">Unde laudantium magna ipsum am</conteudo>
+                        <pontualidade name="p_pontualidade">Unde consectetur amet perspici</pontualidade>
+                        <dominio name="p_dominio">Sed deserunt natus magna sit</dominio>
+                        <clareza name="p_clareza">Sit deserunt accusantium volup</clareza>
+                        <proatividade name="p_proatividade">Sed perspiciatis totam sit ist</proatividade>
+                        <nivel name="p_nivel">Omnis voluptatem natus aperiam</nivel>
+                        <tarefas name="p_tarefas">Dolor consectetur mollit sit a</tarefas>
+                        <id_semanal name="p_id_semanal" tag="id_semanal">hidden-8fde_b9ca</id_semanal>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-3dbc_8169</id_avaliado>
                     </row>
                     <row>
-                        <avaliador name="p_avaliador">Adipiscing natus doloremque ip</avaliador>
-                        <conteudo name="p_conteudo">Sit ipsum sed ipsum mollit</conteudo>
-                        <pontualidade name="p_pontualidade">Laudantium omnis anim omnis of</pontualidade>
-                        <dominio name="p_dominio">Omnis ut omnis adipiscing offi</dominio>
-                        <clareza name="p_clareza">Iste sit anim accusantium sit</clareza>
-                        <proatividade name="p_proatividade">Iste aliqua omnis amet elit</proatividade>
-                        <nivel name="p_nivel">Sed doloremque ut perspiciatis</nivel>
-                        <tarefas name="p_tarefas">Ipsum aliqua iste ut dolor</tarefas>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <avaliador name="p_avaliador">Anim amet consectetur ipsum st</avaliador>
+                        <conteudo name="p_conteudo">Ut sit ipsum laudantium lorem</conteudo>
+                        <pontualidade name="p_pontualidade">Amet sed ut mollit laudantium</pontualidade>
+                        <dominio name="p_dominio">Doloremque officia adipiscing</dominio>
+                        <clareza name="p_clareza">Anim doloremque totam magna se</clareza>
+                        <proatividade name="p_proatividade">Magna officia consectetur rem</proatividade>
+                        <nivel name="p_nivel">Mollit unde anim deserunt unde</nivel>
+                        <tarefas name="p_tarefas">Anim aperiam stract consectetu</tarefas>
+                        <id_semanal name="p_id_semanal" tag="id_semanal">hidden-ddc3_0860</id_semanal>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-37f4_65cc</id_avaliado>
                     </row>
                     <row>
-                        <avaliador name="p_avaliador">Doloremque elit anim mollit si</avaliador>
-                        <conteudo name="p_conteudo">Consectetur sit totam sit laud</conteudo>
-                        <pontualidade name="p_pontualidade">Rem lorem mollit consectetur a</pontualidade>
-                        <dominio name="p_dominio">Adipiscing iste sed omnis natu</dominio>
-                        <clareza name="p_clareza">Dolor magna sit laudantium rem</clareza>
-                        <proatividade name="p_proatividade">Laudantium perspiciatis aliqua</proatividade>
-                        <nivel name="p_nivel">Dolor omnis unde ipsum mollit</nivel>
-                        <tarefas name="p_tarefas">Lorem amet doloremque iste tot</tarefas>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <avaliador name="p_avaliador">Ipsum adipiscing perspiciatis</avaliador>
+                        <conteudo name="p_conteudo">Mollit sit stract dolor anim</conteudo>
+                        <pontualidade name="p_pontualidade">Amet ipsum magna anim labore</pontualidade>
+                        <dominio name="p_dominio">Totam unde aperiam laudantium</dominio>
+                        <clareza name="p_clareza">Rem aliqua natus deserunt amet</clareza>
+                        <proatividade name="p_proatividade">Amet totam sit aliqua adipisci</proatividade>
+                        <nivel name="p_nivel">Dolor perspiciatis consectetur</nivel>
+                        <tarefas name="p_tarefas">Labore deserunt natus totam do</tarefas>
+                        <id_semanal name="p_id_semanal" tag="id_semanal">hidden-9643_b7fd</id_semanal>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-812c_7f9a</id_avaliado>
                     </row>
                     <row>
-                        <avaliador name="p_avaliador">Perspiciatis mollit laudantium</avaliador>
-                        <conteudo name="p_conteudo">Ut ipsum amet sit laudantium</conteudo>
-                        <pontualidade name="p_pontualidade">Amet rem omnis rem amet</pontualidade>
-                        <dominio name="p_dominio">Voluptatem lorem doloremque el</dominio>
-                        <clareza name="p_clareza">Natus magna accusantium sit si</clareza>
-                        <proatividade name="p_proatividade">Stract amet consectetur accusa</proatividade>
-                        <nivel name="p_nivel">Doloremque magna sed natus mol</nivel>
-                        <tarefas name="p_tarefas">Natus deserunt sit amet unde</tarefas>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <avaliador name="p_avaliador">Omnis sit anim perspiciatis si</avaliador>
+                        <conteudo name="p_conteudo">Perspiciatis labore stract und</conteudo>
+                        <pontualidade name="p_pontualidade">Rem magna anim accusantium ani</pontualidade>
+                        <dominio name="p_dominio">Consectetur magna unde amet se</dominio>
+                        <clareza name="p_clareza">Perspiciatis totam sed ipsum t</clareza>
+                        <proatividade name="p_proatividade">Adipiscing lorem iste anim mag</proatividade>
+                        <nivel name="p_nivel">Ipsum doloremque deserunt aliq</nivel>
+                        <tarefas name="p_tarefas">Rem accusantium consectetur do</tarefas>
+                        <id_semanal name="p_id_semanal" tag="id_semanal">hidden-14ff_d031</id_semanal>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-7859_fc73</id_avaliado>
                     </row>
                 </value>
+                <context-menu>
+                    <item id="button_af44_c7fe" type="specific" code="" flg_transaction="true" class="warning" rel="editar" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Formulario_avaliacao_semanal</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_avaliacao_semanal/Formulario_avaliacao_semanal.xml?</parameter>
+                        <target>mpsubmit|refresh</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_avaliacao_semanal/Formulario_avaliacao_semanal.xml</preview>
+                    </item>
+                    <item id="button_e360_2862" type="specific" code="" class="purple" rel="observacoes" refresh_components="">
+                        <title>Observações</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Ver_observacao</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/ver_observacao/Ver_observacao.xml?</parameter>
+                        <target>_blank</target>
+                        <img>purple|fa-bullseye</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/ver_observacao/Ver_observacao.xml</preview>
+                    </item>
+                </context-menu>
             </table>
         </table_1>
     </content>
@@ -124,6 +178,14 @@
         <imports></imports>
         <xml>
             <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="enviar_p" id="zD/?N-nXL9(/?={PUxeA" x="613" y="163">
+                <field name="iskey">id_semanal</field>
+                <next>
+                    <block type="enviar_p" id="Ot5W(a7,tOyf{cFr)3PW">
+                        <field name="iskey">id_semanal</field>
+                    </block>
+                </next>
+            </block>
         </xml>
     </blockly>
 </rows>

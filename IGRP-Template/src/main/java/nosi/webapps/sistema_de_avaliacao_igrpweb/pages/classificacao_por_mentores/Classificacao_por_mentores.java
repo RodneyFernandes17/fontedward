@@ -28,6 +28,8 @@ public class Classificacao_por_mentores extends Model{
 		private String proatividade;
 		private String nivel;
 		private String tarefas;
+		private String id_semanal;
+		private String id_avaliado;
 		public void setAvaliador(String avaliador){
 			this.avaliador = avaliador;
 		}
@@ -82,6 +84,20 @@ public class Classificacao_por_mentores extends Model{
 		}
 		public String getTarefas(){
 			return this.tarefas;
+		}
+
+		public void setId_semanal(String id_semanal){
+			this.id_semanal = id_semanal;
+		}
+		public String getId_semanal(){
+			return this.id_semanal;
+		}
+
+		public void setId_avaliado(String id_avaliado){
+			this.id_avaliado = id_avaliado;
+		}
+		public String getId_avaliado(){
+			return this.id_avaliado;
 		}
 
 	}

@@ -16,8 +16,12 @@ public class Classificacao_por_mentoresView extends View {
 	public Field proatividade;
 	public Field nivel;
 	public Field tarefas;
+	public Field id_semanal;
+	public Field id_avaliado;
 	public IGRPTable table_1;
 
+	public IGRPButton btn_editar;
+	public IGRPButton btn_observacoes;
 
 	public Classificacao_por_mentoresView(){
 
@@ -57,7 +61,21 @@ public class Classificacao_por_mentoresView extends View {
 		tarefas.setLabel(gt("Tarefas"));
 		tarefas.propertie().add("name","p_tarefas").add("type","text").add("maxlength","30").add("showLabel","true").add("group_in","");
 		
+		id_semanal = new HiddenField(model,"id_semanal");
+		id_semanal.setLabel(gt(""));
+		id_semanal.propertie().add("name","p_id_semanal").add("type","hidden").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","").add("tag","id_semanal");
+		
+		id_avaliado = new HiddenField(model,"id_avaliado");
+		id_avaliado.setLabel(gt(""));
+		id_avaliado.propertie().add("name","p_id_avaliado").add("type","hidden").add("maxlength","30").add("showLabel","true").add("group_in","").add("java-type","").add("tag","id_avaliado");
+		
 
+
+		btn_editar = new IGRPButton("Editar","sistema_de_avaliacao_igrpweb","Classificacao_por_mentores","editar","mpsubmit|refresh","warning|fa-pencil","","");
+		btn_editar.propertie.add("id","button_af44_c7fe").add("type","specific").add("flg_transaction","true").add("class","warning").add("rel","editar").add("refresh_components","");
+
+		btn_observacoes = new IGRPButton("Observações","sistema_de_avaliacao_igrpweb","Classificacao_por_mentores","observacoes","_blank","purple|fa-bullseye","","");
+		btn_observacoes.propertie.add("id","button_e360_2862").add("type","specific").add("class","purple").add("rel","observacoes").add("refresh_components","");
 
 		
 	}
@@ -73,7 +91,11 @@ public class Classificacao_por_mentoresView extends View {
 		table_1.addField(proatividade);
 		table_1.addField(nivel);
 		table_1.addField(tarefas);
+		table_1.addField(id_semanal);
+		table_1.addField(id_avaliado);
 
+		table_1.addButton(btn_editar);
+		table_1.addButton(btn_observacoes);
 		this.addToPage(table_1);
 	}
 		
@@ -87,7 +109,9 @@ public class Classificacao_por_mentoresView extends View {
 		clareza.setValue(model);
 		proatividade.setValue(model);
 		nivel.setValue(model);
-		tarefas.setValue(model);	
+		tarefas.setValue(model);
+		id_semanal.setValue(model);
+		id_avaliado.setValue(model);	
 
 		table_1.loadModel(((Classificacao_por_mentores) model).getTable_1());
 		}

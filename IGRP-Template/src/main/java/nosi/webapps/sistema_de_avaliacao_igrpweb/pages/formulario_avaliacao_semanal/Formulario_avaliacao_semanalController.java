@@ -7,7 +7,6 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import org.hibernate.Session;
@@ -41,6 +40,34 @@ public class Formulario_avaliacao_semanalController extends Controller {
 			model.setId_tema(tema.getId());
 			model.setId_avaliado(tema.getIdAvaliadoFk().getIdAvaliado() + "");
 		}
+		
+		
+		try{
+			String isEdit = Core.getParam("isEdit");
+			if (Core.isNotNull(isEdit)) {
+				SemanalTbl semanaltbl = new SemanalTbl().find().andWhere("idSemanal","=",Core.getParamInt("p_id_semanal"))
+						.andWhere("idAvaliador","=",Core.getCurrentUser().getId()).one();
+				
+				if (semanaltbl!=null && !semanaltbl.hasError()) {
+					model.setSemana(semanaltbl.getIdTemaFk().getNrSemana().getNrSemana());
+					model.setTema_semanal(semanaltbl.getIdTemaFk().getTema());
+					model.setConteudo(semanaltbl.getConteudo());
+					model.setPontualidade(semanaltbl.getPontualidade());
+					model.setDominio(semanaltbl.getDominio());
+					model.setClareza(semanaltbl.getClareza());
+					model.setProactividade(semanaltbl.getProactividade());
+					model.setAprendizagem(semanaltbl.getNivel());
+					model.setTarefas(semanaltbl.getTarefas());
+					model.setId_avaliado(""+semanaltbl.getIdAvaliadoFk().getIdAvaliado());
+					model.setId_semanal(""+semanaltbl.getIdSemanal());
+					model.setId_tema(semanaltbl.getIdTemaFk().getId());
+			
+					view.btn_submeter_avaliacao.addParameter("isEdit", "true");
+				}
+			}
+			}catch ( Exception e ) {
+				e.printStackTrace();
+			}
 
 		/*----#end-code----*/
 		view.setModel(model);
