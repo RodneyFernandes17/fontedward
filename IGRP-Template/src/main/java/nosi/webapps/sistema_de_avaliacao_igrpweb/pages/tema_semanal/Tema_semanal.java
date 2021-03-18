@@ -28,6 +28,42 @@ public class Tema_semanal extends Model{
 
 	@RParam(rParamName = "p_id_semana")
 	private int id_semana;
+
+	@RParam(rParamName = "p_positivo_title")
+	private String positivo_title;
+
+	@RParam(rParamName = "p_positivo_val")
+	private String positivo_val;
+
+	@RParam(rParamName = "p_positivo_txt")
+	private String positivo_txt;
+
+	@RParam(rParamName = "p_positivo_url")
+	private String positivo_url;
+
+	@RParam(rParamName = "p_positivo_bg")
+	private String positivo_bg;
+
+	@RParam(rParamName = "p_positivo_icn")
+	private String positivo_icn;
+
+	@RParam(rParamName = "p_negativo_title")
+	private String negativo_title;
+
+	@RParam(rParamName = "p_negativo_val")
+	private String negativo_val;
+
+	@RParam(rParamName = "p_negativo_txt")
+	private String negativo_txt;
+
+	@RParam(rParamName = "p_negativo_url")
+	private String negativo_url;
+
+	@RParam(rParamName = "p_negativo_bg")
+	private String negativo_bg;
+
+	@RParam(rParamName = "p_negativo_icn")
+	private String negativo_icn;
 	
 	public void setNome(String nome){
 		this.nome = nome;
@@ -76,6 +112,90 @@ public class Tema_semanal extends Model{
 	}
 	public int getId_semana(){
 		return this.id_semana;
+	}
+	
+	public void setPositivo_title(String positivo_title){
+		this.positivo_title = positivo_title;
+	}
+	public String getPositivo_title(){
+		return this.positivo_title;
+	}
+	
+	public void setPositivo_val(String positivo_val){
+		this.positivo_val = positivo_val;
+	}
+	public String getPositivo_val(){
+		return this.positivo_val;
+	}
+	
+	public void setPositivo_txt(String positivo_txt){
+		this.positivo_txt = positivo_txt;
+	}
+	public String getPositivo_txt(){
+		return this.positivo_txt;
+	}
+	
+	public void setPositivo_url(String positivo_url){
+		this.positivo_url = positivo_url;
+	}
+	public String getPositivo_url(){
+		return this.positivo_url;
+	}
+	
+	public void setPositivo_bg(String positivo_bg){
+		this.positivo_bg = positivo_bg;
+	}
+	public String getPositivo_bg(){
+		return this.positivo_bg;
+	}
+	
+	public void setPositivo_icn(String positivo_icn){
+		this.positivo_icn = positivo_icn;
+	}
+	public String getPositivo_icn(){
+		return this.positivo_icn;
+	}
+	
+	public void setNegativo_title(String negativo_title){
+		this.negativo_title = negativo_title;
+	}
+	public String getNegativo_title(){
+		return this.negativo_title;
+	}
+	
+	public void setNegativo_val(String negativo_val){
+		this.negativo_val = negativo_val;
+	}
+	public String getNegativo_val(){
+		return this.negativo_val;
+	}
+	
+	public void setNegativo_txt(String negativo_txt){
+		this.negativo_txt = negativo_txt;
+	}
+	public String getNegativo_txt(){
+		return this.negativo_txt;
+	}
+	
+	public void setNegativo_url(String negativo_url){
+		this.negativo_url = negativo_url;
+	}
+	public String getNegativo_url(){
+		return this.negativo_url;
+	}
+	
+	public void setNegativo_bg(String negativo_bg){
+		this.negativo_bg = negativo_bg;
+	}
+	public String getNegativo_bg(){
+		return this.negativo_bg;
+	}
+	
+	public void setNegativo_icn(String negativo_icn){
+		this.negativo_icn = negativo_icn;
+	}
+	public String getNegativo_icn(){
+		return this.negativo_icn;
 	}
 
 

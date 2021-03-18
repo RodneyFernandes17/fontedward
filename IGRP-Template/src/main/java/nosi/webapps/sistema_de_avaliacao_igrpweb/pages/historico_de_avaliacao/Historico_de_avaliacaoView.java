@@ -12,6 +12,7 @@ public class Historico_de_avaliacaoView extends View {
 
 	public Field nome;
 	public Field area;
+	public Field mentor;
 	public Field view_1_img;
 	public Field media_tbl;
 	public Field semana;
@@ -42,7 +43,7 @@ public class Historico_de_avaliacaoView extends View {
 
 		table_1 = new IGRPTable("table_1","");
 
-		chart_1 = new IGRPChart("chart_1","Chart");
+		chart_1 = new IGRPChart("chart_1","Gráfico de Evolução Semanal");
 
 		paragraph_1 = new IGRPParagraph("paragraph_1","");
 
@@ -53,6 +54,10 @@ public class Historico_de_avaliacaoView extends View {
 		area = new TextField(model,"area");
 		area.setLabel(gt("Área ou Projeto"));
 		area.propertie().add("name","p_area").add("type","text").add("maxlength","250").add("class","default").add("img","").add("showlabel","true");
+		
+		mentor = new TextField(model,"mentor");
+		mentor.setLabel(gt("Mentor(a)"));
+		mentor.propertie().add("name","p_mentor").add("type","text").add("maxlength","250").add("class","default").add("img","").add("showlabel","true");
 		
 		view_1_img = new TextField(model,"view_1_img");
 		view_1_img.setLabel(gt(""));
@@ -112,7 +117,7 @@ public class Historico_de_avaliacaoView extends View {
 		
 		paragraph_1_text = new TextField(model,"paragraph_1_text");
 		paragraph_1_text.setLabel(gt(""));
-		paragraph_1_text.setValue(gt("<p><b>Conteudo do Powerpoint</b> &ndash; avaliar a qualidade da apresenta&ccedil;&atilde;o em termos de quantidades de imagens, textos, estruturas;</p> <p><b>Pontualidade</b> &ndash; respeito ao tempo estipulado como dura&ccedil;&atilde;o da apresenta&ccedil;&atilde;o.</p> <p><b>Dom&iacute;nio da l&iacute;ngua</b> &ndash; dom&iacute;nio para com a l&iacute;ngua escolhida para a realiza&ccedil;&atilde;o da apresenta&ccedil;&atilde;o, ingl&ecirc;s, portugu&ecirc;s, etc.</p> <p><b>Clareza no discurso</b> &ndash; forma de apresenta&ccedil;&atilde;o clara com dom&iacute;nio do conte&uacute;do e de conceitos apresentados;</p> <p><b>Proactividade</b> &ndash; n&iacute;vel de proactividade nas tarefas em que lhes foram submetidas;</p> <p><b>Nivel de aprendizagem</b> &ndash; qual a margem de aprendizagem que alcan&ccedil;ou durante a semana;</p> <p><b>Tarefas futuras</b> &ndash; planos que tem para realiza&ccedil;&atilde;o de tarefas futuras e quais os impedimentos;</p> <p>*Avalia&ccedil;&atilde;o M&aacute;xima por Categoria 10, M&iacute;nima 0.</p>"));
+		paragraph_1_text.setValue(gt("<p><b>Conteudo do Powerpoint</b> &ndash; avaliar a qualidade da apresenta&ccedil;&atilde;o em termos de quantidades de imagens, textos e&nbsp;estruturas.</p> <p><b>Pontualidade</b> &ndash; respeito ao tempo estipulado para a apresenta&ccedil;&atilde;o, a sua dura&ccedil;&atilde;o (n&atilde;o pode ser nem muito longo, nem muito curto).</p> <p><b>Dom&iacute;nio da l&iacute;ngua</b> &ndash; dom&iacute;nio para com a l&iacute;ngua que foi solicitada para a realiza&ccedil;&atilde;o da apresenta&ccedil;&atilde;o, ingl&ecirc;s e/ou&nbsp;portugu&ecirc;s.</p> <p><b>Clareza no discurso</b> &ndash; forma de apresenta&ccedil;&atilde;o clara com dom&iacute;nio de&nbsp;conte&uacute;dos&nbsp;e&nbsp;conceitos abrangidos.</p> <p><b>Proactividade</b> &ndash; n&iacute;vel de proactividade nas tarefas, ou seja, aquilo que fez mais do que&nbsp;aquilo que lhe foi pedido pelo mentor do est&aacute;gio.</p> <p><b>Nivel de aprendizagem</b> &ndash; qual a margem de aprendizagem que alcan&ccedil;ou durante a semana nas tarefas realizadas.</p> <p><b>Tarefas futuras</b> &ndash; planos que tem para realiza&ccedil;&atilde;o de tarefas futuras e quais os impedimentos para a sua realiza&ccedil;&atilde;o.</p> <p>&nbsp;</p> <p>*Avalia&ccedil;&atilde;o M&aacute;xima por Categoria 10, M&iacute;nima 0.</p>"));
 		paragraph_1_text.propertie().add("type","text").add("name","p_paragraph_1_text").add("maxlength","4000");
 		
 
@@ -126,7 +131,7 @@ public class Historico_de_avaliacaoView extends View {
 		chart_1.setXaxys("Eixo de X");
 		chart_1.setYaxys("Eixo de Y");
 		chart_1.setUrl("#");
-		//ex: chart_1.addColor("#eab021").addColor("#c58818").addColor("#6ed5b4").addColor("#24c6d6");
+		//ex: chart_1.addColor("#2115ad").addColor("#e30d69").addColor("#70d158").addColor("#6376b1");
 
 	}
 		
@@ -135,6 +140,7 @@ public class Historico_de_avaliacaoView extends View {
 		
 		view_1.addField(nome);
 		view_1.addField(area);
+		view_1.addField(mentor);
 		view_1.addField(view_1_img);
 
 		table_1.addField(media_tbl);
@@ -181,6 +187,7 @@ public class Historico_de_avaliacaoView extends View {
 		
 		nome.setValue(model);
 		area.setValue(model);
+		mentor.setValue(model);
 		view_1_img.setValue(model);
 		media_tbl.setValue(model);
 		semana.setValue(model);

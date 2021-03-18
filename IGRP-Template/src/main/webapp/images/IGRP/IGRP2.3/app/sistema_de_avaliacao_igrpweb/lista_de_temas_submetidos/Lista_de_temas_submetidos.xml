@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_temas_submetidos/Lista_de_temas_submetidos.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Lista_de_temas_submetidos</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Lista_de_temas_submetidos</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=99</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Lista de Temas Submetidos</title>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <tema_semanal name="p_tema_semanal" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Tema Semanal</label>
+                </tema_semanal>
+                <data_de_envio name="p_data_de_envio" type="date" range="false" disableWeekends="false" daysoff="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Data de Envio</label>
+                </data_de_envio>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <nome name="p_nome">Laudantium perspiciatis offici</nome>
+                        <tema_semanal name="p_tema_semanal">Consectetur anim ipsum rem ips</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">07-06-2012</data_de_envio>
+                    </row>
+                    <row>
+                        <nome name="p_nome">Omnis sit anim sit natus</nome>
+                        <tema_semanal name="p_tema_semanal">Dolor sit unde aliqua ipsum</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">01-02-2010</data_de_envio>
+                    </row>
+                    <row>
+                        <nome name="p_nome">Officia sit magna laudantium v</nome>
+                        <tema_semanal name="p_tema_semanal">Accusantium voluptatem adipisc</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">08-01-2014</data_de_envio>
+                    </row>
+                    <row>
+                        <nome name="p_nome">Voluptatem iste omnis ipsum ap</nome>
+                        <tema_semanal name="p_tema_semanal">Perspiciatis sit ipsum anim ac</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">05-03-2015</data_de_envio>
+                    </row>
+                    <row>
+                        <nome name="p_nome">Ipsum sed rem accusantium magn</nome>
+                        <tema_semanal name="p_tema_semanal">Magna sit aliqua ut anim</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">08-03-2013</data_de_envio>
+                    </row>
+                </value>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="dao">TemaTbl</import>
+            <import type="dao">AvaliadoTbl</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="listar_table_1" id="table_1" inline="true" x="537" y="88">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">TemaTbl</field>
+                <field name="FILL">FALSE</field>
+                <field name="find">TODOSS</field>
+                <field name="limit"></field>
+                <statement name="value2">
+                    <block type="rowtablenome" id="String::nome">
+                        <value name="fields_model">
+                            <block type="get-dao-TemaTbl" id="[TdNcG]gwS)Ne[VpkQaC">
+                                <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                <value name="dao_rela">
+                                    <block type="get-dao-AvaliadoTbl" id="B;j2uW;|Xx%a%9EBu72*">
+                                        <mutation hover_type="String::nome"></mutation>
+                                        <field name="DAO_FIELD">String::nome</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="rowtabletema_semanal" id="String::tema_semanal">
+                                <value name="fields_model">
+                                    <block type="get-dao-TemaTbl" id="R;k`#9-3gr%`S9K*@(r,">
+                                        <mutation hover_type="String::tema"></mutation>
+                                        <field name="DAO_FIELD">String::tema</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="rowtabledata_de_envio" id="String::data_de_envio">
+                                        <value name="fields_model">
+                                            <block type="get-dao-TemaTbl" id="xX]`(0vHa2Bv2@KE1g.#">
+                                                <mutation hover_type="LocalDateTime::data"></mutation>
+                                                <field name="DAO_FIELD">LocalDateTime::data</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>

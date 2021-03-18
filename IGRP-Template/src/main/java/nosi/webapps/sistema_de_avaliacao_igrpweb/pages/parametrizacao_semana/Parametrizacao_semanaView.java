@@ -37,7 +37,7 @@ public class Parametrizacao_semanaView extends View {
 		
 		semana_tbl = new NumberField(model,"semana_tbl");
 		semana_tbl.setLabel(gt("Semana"));
-		semana_tbl.propertie().add("name","p_semana_tbl").add("type","number").add("min","").add("max","").add("calculation","false").add("mathcal","").add("numberformat","").add("maxlength","30").add("showLabel","true").add("total_footer","false").add("group_in","").add("java-type","");
+		semana_tbl.propertie().add("name","p_semana_tbl").add("type","number").add("min","").add("max","").add("calculation","false").add("mathcal","").add("numberformat","").add("maxlength","30").add("showLabel","true").add("total_footer","false").add("group_in","").add("java-type","int");
 		
 		atual_tbl = new TextField(model,"atual_tbl");
 		atual_tbl.setLabel(gt("Atual"));
@@ -45,7 +45,7 @@ public class Parametrizacao_semanaView extends View {
 		
 
 
-		btn_salvar = new IGRPButton("Salvar","sistema_de_avaliacao_igrpweb","Parametrizacao_semana","salvar","submit","primary|fa-angle-right","","");
+		btn_salvar = new IGRPButton("Salvar","sistema_de_avaliacao_igrpweb","Parametrizacao_semana","salvar","submit","primary|fa-save","","");
 		btn_salvar.propertie.add("id","button_b7b2_a4a0").add("type","form").add("class","primary").add("rel","salvar").add("refresh_components","");
 
 		btn_editar = new IGRPButton("Editar","sistema_de_avaliacao_igrpweb","Parametrizacao_semana","editar","submit","warning|fa-pencil","","");

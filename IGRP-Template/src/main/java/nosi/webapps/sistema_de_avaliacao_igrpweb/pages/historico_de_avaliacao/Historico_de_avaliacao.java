@@ -16,6 +16,9 @@ public class Historico_de_avaliacao extends Model{
 	@RParam(rParamName = "p_area")
 	private String area;
 
+	@RParam(rParamName = "p_mentor")
+	private String mentor;
+
 	@RParam(rParamName = "p_view_1_img")
 	private String view_1_img;
 
@@ -52,6 +55,13 @@ public class Historico_de_avaliacao extends Model{
 	}
 	public String getArea(){
 		return this.area;
+	}
+	
+	public void setMentor(String mentor){
+		this.mentor = mentor;
+	}
+	public String getMentor(){
+		return this.mentor;
 	}
 	
 	public void setView_1_img(String view_1_img){

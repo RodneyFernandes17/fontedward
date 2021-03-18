@@ -17,11 +17,11 @@ import nosi.core.webapp.Report;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TemaTbl;
+import java.util.Map;
 /*----#end-code----*/
-		
+
 public class Lista_avaliacao_semanalController extends Controller {
-	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
+	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException {
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		Lista_avaliacao_semanalView view = new Lista_avaliacao_semanalView();
@@ -44,14 +44,16 @@ public class Lista_avaliacao_semanalController extends Controller {
 					row.setId_avaliado(avaliado.getIdAvaliado() + "");
 					row.setFoto(avaliado.getIdFoto() != null ? Core.getLinkFileByUuid(avaliado.getIdFoto()) : null);
 					row.setNome(avaliado.getNome());
-					row.setArea(avaliado.getIdMentorFk()!=null?avaliado.getIdMentorFk().getIdAreaFk().getAreaDesc():null);
-					row.setMentor(avaliado.getIdMentorFk()!=null?avaliado.getIdMentorFk().getNome():null);
-					row.setEdicao(Core.findDomainDescByKey("edicao",avaliado.getEdicao() != null ? avaliado.getEdicao() : null));
-//					row.setId_utilizador(avaliado.getIdUtilizador().toString());
-									
-					SemanalTbl data = new SemanalTbl().find().andWhere("idAvaliador", "=", Core.getCurrentUser().getId())
-							.andWhere("idAvaliadoFk", "=", avaliado.getIdAvaliado()).andWhere("idTemaFk.nrSemana.atual","=",true)
-							.one();
+					row.setArea(avaliado.getIdMentorFk() != null ? avaliado.getIdMentorFk().getIdAreaFk().getAreaDesc()
+							: null);
+					row.setMentor(avaliado.getIdMentorFk() != null ? avaliado.getIdMentorFk().getNome() : null);
+					row.setEdicao(Core.findDomainDescByKey("edicao",
+							avaliado.getEdicao() != null ? avaliado.getEdicao() : null));
+
+					SemanalTbl data = new SemanalTbl().find()
+							.andWhere("idAvaliador", "=", Core.getCurrentUser().getId())
+							.andWhere("idAvaliadoFk", "=", avaliado.getIdAvaliado())
+							.andWhere("idTemaFk.nrSemana.atual", "=", true).one();
 					if (Core.isNotNull(data)) {
 						row.hiddenButton(view.btn_avaliacao_semanal);
 					}
@@ -60,15 +62,18 @@ public class Lista_avaliacao_semanalController extends Controller {
 					if (Core.isNotNull(tema)) {
 						row.hiddenButton(view.btn_inserir_tema);
 					}
+
 					if (Core.isNull(tema)) {
 						row.hiddenButton(view.btn_avaliacao_semanal);
 					}
-//					AvaliadoTbl iduser = new AvaliadoTbl().find().andWhere("idUtilizador", "=", avaliado.getIdUtilizador()).one();
-//					if (Core.isNull(iduser)) {
-//						row.hiddenButton(view.btn_avaliacao_semanal);
-//						row.hiddenButton(view.btn_inserir_tema);
-//					}
-					
+
+					if (!avaliado.getIdUtilizador().equals(Core.getCurrentUser().getId())
+							&& Core.getCurrentProfileCode().equals("avaliado.sistema_de_avaliacao_igrpweb")) {
+						row.hiddenButton(view.btn_avaliacao_semanal);
+						row.hiddenButton(view.btn_historico_de_avaliacoes);
+						row.hiddenButton(view.btn_inserir_tema);
+					}
+
 					testetblTable.add(row);
 				}
 			}
@@ -76,13 +81,13 @@ public class Lista_avaliacao_semanalController extends Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		/*----#end-code----*/
 		view.setModel(model);
-		return this.renderView(view);	
+		return this.renderView(view);
 	}
-	
-	public Response actionVer() throws IOException, IllegalArgumentException, IllegalAccessException{
+
+	public Response actionVer() throws IOException, IllegalArgumentException, IllegalAccessException {
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -97,12 +102,12 @@ public class Lista_avaliacao_semanalController extends Controller {
 		/*----#start-code(ver)----*/
 		this.addQueryString("isEdit", "true");
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
-		
+
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb","Formulario_de_inscricao","index", this.queryString());	
+		return this.redirect("sistema_de_avaliacao_igrpweb", "Formulario_de_inscricao", "index", this.queryString());
 	}
-	
-	public Response actionAvaliacao_semanal() throws IOException, IllegalArgumentException, IllegalAccessException{
+
+	public Response actionAvaliacao_semanal() throws IOException, IllegalArgumentException, IllegalAccessException {
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -116,12 +121,13 @@ public class Lista_avaliacao_semanalController extends Controller {
 		  ----#gen-example */
 		/*----#start-code(avaliacao_semanal)----*/
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
-		
+
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb","Formulario_avaliacao_semanal","index", this.queryString());	
+		return this.redirect("sistema_de_avaliacao_igrpweb", "Formulario_avaliacao_semanal", "index",
+				this.queryString());
 	}
-	
-	public Response actionInserir_tema() throws IOException, IllegalArgumentException, IllegalAccessException{
+
+	public Response actionInserir_tema() throws IOException, IllegalArgumentException, IllegalAccessException {
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -135,12 +141,13 @@ public class Lista_avaliacao_semanalController extends Controller {
 		  ----#gen-example */
 		/*----#start-code(inserir_tema)----*/
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
-		
+
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb","Tema_semanal","index", this.queryString());	
+		return this.redirect("sistema_de_avaliacao_igrpweb", "Tema_semanal", "index", this.queryString());
 	}
-	
-	public Response actionHistorico_de_avaliacoes() throws IOException, IllegalArgumentException, IllegalAccessException{
+
+	public Response actionHistorico_de_avaliacoes()
+			throws IOException, IllegalArgumentException, IllegalAccessException {
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -153,16 +160,13 @@ public class Lista_avaliacao_semanalController extends Controller {
 		  Use model.validate() to validate your model
 		  ----#gen-example */
 		/*----#start-code(historico_de_avaliacoes)----*/
-		
+
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb","Historico_de_avaliacao","index", this.queryString());	
+		return this.redirect("sistema_de_avaliacao_igrpweb", "Historico_de_avaliacao", "index", this.queryString());
 	}
-	
-		
-		
-/*----#start-code(custom_actions)----*/
 
+	/*----#start-code(custom_actions)----*/
 
-/*----#end-code----*/
+	/*----#end-code----*/
 }

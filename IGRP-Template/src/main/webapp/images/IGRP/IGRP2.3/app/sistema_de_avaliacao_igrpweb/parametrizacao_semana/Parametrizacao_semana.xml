@@ -41,7 +41,7 @@
             <fields>
                 <semana name="p_semana" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
                     <label>Semana</label>
-                    <value>162</value>
+                    <value>81</value>
                 </semana>
                 <atual name="p_atual" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" switch="false" check="true">
                     <label>Atual</label>
@@ -56,14 +56,14 @@
                     <link>index</link>
                     <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_semana/Parametrizacao_semana.xml?</parameter>
                     <target>submit</target>
-                    <img>primary|fa-angle-right</img>
+                    <img>primary|fa-save</img>
                     <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_semana/Parametrizacao_semana.xml</preview>
                 </item>
             </tools-bar>
         </form_1>
         <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
             <fields>
-                <semana_tbl name="p_semana_tbl" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" total_footer="false" group_in="" java-type="">
+                <semana_tbl name="p_semana_tbl" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="true" total_footer="false" group_in="" java-type="int">
                     <label>Semana</label>
                 </semana_tbl>
                 <atual_tbl name="p_atual_tbl" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
@@ -77,40 +77,40 @@
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">25</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Aliqua omnis labore deserunt a</atual_tbl>
+                        <semana_tbl name="p_semana_tbl">18</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Aliqua consectetur ipsum sed s</atual_tbl>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">0</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Doloremque dolor ut dolor elit</atual_tbl>
+                        <semana_tbl name="p_semana_tbl">23</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Voluptatem lorem totam stract</atual_tbl>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">0</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Iste laudantium sed anim dolor</atual_tbl>
+                        <semana_tbl name="p_semana_tbl">5</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Dolor stract accusantium volup</atual_tbl>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">6</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Stract sit consectetur ipsum a</atual_tbl>
+                        <semana_tbl name="p_semana_tbl">5</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Adipiscing aperiam anim dolore</atual_tbl>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">19</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Officia iste accusantium elit</atual_tbl>
+                        <semana_tbl name="p_semana_tbl">1</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Lorem doloremque ipsum totam s</atual_tbl>
                     </row>
                 </value>
                 <context-menu>
@@ -129,9 +129,112 @@
         </table_1>
     </content>
     <blockly>
-        <imports></imports>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="inserir_dao">Inserir Daos</import>
+            <import type="dao">SemanaTbl</import>
+        </imports>
         <xml>
             <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="formuu_form_1" id="1^:lH[d#o;@w_:l?-o03" inline="true" x="688" y="13">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">SemanaTbl</field>
+                <value name="get_pa">
+                    <block type="core_get_param" id="-68#M6!c4e|i(%CanT!=">
+                        <field name="param">semana_tbl</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="model_form_semana" id="Integer::semana">
+                        <value name="value1">
+                            <block type="get-dao-SemanaTbl" id="Y54RlQU1]DH]/kT,l2%f">
+                                <mutation hover_type="Integer::nrSemana"></mutation>
+                                <field name="DAO_FIELD">Integer::nrSemana</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="model_form_atual" id="int::atual">
+                                <value name="value1">
+                                    <block type="get-dao-SemanaTbl" id="CSx=|.n-r0;./RgvI7iH">
+                                        <mutation hover_type="Boolean::atual"></mutation>
+                                        <field name="DAO_FIELD">Boolean::atual</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="add_isedit" id="=A!ERi/cJMHl.es]dS]+">
+                                        <field name="button">salvar</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="listar_table_1" id="table_1" inline="true" x="913" y="138">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">SemanaTbl</field>
+                <field name="FILL">FALSE</field>
+                <field name="find">TODOSS</field>
+                <field name="limit"></field>
+                <statement name="value2">
+                    <block type="rowtablesemana_tbl" id="int::semana_tbl">
+                        <value name="fields_model">
+                            <block type="get-dao-SemanaTbl" id="#G-5a1:o9fL7|?2]hjy4">
+                                <mutation hover_type="Integer::nrSemana"></mutation>
+                                <field name="DAO_FIELD">Integer::nrSemana</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="rowtableatual_tbl" id="String::atual_tbl">
+                                <value name="fields_model">
+                                    <block type="get-dao-SemanaTbl" id="FNN(2J`|E4_.K)%YP0Gn">
+                                        <mutation hover_type="Boolean::atual"></mutation>
+                                        <field name="DAO_FIELD">Boolean::atual</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="save_formu_form_1" id="-%S^PNu-qnRj=*5A/qE|" inline="true" x="688" y="263">
+                <mutation count="0" pxchecked="true"></mutation>
+                <field name="dao">SemanaTbl</field>
+                <field name="EDIT">TRUE</field>
+                <value name="param_id">
+                    <block type="mod_formform_1" id="{L~|u}1R%Z]*OdXS/1k/">
+                        <field name="get_model">Integer::semana</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="set-dao-SemanaTbl" id="tq%@Tljh^Ya!=oXu;xg`" inline="false">
+                        <mutation hover_type="Integer::nrSemana"></mutation>
+                        <field name="DAO_FIELD">Integer::nrSemana</field>
+                        <value name="value1">
+                            <block type="mod_formform_1" id="cH;(9WPd:N*:j#YPH8W+">
+                                <field name="get_model">Integer::semana</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="set-dao-SemanaTbl" id="4[xTtl8-T5{O=ef_3uN3" inline="false">
+                                <mutation hover_type="Boolean::atual"></mutation>
+                                <field name="DAO_FIELD">Boolean::atual</field>
+                                <value name="value1">
+                                    <block type="mod_formform_1" id="~+TOm+f;=742]kFO@k?w">
+                                        <field name="get_model">int::atual</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="enviar_p" id="/7At40-QzW|RqEE%zB8`" x="388" y="338">
+                <field name="iskey">semana_tbl</field>
+                <next>
+                    <block type="editar_dao" id="3,MZ~Ob;n;2(Ycj^oB}F"></block>
+                </next>
+            </block>
         </xml>
     </blockly>
 </rows>

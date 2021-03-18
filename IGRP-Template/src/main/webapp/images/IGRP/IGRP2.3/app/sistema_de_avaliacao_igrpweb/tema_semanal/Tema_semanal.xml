@@ -37,19 +37,19 @@
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
     <content>
         <title>Inserção do Tema Semanal</title>
-        <view_1 type="view" xml-type="view" title="Avaliação Semanal" gen-type="container" gen-group="">
+        <view_1 type="view" xml-type="view" title="Informações" gen-type="container" gen-group="">
             <fields>
                 <nome name="p_nome" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Nome</label>
-                    <value>Rem mollit perspiciatis omnis anim</value>
+                    <value>Lorem deserunt unde sit laudantium</value>
                 </nome>
                 <area name="p_area" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Área ou Projeto</label>
-                    <value>Adipiscing totam rem dolor mollit</value>
+                    <value>Voluptatem dolor stract laudantium mollit</value>
                 </area>
                 <mentor name="p_mentor" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Mentor</label>
-                    <value>Aperiam magna labore sed accusantium</value>
+                    <value>Mollit ut mollit doloremque dolor</value>
                 </mentor>
                 <view_1_img type="text" name="p_view_1_img" maxlength="300">
                     <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
@@ -60,7 +60,7 @@
             <fields>
                 <tema_semanal name="p_tema_semanal" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Tema Semanal</label>
-                    <value>Totam accusantium aperiam aliqua omnis</value>
+                    <value>Adipiscing consectetur totam aperiam perspiciatis</value>
                     <validations>
                         <validation>
                             <annotation>@NotNull</annotation>
@@ -82,82 +82,200 @@
                 <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/tema_semanal/Tema_semanal.xml</preview>
             </item>
         </toolsbar_1>
+        <positivo type="statbox" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <positivo_title name="p_positivo_title" type="text" maxlength="4000">
+                    <label>Box Title</label>
+                    <value>Média</value>
+                </positivo_title>
+                <positivo_val name="p_positivo_val" type="text" maxlength="4000">
+                    <label>Value</label>
+                    <value>68</value>
+                </positivo_val>
+                <positivo_txt name="p_positivo_txt" type="text" maxlength="4000">
+                    <label>Url Text</label>
+                    <value>Continua assim no que diz respeito à</value>
+                </positivo_txt>
+                <positivo_url name="p_positivo_url" type="text" maxlength="4000">
+                    <label>Url</label>
+                    <value>http://www.example.com</value>
+                </positivo_url>
+                <positivo_bg name="p_positivo_bg" type="text" maxlength="4000">
+                    <label>Background</label>
+                    <value>cp-electric</value>
+                </positivo_bg>
+                <positivo_icn name="p_positivo_icn" type="text" maxlength="4000" persist="true">
+                    <label>Icon</label>
+                    <value>fa-thumbs-up</value>
+                </positivo_icn>
+            </fields>
+        </positivo>
+        <negativo type="statbox" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <negativo_title name="p_negativo_title" type="text" maxlength="4000">
+                    <label>Box Title</label>
+                    <value>Média</value>
+                </negativo_title>
+                <negativo_val name="p_negativo_val" type="text" maxlength="4000">
+                    <label>Value</label>
+                    <value>485</value>
+                </negativo_val>
+                <negativo_txt name="p_negativo_txt" type="text" maxlength="4000">
+                    <label>Url Text</label>
+                    <value>Necessita de melhoria no que diz respeito à</value>
+                </negativo_txt>
+                <negativo_url name="p_negativo_url" type="text" maxlength="4000">
+                    <label>Url</label>
+                    <value>http://www.example.com</value>
+                </negativo_url>
+                <negativo_bg name="p_negativo_bg" type="text" maxlength="4000">
+                    <label>Background</label>
+                    <value>cp-embers</value>
+                </negativo_bg>
+                <negativo_icn name="p_negativo_icn" type="text" maxlength="4000" persist="true">
+                    <label>Icon</label>
+                    <value>fa-thumbs-down</value>
+                </negativo_icn>
+            </fields>
+        </negativo>
     </content>
     <blockly>
         <imports>
+            <import type="dao">SemanalTbl</import>
             <import type="dao">AvaliadoTbl</import>
             <import type="dao">MentorTbl</import>
             <import type="dao">AreaTbl</import>
         </imports>
         <xml>
-            <block type="controller" id="controller" x="363" y="38">
-                <statement name="index">
-                    <block type="vieww_view_1" id="zXNY;Kf:CzYRLHXQmwDz" inline="true">
-                        <mutation pxchecked="false" limit="false" count="0"></mutation>
-                        <field name="dao">AvaliadoTbl</field>
-                        <value name="get_pa">
-                            <block type="core_get_param" id="AySy@zV9Ei2o!.PZp^Hn">
-                                <field name="param">id_avaliado</field>
+            <block type="controller" id="controller" x="363" y="38"></block>
+            <block type="sttbox_negativo" id="negativo" inline="true" x="713" y="288">
+                <mutation pxchecked="false" limit="false" count="1" mutation-1="andWhere"></mutation>
+                <field name="dao">SemanalTbl</field>
+                <field name="ADD1FILTER">andWhere</field>
+                <field name="ADD1WHERE">WHERE_EQ</field>
+                <statement name="value2">
+                    <block type="statfields_negativo_title" id="String::negativo_title">
+                        <next>
+                            <block type="statfields_negativo_val" id="String::negativo_val">
+                                <next>
+                                    <block type="statfields_negativo_txt" id="String::negativo_txt">
+                                        <next>
+                                            <block type="statfields_negativo_url" id="String::negativo_url"></block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <value name="ADD1">
+                    <block type="get-dao-SemanalTbl" id="7n|~e#{^Guqu{Fs}0dXf">
+                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                    </block>
+                </value>
+                <value name="ADD1STATE2">
+                    <block type="core_get_param" id="zGwtR#FCZw1g,0fc}^n+">
+                        <field name="param">id_avaliado</field>
+                    </block>
+                </value>
+            </block>
+            <block type="sttbox_positivo" id="positivo" inline="true" x="287" y="387">
+                <mutation pxchecked="false" limit="false" count="1" mutation-1="andWhere"></mutation>
+                <field name="dao">SemanalTbl</field>
+                <field name="ADD1FILTER">andWhere</field>
+                <field name="ADD1WHERE">WHERE_EQ</field>
+                <statement name="value2">
+                    <block type="statfields_positivo_title" id="String::positivo_title">
+                        <next>
+                            <block type="statfields_positivo_val" id="String::positivo_val">
+                                <next>
+                                    <block type="statfields_positivo_txt" id="String::positivo_txt">
+                                        <next>
+                                            <block type="statfields_positivo_url" id="String::positivo_url"></block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <value name="ADD1">
+                    <block type="get-dao-SemanalTbl" id="CFMxEbsRQ)}]1EMcc,Qq">
+                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                    </block>
+                </value>
+                <value name="ADD1STATE2">
+                    <block type="core_get_param" id="^W?=))V|:pcd?e3LBD_|">
+                        <field name="param">id_avaliado</field>
+                    </block>
+                </value>
+            </block>
+            <block type="vieww_view_1" id="zXNY;Kf:CzYRLHXQmwDz" inline="true" x="662" y="513">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">AvaliadoTbl</field>
+                <value name="get_pa">
+                    <block type="core_get_param" id="AySy@zV9Ei2o!.PZp^Hn">
+                        <field name="param">id_avaliado</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="model_form_nome" id="String::nome">
+                        <value name="value1">
+                            <block type="get-dao-AvaliadoTbl" id="SeC#hiF(PX1Z8-*s7;7L">
+                                <mutation hover_type="String::nome"></mutation>
+                                <field name="DAO_FIELD">String::nome</field>
                             </block>
                         </value>
-                        <statement name="value2">
-                            <block type="model_form_nome" id="String::nome">
+                        <next>
+                            <block type="model_form_area" id="String::area">
                                 <value name="value1">
-                                    <block type="get-dao-AvaliadoTbl" id="SeC#hiF(PX1Z8-*s7;7L">
-                                        <mutation hover_type="String::nome"></mutation>
-                                        <field name="DAO_FIELD">String::nome</field>
+                                    <block type="get-dao-AvaliadoTbl" id="[[Mo]@KXJCm5vbzWEe=j">
+                                        <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
+                                        <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
+                                        <value name="dao_rela">
+                                            <block type="get-dao-MentorTbl" id="w8s;!@^3xn(Jh7oI]Fc~">
+                                                <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
+                                                <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-AreaTbl" id="i6*6sPuTwz~4BvU*CAD#">
+                                                        <mutation hover_type="String::areaDesc"></mutation>
+                                                        <field name="DAO_FIELD">String::areaDesc</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
                                     </block>
                                 </value>
                                 <next>
-                                    <block type="model_form_area" id="String::area">
+                                    <block type="model_form_mentor" id="String::mentor">
                                         <value name="value1">
-                                            <block type="get-dao-AvaliadoTbl" id="[[Mo]@KXJCm5vbzWEe=j">
+                                            <block type="get-dao-AvaliadoTbl" id=".-ic[2E-C:ea@Rs-Hn#f">
                                                 <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
                                                 <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
                                                 <value name="dao_rela">
-                                                    <block type="get-dao-MentorTbl" id="w8s;!@^3xn(Jh7oI]Fc~">
-                                                        <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
-                                                        <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
-                                                        <value name="dao_rela">
-                                                            <block type="get-dao-AreaTbl" id="i6*6sPuTwz~4BvU*CAD#">
-                                                                <mutation hover_type="String::areaDesc"></mutation>
-                                                                <field name="DAO_FIELD">String::areaDesc</field>
-                                                            </block>
-                                                        </value>
+                                                    <block type="get-dao-MentorTbl" id="9FK-15EY+BY7.^q0*.Uy">
+                                                        <mutation hover_type="String::nome"></mutation>
+                                                        <field name="DAO_FIELD">String::nome</field>
                                                     </block>
                                                 </value>
                                             </block>
                                         </value>
                                         <next>
-                                            <block type="model_form_mentor" id="String::mentor">
+                                            <block type="model_form_view_1_img" id="Image_View::view_1_img">
                                                 <value name="value1">
-                                                    <block type="get-dao-AvaliadoTbl" id=".-ic[2E-C:ea@Rs-Hn#f">
-                                                        <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
-                                                        <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
-                                                        <value name="dao_rela">
-                                                            <block type="get-dao-MentorTbl" id="9FK-15EY+BY7.^q0*.Uy">
-                                                                <mutation hover_type="String::nome"></mutation>
-                                                                <field name="DAO_FIELD">String::nome</field>
-                                                            </block>
-                                                        </value>
+                                                    <block type="get-dao-AvaliadoTbl" id="bAW^,f,nhcNAI[kW56N5">
+                                                        <mutation hover_type="String::idFoto"></mutation>
+                                                        <field name="DAO_FIELD">String::idFoto</field>
                                                     </block>
                                                 </value>
-                                                <next>
-                                                    <block type="model_form_view_1_img" id="Image_View::view_1_img">
-                                                        <value name="value1">
-                                                            <block type="get-dao-AvaliadoTbl" id="bAW^,f,nhcNAI[kW56N5">
-                                                                <mutation hover_type="String::idFoto"></mutation>
-                                                                <field name="DAO_FIELD">String::idFoto</field>
-                                                            </block>
-                                                        </value>
-                                                    </block>
-                                                </next>
                                             </block>
                                         </next>
                                     </block>
                                 </next>
                             </block>
-                        </statement>
+                        </next>
                     </block>
                 </statement>
             </block>

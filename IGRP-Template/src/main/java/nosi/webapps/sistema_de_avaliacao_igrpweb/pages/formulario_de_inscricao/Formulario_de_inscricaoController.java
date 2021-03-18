@@ -64,6 +64,7 @@ public class Formulario_de_inscricaoController extends Controller {
 					view.nivel.propertie().add("disabled", "true");
 					view.horas.propertie().add("disabled", "true");
 					view.btn_seguinte.setVisible(false);
+					view.formador.setVisible(false);
 
 				}
 			}

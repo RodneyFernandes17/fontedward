@@ -41,12 +41,16 @@
             <fields>
                 <nome name="p_nome" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Nome</label>
-                    <value>Aliqua adipiscing sit ipsum totam</value>
+                    <value>Aliqua sed iste sed doloremque</value>
                 </nome>
                 <area name="p_area" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Área ou Projeto</label>
-                    <value>Rem amet ipsum officia deserunt</value>
+                    <value>Aliqua deserunt natus ipsum officia</value>
                 </area>
+                <mentor name="p_mentor" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
+                    <label>Mentor(a)</label>
+                    <value>Elit rem elit adipiscing anim</value>
+                </mentor>
                 <view_1_img type="text" name="p_view_1_img" maxlength="300">
                     <value>../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</value>
                 </view_1_img>
@@ -99,57 +103,38 @@
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <media_tbl name="p_media_tbl">bom</media_tbl>
-                        <semana name="p_semana">29</semana>
-                        <data name="p_data">07-01-2010</data>
-                        <tema name="p_tema">Stract amet iste unde ipsum</tema>
-                        <media_semanal name="p_media_semanal">Ipsum sit adipiscing dolor off</media_semanal>
-                        <conteudo name="p_conteudo">Elit sit dolor amet ipsum</conteudo>
-                        <pontualidade name="p_pontualidade">Anim omnis mollit unde totam</pontualidade>
-                        <dominio name="p_dominio">Doloremque elit sed sit ut</dominio>
-                        <clareza name="p_clareza">Voluptatem unde ut sit deserun</clareza>
-                        <proatividade name="p_proatividade">Sit stract anim amet aperiam</proatividade>
-                        <nivel name="p_nivel">Perspiciatis natus aliqua ipsu</nivel>
-                        <tarefas name="p_tarefas">Unde ut totam doloremque conse</tarefas>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-4744_5194</id_avaliado>
+                        <media_tbl name="p_media_tbl">razoavel</media_tbl>
+                        <semana name="p_semana">5</semana>
+                        <data name="p_data">04-07-2012</data>
+                        <tema name="p_tema">Totam unde magna aperiam deser</tema>
+                        <media_semanal name="p_media_semanal">Ipsum iste accusantium stract</media_semanal>
+                        <conteudo name="p_conteudo">Dolor lorem unde perspiciatis</conteudo>
+                        <pontualidade name="p_pontualidade">Accusantium adipiscing consect</pontualidade>
+                        <dominio name="p_dominio">Unde adipiscing magna aliqua o</dominio>
+                        <clareza name="p_clareza">Labore anim aperiam labore mag</clareza>
+                        <proatividade name="p_proatividade">Natus dolor amet ipsum labore</proatividade>
+                        <nivel name="p_nivel">Aperiam mollit amet lorem offi</nivel>
+                        <tarefas name="p_tarefas">Labore elit magna doloremque s</tarefas>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-6f0a_bfc9</id_avaliado>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <media_tbl name="p_media_tbl">mto_bom</media_tbl>
-                        <semana name="p_semana">27</semana>
-                        <data name="p_data">01-03-2013</data>
-                        <tema name="p_tema">Lorem doloremque unde accusant</tema>
-                        <media_semanal name="p_media_semanal">Dolor sit mollit consectetur l</media_semanal>
-                        <conteudo name="p_conteudo">Omnis dolor voluptatem omnis s</conteudo>
-                        <pontualidade name="p_pontualidade">Magna voluptatem sed aperiam i</pontualidade>
-                        <dominio name="p_dominio">Ipsum sit iste accusantium dol</dominio>
-                        <clareza name="p_clareza">Iste magna doloremque natus st</clareza>
-                        <proatividade name="p_proatividade">Ut voluptatem totam ut dolorem</proatividade>
-                        <nivel name="p_nivel">Ut iste ut sed dolor</nivel>
-                        <tarefas name="p_tarefas">Elit iste voluptatem totam ips</tarefas>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-cc00_d5e4</id_avaliado>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
-                        <media_tbl name="p_media_tbl">mto_bom</media_tbl>
-                        <semana name="p_semana">3</semana>
-                        <data name="p_data">03-02-2010</data>
-                        <tema name="p_tema">Consectetur aliqua omnis aliqu</tema>
-                        <media_semanal name="p_media_semanal">Elit lorem magna consectetur a</media_semanal>
-                        <conteudo name="p_conteudo">Iste ipsum accusantium magna s</conteudo>
-                        <pontualidade name="p_pontualidade">Anim ipsum labore sit voluptat</pontualidade>
-                        <dominio name="p_dominio">Totam aliqua magna sed sit</dominio>
-                        <clareza name="p_clareza">Elit totam deserunt omnis dolo</clareza>
-                        <proatividade name="p_proatividade">Anim magna sit deserunt adipis</proatividade>
-                        <nivel name="p_nivel">Iste unde amet sit anim</nivel>
-                        <tarefas name="p_tarefas">Rem deserunt laudantium offici</tarefas>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-0029_9e60</id_avaliado>
+                        <media_tbl name="p_media_tbl">fraco</media_tbl>
+                        <semana name="p_semana">9</semana>
+                        <data name="p_data">02-01-2014</data>
+                        <tema name="p_tema">Officia lorem stract sit sit</tema>
+                        <media_semanal name="p_media_semanal">Iste stract officia totam pers</media_semanal>
+                        <conteudo name="p_conteudo">Sed perspiciatis lorem ipsum a</conteudo>
+                        <pontualidade name="p_pontualidade">Doloremque iste ipsum aperiam</pontualidade>
+                        <dominio name="p_dominio">Deserunt ut labore amet volupt</dominio>
+                        <clareza name="p_clareza">Officia ut officia ut laudanti</clareza>
+                        <proatividade name="p_proatividade">Sit lorem ipsum dolor adipisci</proatividade>
+                        <nivel name="p_nivel">Totam elit officia aliqua unde</nivel>
+                        <tarefas name="p_tarefas">Sit adipiscing iste aperiam do</tarefas>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-ca9a_a773</id_avaliado>
                     </row>
                     <row>
                         <context-menu>
@@ -157,37 +142,56 @@
                             <param>p2=linha1</param>
                         </context-menu>
                         <media_tbl name="p_media_tbl">bom</media_tbl>
-                        <semana name="p_semana">21</semana>
-                        <data name="p_data">03-01-2012</data>
-                        <tema name="p_tema">Perspiciatis ipsum elit anim u</tema>
-                        <media_semanal name="p_media_semanal">Sit dolor omnis unde consectet</media_semanal>
-                        <conteudo name="p_conteudo">Amet unde stract perspiciatis</conteudo>
-                        <pontualidade name="p_pontualidade">Perspiciatis anim lorem ipsum</pontualidade>
-                        <dominio name="p_dominio">Doloremque adipiscing lorem ad</dominio>
-                        <clareza name="p_clareza">Unde consectetur perspiciatis</clareza>
-                        <proatividade name="p_proatividade">Doloremque perspiciatis sit om</proatividade>
-                        <nivel name="p_nivel">Ut magna stract accusantium ap</nivel>
-                        <tarefas name="p_tarefas">Iste unde ut officia anim</tarefas>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-1390_c64f</id_avaliado>
+                        <semana name="p_semana">2</semana>
+                        <data name="p_data">05-07-2017</data>
+                        <tema name="p_tema">Magna sit natus perspiciatis s</tema>
+                        <media_semanal name="p_media_semanal">Sit magna mollit unde sed</media_semanal>
+                        <conteudo name="p_conteudo">Aperiam mollit omnis sit elit</conteudo>
+                        <pontualidade name="p_pontualidade">Natus aliqua sit laudantium st</pontualidade>
+                        <dominio name="p_dominio">Iste labore mollit amet omnis</dominio>
+                        <clareza name="p_clareza">Totam aperiam dolor accusantiu</clareza>
+                        <proatividade name="p_proatividade">Rem totam doloremque unde moll</proatividade>
+                        <nivel name="p_nivel">Rem stract lorem unde iste</nivel>
+                        <tarefas name="p_tarefas">Consectetur lorem stract accus</tarefas>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-8ac1_d771</id_avaliado>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <media_tbl name="p_media_tbl">mto_bom</media_tbl>
-                        <semana name="p_semana">28</semana>
-                        <data name="p_data">01-03-2017</data>
-                        <tema name="p_tema">Stract rem sit voluptatem iste</tema>
-                        <media_semanal name="p_media_semanal">Omnis labore aliqua sit deseru</media_semanal>
-                        <conteudo name="p_conteudo">Totam anim lorem iste omnis</conteudo>
-                        <pontualidade name="p_pontualidade">Adipiscing voluptatem deserunt</pontualidade>
-                        <dominio name="p_dominio">Aperiam voluptatem totam adipi</dominio>
-                        <clareza name="p_clareza">Aperiam anim doloremque omnis</clareza>
-                        <proatividade name="p_proatividade">Sit labore perspiciatis natus</proatividade>
-                        <nivel name="p_nivel">Voluptatem elit aliqua magna l</nivel>
-                        <tarefas name="p_tarefas">Consectetur anim omnis aperiam</tarefas>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-34d3_9fef</id_avaliado>
+                        <media_tbl name="p_media_tbl">fraco</media_tbl>
+                        <semana name="p_semana">10</semana>
+                        <data name="p_data">03-05-2017</data>
+                        <tema name="p_tema">Rem omnis adipiscing amet aper</tema>
+                        <media_semanal name="p_media_semanal">Magna voluptatem rem unde cons</media_semanal>
+                        <conteudo name="p_conteudo">Sed unde ut aperiam ipsum</conteudo>
+                        <pontualidade name="p_pontualidade">Ut laudantium labore rem sed</pontualidade>
+                        <dominio name="p_dominio">Ipsum anim magna accusantium d</dominio>
+                        <clareza name="p_clareza">Sit aperiam iste deserunt amet</clareza>
+                        <proatividade name="p_proatividade">Sed perspiciatis officia accus</proatividade>
+                        <nivel name="p_nivel">Deserunt accusantium officia a</nivel>
+                        <tarefas name="p_tarefas">Doloremque officia deserunt is</tarefas>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-d778_8e9a</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <media_tbl name="p_media_tbl">bom</media_tbl>
+                        <semana name="p_semana">23</semana>
+                        <data name="p_data">03-05-2014</data>
+                        <tema name="p_tema">Dolor aperiam amet officia nat</tema>
+                        <media_semanal name="p_media_semanal">Rem doloremque sed stract tota</media_semanal>
+                        <conteudo name="p_conteudo">Adipiscing dolor sit rem magna</conteudo>
+                        <pontualidade name="p_pontualidade">Magna aliqua sed sit ipsum</pontualidade>
+                        <dominio name="p_dominio">Sed mollit perspiciatis mollit</dominio>
+                        <clareza name="p_clareza">Voluptatem anim amet dolor dol</clareza>
+                        <proatividade name="p_proatividade">Sit labore aliqua rem doloremq</proatividade>
+                        <nivel name="p_nivel">Deserunt adipiscing sit anim a</nivel>
+                        <tarefas name="p_tarefas">Aliqua iste amet ut aliqua</tarefas>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-8e04_b46f</id_avaliado>
                     </row>
                 </value>
                 <legend_color>
@@ -226,7 +230,7 @@
                 </context-menu>
             </table>
         </table_1>
-        <chart_1 type="chart" xml-type="chart" title="Chart" gen-type="container" gen-group="">
+        <chart_1 type="chart" xml-type="chart" title="Gráfico de Evolução Semanal" gen-type="container" gen-group="">
             <caption/>
             <chart_type>line</chart_type>
             <xaxys>Eixo de X</xaxys>
@@ -242,38 +246,38 @@
             <value>
                 <row>
                     <col>2010</col>
-                    <col>855</col>
-                    <col>493</col>
-                    <col>375</col>
-                    <col>739</col>
+                    <col>861</col>
+                    <col>120</col>
+                    <col>175</col>
+                    <col>98</col>
                 </row>
                 <row>
                     <col>2009</col>
-                    <col>312</col>
-                    <col>835</col>
-                    <col>49</col>
-                    <col>75</col>
+                    <col>805</col>
+                    <col>892</col>
+                    <col>920</col>
+                    <col>168</col>
                 </row>
                 <row>
                     <col>2015</col>
                     <col>1010</col>
-                    <col>172</col>
-                    <col>800</col>
-                    <col>651</col>
+                    <col>40</col>
+                    <col>799</col>
+                    <col>735</col>
                 </row>
             </value>
             <colors>
-                <col>#aeb12b</col>
-                <col>#d50a32</col>
-                <col>#930366</col>
-                <col>#f1e25e</col>
+                <col>#d9c3b7</col>
+                <col>#425a83</col>
+                <col>#470f56</col>
+                <col>#69a7a8</col>
             </colors>
         </chart_1>
         <paragraph_1 type="paragraph" xml-type="form" gen-type="container" gen-group="">
             <fields>
                 <paragraph_1_text type="text" name="p_paragraph_1_text" persist="true" maxlength="4000">
                     <value>
-                        <![CDATA[<p><b>Conteudo do Powerpoint</b> &ndash; avaliar a qualidade da apresenta&ccedil;&atilde;o em termos de quantidades de imagens, textos, estruturas;</p><p><b>Pontualidade</b> &ndash; respeito ao tempo estipulado como dura&ccedil;&atilde;o da apresenta&ccedil;&atilde;o.</p><p><b>Dom&iacute;nio da l&iacute;ngua</b> &ndash; dom&iacute;nio para com a l&iacute;ngua escolhida para a realiza&ccedil;&atilde;o da apresenta&ccedil;&atilde;o, ingl&ecirc;s, portugu&ecirc;s, etc.</p><p><b>Clareza no discurso</b> &ndash; forma de apresenta&ccedil;&atilde;o clara com dom&iacute;nio do conte&uacute;do e de conceitos apresentados;</p><p><b>Proactividade</b> &ndash; n&iacute;vel de proactividade nas tarefas em que lhes foram submetidas;</p><p><b>Nivel de aprendizagem</b> &ndash; qual a margem de aprendizagem que alcan&ccedil;ou durante a semana;</p><p><b>Tarefas futuras</b> &ndash; planos que tem para realiza&ccedil;&atilde;o de tarefas futuras e quais os impedimentos;</p><p>*Avalia&ccedil;&atilde;o M&aacute;xima por Categoria 10, M&iacute;nima 0.</p>
+                        <![CDATA[<p><b>Conteudo do Powerpoint</b> &ndash; avaliar a qualidade da apresenta&ccedil;&atilde;o em termos de quantidades de imagens, textos e&nbsp;estruturas.</p><p><b>Pontualidade</b> &ndash; respeito ao tempo estipulado para a apresenta&ccedil;&atilde;o, a sua dura&ccedil;&atilde;o (n&atilde;o pode ser nem muito longo, nem muito curto).</p><p><b>Dom&iacute;nio da l&iacute;ngua</b> &ndash; dom&iacute;nio para com a l&iacute;ngua que foi solicitada para a realiza&ccedil;&atilde;o da apresenta&ccedil;&atilde;o, ingl&ecirc;s e/ou&nbsp;portugu&ecirc;s.</p><p><b>Clareza no discurso</b> &ndash; forma de apresenta&ccedil;&atilde;o clara com dom&iacute;nio de&nbsp;conte&uacute;dos&nbsp;e&nbsp;conceitos abrangidos.</p><p><b>Proactividade</b> &ndash; n&iacute;vel de proactividade nas tarefas, ou seja, aquilo que fez mais do que&nbsp;aquilo que lhe foi pedido pelo mentor do est&aacute;gio.</p><p><b>Nivel de aprendizagem</b> &ndash; qual a margem de aprendizagem que alcan&ccedil;ou durante a semana nas tarefas realizadas.</p><p><b>Tarefas futuras</b> &ndash; planos que tem para realiza&ccedil;&atilde;o de tarefas futuras e quais os impedimentos para a sua realiza&ccedil;&atilde;o.</p><p>&nbsp;</p><p>*Avalia&ccedil;&atilde;o M&aacute;xima por Categoria 10, M&iacute;nima 0.</p>
 ]]>
                     </value>
                 </paragraph_1_text>
@@ -281,9 +285,46 @@
         </paragraph_1>
     </content>
     <blockly>
-        <imports></imports>
+        <imports>
+            <import type="grafico">chart_1</import>
+            <import type="dao">SemanalTbl</import>
+        </imports>
         <xml>
             <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="grafico_chart_1" id="nyWL.PRly:mXxLXJBp*x" inline="true" x="663" y="113">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">SemanalTbl</field>
+                <statement name="value2">
+                    <block type="EixoX" id="zWg*1GkNEB_^P)}fQ[ag">
+                        <value name="eixo">
+                            <block type="get-dao-SemanalTbl" id=";cnP!H]]hLeRdb2N0[33">
+                                <mutation hover_type="Integer::conteudo"></mutation>
+                                <field name="DAO_FIELD">Integer::conteudo</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="EixoY" id="3eR3Um|KI:6q/Bu944r%">
+                                <value name="eixo">
+                                    <block type="get-dao-SemanalTbl" id="TK2*2E6ScP4]N5xkikOt">
+                                        <mutation hover_type="Integer::pontualidade"></mutation>
+                                        <field name="DAO_FIELD">Integer::pontualidade</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="EixoZ" id="xEERZw])^LXfMdZAk_+[">
+                                        <value name="eixo">
+                                            <block type="get-dao-SemanalTbl" id="C~(/:U7x@!DA5LD0PJ@v">
+                                                <mutation hover_type="Integer::dominio"></mutation>
+                                                <field name="DAO_FIELD">Integer::dominio</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
         </xml>
     </blockly>
 </rows>

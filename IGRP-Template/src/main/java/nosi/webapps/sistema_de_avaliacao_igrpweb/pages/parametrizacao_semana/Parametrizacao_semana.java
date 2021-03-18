@@ -48,12 +48,12 @@ public class Parametrizacao_semana extends Model{
 
 
 	public static class Table_1 extends IGRPTable.Table{
-		private Integer semana_tbl;
+		private int semana_tbl;
 		private String atual_tbl;
-		public void setSemana_tbl(Integer semana_tbl){
+		public void setSemana_tbl(int semana_tbl){
 			this.semana_tbl = semana_tbl;
 		}
-		public Integer getSemana_tbl(){
+		public int getSemana_tbl(){
 			return this.semana_tbl;
 		}
 

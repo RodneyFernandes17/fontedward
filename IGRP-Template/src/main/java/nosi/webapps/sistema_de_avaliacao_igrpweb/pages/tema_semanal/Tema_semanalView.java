@@ -15,8 +15,22 @@ public class Tema_semanalView extends View {
 	public Field tema_semanal;
 	public Field id_avaliado;
 	public Field id_semana;
+	public Field positivo_title;
+	public Field positivo_val;
+	public Field positivo_txt;
+	public Field positivo_url;
+	public Field positivo_bg;
+	public Field positivo_icn;
+	public Field negativo_title;
+	public Field negativo_val;
+	public Field negativo_txt;
+	public Field negativo_url;
+	public Field negativo_bg;
+	public Field negativo_icn;
 	public IGRPView view_1;
 	public IGRPForm form_1;
+	public IGRPStatBox positivo;
+	public IGRPStatBox negativo;
 
 	public IGRPToolsBar toolsbar_1;
 	public IGRPButton btn_submeter;
@@ -25,9 +39,13 @@ public class Tema_semanalView extends View {
 
 		this.setPageTitle("Inserção do Tema Semanal");
 			
-		view_1 = new IGRPView("view_1","Avaliação Semanal");
+		view_1 = new IGRPView("view_1","Informações");
 
 		form_1 = new IGRPForm("form_1","Inserção do Tema Semanal");
+
+		positivo = new IGRPStatBox("positivo","");
+
+		negativo = new IGRPStatBox("negativo","");
 
 		nome = new TextField(model,"nome");
 		nome.setLabel(gt("Nome"));
@@ -57,6 +75,56 @@ public class Tema_semanalView extends View {
 		id_semana.setLabel(gt(""));
 		id_semana.propertie().add("name","p_id_semana").add("type","hidden").add("maxlength","250").add("java-type","int").add("tag","id_semana");
 		
+		positivo_title = new TextField(model,"positivo_title");
+		positivo_title.setLabel(gt("Box Title"));
+		positivo_title.propertie().add("name","p_positivo_title").add("type","text").add("maxlength","4000");
+		
+		positivo_val = new TextField(model,"positivo_val");
+		positivo_val.setLabel(gt("Value"));
+		positivo_val.propertie().add("name","p_positivo_val").add("type","text").add("maxlength","4000");
+		
+		positivo_txt = new TextField(model,"positivo_txt");
+		positivo_txt.setLabel(gt("Url Text"));
+		positivo_txt.propertie().add("name","p_positivo_txt").add("type","text").add("maxlength","4000");
+		
+		positivo_url = new TextField(model,"positivo_url");
+		positivo_url.setLabel(gt("Url"));
+		positivo_url.propertie().add("name","p_positivo_url").add("type","text").add("maxlength","4000");
+		
+		positivo_bg = new TextField(model,"positivo_bg");
+		positivo_bg.setLabel(gt("Background"));
+		positivo_bg.propertie().add("name","p_positivo_bg").add("type","text").add("maxlength","4000");
+		
+		positivo_icn = new TextField(model,"positivo_icn");
+		positivo_icn.setLabel(gt("Icon"));
+		positivo_icn.setValue(gt("fa-thumbs-up"));
+		positivo_icn.propertie().add("name","p_positivo_icn").add("type","text").add("maxlength","4000");
+		
+		negativo_title = new TextField(model,"negativo_title");
+		negativo_title.setLabel(gt("Box Title"));
+		negativo_title.propertie().add("name","p_negativo_title").add("type","text").add("maxlength","4000");
+		
+		negativo_val = new TextField(model,"negativo_val");
+		negativo_val.setLabel(gt("Value"));
+		negativo_val.propertie().add("name","p_negativo_val").add("type","text").add("maxlength","4000");
+		
+		negativo_txt = new TextField(model,"negativo_txt");
+		negativo_txt.setLabel(gt("Url Text"));
+		negativo_txt.propertie().add("name","p_negativo_txt").add("type","text").add("maxlength","4000");
+		
+		negativo_url = new TextField(model,"negativo_url");
+		negativo_url.setLabel(gt("Url"));
+		negativo_url.propertie().add("name","p_negativo_url").add("type","text").add("maxlength","4000");
+		
+		negativo_bg = new TextField(model,"negativo_bg");
+		negativo_bg.setLabel(gt("Background"));
+		negativo_bg.propertie().add("name","p_negativo_bg").add("type","text").add("maxlength","4000");
+		
+		negativo_icn = new TextField(model,"negativo_icn");
+		negativo_icn.setLabel(gt("Icon"));
+		negativo_icn.setValue(gt("fa-thumbs-down"));
+		negativo_icn.propertie().add("name","p_negativo_icn").add("type","text").add("maxlength","4000");
+		
 
 		toolsbar_1 = new IGRPToolsBar("toolsbar_1");
 
@@ -79,9 +147,25 @@ public class Tema_semanalView extends View {
 		form_1.addField(id_semana);
 
 
+		positivo.addField(positivo_title);
+		positivo.addField(positivo_val);
+		positivo.addField(positivo_txt);
+		positivo.addField(positivo_url);
+		positivo.addField(positivo_bg);
+		positivo.addField(positivo_icn);
+
+		negativo.addField(negativo_title);
+		negativo.addField(negativo_val);
+		negativo.addField(negativo_txt);
+		negativo.addField(negativo_url);
+		negativo.addField(negativo_bg);
+		negativo.addField(negativo_icn);
+
 		toolsbar_1.addButton(btn_submeter);
 		this.addToPage(view_1);
 		this.addToPage(form_1);
+		this.addToPage(positivo);
+		this.addToPage(negativo);
 		this.addToPage(toolsbar_1);
 	}
 		
@@ -94,7 +178,17 @@ public class Tema_semanalView extends View {
 		view_1_img.setValue(model);
 		tema_semanal.setValue(model);
 		id_avaliado.setValue(model);
-		id_semana.setValue(model);	
+		id_semana.setValue(model);
+		positivo_title.setValue(model);
+		positivo_val.setValue(model);
+		positivo_txt.setValue(model);
+		positivo_url.setValue(model);
+		positivo_bg.setValue(model);
+		negativo_title.setValue(model);
+		negativo_val.setValue(model);
+		negativo_txt.setValue(model);
+		negativo_url.setValue(model);
+		negativo_bg.setValue(model);	
 
 		}
 }

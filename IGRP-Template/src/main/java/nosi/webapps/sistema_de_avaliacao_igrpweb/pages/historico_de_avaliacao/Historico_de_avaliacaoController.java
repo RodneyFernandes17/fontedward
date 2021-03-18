@@ -7,6 +7,12 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.pages.historico_de_avaliacao.Historico_de_avaliacao.Chart_1;
+import java.util.Map;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanalTbl;
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import java.util.ArrayList;
@@ -14,8 +20,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanaTbl;
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanalTbl;
-
+import java.util.LinkedHashMap;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.pages.historico_de_avaliacao.Historico_de_avaliacao.Chart_1;
+import java.util.Map;
 /*----#end-code----*/
 
 public class Historico_de_avaliacaoController extends Controller {
@@ -29,16 +36,18 @@ public class Historico_de_avaliacaoController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT 'mto_bom' as media_tbl,'21' as semana,'05-07-2010' as data,'Labore adipiscing adipiscing n' as tema,'Iste deserunt voluptatem conse' as media_semanal,'Ipsum voluptatem lorem dolorem' as conteudo,'Sit lorem amet sit mollit' as pontualidade,'Sit officia aliqua magna accus' as dominio,'Ut rem magna adipiscing iste' as clareza,'Ut magna accusantium lorem ame' as proatividade,'Doloremque accusantium deserun' as nivel,'Omnis deserunt consectetur ali' as tarefas,'hidden-a9cc_d232' as id_avaliado "));
+		model.loadTable_1(Core.query(null,"SELECT 'fraco' as media_tbl,'29' as semana,'05-01-2014' as data,'Laudantium sit ut sit iste' as tema,'Elit adipiscing mollit consect' as media_semanal,'Omnis laudantium natus elit ma' as conteudo,'Stract adipiscing elit aliqua' as pontualidade,'Lorem sit anim officia volupta' as dominio,'Deserunt doloremque perspiciat' as clareza,'Adipiscing natus sit lorem dol' as proatividade,'Officia lorem sit omnis volupt' as nivel,'Aperiam rem consectetur aliqua' as tarefas,'hidden-ffd7_3249' as id_avaliado "));
 		view.chart_1.loadQuery(Core.query(null,"SELECT 'X1' as EixoX, 'Y1' as EixoY, 15 as EixoZ"
 		                              +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 10 as EixoZ"
 		                              +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 23 as EixoZ"
 		                              +" UNION SELECT 'X3' as EixoX, 'Y3' as EixoY, 40 as EixoZ"));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
+		Long max_semana = new SemanaTbl().find().getCount();
+		Integer id_avaliado = Core.getParamInt("p_id_avaliado");
+		LinkedHashMap<Integer, Long> medias = new LinkedHashMap<>();
 
 		try {
-
 			AvaliadoTbl avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
 			if (avaliadotbl != null && !avaliadotbl.hasError()) {
 				model.setNome(avaliadotbl.getNome());
@@ -46,29 +55,17 @@ public class Historico_de_avaliacaoController extends Controller {
 						avaliadotbl.getIdMentorFk() != null ? avaliadotbl.getIdMentorFk().getIdAreaFk().getAreaDesc()
 								: "");
 				model.setView_1_img(Core.getLinkFileByUuid(avaliadotbl.getIdFoto()));
+				model.setMentor(avaliadotbl.getIdMentorFk() != null ? avaliadotbl.getIdMentorFk().getNome() : "");
 			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		Integer id_avaliado = Core.getParamInt("p_id_avaliado");
-
-		try {
-			Long max_semana = new SemanaTbl().find().getCount();
-
 			List<Historico_de_avaliacao.Table_1> semanaltblTable = new ArrayList<>();
-
 			for (int semana_in = 1; semana_in <= max_semana; semana_in++) {
 				Historico_de_avaliacao.Table_1 row = new Historico_de_avaliacao.Table_1();
-
 				SemanalTbl semana_nulo = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 						.andWhere("idAvaliadoFk", "=", id_avaliado).one();
-
 				if (Core.isNull(semana_nulo)) {
 					row.setSemana(semana_in);
 					row.setData("");
-					row.setTema("Ainda sem classificação");
+					row.setTema("Ainda sem Classificação");
 					row.setConteudo("");
 					row.setPontualidade("");
 					row.setDominio("");
@@ -78,9 +75,8 @@ public class Historico_de_avaliacaoController extends Controller {
 					row.setTarefas("");
 					row.setMedia_semanal("");
 					row.setId_avaliado("");
-
+					medias.put(semana_in, (long) 0);
 				} else {
-
 					row.setSemana(semana_in);
 					SemanalTbl data = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 							.andWhere("idAvaliadoFk", "=", id_avaliado).one();
@@ -93,47 +89,39 @@ public class Historico_de_avaliacaoController extends Controller {
 							.collect(Collectors.averagingInt(e -> e.getConteudo()));
 					Long conteudo = Math.round(dadosconteudo);
 					row.setConteudo(conteudo + "");
-
 					Double dadospontual = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 							.andWhere("idAvaliadoFk", "=", id_avaliado).all().stream()
 							.collect(Collectors.averagingInt(e -> e.getPontualidade()));
 					Long pontual = Math.round(dadospontual);
 					row.setPontualidade(pontual + "");
-
 					Double dadosdominio = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 							.andWhere("idAvaliadoFk", "=", id_avaliado).all().stream()
 							.collect(Collectors.averagingInt(e -> e.getDominio()));
 					Long dominio = Math.round(dadosdominio);
 					row.setDominio(dominio + "");
-
 					Double dadosclareza = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 							.andWhere("idAvaliadoFk", "=", id_avaliado).all().stream()
 							.collect(Collectors.averagingInt(e -> e.getClareza()));
 					Long clareza = Math.round(dadosclareza);
 					row.setClareza(clareza + "");
-
 					Double dadosproat = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 							.andWhere("idAvaliadoFk", "=", id_avaliado).all().stream()
 							.collect(Collectors.averagingInt(e -> e.getProactividade()));
 					Long proativadade = Math.round(dadosproat);
 					row.setProatividade(proativadade + "");
-
 					Double dadosnivel = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 							.andWhere("idAvaliadoFk", "=", id_avaliado).all().stream()
 							.collect(Collectors.averagingInt(e -> e.getNivel()));
 					Long nivel = Math.round(dadosnivel);
 					row.setNivel(nivel + "");
-
 					Double dadostarefas = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_in)
 							.andWhere("idAvaliadoFk", "=", id_avaliado).all().stream()
 							.collect(Collectors.averagingInt(e -> e.getTarefas()));
 					Long tarefas = Math.round(dadostarefas);
 					row.setTarefas(tarefas + "");
-
 					Double Media = (double) (conteudo + pontual + dominio + clareza + proativadade + nivel + tarefas)
 							/ 7;
 					Long media_round = Math.round(Media);
-
 					row.setMedia_semanal(media_round + "");
 
 					if (media_round < 5) {
@@ -145,11 +133,21 @@ public class Historico_de_avaliacaoController extends Controller {
 					} else if (media_round >= 9) {
 						row.setMedia_tbl("mto_bom");
 					}
+					medias.put(semana_in, media_round);
 				}
 				semanaltblTable.add(row);
-
 			}
 			model.setTable_1(semanaltblTable);
+
+			model.setChart_1(new ArrayList<>());
+			for (int semana_in = 1; semana_in <= max_semana; semana_in++) {
+				Chart_1 c = new Chart_1();
+				c.setEixoX("" + semana_in);
+				c.setEixoY("Nº Semana");
+				c.setEixoZ(medias.get(semana_in));
+				model.getChart_1().add(c);
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
