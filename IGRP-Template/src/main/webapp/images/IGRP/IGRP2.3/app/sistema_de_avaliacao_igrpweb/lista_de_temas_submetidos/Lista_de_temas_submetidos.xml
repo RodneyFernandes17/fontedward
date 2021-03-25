@@ -37,6 +37,17 @@
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
     <content>
         <title>Lista de Temas Submetidos</title>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="novo_tema" flg_transaction="true" refresh_components="">
+                <title>Novo Tema</title>
+                <app>sistema_de_avaliacao_igrpweb</app>
+                <page>Tema_semanal</page>
+                <link>index</link>
+                <target>mpsubmit|refresh</target>
+                <img>purple|fa-plus-square</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/tema_semanal/Tema_semanal.xml</preview>
+            </item>
+        </toolsbar_1>
         <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
             <fields>
                 <nome name="p_nome" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
@@ -52,33 +63,38 @@
             <table>
                 <value>
                     <row>
-                        <nome name="p_nome">Laudantium perspiciatis offici</nome>
-                        <tema_semanal name="p_tema_semanal">Consectetur anim ipsum rem ips</tema_semanal>
-                        <data_de_envio name="p_data_de_envio">07-06-2012</data_de_envio>
+                        <nome name="p_nome">Ut lorem unde sit voluptatem</nome>
+                        <tema_semanal name="p_tema_semanal">Labore sit sed anim labore</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">04-04-2013</data_de_envio>
                     </row>
                     <row>
-                        <nome name="p_nome">Omnis sit anim sit natus</nome>
-                        <tema_semanal name="p_tema_semanal">Dolor sit unde aliqua ipsum</tema_semanal>
-                        <data_de_envio name="p_data_de_envio">01-02-2010</data_de_envio>
+                        <nome name="p_nome">Accusantium omnis aliqua volup</nome>
+                        <tema_semanal name="p_tema_semanal">Iste dolor lorem iste ut</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">03-06-2016</data_de_envio>
                     </row>
                     <row>
-                        <nome name="p_nome">Officia sit magna laudantium v</nome>
-                        <tema_semanal name="p_tema_semanal">Accusantium voluptatem adipisc</tema_semanal>
-                        <data_de_envio name="p_data_de_envio">08-01-2014</data_de_envio>
+                        <nome name="p_nome">Voluptatem sed labore natus se</nome>
+                        <tema_semanal name="p_tema_semanal">Unde labore rem amet officia</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">04-08-2016</data_de_envio>
                     </row>
                     <row>
-                        <nome name="p_nome">Voluptatem iste omnis ipsum ap</nome>
-                        <tema_semanal name="p_tema_semanal">Perspiciatis sit ipsum anim ac</tema_semanal>
-                        <data_de_envio name="p_data_de_envio">05-03-2015</data_de_envio>
+                        <nome name="p_nome">Elit sit laudantium unde ut</nome>
+                        <tema_semanal name="p_tema_semanal">Omnis rem totam aliqua perspic</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">08-07-2010</data_de_envio>
                     </row>
                     <row>
-                        <nome name="p_nome">Ipsum sed rem accusantium magn</nome>
-                        <tema_semanal name="p_tema_semanal">Magna sit aliqua ut anim</tema_semanal>
-                        <data_de_envio name="p_data_de_envio">08-03-2013</data_de_envio>
+                        <nome name="p_nome">Rem lorem officia consectetur</nome>
+                        <tema_semanal name="p_tema_semanal">Iste ut laudantium perspiciati</tema_semanal>
+                        <data_de_envio name="p_data_de_envio">02-02-2012</data_de_envio>
                     </row>
                 </value>
             </table>
         </table_1>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <hidden name="p_id_avaliado" type="hidden" maxlength="250" java-type="" tag="id_avaliado"/>
+            </fields>
+        </form_1>
     </content>
     <blockly>
         <imports>

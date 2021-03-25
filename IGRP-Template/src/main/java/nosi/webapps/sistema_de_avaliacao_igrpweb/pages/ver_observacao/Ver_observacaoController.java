@@ -27,6 +27,10 @@ public class Ver_observacaoController extends Controller {
 			if (semanaltbl != null && !semanaltbl.hasError()) {
 				model.setAvaliador("" + semanaltbl.getNomeAvaliador());
 				model.setObservacao(semanaltbl.getObservacao());
+				
+				if(Core.isNotNull(Core.getParam("isVer"))){
+					view.observacao.propertie().add("readonly", "true");
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

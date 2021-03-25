@@ -74,7 +74,8 @@ public class Teste_realizadoController extends Controller {
 		
 		try{
 		
-		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","igrp_studio").all();
+		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","igrp_studio")
+				.andWhere(NIVEL, "=", 1).all();
 		
 		if(perguntatbl !=null){
 			
@@ -118,7 +119,8 @@ public class Teste_realizadoController extends Controller {
 		
 	try{
 		
-		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","bpmn_report").all();
+		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","bpmn_report")
+				.andWhere(NIVEL, "=", 1).all();
 		
 		if(perguntatbl !=null){
 			
@@ -162,7 +164,8 @@ public class Teste_realizadoController extends Controller {
 	
 	try{
 		
-		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","page_designer").all();
+		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","page_designer")
+				.andWhere(NIVEL, "=", 1).all();
 		
 		if(perguntatbl !=null){
 			
@@ -206,7 +209,8 @@ public class Teste_realizadoController extends Controller {
 	
 	try{
 		
-		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","gerador_blockly").all();
+		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","gerador_blockly")
+				.andWhere(NIVEL, "=", 1).all();
 		
 		if(perguntatbl !=null){
 			
@@ -251,7 +255,8 @@ public class Teste_realizadoController extends Controller {
 	
 	try{
 		
-		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","eclipse_git").all();
+		List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","eclipse_git")
+				.andWhere(NIVEL, "=", 1).all();
 		
 		if(perguntatbl !=null){
 			
@@ -296,7 +301,8 @@ public class Teste_realizadoController extends Controller {
 	
 		try{
 			
-			List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","base_dados_dao").all();
+			List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","base_dados_dao")
+					.andWhere(NIVEL, "=", 1).all();
 			
 			if(perguntatbl !=null){
 				
@@ -340,7 +346,8 @@ public class Teste_realizadoController extends Controller {
 		
 		try{
 			
-			List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","java").all();
+			List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","java")
+					.andWhere(NIVEL, "=", 1).all();
 			
 			if(perguntatbl !=null){
 				
@@ -384,7 +391,8 @@ public class Teste_realizadoController extends Controller {
 		
 		try{
 			
-			List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","gestao_acesso").all();
+			List<PerguntaTbl> perguntatbl = new PerguntaTbl().find().where("conceito","=","gestao_acesso")
+					.andWhere(NIVEL, "=", 1).all();
 			
 			if(perguntatbl !=null){
 				
@@ -432,7 +440,9 @@ public class Teste_realizadoController extends Controller {
 		
 		
 /*----#start-code(custom_actions)----*/
-
+	private static final String CONCEITO = "conceito";
+	private static final String NIVEL = "nivel";
+	private static final String IDPERGUNTAFK = "idPerguntaFk";
 
 /*----#end-code----*/
 }

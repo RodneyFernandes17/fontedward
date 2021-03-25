@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lista_de_temas_submetidos extends Model{		
+
+	@RParam(rParamName = "p_id_avaliado")
+	private String id_avaliado;
 	
 	private List<Table_1> table_1 = new ArrayList<>();	
 	public void setTable_1(List<Table_1> table_1){
@@ -17,6 +20,13 @@ public class Lista_de_temas_submetidos extends Model{
 		return this.table_1;
 	}
 
+	
+	public void setId_avaliado(String id_avaliado){
+		this.id_avaliado = id_avaliado;
+	}
+	public String getId_avaliado(){
+		return this.id_avaliado;
+	}
 
 
 	public static class Table_1 extends IGRPTable.Table{

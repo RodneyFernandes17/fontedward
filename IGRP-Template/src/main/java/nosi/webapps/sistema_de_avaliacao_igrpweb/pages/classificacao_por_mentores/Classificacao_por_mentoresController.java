@@ -99,7 +99,7 @@ public class Classificacao_por_mentoresController extends Controller {
 		  Use model.validate() to validate your model
 		  ----#gen-example */
 		/*----#start-code(observacoes)----*/
-		
+		this.addQueryString("isVer", "true");
 		this.addQueryString("p_id_semanal", Core.getParam("p_id_semanal"));
 		/*----#end-code----*/
 		return this.redirect("sistema_de_avaliacao_igrpweb","Ver_observacao","index", this.queryString());	

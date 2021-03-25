@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.ForeignKey;
@@ -50,7 +52,7 @@ public class TesteTbl extends BaseActiveRecord<TesteTbl> {
 	@Column(name = "valor_final", nullable = false)
 	private Integer valorFinal;
 	@Column(name = "data_realizacao", nullable = false)
-	private LocalDate dataRealizacao;
+	private LocalDateTime dataRealizacao;
 	@Column(name = "valor_gestao_acesso", nullable = false)
 	private Integer valorGestaoAcesso;
 	@Column(name = "aprovacao")
@@ -136,11 +138,11 @@ public class TesteTbl extends BaseActiveRecord<TesteTbl> {
 		 this.valorFinal = valorFinal;
 	}
 
-	public LocalDate getDataRealizacao() { 
+	public LocalDateTime getDataRealizacao() { 
 		return this.dataRealizacao;
 	}
 
-	public void setDataRealizacao(LocalDate dataRealizacao) {
+	public void setDataRealizacao(LocalDateTime dataRealizacao) {
 		 this.dataRealizacao = dataRealizacao;
 	}
 

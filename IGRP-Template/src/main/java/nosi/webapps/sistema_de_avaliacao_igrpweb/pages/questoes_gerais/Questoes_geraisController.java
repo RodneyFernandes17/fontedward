@@ -4,6 +4,8 @@ import nosi.core.webapp.Controller;//
 import nosi.core.webapp.databse.helpers.ResultSet;//
 import nosi.core.webapp.databse.helpers.QueryInterface;//
 import java.io.IOException;//
+import java.time.LocalDateTime;
+
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
@@ -696,6 +698,8 @@ public class Questoes_geraisController extends Controller {
 						valor_gestao_acesso += Core.toInt(resposta_valor40.getRespostaCerta());
 					}
 					testetbl.setValorGestaoAcesso(valor_gestao_acesso);
+					
+					testetbl.setDataRealizacao(LocalDateTime.now());
 
 					int valor_final = valores.stream().mapToInt(a -> a).sum();
 

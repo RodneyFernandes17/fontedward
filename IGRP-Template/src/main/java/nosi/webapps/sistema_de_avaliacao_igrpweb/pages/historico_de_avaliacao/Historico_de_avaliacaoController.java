@@ -24,9 +24,9 @@ import java.util.LinkedHashMap;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.pages.historico_de_avaliacao.Historico_de_avaliacao.Chart_1;
 import java.util.Map;
 /*----#end-code----*/
-		
+
 public class Historico_de_avaliacaoController extends Controller {
-	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
+	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException {
 		Historico_de_avaliacao model = new Historico_de_avaliacao();
 		model.load();
 		model.setView_1_img("../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg");
@@ -38,17 +38,27 @@ public class Historico_de_avaliacaoController extends Controller {
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
 		model.loadTable_1(Core.query(null,"SELECT 'bom' as media_tbl,'6' as semana,'01-02-2017' as data,'Anim omnis sit perspiciatis re' as tema,'Consectetur sed lorem ipsum ap' as media_semanal,'Deserunt iste deserunt unde st' as conteudo,'Iste perspiciatis sit iste ape' as pontualidade,'Natus ipsum deserunt magna off' as dominio,'Ipsum doloremque dolor aliqua' as clareza,'Ut amet consectetur ipsum ut' as proatividade,'Ut unde labore ut dolor' as nivel,'Ipsum iste doloremque sed rem' as tarefas,'hidden-af50_1d67' as id_avaliado "));
 		view.chart_1.loadQuery(Core.query(null,"SELECT 'X1' as EixoX, 'Y1' as EixoY, 15 as EixoZ"
-                                      +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 10 as EixoZ"
-                                      +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 23 as EixoZ"
-                                      +" UNION SELECT 'X3' as EixoX, 'Y3' as EixoY, 40 as EixoZ"));
+		                              +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 10 as EixoZ"
+		                              +" UNION SELECT 'X2' as EixoX, 'Y2' as EixoY, 23 as EixoZ"
+		                              +" UNION SELECT 'X3' as EixoX, 'Y3' as EixoY, 40 as EixoZ"));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
-		Long max_semana = new SemanaTbl().find().getCount();
-		Integer id_avaliado = Core.getParamInt("p_id_avaliado");
-		LinkedHashMap<Integer, Long> medias = new LinkedHashMap<>();
 
 		try {
-			AvaliadoTbl avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
+			Long max_semana = new SemanaTbl().find().getCount();
+			LinkedHashMap<Integer, Long> medias = new LinkedHashMap<>();
+			
+			Integer id_avaliado_param = Core.getParamInt("p_id_avaliado");
+			Integer id_avaliado;
+			AvaliadoTbl avaliadotbl;
+			if(Core.isNotNullOrZero(id_avaliado_param)) {
+				id_avaliado = Core.getParamInt("p_id_avaliado");
+				 avaliadotbl = new AvaliadoTbl().findOne(id_avaliado);
+			}else {
+				 avaliadotbl = new AvaliadoTbl().find().andWhere("idUtilizador","=",Core.getCurrentUser().getId()).one();
+				id_avaliado = avaliadotbl.getIdAvaliado();			
+			}	
+			
 			if (avaliadotbl != null && !avaliadotbl.hasError()) {
 				model.setNome(avaliadotbl.getNome());
 				model.setArea(
@@ -154,10 +164,11 @@ public class Historico_de_avaliacaoController extends Controller {
 
 		/*----#end-code----*/
 		view.setModel(model);
-		return this.renderView(view);	
+		return this.renderView(view);
 	}
-	
-	public Response actionClassificacao_por_mentores() throws IOException, IllegalArgumentException, IllegalAccessException{
+
+	public Response actionClassificacao_por_mentores()
+			throws IOException, IllegalArgumentException, IllegalAccessException {
 		Historico_de_avaliacao model = new Historico_de_avaliacao();
 		model.load();
 		/*----#gen-example
@@ -174,12 +185,10 @@ public class Historico_de_avaliacaoController extends Controller {
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb","Classificacao_por_mentores","index", this.queryString());	
+		return this.redirect("sistema_de_avaliacao_igrpweb", "Classificacao_por_mentores", "index", this.queryString());
 	}
-	
-		
-		
-/*----#start-code(custom_actions)----*/
+
+	/*----#start-code(custom_actions)----*/
 
 	/*----#end-code----*/
 }
