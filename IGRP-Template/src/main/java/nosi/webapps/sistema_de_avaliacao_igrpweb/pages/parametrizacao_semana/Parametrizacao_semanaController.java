@@ -50,7 +50,7 @@ public class Parametrizacao_semanaController extends Controller {
 			}
 
 			SemanaTbl semanatblfilter = new SemanaTbl().find();
-			List<SemanaTbl> semanatblList = semanatblfilter.all();
+			List<SemanaTbl> semanatblList = semanatblfilter.orderByDesc("nrSemana").all();
 			List<Parametrizacao_semana.Table_1> semanatblTable = new ArrayList<>();
 			if (semanatblList != null) {
 				for (SemanaTbl semanatbl : semanatblList) {

@@ -12,11 +12,11 @@ public class DashboardView extends View {
 
 	public DashboardView(){
 
-		this.setPageTitle("Dashboard");
+		this.setPageTitle("Estatísticas");
 			
-		chart_2 = new IGRPChart("chart_2","Teste Realizado por Universidade");
+		chart_2 = new IGRPChart("chart_2","Teste igrpweb Realizado por Universidade");
 
-		chart_1 = new IGRPChart("chart_1","Teste por Área de Formação");
+		chart_1 = new IGRPChart("chart_1","Teste igrpweb por Área de Formação");
 
 
 
@@ -26,14 +26,14 @@ public class DashboardView extends View {
 		chart_2.setXaxys("Eixo de X");
 		chart_2.setYaxys("Eixo de Y");
 		chart_2.setUrl("#");
-		//ex: chart_2.addColor("#718106").addColor("#542fea").addColor("#a910e6").addColor("#333bef");
+		//ex: chart_2.addColor("#69f82c").addColor("#bed286").addColor("#2ac2fc").addColor("#38b065");
 
 		chart_1.setCaption("");
 		chart_1.setChart_type("column");
 		chart_1.setXaxys("Eixo de X");
 		chart_1.setYaxys("Eixo de Y");
 		chart_1.setUrl("#");
-		//ex: chart_1.addColor("#fb392e").addColor("#e0b260").addColor("#f80dd3").addColor("#45ec71");
+		//ex: chart_1.addColor("#840c8f").addColor("#62e78b").addColor("#883ca6").addColor("#fae56f");
 
 	}
 		

@@ -13,42 +13,67 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanalTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanaTbl;
+
 import java.time.LocalDate;
+import java.util.List;
+
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TemaTbl;
 /*----#end-code----*/
-		
+
 public class Formulario_avaliacao_semanalController extends Controller {
-	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
+	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException {
 		Formulario_avaliacao_semanal model = new Formulario_avaliacao_semanal();
 		model.load();
 		model.setView_1_img("../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg");
 		Formulario_avaliacao_semanalView view = new Formulario_avaliacao_semanalView();
 		/*----#start-code(index)----*/
+		try {
+			Integer id_avaliado = Core.getParamInt("p_id_avaliado");
 
-		Integer id_avaliado = Core.getParamInt("p_id_avaliado");
+			/**************** ENVIAR AVISOS *******************************************/
 
-		TemaTbl tema = new TemaTbl().find().andWhere("idAvaliadoFk", "=", id_avaliado)
-				.andWhere("nrSemana.atual", "=", true).one();
-		if (tema != null && !tema.hasError()) {
-			model.setNome(tema.getIdAvaliadoFk().getNome());
-			model.setArea(tema.getIdAvaliadoFk().getIdMentorFk()!=null?tema.getIdAvaliadoFk().getIdMentorFk().getIdAreaFk().getAreaDesc():"");
-			model.setMentor(tema.getIdAvaliadoFk().getIdMentorFk()!=null?tema.getIdAvaliadoFk().getIdMentorFk().getNome():"");
-			model.setView_1_img(
-					tema.getIdAvaliadoFk() != null ? Core.getLinkFileByUuid(tema.getIdAvaliadoFk().getIdFoto()) : null);
-			model.setSemana(tema.getNrSemana().getNrSemana());
-			model.setTema_semanal(tema.getTema());
-			model.setId_tema(tema.getId());
-			model.setId_avaliado(tema.getIdAvaliadoFk().getIdAvaliado() + "");
-		}
-		
-		
-		try{
+			SemanaTbl semana_atual = new SemanaTbl().find().andWhere("atual", "=", true).one();
+			Integer semana_anterior = semana_atual.getNrSemana() - 1;
+			List<SemanalTbl> semanna = new SemanalTbl().find().andWhere("idTemaFk.nrSemana", "=", semana_anterior)
+					.andWhere("idAvaliadoFk", "=", Core.getParamInt("p_id_avaliado")).all();
+
+			for (SemanalTbl obs : semanna) {
+				if (Core.isNotNull(obs.getObservacao())) {
+					Core.setMessageWarning(
+							"Observação Semana Anterior: " + obs.getObservacao() + " (" + obs.getNomeAvaliador() + ")");
+				}
+
+			}
+
+			/**************** EDIÇÃO *******************************************/
+
+			TemaTbl tema = new TemaTbl().find().andWhere("idAvaliadoFk", "=", id_avaliado)
+					.andWhere("nrSemana.atual", "=", true).one();
+			if (tema != null && !tema.hasError()) {
+				model.setNome(tema.getIdAvaliadoFk().getNome());
+				model.setArea(tema.getIdAvaliadoFk().getIdMentorFk() != null
+						? tema.getIdAvaliadoFk().getIdMentorFk().getIdAreaFk().getAreaDesc()
+						: "");
+				model.setMentor(tema.getIdAvaliadoFk().getIdMentorFk() != null
+						? tema.getIdAvaliadoFk().getIdMentorFk().getNome()
+						: "");
+				model.setView_1_img(
+						tema.getIdAvaliadoFk() != null ? Core.getLinkFileByUuid(tema.getIdAvaliadoFk().getIdFoto())
+								: null);
+				model.setSemana(tema.getNrSemana().getNrSemana());
+				model.setTema_semanal(tema.getTema());
+				model.setId_tema(tema.getId());
+				model.setId_avaliado(tema.getIdAvaliadoFk().getIdAvaliado() + "");
+			}
+
 			String isEdit = Core.getParam("isEdit");
 			if (Core.isNotNull(isEdit)) {
-				SemanalTbl semanaltbl = new SemanalTbl().find().andWhere("idSemanal","=",Core.getParamInt("p_id_semanal"))
-						.andWhere("idAvaliador","=",Core.getCurrentUser().getId()).one();
-				
-				if (semanaltbl!=null && !semanaltbl.hasError()) {
+				SemanalTbl semanaltbl = new SemanalTbl().find()
+						.andWhere("idSemanal", "=", Core.getParamInt("p_id_semanal"))
+						.andWhere("idAvaliador", "=", Core.getCurrentUser().getId()).one();
+
+				if (semanaltbl != null && !semanaltbl.hasError()) {
 					model.setSemana(semanaltbl.getIdTemaFk().getNrSemana().getNrSemana());
 					model.setTema_semanal(semanaltbl.getIdTemaFk().getTema());
 					model.setConteudo(semanaltbl.getConteudo());
@@ -58,23 +83,24 @@ public class Formulario_avaliacao_semanalController extends Controller {
 					model.setProactividade(semanaltbl.getProactividade());
 					model.setAprendizagem(semanaltbl.getNivel());
 					model.setTarefas(semanaltbl.getTarefas());
-					model.setId_avaliado(""+semanaltbl.getIdAvaliadoFk().getIdAvaliado());
-					model.setId_semanal(""+semanaltbl.getIdSemanal());
+					model.setId_avaliado("" + semanaltbl.getIdAvaliadoFk().getIdAvaliado());
+					model.setId_semanal("" + semanaltbl.getIdSemanal());
 					model.setId_tema(semanaltbl.getIdTemaFk().getId());
-			
+					model.setObservacoes(semanaltbl.getObservacao());
+
 					view.btn_submeter_avaliacao.addParameter("isEdit", "true");
 				}
 			}
-			}catch ( Exception e ) {
-				e.printStackTrace();
-			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		/*----#end-code----*/
 		view.setModel(model);
-		return this.renderView(view);	
+		return this.renderView(view);
 	}
-	
-	public Response actionSubmeter_avaliacao() throws IOException, IllegalArgumentException, IllegalAccessException{
+
+	public Response actionSubmeter_avaliacao() throws IOException, IllegalArgumentException, IllegalAccessException {
 		Formulario_avaliacao_semanal model = new Formulario_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -86,71 +112,70 @@ public class Formulario_avaliacao_semanalController extends Controller {
 		  ----#gen-example */
 		/*----#start-code(submeter_avaliacao)----*/
 
-			Session session = null;
-			Transaction transaction = null;
-			String isEdit = Core.getParam("isEdit");
-			try {
-				if (model.validate()) {
-					session = Core.getSession(Core.defaultConnection());
-					transaction = session.getTransaction();
-					if (!transaction.isActive())
-						transaction.begin();
+		Session session = null;
+		Transaction transaction = null;
+		String isEdit = Core.getParam("isEdit");
+		try {
+			if (model.validate()) {
+				session = Core.getSession(Core.defaultConnection());
+				transaction = session.getTransaction();
+				if (!transaction.isActive())
+					transaction.begin();
 
-					SemanalTbl semanaltbl = new SemanalTbl();
-					if (Core.isNotNull(isEdit)) {
-						semanaltbl = session.find(SemanalTbl.class, Core.getParamInt("p_id_semanal"));
-					}
-					if (semanaltbl != null) {
-						AvaliadoTbl avaliadotbl_foreign = session.find(AvaliadoTbl.class,
-								Core.toInt(model.getId_avaliado()));
-						semanaltbl.setIdAvaliadoFk(avaliadotbl_foreign);
-						semanaltbl.setConteudo(model.getConteudo());
-						semanaltbl.setPontualidade(model.getPontualidade());
-						semanaltbl.setDominio(model.getDominio());
-						semanaltbl.setClareza(model.getClareza());
-						semanaltbl.setProactividade(model.getProactividade());
-						semanaltbl.setNivel(model.getAprendizagem());
-						semanaltbl.setTarefas(model.getTarefas());
-						semanaltbl.setData(LocalDate.now());
-						semanaltbl.setIdAvaliador(Core.getCurrentUser().getId());
-						semanaltbl.setNomeAvaliador(Core.getCurrentUser().getName());
-						TemaTbl tema_for = session.find(TemaTbl.class, model.getId_tema());
-						semanaltbl.setIdTemaFk(tema_for);
-						
-					}
-					session.persist(semanaltbl);
-					transaction.commit();
-
-					Core.setMessageSuccess();
-				} else
-					Core.setMessageError();
-			} catch (Exception e) {
-				e.printStackTrace();
-				Core.setMessageError("Error: " + e.getMessage());
-				if (transaction != null)
-					transaction.rollback();
-			} finally {
-				if (session != null && session.isOpen()) {
-					session.close();
+				SemanalTbl semanaltbl = new SemanalTbl();
+				if (Core.isNotNull(isEdit)) {
+					semanaltbl = session.find(SemanalTbl.class, Core.getParamInt("p_id_semanal"));
 				}
+				if (semanaltbl != null) {
+					AvaliadoTbl avaliadotbl_foreign = session.find(AvaliadoTbl.class,
+							Core.toInt(model.getId_avaliado()));
+					semanaltbl.setIdAvaliadoFk(avaliadotbl_foreign);
+					semanaltbl.setConteudo(model.getConteudo());
+					semanaltbl.setPontualidade(model.getPontualidade());
+					semanaltbl.setDominio(model.getDominio());
+					semanaltbl.setClareza(model.getClareza());
+					semanaltbl.setProactividade(model.getProactividade());
+					semanaltbl.setNivel(model.getAprendizagem());
+					semanaltbl.setTarefas(model.getTarefas());
+					semanaltbl.setData(LocalDate.now());
+					semanaltbl.setIdAvaliador(Core.getCurrentUser().getId());
+					semanaltbl.setObservacao(model.getObservacoes());
+					semanaltbl.setNomeAvaliador(Core.getCurrentUser().getName());
+					TemaTbl tema_for = session.find(TemaTbl.class, model.getId_tema());
+					semanaltbl.setIdTemaFk(tema_for);
+
+				}
+				session.persist(semanaltbl);
+				transaction.commit();
+
+				Core.setMessageSuccess();
+			} else
+				Core.setMessageError();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Core.setMessageError("Error: " + e.getMessage());
+			if (transaction != null)
+				transaction.rollback();
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
 			}
+		}
 
-			if (Core.isNotNull(isEdit)) {
+		if (Core.isNotNull(isEdit)) {
 
-				this.addQueryString("isEdit", "true");
-				return this.forward("sistema_de_avaliacao_igrpweb", "Formulario_avaliacao_semanal", "index",
-						this.queryString());
-			}	
+			this.addQueryString("isEdit", "true");
+			return this.forward("sistema_de_avaliacao_igrpweb", "Formulario_avaliacao_semanal", "index",
+					this.queryString());
+		}
 
 		return this.redirect("sistema_de_avaliacao_igrpweb", "Formulario_avaliacao_semanal", "index",
 				this.queryString());
 		/*----#end-code----*/
-			
+
 	}
-	
-		
-		
-/*----#start-code(custom_actions)----*/
+
+	/*----#start-code(custom_actions)----*/
 
 	/*----#end-code----*/
 }

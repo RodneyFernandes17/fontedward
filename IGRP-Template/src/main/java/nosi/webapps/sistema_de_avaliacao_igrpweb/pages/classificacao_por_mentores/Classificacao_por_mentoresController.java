@@ -52,6 +52,9 @@ public class Classificacao_por_mentoresController extends Controller {
 				if(!Core.getCurrentUser().getId().equals(sem.getIdAvaliador()))
 					row.hiddenButton(view.btn_editar);
               row.setId_semanal(""+sem.getIdSemanal());
+              if(Core.isNull(sem.getObservacao()))
+            	  row.hiddenButton(view.btn_observacoes);
+              
 				semanaltblTable.add(row);
 			}
 			model.setTable_1(semanaltblTable);

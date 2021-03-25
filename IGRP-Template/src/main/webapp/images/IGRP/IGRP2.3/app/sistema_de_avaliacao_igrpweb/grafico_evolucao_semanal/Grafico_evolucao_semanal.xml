@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/grafico_evolucao_semanal/Grafico_evolucao_semanal.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Grafico_evolucao_semanal</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Grafico_evolucao_semanal</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=101</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Gráfico Evolução Semanal</title>
+        <form_1 type="form" xml-type="form" title="Selecionar Estagiários" gen-type="container" gen-group="">
+            <fields>
+                <estagiarios name="p_estagiarios" type="select" multiple="true" tags="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Estagiários</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </estagiarios>
+            </fields>
+            <tools-bar>
+                <item id="button_4a0b_a46c" type="form" code="" class="success" rel="filtrar" custom_return="true" refresh_components="chart_1">
+                    <title>Filtrar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Grafico_evolucao_semanal</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/grafico_evolucao_semanal/Grafico_evolucao_semanal.xml?</parameter>
+                    <target>submit_ajax</target>
+                    <img>success|fa-search</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/grafico_evolucao_semanal/Grafico_evolucao_semanal.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <chart_1 type="chart" xml-type="chart" title="Gráfico de Evolução" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>line</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>122</col>
+                    <col>934</col>
+                    <col>674</col>
+                    <col>257</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>820</col>
+                    <col>368</col>
+                    <col>323</col>
+                    <col>382</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>554</col>
+                    <col>652</col>
+                    <col>663</col>
+                </row>
+            </value>
+            <colors>
+                <col>#6447d0</col>
+                <col>#0c2b8b</col>
+                <col>#af8d68</col>
+                <col>#a23cb8</col>
+            </colors>
+        </chart_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="grafico">chart_1</import>
+            <import type="combo_dao">Combo Dao</import>
+            <import type="dao">AvaliadoTbl</import>
+        </imports>
+        <xml>
+            <block type="combo_dao" id="o9MYB9xplnlxYhU*nM%p" inline="true" x="613" y="-12">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="selecao">estagiarios</field>
+                <field name="dao">AvaliadoTbl</field>
+                <field name="selecionar">TRUE</field>
+                <statement name="key_val">
+                    <block type="option_dao" id="zj:U,rWLtv`loaOTQ/-[" inline="true">
+                        <value name="key_val">
+                            <block type="get-dao-AvaliadoTbl" id="vos%UibK?D7l2mv|R}Xp">
+                                <mutation hover_type="Integer::idAvaliado"></mutation>
+                                <field name="DAO_FIELD">Integer::idAvaliado</field>
+                            </block>
+                        </value>
+                        <value name="value_val">
+                            <block type="get-dao-AvaliadoTbl" id="z%Tz.`I5rrocIFqGT)hE">
+                                <mutation hover_type="String::nome"></mutation>
+                                <field name="DAO_FIELD">String::nome</field>
+                            </block>
+                        </value>
+                    </block>
+                </statement>
+            </block>
+            <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="grafico_chart_1" id="lWV8|Jvu0=(Fu9Wh,u(A" inline="true" x="738" y="138">
+                <mutation pxchecked="false" limit="false" count="1" mutation-1="andWhere"></mutation>
+                <field name="dao">AvaliadoTbl</field>
+                <field name="ADD1FILTER">andWhere</field>
+                <field name="ADD1WHERE">WHERE_EQ</field>
+                <statement name="value2">
+                    <block type="EixoX" id="kVsaZ~-3{2`T)sxOublR">
+                        <next>
+                            <block type="EixoY" id="jo,|Q;K!f;DgHwJ~mYZ2">
+                                <next>
+                                    <block type="EixoZ" id="`S@kpU1_O|}[{M;bno_/"></block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>

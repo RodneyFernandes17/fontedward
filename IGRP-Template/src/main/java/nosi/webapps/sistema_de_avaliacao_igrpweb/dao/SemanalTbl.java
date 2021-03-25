@@ -1,24 +1,26 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import java.time.LocalDate;
-import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
+import javax.persistence.Column;
+import javax.validation.constraints.Size;
 import javax.persistence.ForeignKey;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
- * @author: Nositeste 13-03-2021
+ * @author: Nositeste 19-03-2021
 */
 
 @Entity
-@Table(name = "semanal_tbl", schema = "")
+@Table(name = "semanal_tbl", schema = "public")
 @NamedQuery(name = "SemanalTbl.findAll", query = "SELECT t FROM SemanalTbl t")
 public class SemanalTbl extends BaseActiveRecord<SemanalTbl> {
 
@@ -28,34 +30,47 @@ public class SemanalTbl extends BaseActiveRecord<SemanalTbl> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_semanal", updatable = false, nullable = false)
+	@Column(name = "id_semanal", nullable = false, updatable = false)
  	private Integer idSemanal;
 	@ManyToOne
-	@JoinColumn(name = "id_avaliado_fk", foreignKey = @ForeignKey(name = "avaliado_fkey"), nullable = false)
+	@JoinColumn(name = "id_avaliado_fk", foreignKey = @ForeignKey(name = "avaliado_fkey"))
 	private AvaliadoTbl idAvaliadoFk;
-	@Column(name = "conteudo", nullable = false)
+	@NotNull
+	@Column(name = "conteudo")
 	private Integer conteudo;
-	@Column(name = "pontualidade", nullable = false)
+	@NotNull
+	@Column(name = "pontualidade")
 	private Integer pontualidade;
-	@Column(name = "dominio", nullable = false)
+	@NotNull
+	@Column(name = "dominio")
 	private Integer dominio;
-	@Column(name = "clareza", nullable = false)
+	@NotNull
+	@Column(name = "clareza")
 	private Integer clareza;
-	@Column(name = "proactividade", nullable = false)
+	@NotNull
+	@Column(name = "proactividade")
 	private Integer proactividade;
-	@Column(name = "nivel", nullable = false)
+	@NotNull
+	@Column(name = "nivel")
 	private Integer nivel;
-	@Column(name = "tarefas", nullable = false)
+	@NotNull
+	@Column(name = "tarefas")
 	private Integer tarefas;
-	@Column(name = "data", nullable = false)
+	@NotNull
+	@Column(name = "data")
 	private LocalDate data;
-	@Column(name = "id_avaliador", nullable = false)
+	@NotNull
+	@Column(name = "id_avaliador")
 	private Integer idAvaliador;
-	@Column(name = "nome_avaliador", length = 2147483647)
+	@Size(max = 2147483647)
+	@Column(name = "nome_avaliador")
 	private String nomeAvaliador;
 	@ManyToOne
 	@JoinColumn(name = "id_tema_fk", foreignKey = @ForeignKey(name = "tema_fk"))
 	private TemaTbl idTemaFk;
+	@Size(max = 2147483647)
+	@Column(name = "observacao")
+	private String observacao;
 
 	public Integer getIdSemanal() { 
 		return this.idSemanal;
@@ -159,6 +174,14 @@ public class SemanalTbl extends BaseActiveRecord<SemanalTbl> {
 
 	public void setIdTemaFk(TemaTbl idTemaFk) {
 		 this.idTemaFk = idTemaFk;
+	}
+
+	public String getObservacao() { 
+		return this.observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		 this.observacao = observacao;
 	}
 
 }

@@ -51,6 +51,9 @@ public class Formulario_avaliacao_semanal extends Model{
 	@RParam(rParamName = "p_tarefas")
 	private Integer tarefas;
 
+	@RParam(rParamName = "p_observacoes")
+	private String observacoes;
+
 	@NotNull()
 	@RParam(rParamName = "p_id_avaliado")
 	private String id_avaliado;
@@ -161,6 +164,13 @@ public class Formulario_avaliacao_semanal extends Model{
 	}
 	public Integer getTarefas(){
 		return this.tarefas;
+	}
+	
+	public void setObservacoes(String observacoes){
+		this.observacoes = observacoes;
+	}
+	public String getObservacoes(){
+		return this.observacoes;
 	}
 	
 	public void setId_avaliado(String id_avaliado){

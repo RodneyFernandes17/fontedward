@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lista_de_perguntas extends Model{		
+
+	@RParam(rParamName = "p_conceito_form")
+	private String conceito_form;
+
+	@RParam(rParamName = "p_nivel_form")
+	private String nivel_form;
 	
 	private List<Table_1> table_1 = new ArrayList<>();	
 	public void setTable_1(List<Table_1> table_1){
@@ -17,11 +23,26 @@ public class Lista_de_perguntas extends Model{
 		return this.table_1;
 	}
 
+	
+	public void setConceito_form(String conceito_form){
+		this.conceito_form = conceito_form;
+	}
+	public String getConceito_form(){
+		return this.conceito_form;
+	}
+	
+	public void setNivel_form(String nivel_form){
+		this.nivel_form = nivel_form;
+	}
+	public String getNivel_form(){
+		return this.nivel_form;
+	}
 
 
 	public static class Table_1 extends IGRPTable.Table{
 		private String conceito;
 		private String pergunta;
+		private String nivel;
 		private String id_pergunta;
 		public void setConceito(String conceito){
 			this.conceito = conceito;
@@ -35,6 +56,13 @@ public class Lista_de_perguntas extends Model{
 		}
 		public String getPergunta(){
 			return this.pergunta;
+		}
+
+		public void setNivel(String nivel){
+			this.nivel = nivel;
+		}
+		public String getNivel(){
+			return this.nivel;
 		}
 
 		public void setId_pergunta(String id_pergunta){

@@ -22,6 +22,7 @@ public class Formulario_avaliacao_semanalView extends View {
 	public Field proactividade;
 	public Field aprendizagem;
 	public Field tarefas;
+	public Field observacoes;
 	public Field id_avaliado;
 	public Field id_semanal;
 	public Field id_tema;
@@ -98,6 +99,10 @@ public class Formulario_avaliacao_semanalView extends View {
 		tarefas.setLabel(gt("Tarefas"));
 		tarefas.propertie().add("name","p_tarefas").add("type","range").add("rangeMin","0").add("rangeMax","10").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
 		
+		observacoes = new TextAreaField(model,"observacoes");
+		observacoes.setLabel(gt("Observações"));
+		observacoes.propertie().add("name","p_observacoes").add("type","textarea").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
+		
 		id_avaliado = new HiddenField(model,"id_avaliado");
 		id_avaliado.setLabel(gt(""));
 		id_avaliado.propertie().add("name","p_id_avaliado").add("type","hidden").add("maxlength","250").add("java-type","").add("tag","id_avaliado");
@@ -141,6 +146,7 @@ public class Formulario_avaliacao_semanalView extends View {
 		form_1.addField(proactividade);
 		form_1.addField(aprendizagem);
 		form_1.addField(tarefas);
+		form_1.addField(observacoes);
 		form_1.addField(id_avaliado);
 		form_1.addField(id_semanal);
 		form_1.addField(id_tema);
@@ -170,6 +176,7 @@ public class Formulario_avaliacao_semanalView extends View {
 		proactividade.setValue(model);
 		aprendizagem.setValue(model);
 		tarefas.setValue(model);
+		observacoes.setValue(model);
 		id_avaliado.setValue(model);
 		id_semanal.setValue(model);
 		id_tema.setValue(model);	

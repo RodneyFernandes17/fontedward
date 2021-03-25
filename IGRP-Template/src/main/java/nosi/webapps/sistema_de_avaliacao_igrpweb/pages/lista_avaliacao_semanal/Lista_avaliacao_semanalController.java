@@ -7,6 +7,7 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
@@ -19,9 +20,9 @@ import java.util.List;
 import java.time.LocalDate;
 import java.util.Map;
 /*----#end-code----*/
-
+		
 public class Lista_avaliacao_semanalController extends Controller {
-	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException {
+	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		Lista_avaliacao_semanalView view = new Lista_avaliacao_semanalView();
@@ -30,7 +31,7 @@ public class Lista_avaliacao_semanalController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Dolor ut labore amet consectet' as nome,'Aperiam stract sit ipsum sit l' as edicao,'Aliqua stract sit unde sit' as area,'Perspiciatis unde deserunt ali' as mentor,'hidden-fbfd_3294' as id_teste,'hidden-1fca_ae7d' as id_avaliado,'hidden-3f4c_8876' as id_utilizador "));
+		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Sit aperiam elit ipsum dolor l' as nome,'Amet lorem iste ut voluptatem' as edicao,'Iste voluptatem accusantium un' as area,'Consectetur voluptatem amet om' as mentor,'hidden-1482_3ba0' as id_teste,'hidden-0ed1_5c2e' as id_avaliado,'hidden-97d8_5b0d' as id_utilizador "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		try {
@@ -84,10 +85,10 @@ public class Lista_avaliacao_semanalController extends Controller {
 
 		/*----#end-code----*/
 		view.setModel(model);
-		return this.renderView(view);
+		return this.renderView(view);	
 	}
-
-	public Response actionVer() throws IOException, IllegalArgumentException, IllegalAccessException {
+	
+	public Response actionVer() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -104,10 +105,10 @@ public class Lista_avaliacao_semanalController extends Controller {
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb", "Formulario_de_inscricao", "index", this.queryString());
+		return this.redirect("sistema_de_avaliacao_igrpweb","Formulario_de_inscricao","index", this.queryString());	
 	}
-
-	public Response actionAvaliacao_semanal() throws IOException, IllegalArgumentException, IllegalAccessException {
+	
+	public Response actionAvaliacao_semanal() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -123,11 +124,10 @@ public class Lista_avaliacao_semanalController extends Controller {
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb", "Formulario_avaliacao_semanal", "index",
-				this.queryString());
+		return this.redirect("sistema_de_avaliacao_igrpweb","Formulario_avaliacao_semanal","index", this.queryString());	
 	}
-
-	public Response actionInserir_tema() throws IOException, IllegalArgumentException, IllegalAccessException {
+	
+	public Response actionInserir_tema() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -143,11 +143,10 @@ public class Lista_avaliacao_semanalController extends Controller {
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb", "Tema_semanal", "index", this.queryString());
+		return this.redirect("sistema_de_avaliacao_igrpweb","Tema_semanal","index", this.queryString());	
 	}
-
-	public Response actionHistorico_de_avaliacoes()
-			throws IOException, IllegalArgumentException, IllegalAccessException {
+	
+	public Response actionHistorico_de_avaliacoes() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
 		model.load();
 		/*----#gen-example
@@ -163,10 +162,40 @@ public class Lista_avaliacao_semanalController extends Controller {
 
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb", "Historico_de_avaliacao", "index", this.queryString());
+		return this.redirect("sistema_de_avaliacao_igrpweb","Historico_de_avaliacao","index", this.queryString());	
 	}
-
-	/*----#start-code(custom_actions)----*/
+	
+	public Response actionEliminar() throws IOException, IllegalArgumentException, IllegalAccessException{
+		Lista_avaliacao_semanal model = new Lista_avaliacao_semanal();
+		model.load();
+		/*----#gen-example
+		  EXAMPLES COPY/PASTE:
+		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
+		  this.addQueryString("p_id","12"); //to send a query string in the URL
+		  this.addQueryString("p_id_teste",Core.getParam("p_id_teste"));
+		  this.addQueryString("p_id_avaliado",Core.getParam("p_id_avaliado"));
+		  return this.forward("sistema_de_avaliacao_igrpweb","Formulario_de_inscricao","index",this.queryString()); //if submit, loads the values
+		  Use model.validate() to validate your model
+		  ----#gen-example */
+		/*----#start-code(eliminar)----*/
+		
+		AvaliadoTbl avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
+	if (avaliadotbl != null && !avaliadotbl.hasError()) {
+		boolean del = avaliadotbl.delete(avaliadotbl.getIdAvaliado());
+		if (del == true)
+			Core.setMessageSuccess("Deleted from DB successfully!");
+		else
+			Core.setMessageError("Error deleting person from DB!");
+	} else {
+		Core.setMessageError(avaliadotbl.getError().toString());
+	}
+		/*----#end-code----*/
+		return this.redirect("sistema_de_avaliacao_igrpweb","Formulario_de_inscricao","index", this.queryString());	
+	}
+	
+		
+		
+/*----#start-code(custom_actions)----*/
 
 	/*----#end-code----*/
 }

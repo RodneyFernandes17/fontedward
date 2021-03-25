@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/estatistica_mentores_e_areas/Estatistica_mentores_e_areas.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Estatistica_mentores_e_areas</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Estatistica_mentores_e_areas</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=103</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Estatística Mentores e Áreas</title>
+        <form_2 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <areas_ou_projetos name="p_areas_ou_projetos" type="select" multiple="true" tags="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Áreas ou Projetos</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </areas_ou_projetos>
+            </fields>
+            <tools-bar>
+                <item id="button_b76e_68f5" type="form" code="" class="primary" rel="filtrar_area" custom_return="true" refresh_components="chart_1">
+                    <title>Filtrar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Estatistica_mentores_e_areas</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/estatistica_mentores_e_areas/Estatistica_mentores_e_areas.xml?</parameter>
+                    <target>submit_ajax</target>
+                    <img>primary|fa-filter</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/estatistica_mentores_e_areas/Estatistica_mentores_e_areas.xml</preview>
+                </item>
+            </tools-bar>
+        </form_2>
+        <chart_1 type="chart" xml-type="chart" title="Nº de Estagiários por Áreas ou Projetos" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>column</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>227</col>
+                    <col>670</col>
+                    <col>362</col>
+                    <col>399</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>452</col>
+                    <col>14</col>
+                    <col>456</col>
+                    <col>260</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>75</col>
+                    <col>193</col>
+                    <col>930</col>
+                </row>
+            </value>
+            <colors>
+                <col>#15d58a</col>
+                <col>#47636e</col>
+                <col>#47a8a3</col>
+                <col>#cc914c</col>
+            </colors>
+        </chart_1>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <mentores name="p_mentores" type="select" multiple="true" tags="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Mentores</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </mentores>
+            </fields>
+            <tools-bar>
+                <item id="button_9c9c_12fd" type="form" code="" class="primary" rel="filtrar" custom_return="true" refresh_components="chart_2">
+                    <title>Filtrar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Estatistica_mentores_e_areas</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/estatistica_mentores_e_areas/Estatistica_mentores_e_areas.xml?</parameter>
+                    <target>submit_ajax</target>
+                    <img>primary|fa-filter</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/estatistica_mentores_e_areas/Estatistica_mentores_e_areas.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <chart_2 type="chart" xml-type="chart" title="Nº de Estagiários por Mentores" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>column</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>119</col>
+                    <col>248</col>
+                    <col>428</col>
+                    <col>486</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>142</col>
+                    <col>340</col>
+                    <col>263</col>
+                    <col>117</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>119</col>
+                    <col>486</col>
+                    <col>95</col>
+                </row>
+            </value>
+            <colors>
+                <col>#02cb67</col>
+                <col>#da500f</col>
+                <col>#310452</col>
+                <col>#17d675</col>
+            </colors>
+        </chart_2>
+    </content>
+    <blockly>
+        <imports>
+            <import type="grafico">chart_1</import>
+            <import type="grafico">chart_2</import>
+            <import type="combo_dao">Combo Dao</import>
+            <import type="dao">MentorTbl</import>
+            <import type="dao">AreaTbl</import>
+            <import type="dao">AvaliadoTbl</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="combo_dao" id="SIZ!rSdI]lAgUsu:i#_Y" inline="true" x="663" y="13">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="selecao">mentores</field>
+                <field name="dao">MentorTbl</field>
+                <field name="selecionar">TRUE</field>
+                <statement name="key_val">
+                    <block type="option_dao" id="R{W=!+[L.)VOVjsbks4." inline="true">
+                        <value name="key_val">
+                            <block type="get-dao-MentorTbl" id="QQ_b),OUj]xoS}QL*Mpw">
+                                <mutation hover_type="Integer::id"></mutation>
+                                <field name="DAO_FIELD">Integer::id</field>
+                            </block>
+                        </value>
+                        <value name="value_val">
+                            <block type="get-dao-MentorTbl" id="0;QN%NQxV9QLq4AHAFO0">
+                                <mutation hover_type="String::nome"></mutation>
+                                <field name="DAO_FIELD">String::nome</field>
+                            </block>
+                        </value>
+                    </block>
+                </statement>
+                <next>
+                    <block type="combo_dao" id="Cj9mF4W-9VhwcDsP7X^r" inline="true">
+                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                        <field name="selecao">areas_ou_projetos</field>
+                        <field name="dao">AreaTbl</field>
+                        <field name="selecionar">FALSE</field>
+                        <statement name="key_val">
+                            <block type="option_dao" id="rZqRkA8U)dVJYl_R:2)L" inline="true">
+                                <value name="key_val">
+                                    <block type="get-dao-AreaTbl" id="4b^/?4FN_#yQ:o.AtlDB">
+                                        <mutation hover_type="Integer::id"></mutation>
+                                        <field name="DAO_FIELD">Integer::id</field>
+                                    </block>
+                                </value>
+                                <value name="value_val">
+                                    <block type="get-dao-AreaTbl" id="=RWHUnzC6dnSA5cVf-=i">
+                                        <mutation hover_type="String::areaDesc"></mutation>
+                                        <field name="DAO_FIELD">String::areaDesc</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+            <block type="grafico_chart_1" id="G_5/}N~2o[kG]}uQ-%_m" inline="true" x="738" y="188">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">AvaliadoTbl</field>
+                <statement name="value2">
+                    <block type="EixoX" id=":UL]dvYL5dKNm?0s,hm:">
+                        <value name="eixo">
+                            <block type="get-dao-AvaliadoTbl" id="iJEM.]6+e*]:48Q,*oTv">
+                                <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
+                                <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
+                                <value name="dao_rela">
+                                    <block type="get-dao-MentorTbl" id="=,nD:*I|x[OT/E4yKt%m">
+                                        <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
+                                        <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
+                                        <value name="dao_rela">
+                                            <block type="get-dao-AreaTbl" id="b8XUO62DLwqP~eaSP-hp">
+                                                <mutation hover_type="String::areaDesc"></mutation>
+                                                <field name="DAO_FIELD">String::areaDesc</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="EixoY" id="Nk?6rVJ%4K@V?BTjS[1z">
+                                <value name="eixo">
+                                    <block type="get-dao-AvaliadoTbl" id="x!^XxkG0[mRk:AOlZ2lO">
+                                        <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
+                                        <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
+                                        <value name="dao_rela">
+                                            <block type="get-dao-MentorTbl" id="LYzp10sb3*-sUVE)fk3e">
+                                                <mutation hover_type="AreaTbl_FK#::idAreaFk"></mutation>
+                                                <field name="DAO_FIELD">AreaTbl_FK#::idAreaFk</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-AreaTbl" id="Jtpsv[r9a*:]lxk-F.Lk">
+                                                        <mutation hover_type="String::areaDesc"></mutation>
+                                                        <field name="DAO_FIELD">String::areaDesc</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="EixoZ" id=")DW%oMq8VASfI{;4X7~|">
+                                        <value name="eixo">
+                                            <block type="get-dao-AvaliadoTbl" id="|L{d#b@XcTWXQ4db^y)z">
+                                                <mutation hover_type="Integer::idAvaliado"></mutation>
+                                                <field name="DAO_FIELD">Integer::idAvaliado</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <next>
+                    <block type="grafico_chart_2" id="Q)241~*k6-~p4TrSh9r/" inline="true">
+                        <mutation pxchecked="false" limit="false" count="0"></mutation>
+                        <field name="dao">AvaliadoTbl</field>
+                        <statement name="value2">
+                            <block type="EixoX" id="HidL/db55*qc:61On5R(">
+                                <value name="eixo">
+                                    <block type="get-dao-AvaliadoTbl" id="xY/-2gZ3%=-hDv;V?VTr">
+                                        <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
+                                        <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
+                                        <value name="dao_rela">
+                                            <block type="get-dao-MentorTbl" id="NI}gG_n0ZXW66o{4yBY}">
+                                                <mutation hover_type="String::nome"></mutation>
+                                                <field name="DAO_FIELD">String::nome</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="EixoY" id="k[#i+hxBgw;[_xs_mP%J">
+                                        <value name="eixo">
+                                            <block type="get-dao-AvaliadoTbl" id="=BSTchkOJ3FBu^bRlSm_">
+                                                <mutation hover_type="MentorTbl_FK#::idMentorFk"></mutation>
+                                                <field name="DAO_FIELD">MentorTbl_FK#::idMentorFk</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-MentorTbl" id=",!uWuSiL=nZ7Ou=u_gIh">
+                                                        <mutation hover_type="String::nome"></mutation>
+                                                        <field name="DAO_FIELD">String::nome</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="EixoZ" id="Onc-[y_*61]9PN:%7+_b">
+                                                <value name="eixo">
+                                                    <block type="get-dao-AvaliadoTbl" id="yi2PLtV.e!B38Oi)x5oJ">
+                                                        <mutation hover_type="Integer::idAvaliado"></mutation>
+                                                        <field name="DAO_FIELD">Integer::idAvaliado</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                    </block>
+                </next>
+            </block>
+        </xml>
+    </blockly>
+</rows>

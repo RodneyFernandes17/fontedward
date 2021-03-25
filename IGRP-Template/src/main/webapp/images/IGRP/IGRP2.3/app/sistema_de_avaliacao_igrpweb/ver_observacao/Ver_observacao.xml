@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/IGRP/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/ver_observacao/Ver_observacao.xsl" type="text/xsl"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/ver_observacao/Ver_observacao.xsl" type="text/xsl"?>
 <rows>
-    <link_img>/IGRP/images/IGRP/IGRP2.3</link_img>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
     <title>Dummie XML prototype</title>
     <site>
         <welcome_note>Oba</welcome_note>
@@ -31,32 +31,53 @@
         <copy_menu>false</copy_menu>
         <package_copy_db />
         <package_copy_html />
-        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=318</preserve_url>
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=100</preserve_url>
     </plsql>
     <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
     <content>
         <title>Ver Observação</title>
-        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
-            <fields>
-                <oservacao name="p_oservacao" type="textarea" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
-                    <label>Oservação</label>
-                    <value>Amet laudantium aperiam elit deserunt unde doloremque unde officia omnis magna amet labore consectetur adipiscing</value>
-                </oservacao>
-            </fields>
-        </form_1>
         <view_1 type="view" xml-type="view" gen-type="container" gen-group="">
             <fields>
                 <avaliador name="p_avaliador" type="text" maxlength="250" class="default" iconColor="#333" iconClass="" img="" showlabel="true">
                     <label>Avaliador</label>
-                    <value>Sit elit sed amet ut</value>
+                    <value>Sit magna natus perspiciatis dolor</value>
                 </avaliador>
             </fields>
         </view_1>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <observacao name="p_observacao" type="textarea" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Observação</label>
+                    <value>Consectetur accusantium rem iste mollit ipsum sit labore magna consectetur sed dolor sed totam laudantium</value>
+                </observacao>
+            </fields>
+        </form_1>
     </content>
     <blockly>
-        <imports></imports>
+        <imports>
+            <import type="dao">SemanalTbl</import>
+            <import type="dao">SemanaTbl</import>
+        </imports>
         <xml>
+            <block type="vieww_view_1" id="-58a=C!d2mA~X~?rQQ[S" x="0" y="0">
+                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <field name="dao">SemanaTbl</field>
+                <value name="get_pa">
+                    <block type="core_get_param" id="@8VvQL*p@wS:n}45of/p">
+                        <field name="param">id_semanal</field>
+                    </block>
+                </value>
+            </block>
+            <block type="model_form_avaliador" id="String::avaliador" x="0" y="0">
+                <value name="value1">
+                    <block type="get-dao-SemanalTbl" id="BoH?zHPO]BzC/a?4~-}V">
+                        <mutation hover_type="Integer::idAvaliador"></mutation>
+                        <field name="DAO_FIELD">Integer::idAvaliador</field>
+                    </block>
+                </value>
+            </block>
+            <block type="model_form_oservacao" id="textarea::oservacao" x="0" y="0"></block>
             <block type="controller" id="controller" x="388" y="13"></block>
         </xml>
     </blockly>

@@ -22,6 +22,7 @@ public class Lista_avaliacao_semanalView extends View {
 	public IGRPButton btn_avaliacao_semanal;
 	public IGRPButton btn_inserir_tema;
 	public IGRPButton btn_historico_de_avaliacoes;
+	public IGRPButton btn_eliminar;
 
 	public Lista_avaliacao_semanalView(){
 
@@ -76,6 +77,9 @@ public class Lista_avaliacao_semanalView extends View {
 		btn_historico_de_avaliacoes = new IGRPButton("Histórico de Avaliações","sistema_de_avaliacao_igrpweb","Lista_avaliacao_semanal","historico_de_avaliacoes","mpsubmit","grey|fa-line-chart","","");
 		btn_historico_de_avaliacoes.propertie.add("id","button_5a98_fd99").add("type","specific").add("class","grey").add("rel","historico_de_avaliacoes").add("refresh_components","");
 
+		btn_eliminar = new IGRPButton("Eliminar","sistema_de_avaliacao_igrpweb","Lista_avaliacao_semanal","eliminar","alert_submit","danger|fa-trash","","");
+		btn_eliminar.propertie.add("id","button_27dd_3f73").add("type","specific").add("flg_transaction","true").add("class","danger").add("rel","eliminar").add("refresh_components","");
+
 		
 	}
 		
@@ -95,6 +99,7 @@ public class Lista_avaliacao_semanalView extends View {
 		table_1.addButton(btn_avaliacao_semanal);
 		table_1.addButton(btn_inserir_tema);
 		table_1.addButton(btn_historico_de_avaliacoes);
+		table_1.addButton(btn_eliminar);
 		this.addToPage(table_1);
 	}
 		

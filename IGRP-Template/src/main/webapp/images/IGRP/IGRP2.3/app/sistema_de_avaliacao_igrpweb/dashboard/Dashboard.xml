@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/IGRP/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/dashboard/Dashboard.xsl" type="text/xsl"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/dashboard/Dashboard.xsl" type="text/xsl"?>
 <rows>
-    <link_img>/IGRP/images/IGRP/IGRP2.3</link_img>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
     <title>Dummie XML prototype</title>
     <site>
         <welcome_note>Oba</welcome_note>
@@ -31,13 +31,13 @@
         <copy_menu>false</copy_menu>
         <package_copy_db />
         <package_copy_html />
-        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=289</preserve_url>
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=86</preserve_url>
     </plsql>
     <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
     <content>
-        <title>Dashboard</title>
-        <chart_2 type="chart" xml-type="chart" title="Teste Realizado por Universidade" gen-type="container" gen-group="">
+        <title>Estatísticas</title>
+        <chart_2 type="chart" xml-type="chart" title="Teste igrpweb Realizado por Universidade" gen-type="container" gen-group="">
             <caption/>
             <chart_type>column</chart_type>
             <xaxys>Eixo de X</xaxys>
@@ -53,34 +53,34 @@
             <value>
                 <row>
                     <col>2010</col>
-                    <col>437</col>
-                    <col>21</col>
-                    <col>180</col>
-                    <col>899</col>
+                    <col>342</col>
+                    <col>327</col>
+                    <col>419</col>
+                    <col>438</col>
                 </row>
                 <row>
                     <col>2009</col>
-                    <col>761</col>
-                    <col>622</col>
-                    <col>26</col>
-                    <col>229</col>
+                    <col>507</col>
+                    <col>295</col>
+                    <col>604</col>
+                    <col>383</col>
                 </row>
                 <row>
                     <col>2015</col>
                     <col>1010</col>
-                    <col>983</col>
-                    <col>569</col>
-                    <col>717</col>
+                    <col>325</col>
+                    <col>239</col>
+                    <col>606</col>
                 </row>
             </value>
             <colors>
-                <col>#67f260</col>
-                <col>#7073f9</col>
-                <col>#1c2c4e</col>
-                <col>#35ae83</col>
+                <col>#9f07ef</col>
+                <col>#cd2d20</col>
+                <col>#ab6838</col>
+                <col>#a4dc12</col>
             </colors>
         </chart_2>
-        <chart_1 type="chart" xml-type="chart" title="Teste por Área de Formação" gen-type="container" gen-group="">
+        <chart_1 type="chart" xml-type="chart" title="Teste igrpweb por Área de Formação" gen-type="container" gen-group="">
             <caption/>
             <chart_type>column</chart_type>
             <xaxys>Eixo de X</xaxys>
@@ -96,31 +96,31 @@
             <value>
                 <row>
                     <col>2010</col>
-                    <col>278</col>
-                    <col>815</col>
-                    <col>571</col>
-                    <col>29</col>
+                    <col>75</col>
+                    <col>502</col>
+                    <col>756</col>
+                    <col>298</col>
                 </row>
                 <row>
                     <col>2009</col>
-                    <col>164</col>
-                    <col>547</col>
-                    <col>596</col>
-                    <col>474</col>
+                    <col>163</col>
+                    <col>381</col>
+                    <col>404</col>
+                    <col>171</col>
                 </row>
                 <row>
                     <col>2015</col>
                     <col>1010</col>
-                    <col>548</col>
-                    <col>48</col>
-                    <col>124</col>
+                    <col>960</col>
+                    <col>259</col>
+                    <col>207</col>
                 </row>
             </value>
             <colors>
-                <col>#754f5d</col>
-                <col>#3fb1a3</col>
-                <col>#5ec5ac</col>
-                <col>#c01237</col>
+                <col>#da5924</col>
+                <col>#a01fbc</col>
+                <col>#bc1b34</col>
+                <col>#c20f9e</col>
             </colors>
         </chart_1>
     </content>

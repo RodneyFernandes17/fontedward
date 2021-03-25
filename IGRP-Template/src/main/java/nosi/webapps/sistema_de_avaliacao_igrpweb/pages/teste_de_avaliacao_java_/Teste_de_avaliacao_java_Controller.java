@@ -1,9 +1,14 @@
-package nosi.webapps.sistema_de_avaliacao_igrpweb.pages.questoes_gerais;
+package nosi.webapps.sistema_de_avaliacao_igrpweb.pages.teste_de_avaliacao_java_;
 
 import nosi.core.webapp.Controller;//
 import nosi.core.webapp.databse.helpers.ResultSet;//
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.PerguntaTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.RespostaTbl;
 import nosi.core.webapp.databse.helpers.QueryInterface;//
 import java.io.IOException;//
+import java.util.Collections;
+import java.util.List;
+
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
@@ -19,13 +24,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TesteTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
-/*----#end-code----*/
 
-public class Questoes_geraisController extends Controller {
-	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException {
-		Questoes_gerais model = new Questoes_gerais();
+/*----#end-code----*/
+		
+public class Teste_de_avaliacao_java_Controller extends Controller {
+	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
+		Teste_de_avaliacao_java_ model = new Teste_de_avaliacao_java_();
 		model.load();
-		Questoes_geraisView view = new Questoes_geraisView();
+		Teste_de_avaliacao_java_View view = new Teste_de_avaliacao_java_View();
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
@@ -71,7 +77,6 @@ public class Questoes_geraisController extends Controller {
 		view.resposta40.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
-
 		model.setId_avaliado(Core.getParam("p_id_avaliado"));
 		model.setNivel(Core.getParam("p_nivel"));
 
@@ -80,7 +85,7 @@ public class Questoes_geraisController extends Controller {
 			/******** PERGUNTAS IGRP STUDIO *******************/
 
 			List<PerguntaTbl> perguntalistconceito = new PerguntaTbl().find().where(CONCEITO, "=", "igrp_studio")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=", 0).all();
 
 			if (perguntalistconceito != null) {
 
@@ -124,7 +129,7 @@ public class Questoes_geraisController extends Controller {
 			/******* PERGUNTAS BPMN REPORT ************************************/
 
 			List<PerguntaTbl> perguntalistbpmn = new PerguntaTbl().find().where(CONCEITO, "=", "bpmn_report")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=", 0).all();
 
 			if (perguntalistbpmn != null) {
 
@@ -168,7 +173,7 @@ public class Questoes_geraisController extends Controller {
 			/********** PERGUNTAS PAGE DESIGNER ******************************/
 
 			List<PerguntaTbl> perguntalistpage = new PerguntaTbl().find().where(CONCEITO, "=", "page_designer")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=", 0).all();
 
 			if (perguntalistpage != null) {
 
@@ -212,7 +217,7 @@ public class Questoes_geraisController extends Controller {
 			/********* PERGUNTAS GERADOR BLOCKLY ***********************************/
 
 			List<PerguntaTbl> perguntatblistgerador = new PerguntaTbl().find().where(CONCEITO, "=", "gerador_blockly")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=",0).all();
 
 			if (perguntatblistgerador != null) {
 
@@ -256,7 +261,7 @@ public class Questoes_geraisController extends Controller {
 			/*********** PERGUNTAS ECLIPSE GIT **********************************/
 
 			List<PerguntaTbl> perguntatbleclipse = new PerguntaTbl().find().where(CONCEITO, "=", "eclipse_git")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=", 0).all();
 
 			if (perguntatbleclipse != null) {
 
@@ -300,7 +305,7 @@ public class Questoes_geraisController extends Controller {
 			/********* PERGUNTAS BASE DADOS DAO *******************************/
 
 			List<PerguntaTbl> perguntalistadao = new PerguntaTbl().find().where(CONCEITO, "=", "base_dados_dao")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=", 0).all();
 
 			if (perguntalistadao != null) {
 
@@ -344,7 +349,7 @@ public class Questoes_geraisController extends Controller {
 			/********** PERGUNTAS JAVA ***************************************/
 
 			List<PerguntaTbl> perguntalistjava = new PerguntaTbl().find().where(CONCEITO, "=", "java")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=", 0).all();
 
 			if (perguntalistjava != null) {
 
@@ -388,7 +393,7 @@ public class Questoes_geraisController extends Controller {
 			/********* PERGUNTAS GESTÃO DE ACESSO ***********************************/
 
 			List<PerguntaTbl> perguntalistgestao = new PerguntaTbl().find().where(CONCEITO, "=", "gestao_acesso")
-					.andWhere(NIVEL, "=", Core.toInt(model.getNivel())).all();
+					.andWhere(NIVEL, "=", 0).all();
 
 			if (perguntalistgestao != null) {
 
@@ -433,312 +438,18 @@ public class Questoes_geraisController extends Controller {
 			e.printStackTrace();
 		}
 
-		view.btn_finalizar.addParameter("p_id_avaliado", model.getId_avaliado());
+
 		/*----#end-code----*/
 		view.setModel(model);
-		return this.renderView(view);
+		return this.renderView(view);	
 	}
-
-	public Response actionFinalizar() throws IOException, IllegalArgumentException, IllegalAccessException {
-		Questoes_gerais model = new Questoes_gerais();
-		model.load();
-		/*----#gen-example
-		  EXAMPLES COPY/PASTE:
-		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		  this.addQueryString("p_id","12"); //to send a query string in the URL
-		  return this.forward("sistema_de_avaliacao_igrpweb","Informacoes","index",this.queryString()); //if submit, loads the values
-		  Use model.validate() to validate your model
-		  ----#gen-example */
-		/*----#start-code(finalizar)----*/
-
-		Session session = null;
-		Transaction transaction = null;
-		try {
-			if (model.validate()) {
-				session = Core.getSession(Core.defaultConnection());
-				transaction = session.getTransaction();
-				if (!transaction.isActive())
-					transaction.begin();
-				TesteTbl testetbl = new TesteTbl();
-				AvaliadoTbl avaliadotbl_foreign = session.find(AvaliadoTbl.class, Core.getParamInt("p_id_avaliado"));
-				testetbl.setIdAvaliadoFk(avaliadotbl_foreign);
-
-				/******** CÁLCULO IGRP STUDIO *******************************/
-				int valor_igrpstudio = 0;
-				List<Integer> valores = new ArrayList<>();
-				final RespostaTbl resposta_valor1 = session.find(RespostaTbl.class, model.getResposta1());
-				if (resposta_valor1.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor1.getRespostaCerta()));
-					valor_igrpstudio += Core.toInt(resposta_valor1.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor2 = session.find(RespostaTbl.class, model.getResposta2());
-				if (resposta_valor1.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor2.getRespostaCerta()));
-					valor_igrpstudio += Core.toInt(resposta_valor2.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor3 = session.find(RespostaTbl.class, model.getResposta3());
-				if (resposta_valor3.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor3.getRespostaCerta()));
-					valor_igrpstudio += Core.toInt(resposta_valor3.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor4 = session.find(RespostaTbl.class, model.getResposta4());
-				if (resposta_valor3.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor4.getRespostaCerta()));
-					valor_igrpstudio += Core.toInt(resposta_valor4.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor5 = session.find(RespostaTbl.class, model.getResposta5());
-				if (resposta_valor3.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor5.getRespostaCerta()));
-					valor_igrpstudio += Core.toInt(resposta_valor5.getRespostaCerta());
-				}
-				testetbl.setValorIgrpStudio(valor_igrpstudio);
-
-				/******** CÁLCULO BPMN REPORT **********************************/
-				int valor_bpmn_report = 0;
-				final RespostaTbl resposta_valor6 = session.find(RespostaTbl.class, model.getResposta6());
-				if (resposta_valor6.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor6.getRespostaCerta()));
-					valor_bpmn_report += Core.toInt(resposta_valor6.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor7 = session.find(RespostaTbl.class, model.getResposta7());
-				if (resposta_valor7.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor7.getRespostaCerta()));
-					valor_bpmn_report += Core.toInt(resposta_valor7.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor8 = session.find(RespostaTbl.class, model.getResposta8());
-				if (resposta_valor8.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor8.getRespostaCerta()));
-					valor_bpmn_report += Core.toInt(resposta_valor8.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor9 = session.find(RespostaTbl.class, model.getResposta9());
-				if (resposta_valor9.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor9.getRespostaCerta()));
-					valor_bpmn_report += Core.toInt(resposta_valor9.getRespostaCerta());
-				}
-				final RespostaTbl resposta_valor10 = session.find(RespostaTbl.class, model.getResposta10());
-				if (resposta_valor10.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor10.getRespostaCerta()));
-					valor_bpmn_report += Core.toInt(resposta_valor10.getRespostaCerta());
-				}
-
-				testetbl.setValorBpmnReport(valor_bpmn_report);
-
-				/********* CÁLCULO PAGE DESIGNER ***********************************/
-				int valor_page_designer = 0;
-				RespostaTbl resposta_valor11 = session.find(RespostaTbl.class, model.getResposta11());
-				if (resposta_valor11.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor11.getRespostaCerta()));
-					valor_page_designer += Core.toInt(resposta_valor11.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor12 = session.find(RespostaTbl.class, model.getResposta12());
-				if (resposta_valor12.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor12.getRespostaCerta()));
-					valor_page_designer += Core.toInt(resposta_valor12.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor13 = session.find(RespostaTbl.class, model.getResposta13());
-				if (resposta_valor13.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor13.getRespostaCerta()));
-					valor_page_designer += Core.toInt(resposta_valor13.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor14 = session.find(RespostaTbl.class, model.getResposta14());
-				if (resposta_valor14.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor14.getRespostaCerta()));
-					valor_page_designer += Core.toInt(resposta_valor14.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor15 = session.find(RespostaTbl.class, model.getResposta15());
-				if (resposta_valor15.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor15.getRespostaCerta()));
-					valor_page_designer += Core.toInt(resposta_valor15.getRespostaCerta());
-				}
-				testetbl.setValorPageDesigner(valor_page_designer);
-
-				/******* CÁLCULO GERADOR BLOCKLY *********************************/
-				int valor_gerador_blockly = 0;
-				RespostaTbl resposta_valor16 = session.find(RespostaTbl.class, model.getResposta16());
-				if (resposta_valor16.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor16.getRespostaCerta()));
-					valor_gerador_blockly += Core.toInt(resposta_valor16.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor17 = session.find(RespostaTbl.class, model.getResposta17());
-				if (resposta_valor17.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor17.getRespostaCerta()));
-					valor_gerador_blockly += Core.toInt(resposta_valor17.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor18 = session.find(RespostaTbl.class, model.getResposta18());
-				if (resposta_valor18.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor18.getRespostaCerta()));
-					valor_gerador_blockly += Core.toInt(resposta_valor18.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor19 = session.find(RespostaTbl.class, model.getResposta19());
-				if (resposta_valor19.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor19.getRespostaCerta()));
-					valor_gerador_blockly += Core.toInt(resposta_valor19.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor20 = session.find(RespostaTbl.class, model.getResposta20());
-				if (resposta_valor20.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor20.getRespostaCerta()));
-					valor_gerador_blockly += Core.toInt(resposta_valor20.getRespostaCerta());
-				}
-				testetbl.setValorGeradorBlockly(valor_gerador_blockly);
-
-				/******* CÁLCULO ECLISE GIT *********************************/
-				int valor_eclipse_git = 0;
-				RespostaTbl resposta_valor21 = session.find(RespostaTbl.class, model.getResposta21());
-				if (resposta_valor21.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor21.getRespostaCerta()));
-					valor_eclipse_git += Core.toInt(resposta_valor21.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor22 = session.find(RespostaTbl.class, model.getResposta22());
-				if (resposta_valor22.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor22.getRespostaCerta()));
-					valor_eclipse_git += Core.toInt(resposta_valor22.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor23 = session.find(RespostaTbl.class, model.getResposta23());
-				if (resposta_valor23.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor23.getRespostaCerta()));
-					valor_eclipse_git += Core.toInt(resposta_valor23.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor24 = session.find(RespostaTbl.class, model.getResposta24());
-				if (resposta_valor24.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor24.getRespostaCerta()));
-					valor_eclipse_git += Core.toInt(resposta_valor24.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor25 = session.find(RespostaTbl.class, model.getResposta25());
-				if (resposta_valor25.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor25.getRespostaCerta()));
-					valor_eclipse_git += Core.toInt(resposta_valor25.getRespostaCerta());
-				}
-				testetbl.setValorEclipseGit(valor_eclipse_git);
-
-				/******* CÁLCULO BASE DADOS DAO ************************************/
-				int valor_base_dados_dao = 0;
-				RespostaTbl resposta_valor26 = session.find(RespostaTbl.class, model.getResposta26());
-				if (resposta_valor26.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor26.getRespostaCerta()));
-					valor_base_dados_dao += Core.toInt(resposta_valor26.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor27 = session.find(RespostaTbl.class, model.getResposta27());
-				if (resposta_valor27.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor27.getRespostaCerta()));
-					valor_base_dados_dao += Core.toInt(resposta_valor27.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor28 = session.find(RespostaTbl.class, model.getResposta28());
-				if (resposta_valor28.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor28.getRespostaCerta()));
-					valor_base_dados_dao += Core.toInt(resposta_valor28.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor29 = session.find(RespostaTbl.class, model.getResposta29());
-				if (resposta_valor29.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor29.getRespostaCerta()));
-					valor_base_dados_dao += Core.toInt(resposta_valor29.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor30 = session.find(RespostaTbl.class, model.getResposta30());
-				if (resposta_valor30.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor30.getRespostaCerta()));
-					valor_eclipse_git += Core.toInt(resposta_valor30.getRespostaCerta());
-				}
-				testetbl.setValorBaseDadosDao(valor_base_dados_dao);
-
-				/******* CÁLCULO JAVA ****************************************/
-				int valor_java = 0;
-				RespostaTbl resposta_valor31 = session.find(RespostaTbl.class, model.getResposta31());
-				if (resposta_valor31.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor31.getRespostaCerta()));
-					valor_java += Core.toInt(resposta_valor31.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor32 = session.find(RespostaTbl.class, model.getResposta32());
-				if (resposta_valor32.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor32.getRespostaCerta()));
-					valor_java += Core.toInt(resposta_valor32.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor33 = session.find(RespostaTbl.class, model.getResposta33());
-				if (resposta_valor33.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor33.getRespostaCerta()));
-					valor_java += Core.toInt(resposta_valor33.getRespostaCerta());
-				}
-				RespostaTbl resposta_valor34 = session.find(RespostaTbl.class, model.getResposta34());
-				if (resposta_valor34.getRespostaCerta() != null) {
-					valores.add(Core.toInt(resposta_valor34.getRespostaCerta()));
-					valor_java += Core.toInt(resposta_valor34.getRespostaCerta());
-					RespostaTbl resposta_valor35 = session.find(RespostaTbl.class, model.getResposta35());
-					if (resposta_valor35.getRespostaCerta() != null) {
-						valores.add(Core.toInt(resposta_valor35.getRespostaCerta()));
-						valor_java += Core.toInt(resposta_valor35.getRespostaCerta());
-					}
-
-					testetbl.setValorJava(valor_java);
-
-					/********* CÁLCULO GESTAO ACESSO *********************************/
-					int valor_gestao_acesso = 0;
-					RespostaTbl resposta_valor36 = session.find(RespostaTbl.class, model.getResposta36());
-					if (resposta_valor36.getRespostaCerta() != null) {
-						valores.add(Core.toInt(resposta_valor36.getRespostaCerta()));
-						valor_gestao_acesso += Core.toInt(resposta_valor36.getRespostaCerta());
-					}
-					RespostaTbl resposta_valor37 = session.find(RespostaTbl.class, model.getResposta37());
-					if (resposta_valor37.getRespostaCerta() != null) {
-						valores.add(Core.toInt(resposta_valor37.getRespostaCerta()));
-						valor_gestao_acesso += Core.toInt(resposta_valor37.getRespostaCerta());
-					}
-					RespostaTbl resposta_valor38 = session.find(RespostaTbl.class, model.getResposta38());
-					if (resposta_valor38.getRespostaCerta() != null) {
-						valores.add(Core.toInt(resposta_valor38.getRespostaCerta()));
-						valor_gestao_acesso += Core.toInt(resposta_valor38.getRespostaCerta());
-					}
-					RespostaTbl resposta_valor39 = session.find(RespostaTbl.class, model.getResposta39());
-					if (resposta_valor39.getRespostaCerta() != null) {
-						valores.add(Core.toInt(resposta_valor39.getRespostaCerta()));
-						valor_gestao_acesso += Core.toInt(resposta_valor39.getRespostaCerta());
-					}
-					RespostaTbl resposta_valor40 = session.find(RespostaTbl.class, model.getResposta40());
-					if (resposta_valor40.getRespostaCerta() != null) {
-						valores.add(Core.toInt(resposta_valor40.getRespostaCerta()));
-						valor_gestao_acesso += Core.toInt(resposta_valor40.getRespostaCerta());
-					}
-					testetbl.setValorGestaoAcesso(valor_gestao_acesso);
-
-					int valor_final = valores.stream().mapToInt(a -> a).sum();
-
-					testetbl.setValorFinal(valor_final);
-
-					if (valor_final >= 30) {
-						testetbl.setAprovacao(4);
-					} else if (valor_final >= 20 && valor_final < 30) {
-						testetbl.setAprovacao(3);
-					} else if (valor_final >= 10 && valor_final < 20) {
-						testetbl.setAprovacao(2);
-					} else if (valor_final < 10) {
-						testetbl.setAprovacao(1);
-					}
-					session.persist(testetbl);
-					transaction.commit();
-					Core.setMessageSuccess();
-					this.addQueryString("p_id_teste", testetbl.getIdTeste());
-				} else
-					Core.setMessageError();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			Core.setMessageError("Error: " + e.getMessage());
-			if (transaction != null)
-				transaction.rollback();
-		} finally {
-			if (session != null && session.isOpen()) {
-				session.close();
-			}
-		}
-
-		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
-
-		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb", "Informacoes", "index", this.queryString());
-	}
-
-	/*----#start-code(custom_actions)----*/
+	
+		
+		
+/*----#start-code(custom_actions)----*/
 
 	private static final String CONCEITO = "conceito";
 	private static final String NIVEL = "nivel";
 	private static final String IDPERGUNTAFK = "idPerguntaFk";
-
-	/*----#end-code----*/
+/*----#end-code----*/
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/IGRP/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_perguntas/Lista_de_perguntas.xsl" type="text/xsl"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_perguntas/Lista_de_perguntas.xsl" type="text/xsl"?>
 <rows>
-    <link_img>/IGRP/images/IGRP/IGRP2.3</link_img>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
     <title>Dummie XML prototype</title>
     <site>
         <welcome_note>Oba</welcome_note>
@@ -31,7 +31,7 @@
         <copy_menu>false</copy_menu>
         <package_copy_db />
         <package_copy_html />
-        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=284</preserve_url>
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=81</preserve_url>
     </plsql>
     <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
@@ -48,6 +48,86 @@
                 <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_perguntas_e_respostas/Parametrizacao_perguntas_e_respostas.xml</preview>
             </item>
         </toolsbar_1>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <conceito_form name="p_conceito_form" type="select" multiple="false" tags="false" domain="conceitos « sistema_de_avaliacao_igrpweb" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Conceito</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>IGRP Studio</text>
+                            <value>igrp_studio</value>
+                        </option>
+                        <option>
+                            <text>BPMN e Report Designer</text>
+                            <value>bpmn_report</value>
+                        </option>
+                        <option>
+                            <text>Page Designer</text>
+                            <value>page_designer</value>
+                        </option>
+                        <option>
+                            <text>Gerador e Blockly</text>
+                            <value>gerador_blockly</value>
+                        </option>
+                        <option>
+                            <text>Eclipse e Git</text>
+                            <value>eclipse_git</value>
+                        </option>
+                        <option>
+                            <text>Base de Dados e DAO</text>
+                            <value>base_dados_dao</value>
+                        </option>
+                        <option>
+                            <text>Java</text>
+                            <value>java</value>
+                        </option>
+                        <option>
+                            <text>Gestão de Acessos</text>
+                            <value>gestao_acesso</value>
+                        </option>
+                    </list>
+                </conceito_form>
+                <nivel_form name="p_nivel_form" type="select" multiple="false" tags="false" domain="nivel « sistema_de_avaliacao_igrpweb" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Nivel</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Nível 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Nível 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Nível 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Nível 4</text>
+                            <value>4</value>
+                        </option>
+                        <option>
+                            <text>Nível 5</text>
+                            <value>5</value>
+                        </option>
+                    </list>
+                </nivel_form>
+            </fields>
+            <tools-bar>
+                <item id="button_4aa4_0a63" type="form" code="" class="primary" rel="filtrar" custom_return="true" refresh_components="table_1">
+                    <title>Filtrar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Lista_de_perguntas</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_perguntas/Lista_de_perguntas.xml?</parameter>
+                    <target>submit_ajax</target>
+                    <img>primary|fa-filter</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_perguntas/Lista_de_perguntas.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
         <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
             <fields>
                 <conceito name="p_conceito" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
@@ -56,6 +136,9 @@
                 <pergunta name="p_pergunta" type="textarea" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
                     <label>Pergunta</label>
                 </pergunta>
+                <nivel name="p_nivel" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nivel</label>
+                </nivel>
                 <id_pergunta name="p_id_pergunta" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_pergunta"/>
             </fields>
             <table>
@@ -65,45 +148,50 @@
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <conceito name="p_conceito">Officia amet lorem unde volupt</conceito>
-                        <pergunta name="p_pergunta">Omnis doloremque rem unde aper</pergunta>
-                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-e834_ad66</id_pergunta>
+                        <conceito name="p_conceito">Dolor officia sit accusantium</conceito>
+                        <pergunta name="p_pergunta">Unde rem elit mollit omnis per</pergunta>
+                        <nivel name="p_nivel">Perspiciatis deserunt magna am</nivel>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-122b_1171</id_pergunta>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <conceito name="p_conceito">Stract consectetur anim natus</conceito>
-                        <pergunta name="p_pergunta">Deserunt stract consectetur an</pergunta>
-                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-8daf_68f2</id_pergunta>
+                        <conceito name="p_conceito">Ipsum perspiciatis dolor volup</conceito>
+                        <pergunta name="p_pergunta">Natus iste unde deserunt aperi</pergunta>
+                        <nivel name="p_nivel">Stract ut perspiciatis iste am</nivel>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-babd_129a</id_pergunta>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <conceito name="p_conceito">Doloremque unde lorem amet adi</conceito>
-                        <pergunta name="p_pergunta">Omnis stract omnis ipsum sed u</pergunta>
-                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-bc05_4a8b</id_pergunta>
+                        <conceito name="p_conceito">Aperiam deserunt officia lauda</conceito>
+                        <pergunta name="p_pergunta">Stract officia iste officia se</pergunta>
+                        <nivel name="p_nivel">Ut aperiam ipsum laudantium si</nivel>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-91e6_1bd3</id_pergunta>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <conceito name="p_conceito">Deserunt lorem anim adipiscing</conceito>
-                        <pergunta name="p_pergunta">Doloremque dolor sit ut amet o</pergunta>
-                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-ca88_035e</id_pergunta>
+                        <conceito name="p_conceito">Amet aperiam omnis laudantium</conceito>
+                        <pergunta name="p_pergunta">Perspiciatis omnis ipsum ut co</pergunta>
+                        <nivel name="p_nivel">Natus omnis mollit stract anim</nivel>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-4ef8_3571</id_pergunta>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <conceito name="p_conceito">Magna iste totam perspiciatis</conceito>
-                        <pergunta name="p_pergunta">Laudantium amet sed perspiciat</pergunta>
-                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-ee69_1f45</id_pergunta>
+                        <conceito name="p_conceito">Magna labore unde omnis consec</conceito>
+                        <pergunta name="p_pergunta">Adipiscing sed dolor labore ap</pergunta>
+                        <nivel name="p_nivel">Unde stract ut sit deserunt</nivel>
+                        <id_pergunta name="p_id_pergunta" tag="id_pergunta">hidden-c001_b227</id_pergunta>
                     </row>
                 </value>
                 <context-menu>
@@ -122,9 +210,60 @@
         </table_1>
     </content>
     <blockly>
-        <imports></imports>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="dao">PerguntaTbl</import>
+        </imports>
         <xml>
             <block type="controller" id="controller" x="463" y="13"></block>
+            <block type="listar_table_1" id="table_1" inline="true" x="663" y="38">
+                <mutation pxchecked="false" limit="false" count="2" mutation-1="andWhere" mutation-2="andWhere"></mutation>
+                <field name="dao">PerguntaTbl</field>
+                <field name="FILL">FALSE</field>
+                <field name="find">TODOSS</field>
+                <field name="limit"></field>
+                <field name="ADD1FILTER">andWhere</field>
+                <field name="ADD1WHERE">WHERE_EQ</field>
+                <field name="ADD2FILTER">andWhere</field>
+                <field name="ADD2WHERE">WHERE_EQ</field>
+                <statement name="value2">
+                    <block type="rowtableconceito" id="String::conceito">
+                        <next>
+                            <block type="rowtablepergunta" id="textarea::pergunta">
+                                <next>
+                                    <block type="rowtablenivel" id="String::nivel">
+                                        <next>
+                                            <block type="rowtableid_pergunta" id="String::id_pergunta"></block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <value name="ADD1">
+                    <block type="get-dao-PerguntaTbl" id="gDCE[:pr%%z9f~#%C=cG">
+                        <mutation hover_type="String::conceito"></mutation>
+                        <field name="DAO_FIELD">String::conceito</field>
+                    </block>
+                </value>
+                <value name="ADD1STATE2">
+                    <block type="get_model" id="f3f%~%l5{1W?e[@umKuC">
+                        <field name="get_model">String::conceito_form</field>
+                    </block>
+                </value>
+                <value name="ADD2">
+                    <block type="get-dao-PerguntaTbl" id="on0C6mEVNV-~)W_k-`7T">
+                        <mutation hover_type="Integer::nivel"></mutation>
+                        <field name="DAO_FIELD">Integer::nivel</field>
+                    </block>
+                </value>
+                <value name="ADD2STATE2">
+                    <block type="get_model" id="W4r9ABsjEme:?#3@Cw=H">
+                        <field name="get_model">String::nivel</field>
+                    </block>
+                </value>
+            </block>
         </xml>
     </blockly>
 </rows>

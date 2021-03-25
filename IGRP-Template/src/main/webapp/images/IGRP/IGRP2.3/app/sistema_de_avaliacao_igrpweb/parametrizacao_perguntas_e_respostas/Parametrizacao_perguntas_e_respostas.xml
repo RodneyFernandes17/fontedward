@@ -31,7 +31,7 @@
         <copy_menu>false</copy_menu>
         <package_copy_db />
         <package_copy_html />
-        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=170</preserve_url>
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=82</preserve_url>
     </plsql>
     <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
@@ -73,25 +73,25 @@
                         </option>
                     </list>
                 </conceito>
-                <nivel name="p_nivel" type="select" multiple="false" tags="false" domain="" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
+                <nivel name="p_nivel" type="select" multiple="false" tags="false" domain="nivel « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
                     <label>Nivel</label>
                     <list>
                         <option/>
                         <option>
-                            <text>Option 1</text>
+                            <text>Nível 0</text>
+                            <value>0</value>
+                        </option>
+                        <option>
+                            <text>Nível 1</text>
                             <value>1</value>
                         </option>
                         <option>
-                            <text>Option 2</text>
+                            <text>Nível 2</text>
                             <value>2</value>
                         </option>
                         <option>
-                            <text>Option 3</text>
+                            <text>Nível 3</text>
                             <value>3</value>
-                        </option>
-                        <option>
-                            <text>Option 4</text>
-                            <value>4</value>
                         </option>
                     </list>
                     <validations>
@@ -102,7 +102,7 @@
                 </nivel>
                 <pergunta name="p_pergunta" type="textarea" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Pergunta</label>
-                    <value>Omnis sed iste anim consectetur mollit laudantium sit dolor mollit officia iste ipsum sit officia</value>
+                    <value>Lorem officia deserunt omnis sit sed perspiciatis doloremque deserunt laudantium dolor ipsum aperiam labore consectetur</value>
                 </pergunta>
                 <hidden name="p_id_pergunta" type="hidden" maxlength="250" java-type="" tag="id_pergunta"/>
             </fields>
@@ -111,7 +111,7 @@
             <fields>
                 <resposta name="p_resposta" type="textarea" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
                     <label>Resposta</label>
-                    <value>Accusantium elit doloremque sit consectetur sit perspiciatis sit mollit officia perspiciatis labore laudantium labore adipiscing</value>
+                    <value>Mollit anim sit omnis aliqua lorem deserunt ut dolor officia anim laudantium officia perspiciatis anim</value>
                 </resposta>
                 <resposta_certa name="p_resposta_certa" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" check="true" desc="true">
                     <label>Resposta certa</label>
@@ -121,32 +121,32 @@
             <table>
                 <value>
                     <row>
-                        <resposta name="p_resposta" desc="true">Totam stract aperiam sed aperiam totam rem laudantium natus doloremque totam anim unde elit labore</resposta>
-                        <resposta_desc name="p_resposta_desc">Totam stract aperiam sed aperiam totam rem laudantium natus doloremque totam anim unde elit labore</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Sed voluptatem ut laudantium consectetur aliqua dolor mollit anim amet deserunt officia dolor totam adipiscing</resposta>
+                        <resposta_desc name="p_resposta_desc">Sed voluptatem ut laudantium consectetur aliqua dolor mollit anim amet deserunt officia dolor totam adipiscing</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Ipsum dolor perspiciatis rem totam ut ipsum anim natus magna anim ipsum sit doloremque totam</resposta>
-                        <resposta_desc name="p_resposta_desc">Ipsum dolor perspiciatis rem totam ut ipsum anim natus magna anim ipsum sit doloremque totam</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Voluptatem omnis accusantium labore omnis laudantium unde sit omnis adipiscing labore unde voluptatem aperiam elit</resposta>
+                        <resposta_desc name="p_resposta_desc">Voluptatem omnis accusantium labore omnis laudantium unde sit omnis adipiscing labore unde voluptatem aperiam elit</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Ut doloremque consectetur accusantium amet stract labore unde labore natus adipiscing laudantium adipiscing labore laudantium</resposta>
-                        <resposta_desc name="p_resposta_desc">Ut doloremque consectetur accusantium amet stract labore unde labore natus adipiscing laudantium adipiscing labore laudantium</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Omnis anim accusantium omnis unde ut sit natus sit stract aliqua elit lorem laudantium perspiciatis</resposta>
+                        <resposta_desc name="p_resposta_desc">Omnis anim accusantium omnis unde ut sit natus sit stract aliqua elit lorem laudantium perspiciatis</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Anim iste rem officia totam unde sit aperiam natus unde aperiam doloremque perspiciatis anim doloremque</resposta>
-                        <resposta_desc name="p_resposta_desc">Anim iste rem officia totam unde sit aperiam natus unde aperiam doloremque perspiciatis anim doloremque</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Iste unde mollit iste anim laudantium elit natus stract lorem sit elit perspiciatis mollit deserunt</resposta>
+                        <resposta_desc name="p_resposta_desc">Iste unde mollit iste anim laudantium elit natus stract lorem sit elit perspiciatis mollit deserunt</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Adipiscing unde consectetur ipsum omnis natus aperiam omnis ut rem accusantium deserunt mollit iste stract</resposta>
-                        <resposta_desc name="p_resposta_desc">Adipiscing unde consectetur ipsum omnis natus aperiam omnis ut rem accusantium deserunt mollit iste stract</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Aperiam iste officia doloremque magna ipsum doloremque sit totam laudantium amet officia magna laudantium mollit</resposta>
+                        <resposta_desc name="p_resposta_desc">Aperiam iste officia doloremque magna ipsum doloremque sit totam laudantium amet officia magna laudantium mollit</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>

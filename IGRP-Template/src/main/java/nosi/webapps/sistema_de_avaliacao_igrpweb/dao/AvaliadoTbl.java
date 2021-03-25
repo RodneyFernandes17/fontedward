@@ -1,23 +1,26 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
-import nosi.base.ActiveRecord.BaseActiveRecord;
 import javax.persistence.Column;
+import javax.validation.constraints.Size;
 import javax.persistence.Entity;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.ForeignKey;
+import javax.validation.constraints.NotNull;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.GenerationType;
+import javax.validation.constraints.NotBlank;
 import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
+import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ForeignKey;
 
 /**
- * @author: Nositeste 13-03-2021
+ * @author: Nositeste 19-03-2021
 */
 
 @Entity
-@Table(name = "avaliado_tbl", schema = "")
+@Table(name = "avaliado_tbl", schema = "public")
 @NamedQuery(name = "AvaliadoTbl.findAll", query = "SELECT t FROM AvaliadoTbl t")
 public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 
@@ -27,35 +30,57 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_avaliado", updatable = false, nullable = false)
+	@Column(name = "id_avaliado", nullable = false, updatable = false)
  	private Integer idAvaliado;
-	@Column(name = "id_foto", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "id_foto")
 	private String idFoto;
-	@Column(name = "nome", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "nome")
 	private String nome;
-	@Column(name = "ilha", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "ilha")
 	private String ilha;
-	@Column(name = "edicao", nullable = false, length = 2147483647)
+	@Size(max = 2147483647)
+	@Column(name = "edicao")
 	private String edicao;
-	@Column(name = "formacao", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "formacao")
 	private String formacao;
-	@Column(name = "universidade", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "universidade")
 	private String universidade;
-	@Column(name = "outra_form", length = 2147483647)
+	@Size(max = 2147483647)
+	@Column(name = "outra_form")
 	private String outraForm;
-	@Column(name = "outra_univ", length = 2147483647)
+	@Size(max = 2147483647)
+	@Column(name = "outra_univ")
 	private String outraUniv;
-	@Column(name = "contacto", nullable = false)
+	@NotNull
+	@Column(name = "contacto")
 	private Integer contacto;
-	@Column(name = "email", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "email")
 	private String email;
-	@Column(name = "nivel", nullable = false)
+	@NotNull
+	@Column(name = "nivel")
 	private Integer nivel;
-	@Column(name = "formador", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "formador")
 	private String formador;
-	@Column(name = "horas", nullable = false)
+	@NotNull
+	@Column(name = "horas")
 	private Integer horas;
-	@Column(name = "chave_aut", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "chave_aut")
 	private String chaveAut;
 	@Column(name = "id_utilizador")
 	private Integer idUtilizador;

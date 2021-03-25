@@ -35,7 +35,7 @@ public class Parametrizacao_perguntas_e_respostasView extends View {
 		
 		nivel = new ListField(model,"nivel");
 		nivel.setLabel(gt("Nivel"));
-		nivel.propertie().add("name","p_nivel").add("type","select").add("multiple","false").add("tags","false").add("domain","").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","");
+		nivel.propertie().add("name","p_nivel").add("type","select").add("multiple","false").add("tags","false").add("domain","nivel « sistema_de_avaliacao_igrpweb").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","");
 		
 		pergunta = new TextAreaField(model,"pergunta");
 		pergunta.setLabel(gt("Pergunta"));

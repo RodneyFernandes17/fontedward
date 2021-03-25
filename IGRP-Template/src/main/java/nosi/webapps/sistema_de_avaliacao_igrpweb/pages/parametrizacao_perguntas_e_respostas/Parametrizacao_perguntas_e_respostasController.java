@@ -28,22 +28,15 @@ public class Parametrizacao_perguntas_e_respostasController extends Controller {
 		model.load();
 		Parametrizacao_perguntas_e_respostasView view = new Parametrizacao_perguntas_e_respostasView();
 		view.conceito.loadDomain("conceitos","sistema_de_avaliacao_igrpweb","-- Selecionar --");
+		view.nivel.loadDomain("nivel","sistema_de_avaliacao_igrpweb","-- Selecionar --");
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadSeparatorlist_1(Core.query(null,"SELECT 'Lorem doloremque sed omnis totam lorem sit deserunt stract voluptatem elit omnis totam anim amet' as resposta,'1' as resposta_certa "));
-		view.nivel.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
+		model.loadSeparatorlist_1(Core.query(null,"SELECT 'Consectetur ut voluptatem aperiam lorem consectetur officia lorem rem doloremque anim ut stract sed amet' as resposta,'1' as resposta_certa "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 
-	    LinkedHashMap<String, String> nivel = new LinkedHashMap<>();
-		nivel.put(null, gt("-- Selecionar --"));
-		nivel.put("1",gt("Nivel 1"));
-		nivel.put("2",gt("Nivel 2"));
-		nivel.put("3",gt("Nivel 3"));
-		nivel.put("4",gt("Nivel 4"));
-		nivel.put("5",gt("Nivel 5"));
-		view.nivel.setValue(nivel);
+	   
 	      
 	    try{
 		String isEdit = Core.getParam("isEdit");

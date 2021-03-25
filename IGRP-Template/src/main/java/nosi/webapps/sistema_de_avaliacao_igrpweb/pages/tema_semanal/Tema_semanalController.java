@@ -55,9 +55,25 @@ public class Tema_semanalController extends Controller {
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		try {
-
+			/**************** ENVIAR AVISOS *******************************************/
+			
 			SemanaTbl semana_atual = new SemanaTbl().find().andWhere("atual", "=", true).one();
 			model.setId_semana(semana_atual.getNrSemana());
+			
+			Integer semana_anterior = semana_atual.getNrSemana()-1;
+			
+			List<SemanalTbl> semanna = new SemanalTbl().find()
+					.andWhere("idTemaFk.nrSemana", "=", semana_anterior)
+					.andWhere("idAvaliadoFk", "=", Core.getParamInt("p_id_avaliado"))
+					.all();
+			
+			for (SemanalTbl obs : semanna) {
+					if(Core.isNotNull(obs.getObservacao())) {
+						Core.setMessageWarning("Observação Semana Anterior: "+ obs.getObservacao()+" ("+obs.getNomeAvaliador()+")");
+					}
+				
+			}	
+			/**************** PREENCHER STABOX *******************************************/
 
 			List<SemanalTbl> seman = new SemanalTbl().find()
 					.andWhere("idAvaliadoFk", "=", Core.getParamInt("p_id_avaliado")).all();
