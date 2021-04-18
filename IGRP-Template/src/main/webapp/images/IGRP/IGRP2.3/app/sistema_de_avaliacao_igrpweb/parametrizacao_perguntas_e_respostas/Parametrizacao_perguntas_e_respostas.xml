@@ -39,6 +39,33 @@
         <title>Parametrização Perguntas e Respostas</title>
         <form_1 type="form" xml-type="form" title="Pergunta" gen-type="container" gen-group="">
             <fields>
+                <nivel name="p_nivel" type="select" multiple="false" tags="false" domain="" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
+                    <label>Teste de Avaliação</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </nivel>
                 <conceito name="p_conceito" type="select" multiple="false" tags="false" domain="conceitos « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
                     <label>Conceito</label>
                     <list>
@@ -73,36 +100,9 @@
                         </option>
                     </list>
                 </conceito>
-                <nivel name="p_nivel" type="select" multiple="false" tags="false" domain="nivel « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
-                    <label>Nivel</label>
-                    <list>
-                        <option/>
-                        <option>
-                            <text>Nível 0</text>
-                            <value>0</value>
-                        </option>
-                        <option>
-                            <text>Nível 1</text>
-                            <value>1</value>
-                        </option>
-                        <option>
-                            <text>Nível 2</text>
-                            <value>2</value>
-                        </option>
-                        <option>
-                            <text>Nível 3</text>
-                            <value>3</value>
-                        </option>
-                    </list>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </nivel>
                 <pergunta name="p_pergunta" type="textarea" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Pergunta</label>
-                    <value>Lorem officia deserunt omnis sit sed perspiciatis doloremque deserunt laudantium dolor ipsum aperiam labore consectetur</value>
+                    <value>Doloremque adipiscing ipsum labore iste adipiscing aliqua laudantium mollit perspiciatis unde officia labore adipiscing aperiam</value>
                 </pergunta>
                 <hidden name="p_id_pergunta" type="hidden" maxlength="250" java-type="" tag="id_pergunta"/>
             </fields>
@@ -111,7 +111,7 @@
             <fields>
                 <resposta name="p_resposta" type="textarea" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
                     <label>Resposta</label>
-                    <value>Mollit anim sit omnis aliqua lorem deserunt ut dolor officia anim laudantium officia perspiciatis anim</value>
+                    <value>Unde totam sit dolor natus officia voluptatem dolor labore rem aliqua magna lorem unde accusantium</value>
                 </resposta>
                 <resposta_certa name="p_resposta_certa" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" check="true" desc="true">
                     <label>Resposta certa</label>
@@ -121,32 +121,32 @@
             <table>
                 <value>
                     <row>
-                        <resposta name="p_resposta" desc="true">Sed voluptatem ut laudantium consectetur aliqua dolor mollit anim amet deserunt officia dolor totam adipiscing</resposta>
-                        <resposta_desc name="p_resposta_desc">Sed voluptatem ut laudantium consectetur aliqua dolor mollit anim amet deserunt officia dolor totam adipiscing</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Totam doloremque elit labore totam anim aliqua unde ut amet stract natus sit voluptatem deserunt</resposta>
+                        <resposta_desc name="p_resposta_desc">Totam doloremque elit labore totam anim aliqua unde ut amet stract natus sit voluptatem deserunt</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Voluptatem omnis accusantium labore omnis laudantium unde sit omnis adipiscing labore unde voluptatem aperiam elit</resposta>
-                        <resposta_desc name="p_resposta_desc">Voluptatem omnis accusantium labore omnis laudantium unde sit omnis adipiscing labore unde voluptatem aperiam elit</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Aperiam ipsum voluptatem magna consectetur omnis deserunt officia consectetur laudantium ut dolor magna elit ipsum</resposta>
+                        <resposta_desc name="p_resposta_desc">Aperiam ipsum voluptatem magna consectetur omnis deserunt officia consectetur laudantium ut dolor magna elit ipsum</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Omnis anim accusantium omnis unde ut sit natus sit stract aliqua elit lorem laudantium perspiciatis</resposta>
-                        <resposta_desc name="p_resposta_desc">Omnis anim accusantium omnis unde ut sit natus sit stract aliqua elit lorem laudantium perspiciatis</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Aperiam mollit rem ut officia iste doloremque sit stract lorem amet sit perspiciatis ipsum rem</resposta>
+                        <resposta_desc name="p_resposta_desc">Aperiam mollit rem ut officia iste doloremque sit stract lorem amet sit perspiciatis ipsum rem</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Iste unde mollit iste anim laudantium elit natus stract lorem sit elit perspiciatis mollit deserunt</resposta>
-                        <resposta_desc name="p_resposta_desc">Iste unde mollit iste anim laudantium elit natus stract lorem sit elit perspiciatis mollit deserunt</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Accusantium magna adipiscing aperiam officia perspiciatis labore doloremque consectetur totam sit ipsum voluptatem sit adipiscing</resposta>
+                        <resposta_desc name="p_resposta_desc">Accusantium magna adipiscing aperiam officia perspiciatis labore doloremque consectetur totam sit ipsum voluptatem sit adipiscing</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
                     <row>
-                        <resposta name="p_resposta" desc="true">Aperiam iste officia doloremque magna ipsum doloremque sit totam laudantium amet officia magna laudantium mollit</resposta>
-                        <resposta_desc name="p_resposta_desc">Aperiam iste officia doloremque magna ipsum doloremque sit totam laudantium amet officia magna laudantium mollit</resposta_desc>
+                        <resposta name="p_resposta" desc="true">Perspiciatis lorem stract magna sed natus lorem adipiscing labore anim labore unde voluptatem lorem deserunt</resposta>
+                        <resposta_desc name="p_resposta_desc">Perspiciatis lorem stract magna sed natus lorem adipiscing labore anim labore unde voluptatem lorem deserunt</resposta_desc>
                         <resposta_certa name="p_resposta_certa" check="true" desc="true">1</resposta_certa>
                         <resposta_certa_desc name="p_resposta_certa_desc">1</resposta_certa_desc>
                     </row>
@@ -166,9 +166,37 @@
         </toolsbar_1>
     </content>
     <blockly>
-        <imports></imports>
+        <imports>
+            <import type="combo_dao">Combo Dao</import>
+            <import type="dao">EnunciadoTbl</import>
+        </imports>
         <xml>
-            <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="controller" id="controller" x="388" y="13">
+                <statement name="index">
+                    <block type="combo_dao" id="Y2%rlsBlF124N`IFGOhl" inline="true">
+                        <mutation order="null" limit="null" count="NaN"></mutation>
+                        <field name="selecao">nivel</field>
+                        <field name="dao">EnunciadoTbl</field>
+                        <field name="selecionar">TRUE</field>
+                        <statement name="key_val">
+                            <block type="option_dao" id="wFqqt^D]7@KO|Sy*2]Md" inline="true">
+                                <value name="key_val">
+                                    <block type="get-dao-EnunciadoTbl" id="DWp.JSh5xPlE)(S%j#o/">
+                                        <mutation hover_type="Integer::id"></mutation>
+                                        <field name="DAO_FIELD">Integer::id</field>
+                                    </block>
+                                </value>
+                                <value name="value_val">
+                                    <block type="get-dao-EnunciadoTbl" id="*;?;zz%e9kKf,gE0zbG~">
+                                        <mutation hover_type="String::descricao"></mutation>
+                                        <field name="DAO_FIELD">String::descricao</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                    </block>
+                </statement>
+            </block>
         </xml>
     </blockly>
 </rows>

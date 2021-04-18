@@ -53,7 +53,7 @@ public class Lista_de_classificacaoView extends View {
 		
 		data_de_realizacao = new DateField(model,"data_de_realizacao");
 		data_de_realizacao.setLabel(gt("Data de Realização"));
-		data_de_realizacao.propertie().add("name","p_data_de_realizacao").add("type","date").add("range","false").add("maxlength","30").add("showLabel","true").add("group_in","");
+		data_de_realizacao.propertie().add("name","p_data_de_realizacao").add("type","date").add("range","false").add("maxlength","30").add("showLabel","true").add("group_in","").add("disableWeekends","false").add("daysoff","false");
 		
 		classificacao = new TextField(model,"classificacao");
 		classificacao.setLabel(gt("Classificação (máximo 40 Pontos)"));
@@ -72,7 +72,7 @@ public class Lista_de_classificacaoView extends View {
 		btn_ver = new IGRPButton("Ver","sistema_de_avaliacao_igrpweb","Lista_de_classificacao","ver","_blank","warning|fa-eye","","");
 		btn_ver.propertie.add("id","button_3ef4_b061").add("type","specific").add("class","warning").add("rel","ver").add("refresh_components","");
 
-		btn_emitir_certificado = new IGRPButton("Emitir Certificado","sistema_de_avaliacao_igrpweb","Lista_de_classificacao","emitir_certificado","mpsubmit|refresh","danger|fa-graduation-cap","","");
+		btn_emitir_certificado = new IGRPButton("Emitir Certificado","sistema_de_avaliacao_igrpweb","Lista_de_classificacao","emitir_certificado","mpsubmit","danger|fa-graduation-cap","","");
 		btn_emitir_certificado.propertie.add("id","button_c93d_97f1").add("type","specific").add("flg_transaction","true").add("class","danger").add("rel","emitir_certificado").add("refresh_components","");
 
 		

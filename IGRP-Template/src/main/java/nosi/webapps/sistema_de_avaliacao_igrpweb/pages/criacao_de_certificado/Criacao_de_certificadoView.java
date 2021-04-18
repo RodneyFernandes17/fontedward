@@ -11,10 +11,13 @@ public class Criacao_de_certificadoView extends View {
 	public Field sectionheader_1_text;
 	public Field foto;
 	public Field nome;
-	public Field avaliador;
-	public Field chave_de_validacao;
-	public Field horas_de_formacao;
+	public Field titulo;
 	public Field data;
+	public Field chave_de_validacao;
+	public Field callback_url;
+	public Field texto_1;
+	public Field texto_2;
+	public Field texto_3;
 	public Field id_avaliado;
 	public Field fundo;
 	public Field logo;
@@ -47,21 +50,33 @@ public class Criacao_de_certificadoView extends View {
 		nome.setLabel(gt("Nome"));
 		nome.propertie().add("name","p_nome").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
 		
-		avaliador = new ListField(model,"avaliador");
-		avaliador.setLabel(gt("Avaliador"));
-		avaliador.propertie().add("name","p_avaliador").add("type","select").add("multiple","false").add("tags","false").add("domain","avaliadores « sistema_de_avaliacao_igrpweb").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
+		titulo = new TextField(model,"titulo");
+		titulo.setLabel(gt("Título"));
+		titulo.propertie().add("name","p_titulo").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
+		
+		data = new DateField(model,"data");
+		data.setLabel(gt("Data"));
+		data.propertie().add("name","p_data").add("type","date").add("range","false").add("disableWeekends","false").add("daysoff","false").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("class","primary");
 		
 		chave_de_validacao = new TextField(model,"chave_de_validacao");
 		chave_de_validacao.setLabel(gt("Chave de Validacao"));
 		chave_de_validacao.propertie().add("name","p_chave_de_validacao").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
 		
-		horas_de_formacao = new NumberField(model,"horas_de_formacao");
-		horas_de_formacao.setLabel(gt("Horas de Formação"));
-		horas_de_formacao.propertie().add("name","p_horas_de_formacao").add("type","number").add("min","").add("max","").add("calculation","false").add("mathcal","").add("numberformat","").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("java-type","");
+		callback_url = new TextField(model,"callback_url");
+		callback_url.setLabel(gt("Callback_url"));
+		callback_url.propertie().add("name","p_callback_url").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
 		
-		data = new DateField(model,"data");
-		data.setLabel(gt("Data"));
-		data.propertie().add("name","p_data").add("type","date").add("range","false").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false").add("class","primary");
+		texto_1 = new TextField(model,"texto_1");
+		texto_1.setLabel(gt("Texto 1"));
+		texto_1.propertie().add("name","p_texto_1").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
+		
+		texto_2 = new TextField(model,"texto_2");
+		texto_2.setLabel(gt("Texto 2"));
+		texto_2.propertie().add("name","p_texto_2").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
+		
+		texto_3 = new TextField(model,"texto_3");
+		texto_3.setLabel(gt("Texto 3"));
+		texto_3.propertie().add("name","p_texto_3").add("type","text").add("maxlength","250").add("required","false").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
 		
 		id_avaliado = new HiddenField(model,"id_avaliado");
 		id_avaliado.setLabel(gt(""));
@@ -89,10 +104,13 @@ public class Criacao_de_certificadoView extends View {
 
 		form_1.addField(foto);
 		form_1.addField(nome);
-		form_1.addField(avaliador);
-		form_1.addField(chave_de_validacao);
-		form_1.addField(horas_de_formacao);
+		form_1.addField(titulo);
 		form_1.addField(data);
+		form_1.addField(chave_de_validacao);
+		form_1.addField(callback_url);
+		form_1.addField(texto_1);
+		form_1.addField(texto_2);
+		form_1.addField(texto_3);
 		form_1.addField(id_avaliado);
 
 		form_2.addField(fundo);
@@ -107,10 +125,13 @@ public class Criacao_de_certificadoView extends View {
 	public void setModel(Model model) {
 		
 		nome.setValue(model);
-		avaliador.setValue(model);
-		chave_de_validacao.setValue(model);
-		horas_de_formacao.setValue(model);
+		titulo.setValue(model);
 		data.setValue(model);
+		chave_de_validacao.setValue(model);
+		callback_url.setValue(model);
+		texto_1.setValue(model);
+		texto_2.setValue(model);
+		texto_3.setValue(model);
 		id_avaliado.setValue(model);	
 
 		}

@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Lista_de_perguntas extends Model{		
 
-	@RParam(rParamName = "p_conceito_form")
-	private String conceito_form;
-
 	@RParam(rParamName = "p_nivel_form")
 	private String nivel_form;
+
+	@RParam(rParamName = "p_conceito_form")
+	private String conceito_form;
 	
 	private List<Table_1> table_1 = new ArrayList<>();	
 	public void setTable_1(List<Table_1> table_1){
@@ -24,18 +24,18 @@ public class Lista_de_perguntas extends Model{
 	}
 
 	
-	public void setConceito_form(String conceito_form){
-		this.conceito_form = conceito_form;
-	}
-	public String getConceito_form(){
-		return this.conceito_form;
-	}
-	
 	public void setNivel_form(String nivel_form){
 		this.nivel_form = nivel_form;
 	}
 	public String getNivel_form(){
 		return this.nivel_form;
+	}
+	
+	public void setConceito_form(String conceito_form){
+		this.conceito_form = conceito_form;
+	}
+	public String getConceito_form(){
+		return this.conceito_form;
 	}
 
 

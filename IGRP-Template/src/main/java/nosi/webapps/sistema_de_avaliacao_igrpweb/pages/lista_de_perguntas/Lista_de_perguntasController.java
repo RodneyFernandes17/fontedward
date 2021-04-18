@@ -7,9 +7,12 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
-import java.util.ArrayList;
-import java.util.List;
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.PerguntaTbl;
+import java.util.ArrayList; //block import
+import java.util.List; //block import
+import java.util.List; //block import
+import java.util.LinkedHashMap; //block import
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.EnunciadoTbl; //block import
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.PerguntaTbl; //block import
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import java.util.ArrayList;
@@ -25,12 +28,20 @@ public class Lista_de_perguntasController extends Controller {
 		Lista_de_perguntasView view = new Lista_de_perguntasView();
 		view.id_pergunta.setParam(true);
 		view.conceito_form.loadDomain("conceitos","sistema_de_avaliacao_igrpweb","-- Selecionar --");
-		view.nivel_form.loadDomain("nivel","sistema_de_avaliacao_igrpweb","-- Selecionar --");
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT 'Deserunt rem doloremque totam' as conceito,'Rem magna labore unde natus st' as pergunta,'Omnis voluptatem doloremque an' as nivel,'hidden-7f4c_834f' as id_pergunta "));
+		model.loadTable_1(Core.query(null,"SELECT 'Iste ut totam rem mollit' as conceito,'Ut iste laudantium iste anim u' as pergunta,'Elit adipiscing natus elit rem' as nivel,'hidden-1a73_c94c' as id_pergunta "));
+		view.nivel_form.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
+	try{
+	EnunciadoTbl enunciadotblfilter = new EnunciadoTbl().find();
+	
+	List<EnunciadoTbl> enunciadotblList = enunciadotblfilter.all();
+	view.nivel_form.setValue(Core.toMap(enunciadotblList, "id","descricao","-- Selecionar --"));
+	}catch ( Exception e ) {
+		e.printStackTrace();
+	}
 		/*----#start-code(index)----*/
 			  
 	try{
@@ -40,7 +51,7 @@ public class Lista_de_perguntasController extends Controller {
 		perguntatblfilter.andWhere("conceito","=",model.getConceito_form());
 	}
 	if(Core.isNotNull(model.getNivel_form())){
-		perguntatblfilter.andWhere("nivel","=",Core.toInt(model.getNivel_form()));
+		perguntatblfilter.andWhere("enunciadoId","=",Core.toInt(model.getNivel_form()));
 	}
 	List<PerguntaTbl> perguntatblList = perguntatblfilter.all();
 	List<Lista_de_perguntas.Table_1> perguntatblTable = new ArrayList<>();
@@ -50,7 +61,7 @@ public class Lista_de_perguntasController extends Controller {
 			row.setConceito(Core.findDomainDescByKey("conceitos", perguntatbl.getConceito()));
 			row.setPergunta(perguntatbl.getPergunta());
 			row.setId_pergunta(""+perguntatbl.getIdPergunta());
-			row.setNivel(perguntatbl.getNivel()+"");
+			row.setNivel(perguntatbl.getEnunciadoId().getDescricao());
 			perguntatblTable.add(row);
 		}
 	}

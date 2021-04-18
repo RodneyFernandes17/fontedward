@@ -12,6 +12,7 @@ import nosi.core.webapp.Response;//
 import java.util.ArrayList;
 import java.util.List;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.Formando;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TesteTbl;
 import nosi.core.webapp.Report;
 /*----#end-code----*/
@@ -26,34 +27,39 @@ public class Lista_de_classificacaoController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT '4' as aprovacao,'../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Iste sed adipiscing voluptatem' as nome,'Rem lorem voluptatem ut sit am' as formacao,'Officia laudantium sit amet is' as edicao,'02-01-2016' as data_de_realizacao,'Officia voluptatem natus sed a' as classificacao,'hidden-9791_7a9c' as id_teste,'hidden-412d_25bd' as id_avaliado "));
+		model.loadTable_1(Core.query(null,"SELECT '3' as aprovacao,'../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Sit aliqua deserunt voluptatem' as nome,'Ipsum elit ut amet deserunt do' as formacao,'Perspiciatis lorem sit adipisc' as edicao,'02-04-2011' as data_de_realizacao,'Aperiam sit deserunt doloremqu' as classificacao,'hidden-64b4_679b' as id_teste,'hidden-c057_9b23' as id_avaliado "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
-		try{
-	
-	TesteTbl testetblfilter = new TesteTbl().find();
-	List<TesteTbl> testetblList = testetblfilter.orderByDesc("valorFinal").all();
-	List<Lista_de_classificacao.Table_1> testetblTable = new ArrayList<>();
-	if(testetblList != null){
-		for(TesteTbl testetbl : testetblList){
-			Lista_de_classificacao.Table_1 row = new Lista_de_classificacao.Table_1();
-          	row.setId_avaliado(testetbl.getIdAvaliadoFk()!=null? ""+testetbl.getIdAvaliadoFk().getIdAvaliado():null);
-			row.setFoto(testetbl.getIdAvaliadoFk()!=null?Core.getLinkFileByUuid(testetbl.getIdAvaliadoFk().getIdFoto()):null);
-			row.setNome(testetbl.getIdAvaliadoFk()!=null?testetbl.getIdAvaliadoFk().getNome():null);
-			row.setFormacao(Core.findDomainDescByKey("formacao", testetbl.getIdAvaliadoFk().getFormacao()) );
-			row.setClassificacao(testetbl.getValorFinal()+" Pontos");
-			row.setId_teste(""+testetbl.getIdTeste());
-			row.setAprovacao(testetbl.getAprovacao()+"");
-          	row.setData_de_realizacao(testetbl.getDataRealizacao()+"");
-          	row.setEdicao(Core.findDomainDescByKey("edicao", testetbl.getIdAvaliadoFk()!=null?testetbl.getIdAvaliadoFk().getEdicao():null ));
-			testetblTable.add(row);
+		try {
+
+			TesteTbl testetblfilter = new TesteTbl().find();
+			List<TesteTbl> testetblList = testetblfilter.orderByDesc("valorFinal").all();
+			List<Lista_de_classificacao.Table_1> testetblTable = new ArrayList<>();
+			if (testetblList != null) {
+				for (TesteTbl testetbl : testetblList) {
+					Lista_de_classificacao.Table_1 row = new Lista_de_classificacao.Table_1();
+					row.setId_avaliado(
+							testetbl.getIdAvaliadoFk() != null ? "" + testetbl.getIdAvaliadoFk().getIdAvaliado()
+									: null);
+					row.setFoto(testetbl.getIdAvaliadoFk() != null
+							? Core.getLinkFileByUuid(testetbl.getIdAvaliadoFk().getIdFoto())
+							: null);
+					row.setNome(testetbl.getIdAvaliadoFk() != null ? testetbl.getIdAvaliadoFk().getNome() : null);
+					row.setFormacao(Core.findDomainDescByKey("formacao", testetbl.getIdAvaliadoFk().getFormacao()));
+					row.setClassificacao(testetbl.getValorFinal() + " Pontos");
+					row.setId_teste("" + testetbl.getIdTeste());
+					row.setAprovacao(testetbl.getAprovacao() + "");
+					row.setData_de_realizacao(testetbl.getDataRealizacao() + "");
+					row.setEdicao(Core.findDomainDescByKey("edicao",
+							testetbl.getIdAvaliadoFk() != null ? testetbl.getIdAvaliadoFk().getEdicao() : null));
+					testetblTable.add(row);
+				}
+			}
+			model.setTable_1(testetblTable);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-	}
-	model.setTable_1(testetblTable);
-	}catch(Exception e){
-	e.printStackTrace();
-	}
-		
+
 		/*----#end-code----*/
 		view.setModel(model);
 		return this.renderView(view);	
@@ -91,14 +97,21 @@ public class Lista_de_classificacaoController extends Controller {
 		  Use model.validate() to validate your model
 		  ----#gen-example */
 		/*----#start-code(emitir_certificado)----*/
-		
-		AvaliadoTbl avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
 
-		String contraprova = avaliadotbl.getChaveAut();
-
-		return Core.getLinkReport("certificado_igrpweb",
-				new Report().addParam("value_array", Core.getParam("p_id_avaliado")).setContraProva("IGRPWEB_"+contraprova));
+		TesteTbl teste = new TesteTbl().findOne(Core.getParamInt("p_id_teste"));
 		
+		Core.setMessageSuccess(""+teste.getIdAvaliadoFk().getIdAvaliado());
+		
+		
+		Formando contraprov = new Formando().where("formando.idAvaliado","=", teste.getIdAvaliadoFk().getIdAvaliado())
+				.andWhere("formacao.id","=", teste.getFormacaoId().getId()).one();
+		
+		Core.setMessageSuccess(""+contraprov.getChaveAut());
+		String contraprova = contraprov.getChaveAut();
+
+		return Core.getLinkReport("certificado_igrpweb", new Report()
+				.addParam("value_array", contraprov.getId()).setContraProva("IGRPWEB_" + contraprova));
+
 		/*----#end-code----*/
 			
 	}
@@ -107,6 +120,5 @@ public class Lista_de_classificacaoController extends Controller {
 		
 /*----#start-code(custom_actions)----*/
 
-
-/*----#end-code----*/
+	/*----#end-code----*/
 }

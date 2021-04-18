@@ -41,7 +41,7 @@
             <fields>
                 <semana name="p_semana" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
                     <label>Semana</label>
-                    <value>81</value>
+                    <value>19</value>
                 </semana>
                 <atual name="p_atual" type="checkbox" maxlength="250" required="false" change="false" readonly="false" disabled="false" right="false" java-type="int" switch="false" check="true">
                     <label>Atual</label>
@@ -69,6 +69,12 @@
                 <atual_tbl name="p_atual_tbl" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
                     <label>Atual</label>
                 </atual_tbl>
+                <data_atualizacao name="p_data_atualizacao" type="date" range="false" disableWeekends="false" daysoff="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Data Atualização</label>
+                </data_atualizacao>
+                <modificador name="p_modificador" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Modificador</label>
+                </modificador>
             </fields>
             <table>
                 <value>
@@ -77,16 +83,20 @@
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">18</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Aliqua consectetur ipsum sed s</atual_tbl>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
                         <semana_tbl name="p_semana_tbl">23</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Voluptatem lorem totam stract</atual_tbl>
+                        <atual_tbl name="p_atual_tbl">Officia accusantium consectetu</atual_tbl>
+                        <data_atualizacao name="p_data_atualizacao">07-08-2014</data_atualizacao>
+                        <modificador name="p_modificador">Aperiam accusantium natus dese</modificador>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <semana_tbl name="p_semana_tbl">0</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Rem sit doloremque elit iste</atual_tbl>
+                        <data_atualizacao name="p_data_atualizacao">05-01-2013</data_atualizacao>
+                        <modificador name="p_modificador">Aperiam lorem voluptatem labor</modificador>
                     </row>
                     <row>
                         <context-menu>
@@ -94,23 +104,29 @@
                             <param>p2=linha1</param>
                         </context-menu>
                         <semana_tbl name="p_semana_tbl">5</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Dolor stract accusantium volup</atual_tbl>
+                        <atual_tbl name="p_atual_tbl">Doloremque perspiciatis natus</atual_tbl>
+                        <data_atualizacao name="p_data_atualizacao">06-06-2016</data_atualizacao>
+                        <modificador name="p_modificador">Aperiam stract consectetur vol</modificador>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">5</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Adipiscing aperiam anim dolore</atual_tbl>
+                        <semana_tbl name="p_semana_tbl">4</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Ut adipiscing consectetur magn</atual_tbl>
+                        <data_atualizacao name="p_data_atualizacao">06-05-2016</data_atualizacao>
+                        <modificador name="p_modificador">Magna laudantium consectetur e</modificador>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <semana_tbl name="p_semana_tbl">1</semana_tbl>
-                        <atual_tbl name="p_atual_tbl">Lorem doloremque ipsum totam s</atual_tbl>
+                        <semana_tbl name="p_semana_tbl">17</semana_tbl>
+                        <atual_tbl name="p_atual_tbl">Sed sit deserunt perspiciatis</atual_tbl>
+                        <data_atualizacao name="p_data_atualizacao">02-07-2012</data_atualizacao>
+                        <modificador name="p_modificador">Mollit aperiam sit stract rem</modificador>
                     </row>
                 </value>
                 <context-menu>
@@ -137,7 +153,7 @@
         <xml>
             <block type="controller" id="controller" x="388" y="13"></block>
             <block type="formuu_form_1" id="1^:lH[d#o;@w_:l?-o03" inline="true" x="688" y="13">
-                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <mutation order="null" limit="null" count="0"></mutation>
                 <field name="dao">SemanaTbl</field>
                 <value name="get_pa">
                     <block type="core_get_param" id="-68#M6!c4e|i(%CanT!=">
@@ -171,9 +187,10 @@
                 </statement>
             </block>
             <block type="listar_table_1" id="table_1" inline="true" x="913" y="138">
-                <mutation pxchecked="false" limit="false" count="0"></mutation>
+                <mutation order="" limit="TODOSS" count="0"></mutation>
                 <field name="dao">SemanaTbl</field>
                 <field name="FILL">FALSE</field>
+                <field name="orderdrop"></field>
                 <field name="find">TODOSS</field>
                 <field name="limit"></field>
                 <statement name="value2">

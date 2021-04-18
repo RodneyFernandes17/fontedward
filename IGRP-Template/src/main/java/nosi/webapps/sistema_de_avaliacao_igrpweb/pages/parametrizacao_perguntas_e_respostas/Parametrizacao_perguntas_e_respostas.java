@@ -12,12 +12,12 @@ import nosi.core.validator.constraints.*;
 
 public class Parametrizacao_perguntas_e_respostas extends Model{		
 
-	@RParam(rParamName = "p_conceito")
-	private String conceito;
-
 	@NotNull()
 	@RParam(rParamName = "p_nivel")
 	private String nivel;
+
+	@RParam(rParamName = "p_conceito")
+	private String conceito;
 
 	@RParam(rParamName = "p_pergunta")
 	private String pergunta;
@@ -62,18 +62,18 @@ public class Parametrizacao_perguntas_e_respostas extends Model{
 		return this.p_separatorlist_1_edit;
 	}
 	
-	public void setConceito(String conceito){
-		this.conceito = conceito;
-	}
-	public String getConceito(){
-		return this.conceito;
-	}
-	
 	public void setNivel(String nivel){
 		this.nivel = nivel;
 	}
 	public String getNivel(){
 		return this.nivel;
+	}
+	
+	public void setConceito(String conceito){
+		this.conceito = conceito;
+	}
+	public String getConceito(){
+		return this.conceito;
 	}
 	
 	public void setPergunta(String pergunta){

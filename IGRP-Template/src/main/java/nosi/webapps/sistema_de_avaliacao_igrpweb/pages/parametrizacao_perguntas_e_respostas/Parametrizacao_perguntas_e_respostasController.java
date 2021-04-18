@@ -4,9 +4,14 @@ import nosi.core.webapp.Controller;//
 import nosi.core.webapp.databse.helpers.ResultSet;//
 import nosi.core.webapp.databse.helpers.QueryInterface;//
 import java.io.IOException;//
+import java.time.LocalDateTime;
+
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
+import java.util.List; //block import
+import java.util.LinkedHashMap; //block import
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.EnunciadoTbl; //block import
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import nosi.core.gui.components.IGRPSeparatorList.Pair;
@@ -19,7 +24,9 @@ import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.PerguntaTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.RespostaTbl;
 import java.util.LinkedHashMap;
 import static nosi.core.i18n.Translator.gt;
-
+import java.util.List; 
+import java.util.LinkedHashMap;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.EnunciadoTbl; 
 /*----#end-code----*/
 		
 public class Parametrizacao_perguntas_e_respostasController extends Controller {
@@ -28,15 +35,30 @@ public class Parametrizacao_perguntas_e_respostasController extends Controller {
 		model.load();
 		Parametrizacao_perguntas_e_respostasView view = new Parametrizacao_perguntas_e_respostasView();
 		view.conceito.loadDomain("conceitos","sistema_de_avaliacao_igrpweb","-- Selecionar --");
-		view.nivel.loadDomain("nivel","sistema_de_avaliacao_igrpweb","-- Selecionar --");
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadSeparatorlist_1(Core.query(null,"SELECT 'Consectetur ut voluptatem aperiam lorem consectetur officia lorem rem doloremque anim ut stract sed amet' as resposta,'1' as resposta_certa "));
+		model.loadSeparatorlist_1(Core.query(null,"SELECT 'Stract officia sed accusantium sed perspiciatis mollit deserunt mollit sit unde perspiciatis totam aliqua omnis' as resposta,'1' as resposta_certa "));
+		view.nivel.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
+	try{
+	EnunciadoTbl enunciadotblfilter = new EnunciadoTbl().find();
+	
+	List<EnunciadoTbl> enunciadotblList = enunciadotblfilter.all();
+	view.nivel.setValue(Core.toMap(enunciadotblList, "id","descricao","-- Selecionar --"));
+	}catch ( Exception e ) {
+		e.printStackTrace();
+	}
 		/*----#start-code(index)----*/
 
-	   
+	   try{
+	EnunciadoTbl enunciadotblfilter = new EnunciadoTbl().find();
+	
+	List<EnunciadoTbl> enunciadotblList = enunciadotblfilter.all();
+	view.nivel.setValue(Core.toMap(enunciadotblList, "id","descricao","-- Selecionar --"));
+	}catch ( Exception e ) {
+		e.printStackTrace();
+	}
 	      
 	    try{
 		String isEdit = Core.getParam("isEdit");
@@ -45,7 +67,7 @@ public class Parametrizacao_perguntas_e_respostasController extends Controller {
 			if (perguntatbl!=null && !perguntatbl.hasError()) {
 				model.setConceito(perguntatbl.getConceito());
 				model.setPergunta(perguntatbl.getPergunta());
-				model.setNivel(perguntatbl.getNivel()+"");
+				model.setNivel(perguntatbl.getEnunciadoId().getId()+"");
 				model.setId_pergunta(""+perguntatbl.getIdPergunta());
 		
 	            try{
@@ -60,7 +82,7 @@ public class Parametrizacao_perguntas_e_respostasController extends Controller {
 	                        Parametrizacao_perguntas_e_respostas.Separatorlist_1 row = new Parametrizacao_perguntas_e_respostas.Separatorlist_1();
 
 	                        row.setResposta( new Pair(respostatbl.getResposta(),respostatbl.getResposta()) );
-	            			row.setResposta_certa( new Pair(respostatbl.getRespostaCerta(),respostatbl.getRespostaCerta()) );
+	            			row.setResposta_certa( new Pair(respostatbl.getRespostaCerta()+"",respostatbl.getRespostaCerta()+"") );
 	            			row.setSeparatorlist_1_id( new Pair(""+respostatbl.getIdResposta(),""+respostatbl.getIdResposta()) );
 	                        separatorlistDocs.add(row);
 	                    });
@@ -109,7 +131,9 @@ public class Parametrizacao_perguntas_e_respostasController extends Controller {
 			if (perguntatbl != null){
 				perguntatbl.setPergunta(model.getPergunta());
 				perguntatbl.setConceito(model.getConceito());
-				perguntatbl.setNivel(Core.toInt(model.getNivel()));
+				EnunciadoTbl enunci = new EnunciadoTbl().find().andWhere("id","=",Core.toInt(model.getNivel())).keepConnection().one();
+				perguntatbl.setEnunciadoId(enunci);
+				perguntatbl.setData(LocalDateTime.now());
 			}
 			session.persist(perguntatbl);
 			List<String> respostatbleditList = new ArrayList<>();
@@ -127,7 +151,7 @@ public class Parametrizacao_perguntas_e_respostasController extends Controller {
 				}
 					
 				respostatbl.setResposta(row.getResposta().getKey());
-				respostatbl.setRespostaCerta(""+row.getResposta_certa().getKey());
+				respostatbl.setRespostaCerta(Core.toInt(row.getResposta_certa().getKey()));
 				respostatbl.setIdPerguntaFk(perguntatbl);
 				session.persist(respostatbl);
 			}

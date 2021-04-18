@@ -1,23 +1,25 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
-import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.GenerationType;
 import javax.persistence.Column;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.JoinColumn;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.ForeignKey;
+import javax.validation.constraints.Size;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.GenerationType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
-import javax.persistence.ForeignKey;
 
 /**
- * @author: Nositeste 13-03-2021
+ * @author: Nositeste 15-04-2021
 */
 
 @Entity
-@Table(name = "resposta_tbl", schema = "")
+@Table(name = "resposta_tbl", schema = "public")
 @NamedQuery(name = "RespostaTbl.findAll", query = "SELECT t FROM RespostaTbl t")
 public class RespostaTbl extends BaseActiveRecord<RespostaTbl> {
 
@@ -27,15 +29,17 @@ public class RespostaTbl extends BaseActiveRecord<RespostaTbl> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_resposta", updatable = false, nullable = false)
+	@Column(name = "id_resposta", nullable = false, updatable = false)
  	private Integer idResposta;
-	@Column(name = "resposta", nullable = false, length = 2147483647)
+	@NotBlank
+	@Size(min = 1, max = 2147483647)
+	@Column(name = "resposta")
 	private String resposta;
-	@Column(name = "resposta_certa", nullable = false, length = 2147483647)
-	private String respostaCerta;
 	@ManyToOne
-	@JoinColumn(name = "id_pergunta_fk", foreignKey = @ForeignKey(name = "pergunta_fk"), nullable = false)
+	@JoinColumn(name = "id_pergunta_fk", foreignKey = @ForeignKey(name = "pergunta_fk"))
 	private PerguntaTbl idPerguntaFk;
+	@Column(name = "resposta_certa")
+	private Integer respostaCerta;
 
 	public Integer getIdResposta() { 
 		return this.idResposta;
@@ -53,20 +57,20 @@ public class RespostaTbl extends BaseActiveRecord<RespostaTbl> {
 		 this.resposta = resposta;
 	}
 
-	public String getRespostaCerta() { 
-		return this.respostaCerta;
-	}
-
-	public void setRespostaCerta(String respostaCerta) {
-		 this.respostaCerta = respostaCerta;
-	}
-
 	public PerguntaTbl getIdPerguntaFk() { 
 		return this.idPerguntaFk;
 	}
 
 	public void setIdPerguntaFk(PerguntaTbl idPerguntaFk) {
 		 this.idPerguntaFk = idPerguntaFk;
+	}
+
+	public Integer getRespostaCerta() { 
+		return this.respostaCerta;
+	}
+
+	public void setRespostaCerta(Integer respostaCerta) {
+		 this.respostaCerta = respostaCerta;
 	}
 
 }

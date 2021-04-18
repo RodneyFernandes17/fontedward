@@ -7,6 +7,9 @@ import nosi.core.validator.constraints.*;
 
 public class Questoes_gerais extends Model{		
 
+	@RParam(rParamName = "p_sectionheader_1_text")
+	private String sectionheader_1_text;
+
 	@RParam(rParamName = "p_conceitos_de_igrp_studio")
 	private String conceitos_de_igrp_studio;
 
@@ -430,6 +433,16 @@ public class Questoes_gerais extends Model{
 
 	@RParam(rParamName = "p_nivel")
 	private String nivel;
+
+	@RParam(rParamName = "p_formacao")
+	private String formacao;
+	
+	public void setSectionheader_1_text(String sectionheader_1_text){
+		this.sectionheader_1_text = sectionheader_1_text;
+	}
+	public String getSectionheader_1_text(){
+		return this.sectionheader_1_text;
+	}
 	
 	public void setConceitos_de_igrp_studio(String conceitos_de_igrp_studio){
 		this.conceitos_de_igrp_studio = conceitos_de_igrp_studio;
@@ -1339,6 +1352,13 @@ public class Questoes_gerais extends Model{
 	}
 	public String getNivel(){
 		return this.nivel;
+	}
+	
+	public void setFormacao(String formacao){
+		this.formacao = formacao;
+	}
+	public String getFormacao(){
+		return this.formacao;
 	}
 
 

@@ -1,22 +1,23 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
-import javax.persistence.Column;
-import javax.validation.constraints.Size;
-import javax.persistence.Entity;
 import nosi.base.ActiveRecord.BaseActiveRecord;
-import javax.persistence.ForeignKey;
-import javax.validation.constraints.NotNull;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import java.time.LocalDate;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.persistence.GeneratedValue;
-import javax.persistence.ManyToOne;
-import javax.persistence.GenerationType;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.validation.constraints.Size;
+import javax.persistence.ForeignKey;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.persistence.ManyToOne;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+import javax.persistence.NamedQuery;
 
 /**
- * @author: Nositeste 19-03-2021
+ * @author: Nositeste 17-04-2021
 */
 
 @Entity
@@ -68,25 +69,16 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 	@Size(min = 1, max = 2147483647)
 	@Column(name = "email")
 	private String email;
-	@NotNull
-	@Column(name = "nivel")
-	private Integer nivel;
-	@NotBlank
-	@Size(min = 1, max = 2147483647)
-	@Column(name = "formador")
-	private String formador;
-	@NotNull
-	@Column(name = "horas")
-	private Integer horas;
-	@NotBlank
-	@Size(min = 1, max = 2147483647)
-	@Column(name = "chave_aut")
-	private String chaveAut;
 	@Column(name = "id_utilizador")
 	private Integer idUtilizador;
 	@ManyToOne
 	@JoinColumn(name = "id_mentor_fk", foreignKey = @ForeignKey(name = "mentor_fk"))
 	private MentorTbl idMentorFk;
+	@Size(max = 2147483647)
+	@Column(name = "instituicao")
+	private String instituicao;
+	@Column(name = "data_registro")
+	private LocalDate dataRegistro;
 
 	public Integer getIdAvaliado() { 
 		return this.idAvaliado;
@@ -176,38 +168,6 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 		 this.email = email;
 	}
 
-	public Integer getNivel() { 
-		return this.nivel;
-	}
-
-	public void setNivel(Integer nivel) {
-		 this.nivel = nivel;
-	}
-
-	public String getFormador() { 
-		return this.formador;
-	}
-
-	public void setFormador(String formador) {
-		 this.formador = formador;
-	}
-
-	public Integer getHoras() { 
-		return this.horas;
-	}
-
-	public void setHoras(Integer horas) {
-		 this.horas = horas;
-	}
-
-	public String getChaveAut() { 
-		return this.chaveAut;
-	}
-
-	public void setChaveAut(String chaveAut) {
-		 this.chaveAut = chaveAut;
-	}
-
 	public Integer getIdUtilizador() { 
 		return this.idUtilizador;
 	}
@@ -222,6 +182,22 @@ public class AvaliadoTbl extends BaseActiveRecord<AvaliadoTbl> {
 
 	public void setIdMentorFk(MentorTbl idMentorFk) {
 		 this.idMentorFk = idMentorFk;
+	}
+
+	public String getInstituicao() { 
+		return this.instituicao;
+	}
+
+	public void setInstituicao(String instituicao) {
+		 this.instituicao = instituicao;
+	}
+
+	public LocalDate getDataRegistro() { 
+		return this.dataRegistro;
+	}
+
+	public void setDataRegistro(LocalDate dataRegistro) {
+		 this.dataRegistro = dataRegistro;
 	}
 
 }

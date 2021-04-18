@@ -55,42 +55,36 @@
                 </foto>
                 <nome name="p_nome" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Nome</label>
-                    <value>Adipiscing dolor magna sed elit</value>
+                    <value>Amet adipiscing rem sit dolor</value>
                 </nome>
-                <avaliador name="p_avaliador" type="select" multiple="false" tags="false" domain="avaliadores « sistema_de_avaliacao_igrpweb" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
-                    <label>Avaliador</label>
-                    <list>
-                        <option/>
-                        <option>
-                            <text>Rodney Felisberto Fernandes</text>
-                            <value>rff</value>
-                        </option>
-                        <option>
-                            <text>Isaias de Pina Nunes </text>
-                            <value>ipn</value>
-                        </option>
-                        <option>
-                            <text>Francisco Lopes Horta</text>
-                            <value>flh</value>
-                        </option>
-                        <option>
-                            <text>Iekini Marcel M. Fernandes</text>
-                            <value>immf</value>
-                        </option>
-                    </list>
-                </avaliador>
+                <titulo name="p_titulo" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Título</label>
+                    <value>Iste lorem ipsum ut dolor</value>
+                </titulo>
+                <data name="p_data" type="date" range="false" disableWeekends="false" daysoff="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" class="primary">
+                    <label>Data</label>
+                    <value>08-01-2013</value>
+                </data>
                 <chave_de_validacao name="p_chave_de_validacao" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Chave de Validacao</label>
-                    <value>Accusantium sed officia omnis consectetur</value>
+                    <value>Lorem mollit ipsum aliqua officia</value>
                 </chave_de_validacao>
-                <horas_de_formacao name="p_horas_de_formacao" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
-                    <label>Horas de Formação</label>
-                    <value>18</value>
-                </horas_de_formacao>
-                <data name="p_data" type="date" range="false" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" class="primary">
-                    <label>Data</label>
-                    <value>07-05-2017</value>
-                </data>
+                <callback_url name="p_callback_url" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Callback_url</label>
+                    <value>Magna lorem rem sit doloremque</value>
+                </callback_url>
+                <texto_1 name="p_texto_1" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Texto 1</label>
+                    <value>Totam lorem ut consectetur rem</value>
+                </texto_1>
+                <texto_2 name="p_texto_2" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Texto 2</label>
+                    <value>Amet ipsum sed natus omnis</value>
+                </texto_2>
+                <texto_3 name="p_texto_3" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Texto 3</label>
+                    <value>Natus consectetur stract aperiam sed</value>
+                </texto_3>
                 <hidden name="p_id_avaliado" type="hidden" maxlength="250" java-type="" tag="id_avaliado"/>
             </fields>
         </form_1>

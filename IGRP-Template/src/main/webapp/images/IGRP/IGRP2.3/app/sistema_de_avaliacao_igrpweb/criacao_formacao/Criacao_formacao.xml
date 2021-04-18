@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_formacao/Criacao_formacao.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Criacao_formacao</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Criacao_formacao</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=118</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Criação Formação</title>
+        <form_1 type="form" xml-type="form" title="Criação de uma Formação" gen-type="container" gen-group="">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Nome da Formação</label>
+                    <value>Sit elit laudantium sed deserunt</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </nome>
+                <formadores name="p_formadores" type="select" multiple="true" tags="false" domain="avaliadores « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
+                    <label>Formadores</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Rodney Felisberto Fernandes</text>
+                            <value>RFF</value>
+                        </option>
+                        <option>
+                            <text>Francisco Lopes Horta</text>
+                            <value>FLH</value>
+                        </option>
+                        <option>
+                            <text>Iekini Marcel M. Fernandes</text>
+                            <value>IMMF</value>
+                        </option>
+                        <option>
+                            <text>Isaias de Pina Nunes</text>
+                            <value>IPN</value>
+                        </option>
+                    </list>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </formadores>
+                <horas_de_formacao name="p_horas_de_formacao" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
+                    <label>Horas de Formação</label>
+                    <value>1</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </horas_de_formacao>
+                <data_inicio name="p_data_inicio" type="date" range="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" class="primary" disableWeekends="false" daysoff="false">
+                    <label>Data Início</label>
+                    <value>03-02-2015</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </data_inicio>
+                <data_fim name="p_data_fim" type="date" range="false" disableWeekends="false" daysoff="false" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" class="primary">
+                    <label>Data Fim</label>
+                    <value>02-08-2015</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </data_fim>
+                <local name="p_local" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Local</label>
+                    <value>Consectetur sit iste voluptatem totam</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </local>
+                <topicos name="p_topicos" type="texteditor" maxlength="5000" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Tópico Abordados na Formação</label>
+                    <value>Amet anim magna amet mollit laudantium anim magna totam voluptatem officia iste unde totam sit adipiscing officia voluptatem anim unde</value>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </topicos>
+                <teste_de_avaliacao name="p_teste_de_avaliacao" type="select" multiple="false" tags="false" domain="" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Teste de Avaliação</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Option 1</text>
+                            <value>1</value>
+                        </option>
+                        <option>
+                            <text>Option 2</text>
+                            <value>2</value>
+                        </option>
+                        <option>
+                            <text>Option 3</text>
+                            <value>3</value>
+                        </option>
+                        <option>
+                            <text>Option 4</text>
+                            <value>4</value>
+                        </option>
+                    </list>
+                </teste_de_avaliacao>
+                <codigo_do_teste name="p_codigo_do_teste" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Código do Teste</label>
+                    <value>Sit ut totam sed accusantium</value>
+                </codigo_do_teste>
+                <hidden name="p_id_formacao" type="hidden" maxlength="250" java-type="" tag="id_formacao"/>
+            </fields>
+        </form_1>
+        <separatorlist_1 type="separatorlist" xml-type="separatorlist" title="Adicionar Formandos" gen-clean="true" gen-type="container" gen-group="true">
+            <fields>
+                <procurar_avaliado name="p_procurar_avaliado" type="lookup" action="index" page="Lista_avaliacao_semanal" app="sistema_de_avaliacao_igrpweb" lookup_eraser="false" lookup_type="LOOKUP" class="primary" maxlength="250" required="false" change="false" readonly="true" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
+                    <label>Procurar Avaliado</label>
+                    <value/>
+                    <lookup>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_avaliacao_semanal/Lista_avaliacao_semanal.xml</lookup>
+                    <lookupParams>
+                        <param field-target="p_id_avaliado">id_avaliado</param>
+                        <param field-target="p_nome_avaliado">nome</param>
+                    </lookupParams>
+                </procurar_avaliado>
+                <nome_avaliado name="p_nome_avaliado" type="text" maxlength="250" required="false" change="false" readonly="true" disabled="false" placeholder="" desclabel="false" right="false" desc="true">
+                    <label>Nome do Avaliado</label>
+                    <value>Mollit amet officia voluptatem sit</value>
+                </nome_avaliado>
+                <id_avaliado name="p_id_avaliado" type="hidden" maxlength="250" java-type="" tag="id_avaliado" desc="true"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <procurar_avaliado name="p_procurar_avaliado" desc="true"/>
+                        <procurar_avaliado_desc name="p_procurar_avaliado_desc"/>
+                        <nome_avaliado name="p_nome_avaliado" desc="true">Dolor amet voluptatem adipiscing rem</nome_avaliado>
+                        <nome_avaliado_desc name="p_nome_avaliado_desc">Dolor amet voluptatem adipiscing rem</nome_avaliado_desc>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado" desc="true">hidden-359f_5cbf</id_avaliado>
+                        <id_avaliado_desc name="p_id_avaliado_desc">hidden-359f_5cbf</id_avaliado_desc>
+                    </row>
+                    <row>
+                        <procurar_avaliado name="p_procurar_avaliado" desc="true"/>
+                        <procurar_avaliado_desc name="p_procurar_avaliado_desc"/>
+                        <nome_avaliado name="p_nome_avaliado" desc="true">Laudantium stract consectetur ipsum doloremque</nome_avaliado>
+                        <nome_avaliado_desc name="p_nome_avaliado_desc">Laudantium stract consectetur ipsum doloremque</nome_avaliado_desc>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado" desc="true">hidden-436d_ed22</id_avaliado>
+                        <id_avaliado_desc name="p_id_avaliado_desc">hidden-436d_ed22</id_avaliado_desc>
+                    </row>
+                    <row>
+                        <procurar_avaliado name="p_procurar_avaliado" desc="true"/>
+                        <procurar_avaliado_desc name="p_procurar_avaliado_desc"/>
+                        <nome_avaliado name="p_nome_avaliado" desc="true">Accusantium omnis adipiscing amet totam</nome_avaliado>
+                        <nome_avaliado_desc name="p_nome_avaliado_desc">Accusantium omnis adipiscing amet totam</nome_avaliado_desc>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado" desc="true">hidden-8fc8_3a60</id_avaliado>
+                        <id_avaliado_desc name="p_id_avaliado_desc">hidden-8fc8_3a60</id_avaliado_desc>
+                    </row>
+                    <row>
+                        <procurar_avaliado name="p_procurar_avaliado" desc="true"/>
+                        <procurar_avaliado_desc name="p_procurar_avaliado_desc"/>
+                        <nome_avaliado name="p_nome_avaliado" desc="true">Accusantium sit mollit iste omnis</nome_avaliado>
+                        <nome_avaliado_desc name="p_nome_avaliado_desc">Accusantium sit mollit iste omnis</nome_avaliado_desc>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado" desc="true">hidden-24ea_0c63</id_avaliado>
+                        <id_avaliado_desc name="p_id_avaliado_desc">hidden-24ea_0c63</id_avaliado_desc>
+                    </row>
+                    <row>
+                        <procurar_avaliado name="p_procurar_avaliado" desc="true"/>
+                        <procurar_avaliado_desc name="p_procurar_avaliado_desc"/>
+                        <nome_avaliado name="p_nome_avaliado" desc="true">Lorem consectetur amet labore rem</nome_avaliado>
+                        <nome_avaliado_desc name="p_nome_avaliado_desc">Lorem consectetur amet labore rem</nome_avaliado_desc>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado" desc="true">hidden-c9c6_817e</id_avaliado>
+                        <id_avaliado_desc name="p_id_avaliado_desc">hidden-c9c6_817e</id_avaliado_desc>
+                    </row>
+                </value>
+            </table>
+        </separatorlist_1>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="criar_formacao" refresh_components="">
+                <title>Salvar</title>
+                <app>sistema_de_avaliacao_igrpweb</app>
+                <page>Criacao_formacao</page>
+                <link>index</link>
+                <target>submit</target>
+                <img>black|fa-save</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_formacao/Criacao_formacao.xml</preview>
+            </item>
+        </toolsbar_1>
+    </content>
+    <blockly>
+        <imports></imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+        </xml>
+    </blockly>
+</rows>

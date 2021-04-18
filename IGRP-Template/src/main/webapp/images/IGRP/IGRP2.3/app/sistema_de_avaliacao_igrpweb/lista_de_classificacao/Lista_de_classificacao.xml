@@ -45,7 +45,7 @@
                 <foto name="p_foto" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
                     <label>Foto</label>
                 </foto>
-                <nome name="p_nome" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                <nome name="p_nome" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="true" iskey="false" group_in="">
                     <label>Nome</label>
                 </nome>
                 <formacao name="p_formacao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
@@ -54,7 +54,7 @@
                 <edicao name="p_edicao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
                     <label>Edição</label>
                 </edicao>
-                <data_de_realizacao name="p_data_de_realizacao" type="date" range="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                <data_de_realizacao name="p_data_de_realizacao" type="date" range="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="" disableWeekends="false" daysoff="false">
                     <label>Data de Realização</label>
                 </data_de_realizacao>
                 <classificacao name="p_classificacao" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
@@ -70,15 +70,45 @@
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
+                        <aprovacao name="p_aprovacao">4</aprovacao>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Natus mollit laudantium lorem</nome>
+                        <formacao name="p_formacao">Laudantium ut rem amet deserun</formacao>
+                        <edicao name="p_edicao">Accusantium omnis aperiam magn</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">06-07-2010</data_de_realizacao>
+                        <classificacao name="p_classificacao">Magna dolor adipiscing officia</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-6378_9935</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-b401_4cdf</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
                         <aprovacao name="p_aprovacao">2</aprovacao>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Iste sit magna lorem deserunt</nome>
-                        <formacao name="p_formacao">Sit perspiciatis iste perspici</formacao>
-                        <edicao name="p_edicao">Mollit amet ut sit mollit pers</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">05-06-2014</data_de_realizacao>
-                        <classificacao name="p_classificacao">Magna ipsum unde adipiscing mo</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-93ad_4ea7</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-9170_d3c7</id_avaliado>
+                        <nome name="p_nome">Perspiciatis amet totam unde a</nome>
+                        <formacao name="p_formacao">Perspiciatis iste sit omnis se</formacao>
+                        <edicao name="p_edicao">Anim laudantium ut dolor amet</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">04-08-2016</data_de_realizacao>
+                        <classificacao name="p_classificacao">Aperiam omnis labore aperiam d</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-9746_624d</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-bf5c_fd40</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <aprovacao name="p_aprovacao">1</aprovacao>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Voluptatem consectetur sed mag</nome>
+                        <formacao name="p_formacao">Unde iste sit stract unde accu</formacao>
+                        <edicao name="p_edicao">Doloremque unde totam officia</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">08-01-2013</data_de_realizacao>
+                        <classificacao name="p_classificacao">Elit ut lorem sit doloremque</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-f160_5727</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-ed4d_edb3</id_avaliado>
                     </row>
                     <row>
                         <context-menu>
@@ -87,58 +117,28 @@
                         </context-menu>
                         <aprovacao name="p_aprovacao">3</aprovacao>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Voluptatem natus magna dolor l</nome>
-                        <formacao name="p_formacao">Iste aperiam elit dolor iste u</formacao>
-                        <edicao name="p_edicao">Stract adipiscing iste aperiam</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">02-03-2017</data_de_realizacao>
-                        <classificacao name="p_classificacao">Anim elit omnis perspiciatis r</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-ba3b_1da0</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-780f_bb61</id_avaliado>
+                        <nome name="p_nome">Ut labore omnis adipiscing lor</nome>
+                        <formacao name="p_formacao">Natus consectetur stract rem a</formacao>
+                        <edicao name="p_edicao">Lorem rem officia mollit omnis</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">06-03-2017</data_de_realizacao>
+                        <classificacao name="p_classificacao">Ut doloremque omnis accusantiu</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-a443_cbd6</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-c206_1ff7</id_avaliado>
                     </row>
                     <row>
                         <context-menu>
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <aprovacao name="p_aprovacao">1</aprovacao>
+                        <aprovacao name="p_aprovacao">2</aprovacao>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Sed elit ut stract natus deser</nome>
-                        <formacao name="p_formacao">Aperiam doloremque amet magna</formacao>
-                        <edicao name="p_edicao">Totam ut totam unde stract mag</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">03-07-2017</data_de_realizacao>
-                        <classificacao name="p_classificacao">Elit natus mollit elit labore</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-1854_8a02</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-17a1_8530</id_avaliado>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
-                        <aprovacao name="p_aprovacao">1</aprovacao>
-                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Perspiciatis accusantium sit m</nome>
-                        <formacao name="p_formacao">Amet deserunt voluptatem molli</formacao>
-                        <edicao name="p_edicao">Deserunt totam voluptatem dese</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">06-04-2010</data_de_realizacao>
-                        <classificacao name="p_classificacao">Sit natus adipiscing labore si</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-1c25_c2d7</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-bf7d_63cb</id_avaliado>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
-                        <aprovacao name="p_aprovacao">4</aprovacao>
-                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Sed anim aperiam adipiscing ap</nome>
-                        <formacao name="p_formacao">Natus perspiciatis rem sed vol</formacao>
-                        <edicao name="p_edicao">Doloremque sit sit aliqua adip</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">08-05-2012</data_de_realizacao>
-                        <classificacao name="p_classificacao">Rem dolor stract lorem labore</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-40f2_129e</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-06fe_0a5c</id_avaliado>
+                        <nome name="p_nome">Mollit lorem consectetur iste</nome>
+                        <formacao name="p_formacao">Voluptatem aperiam iste sit ma</formacao>
+                        <edicao name="p_edicao">Natus deserunt accusantium str</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">07-02-2016</data_de_realizacao>
+                        <classificacao name="p_classificacao">Consectetur iste labore aliqua</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-9ab9_f870</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-e7c8_1a37</id_avaliado>
                     </row>
                 </value>
                 <legend_color>
@@ -180,7 +180,7 @@
                         <page>Criacao_de_certificado</page>
                         <link>index</link>
                         <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_de_certificado/Criacao_de_certificado.xml?</parameter>
-                        <target>mpsubmit|refresh</target>
+                        <target>mpsubmit</target>
                         <img>danger|fa-graduation-cap</img>
                         <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_de_certificado/Criacao_de_certificado.xml</preview>
                     </item>

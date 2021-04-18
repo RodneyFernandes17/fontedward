@@ -8,8 +8,8 @@ import static nosi.core.i18n.Translator.gt;
 
 public class Parametrizacao_perguntas_e_respostasView extends View {
 
-	public Field conceito;
 	public Field nivel;
+	public Field conceito;
 	public Field pergunta;
 	public Field id_pergunta;
 	public Field resposta;
@@ -29,13 +29,13 @@ public class Parametrizacao_perguntas_e_respostasView extends View {
 
 		separatorlist_1 = new IGRPSeparatorList("separatorlist_1","Respostas");
 
+		nivel = new ListField(model,"nivel");
+		nivel.setLabel(gt("Teste de Avaliação"));
+		nivel.propertie().add("name","p_nivel").add("type","select").add("multiple","false").add("tags","false").add("domain","").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","");
+		
 		conceito = new ListField(model,"conceito");
 		conceito.setLabel(gt("Conceito"));
 		conceito.propertie().add("name","p_conceito").add("type","select").add("multiple","false").add("tags","false").add("domain","conceitos « sistema_de_avaliacao_igrpweb").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","");
-		
-		nivel = new ListField(model,"nivel");
-		nivel.setLabel(gt("Nivel"));
-		nivel.propertie().add("name","p_nivel").add("type","select").add("multiple","false").add("tags","false").add("domain","nivel « sistema_de_avaliacao_igrpweb").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","");
 		
 		pergunta = new TextAreaField(model,"pergunta");
 		pergunta.setLabel(gt("Pergunta"));
@@ -68,8 +68,8 @@ public class Parametrizacao_perguntas_e_respostasView extends View {
 	@Override
 	public void render(){
 		
-		form_1.addField(conceito);
 		form_1.addField(nivel);
+		form_1.addField(conceito);
 		form_1.addField(pergunta);
 		form_1.addField(id_pergunta);
 
@@ -87,8 +87,8 @@ public class Parametrizacao_perguntas_e_respostasView extends View {
 	@Override
 	public void setModel(Model model) {
 		
-		conceito.setValue(model);
 		nivel.setValue(model);
+		conceito.setValue(model);
 		pergunta.setValue(model);
 		id_pergunta.setValue(model);
 		resposta.setValue(model);

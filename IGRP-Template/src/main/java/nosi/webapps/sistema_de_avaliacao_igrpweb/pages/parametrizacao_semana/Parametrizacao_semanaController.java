@@ -7,11 +7,11 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
-import java.util.ArrayList;
-import java.util.List;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanaTbl;
+import java.util.ArrayList; //block import
+import java.util.List; //block import
+import org.hibernate.Session; //block import
+import org.hibernate.Transaction; //block import
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanaTbl; //block import
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanaTbl;
-
+import java.time.LocalDateTime;
 /*----#end-code----*/
 		
 public class Parametrizacao_semanaController extends Controller {
@@ -31,7 +31,7 @@ public class Parametrizacao_semanaController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT '5' as semana_tbl,'Mollit stract labore consectet' as atual_tbl "));
+		model.loadTable_1(Core.query(null,"SELECT '11' as semana_tbl,'Magna accusantium aliqua sit p' as atual_tbl,'06-01-2011' as data_atualizacao,'Labore iste aliqua dolor lauda' as modificador "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		try {
@@ -57,6 +57,8 @@ public class Parametrizacao_semanaController extends Controller {
 					Parametrizacao_semana.Table_1 row = new Parametrizacao_semana.Table_1();
 					row.setSemana_tbl(semanatbl.getNrSemana());
 					row.setAtual_tbl(semanatbl.getAtual() + "");
+					row.setData_atualizacao(Core.convertLocalDateTimeToString(semanatbl.getDataAtualiza(), "dd-MM-yyyy - HH:mm"));
+					row.setModificador(semanatbl.getNomeModificador());
 					semanatblTable.add(row);
 				}
 			}
@@ -98,6 +100,8 @@ public class Parametrizacao_semanaController extends Controller {
 				}
 				if (semanatbl != null) {
 					semanatbl.setNrSemana(model.getSemana());
+					semanatbl.setDataAtualiza(LocalDateTime.now());
+					semanatbl.setNomeModificador(Core.getCurrentUser().getName());
 					if (model.getAtual()==1) {
 						semanatbl.setAtual(true);
 					}else

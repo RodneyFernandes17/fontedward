@@ -1,26 +1,25 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
+import java.time.LocalDateTime;
+import javax.persistence.ManyToOne;
 import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
+import javax.persistence.GenerationType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.persistence.GenerationType;
-import javax.persistence.GeneratedValue;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
 import javax.persistence.ForeignKey;
+import javax.validation.constraints.NotNull;
 
 /**
- * @author: Nositeste 13-03-2021
+ * @author: Nositeste 15-04-2021
 */
 
 @Entity
-@Table(name = "teste_tbl", schema = "")
+@Table(name = "teste_tbl", schema = "public")
 @NamedQuery(name = "TesteTbl.findAll", query = "SELECT t FROM TesteTbl t")
 public class TesteTbl extends BaseActiveRecord<TesteTbl> {
 
@@ -30,33 +29,37 @@ public class TesteTbl extends BaseActiveRecord<TesteTbl> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_teste", updatable = false, nullable = false)
+	@Column(name = "id_teste", nullable = false, updatable = false)
  	private Integer idTeste;
 	@ManyToOne
-	@JoinColumn(name = "id_avaliado_fk", foreignKey = @ForeignKey(name = "avaliado_fk"), nullable = false)
+	@JoinColumn(name = "id_avaliado_fk", foreignKey = @ForeignKey(name = "avaliado_fk"))
 	private AvaliadoTbl idAvaliadoFk;
-	@Column(name = "valor_igrp_studio", nullable = false)
+	@Column(name = "valor_igrp_studio")
 	private Integer valorIgrpStudio;
-	@Column(name = "valor_bpmn_report", nullable = false)
+	@Column(name = "valor_bpmn_report")
 	private Integer valorBpmnReport;
-	@Column(name = "valor_page_designer", nullable = false)
+	@Column(name = "valor_page_designer")
 	private Integer valorPageDesigner;
-	@Column(name = "valor_gerador_blockly", nullable = false)
+	@Column(name = "valor_gerador_blockly")
 	private Integer valorGeradorBlockly;
-	@Column(name = "valor_eclipse_git", nullable = false)
+	@Column(name = "valor_eclipse_git")
 	private Integer valorEclipseGit;
-	@Column(name = "valor_base_dados_dao", nullable = false)
+	@Column(name = "valor_base_dados_dao")
 	private Integer valorBaseDadosDao;
-	@Column(name = "valor_java", nullable = false)
+	@Column(name = "valor_java")
 	private Integer valorJava;
-	@Column(name = "valor_final", nullable = false)
+	@Column(name = "valor_final")
 	private Integer valorFinal;
-	@Column(name = "data_realizacao", nullable = false)
+	@NotNull
+	@Column(name = "data_realizacao")
 	private LocalDateTime dataRealizacao;
-	@Column(name = "valor_gestao_acesso", nullable = false)
+	@Column(name = "valor_gestao_acesso")
 	private Integer valorGestaoAcesso;
 	@Column(name = "aprovacao")
 	private Integer aprovacao;
+	@ManyToOne
+	@JoinColumn(name = "formacao_id", foreignKey = @ForeignKey(name = "formacao_fkeyy"))
+	private FormacaoTbl formacaoId;
 
 	public Integer getIdTeste() { 
 		return this.idTeste;
@@ -160,6 +163,14 @@ public class TesteTbl extends BaseActiveRecord<TesteTbl> {
 
 	public void setAprovacao(Integer aprovacao) {
 		 this.aprovacao = aprovacao;
+	}
+
+	public FormacaoTbl getFormacaoId() { 
+		return this.formacaoId;
+	}
+
+	public void setFormacaoId(FormacaoTbl formacaoId) {
+		 this.formacaoId = formacaoId;
 	}
 
 }

@@ -7,7 +7,7 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl; //block import
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
@@ -31,7 +31,7 @@ public class Lista_avaliacao_semanalController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Sit aperiam elit ipsum dolor l' as nome,'Amet lorem iste ut voluptatem' as edicao,'Iste voluptatem accusantium un' as area,'Consectetur voluptatem amet om' as mentor,'hidden-1482_3ba0' as id_teste,'hidden-0ed1_5c2e' as id_avaliado,'hidden-97d8_5b0d' as id_utilizador "));
+		model.loadTable_1(Core.query(null,"SELECT '../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Labore officia unde mollit vol' as nome,'Sit magna doloremque stract ut' as edicao,'Natus laudantium sed sit rem' as area,'Omnis iste mollit dolor omnis' as mentor,'hidden-e2e6_48c0' as id_teste,'hidden-2b7b_e626' as id_avaliado,'hidden-ec12_99bb' as id_utilizador "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		try {

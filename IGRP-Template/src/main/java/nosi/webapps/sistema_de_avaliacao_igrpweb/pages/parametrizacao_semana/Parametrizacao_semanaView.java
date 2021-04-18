@@ -13,6 +13,8 @@ public class Parametrizacao_semanaView extends View {
 	public Field atual_check;
 	public Field semana_tbl;
 	public Field atual_tbl;
+	public Field data_atualizacao;
+	public Field modificador;
 	public IGRPForm form_1;
 	public IGRPTable table_1;
 
@@ -43,6 +45,14 @@ public class Parametrizacao_semanaView extends View {
 		atual_tbl.setLabel(gt("Atual"));
 		atual_tbl.propertie().add("name","p_atual_tbl").add("type","text").add("maxlength","30").add("showLabel","true").add("group_in","");
 		
+		data_atualizacao = new DateField(model,"data_atualizacao");
+		data_atualizacao.setLabel(gt("Data Atualização"));
+		data_atualizacao.propertie().add("name","p_data_atualizacao").add("type","date").add("range","false").add("disableWeekends","false").add("daysoff","false").add("maxlength","30").add("showLabel","true").add("group_in","");
+		
+		modificador = new TextField(model,"modificador");
+		modificador.setLabel(gt("Modificador"));
+		modificador.propertie().add("name","p_modificador").add("type","text").add("maxlength","30").add("showLabel","true").add("group_in","");
+		
 
 
 		btn_salvar = new IGRPButton("Salvar","sistema_de_avaliacao_igrpweb","Parametrizacao_semana","salvar","submit","primary|fa-save","","");
@@ -62,6 +72,8 @@ public class Parametrizacao_semanaView extends View {
 
 		table_1.addField(semana_tbl);
 		table_1.addField(atual_tbl);
+		table_1.addField(data_atualizacao);
+		table_1.addField(modificador);
 
 		form_1.addButton(btn_salvar);
 		table_1.addButton(btn_editar);
@@ -75,7 +87,9 @@ public class Parametrizacao_semanaView extends View {
 		semana.setValue(model);
 		atual.setValue(model);
 		semana_tbl.setValue(model);
-		atual_tbl.setValue(model);	
+		atual_tbl.setValue(model);
+		data_atualizacao.setValue(model);
+		modificador.setValue(model);	
 
 		table_1.loadModel(((Parametrizacao_semana) model).getTable_1());
 		}

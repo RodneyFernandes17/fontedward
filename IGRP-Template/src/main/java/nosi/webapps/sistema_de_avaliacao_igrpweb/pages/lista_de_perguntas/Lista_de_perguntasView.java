@@ -8,8 +8,8 @@ import static nosi.core.i18n.Translator.gt;
 
 public class Lista_de_perguntasView extends View {
 
-	public Field conceito_form;
 	public Field nivel_form;
+	public Field conceito_form;
 	public Field conceito;
 	public Field pergunta;
 	public Field nivel;
@@ -30,13 +30,13 @@ public class Lista_de_perguntasView extends View {
 
 		table_1 = new IGRPTable("table_1","");
 
+		nivel_form = new ListField(model,"nivel_form");
+		nivel_form.setLabel(gt("Teste"));
+		nivel_form.propertie().add("name","p_nivel_form").add("type","select").add("multiple","false").add("tags","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
+		
 		conceito_form = new ListField(model,"conceito_form");
 		conceito_form.setLabel(gt("Conceito"));
 		conceito_form.propertie().add("name","p_conceito_form").add("type","select").add("multiple","false").add("tags","false").add("domain","conceitos « sistema_de_avaliacao_igrpweb").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
-		
-		nivel_form = new ListField(model,"nivel_form");
-		nivel_form.setLabel(gt("Nivel"));
-		nivel_form.propertie().add("name","p_nivel_form").add("type","select").add("multiple","false").add("tags","false").add("domain","nivel « sistema_de_avaliacao_igrpweb").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
 		
 		conceito = new TextField(model,"conceito");
 		conceito.setLabel(gt("Conceito"));
@@ -47,7 +47,7 @@ public class Lista_de_perguntasView extends View {
 		pergunta.propertie().add("name","p_pergunta").add("type","textarea").add("maxlength","30").add("showLabel","true").add("group_in","");
 		
 		nivel = new TextField(model,"nivel");
-		nivel.setLabel(gt("Nivel"));
+		nivel.setLabel(gt("Teste "));
 		nivel.propertie().add("name","p_nivel").add("type","text").add("maxlength","30").add("showLabel","true").add("group_in","");
 		
 		id_pergunta = new HiddenField(model,"id_pergunta");
@@ -73,8 +73,8 @@ public class Lista_de_perguntasView extends View {
 	public void render(){
 		
 
-		form_1.addField(conceito_form);
 		form_1.addField(nivel_form);
+		form_1.addField(conceito_form);
 
 		table_1.addField(conceito);
 		table_1.addField(pergunta);
@@ -92,8 +92,8 @@ public class Lista_de_perguntasView extends View {
 	@Override
 	public void setModel(Model model) {
 		
-		conceito_form.setValue(model);
 		nivel_form.setValue(model);
+		conceito_form.setValue(model);
 		conceito.setValue(model);
 		pergunta.setValue(model);
 		nivel.setValue(model);

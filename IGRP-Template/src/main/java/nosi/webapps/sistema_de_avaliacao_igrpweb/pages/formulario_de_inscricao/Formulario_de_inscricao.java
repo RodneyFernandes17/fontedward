@@ -21,6 +21,10 @@ public class Formulario_de_inscricao extends Model{
 	@RParam(rParamName = "p_ilha_natural")
 	private String ilha_natural;
 
+	@NotNull()
+	@RParam(rParamName = "p_instituicao")
+	private String instituicao;
+
 	@RParam(rParamName = "p_edicao_de_nosiakademia")
 	private String edicao_de_nosiakademia;
 
@@ -36,25 +40,11 @@ public class Formulario_de_inscricao extends Model{
 	@RParam(rParamName = "p_outra_universidade")
 	private String outra_universidade;
 
-	@NotNull()
-	@RParam(rParamName = "p_formador")
-	private String formador;
-
 	@RParam(rParamName = "p_contacto")
 	private Integer contacto;
 
 	@RParam(rParamName = "p_email")
 	private String email;
-
-	@RParam(rParamName = "p_nivel")
-	private String nivel;
-
-	@NotNull()
-	@RParam(rParamName = "p_horas")
-	private Integer horas;
-
-	@RParam(rParamName = "p_paragraph_1_text")
-	private String paragraph_1_text;
 	
 	public void setSectionheader_1_text(String sectionheader_1_text){
 		this.sectionheader_1_text = sectionheader_1_text;
@@ -88,6 +78,13 @@ public class Formulario_de_inscricao extends Model{
 	}
 	public String getIlha_natural(){
 		return this.ilha_natural;
+	}
+	
+	public void setInstituicao(String instituicao){
+		this.instituicao = instituicao;
+	}
+	public String getInstituicao(){
+		return this.instituicao;
 	}
 	
 	public void setEdicao_de_nosiakademia(String edicao_de_nosiakademia){
@@ -125,13 +122,6 @@ public class Formulario_de_inscricao extends Model{
 		return this.outra_universidade;
 	}
 	
-	public void setFormador(String formador){
-		this.formador = formador;
-	}
-	public String getFormador(){
-		return this.formador;
-	}
-	
 	public void setContacto(Integer contacto){
 		this.contacto = contacto;
 	}
@@ -144,27 +134,6 @@ public class Formulario_de_inscricao extends Model{
 	}
 	public String getEmail(){
 		return this.email;
-	}
-	
-	public void setNivel(String nivel){
-		this.nivel = nivel;
-	}
-	public String getNivel(){
-		return this.nivel;
-	}
-	
-	public void setHoras(Integer horas){
-		this.horas = horas;
-	}
-	public Integer getHoras(){
-		return this.horas;
-	}
-	
-	public void setParagraph_1_text(String paragraph_1_text){
-		this.paragraph_1_text = paragraph_1_text;
-	}
-	public String getParagraph_1_text(){
-		return this.paragraph_1_text;
 	}
 
 

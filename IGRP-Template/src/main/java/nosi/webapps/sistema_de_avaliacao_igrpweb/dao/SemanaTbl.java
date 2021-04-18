@@ -1,20 +1,23 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
 import nosi.base.ActiveRecord.BaseActiveRecord;
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.time.LocalDateTime;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
+import javax.validation.constraints.NotNull;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+import javax.persistence.Entity;
+import javax.validation.constraints.Size;
 
 /**
- * @author: Nositeste 13-03-2021
+ * @author: Nositeste 15-04-2021
 */
 
 @Entity
-@Table(name = "semana_tbl", schema = "")
+@Table(name = "semana_tbl", schema = "public")
 @NamedQuery(name = "SemanaTbl.findAll", query = "SELECT t FROM SemanaTbl t")
 public class SemanaTbl extends BaseActiveRecord<SemanaTbl> {
 
@@ -24,12 +27,19 @@ public class SemanaTbl extends BaseActiveRecord<SemanaTbl> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", updatable = false, nullable = false)
+	@Column(name = "id", nullable = false, updatable = false)
  	private Integer id;
-	@Column(name = "nr_semana", nullable = false)
+	@NotNull
+	@Column(name = "nr_semana")
 	private Integer nrSemana;
-	@Column(name = "atual", nullable = false)
+	@NotNull
+	@Column(name = "atual")
 	private Boolean atual;
+	@Column(name = "data_atualiza")
+	private LocalDateTime dataAtualiza;
+	@Size(max = 2147483647)
+	@Column(name = "nome_modificador")
+	private String nomeModificador;
 
 	public Integer getId() { 
 		return this.id;
@@ -53,6 +63,22 @@ public class SemanaTbl extends BaseActiveRecord<SemanaTbl> {
 
 	public void setAtual(Boolean atual) {
 		 this.atual = atual;
+	}
+
+	public LocalDateTime getDataAtualiza() { 
+		return this.dataAtualiza;
+	}
+
+	public void setDataAtualiza(LocalDateTime dataAtualiza) {
+		 this.dataAtualiza = dataAtualiza;
+	}
+
+	public String getNomeModificador() { 
+		return this.nomeModificador;
+	}
+
+	public void setNomeModificador(String nomeModificador) {
+		 this.nomeModificador = nomeModificador;
 	}
 
 }

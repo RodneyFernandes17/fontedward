@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/gestao_de_formacoes/Gestao_de_formacoes.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Gestao_de_formacoes</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Gestao_de_formacoes</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=109</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Gestão de Formações</title>
+        <toolsbar_1 type="toolsbar" xml-type="toolsbar" gen-type="menu" gen-group="">
+            <item type="specific" code="" rel="novo" flg_transaction="true" refresh_components="">
+                <title>Novo</title>
+                <app>sistema_de_avaliacao_igrpweb</app>
+                <page>Criacao_formacao</page>
+                <link>index</link>
+                <target>modal|refresh</target>
+                <img>success|fa-plus-square</img>
+                <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_formacao/Criacao_formacao.xml</preview>
+            </item>
+        </toolsbar_1>
+        <table_1 type="table" xml-type="table" title="Lista de Formações" gen-type="container" gen-group="true">
+            <fields>
+                <nome name="p_nome" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <data_inicio name="p_data_inicio" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Data início</label>
+                </data_inicio>
+                <data_fim name="p_data_fim" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Data fim</label>
+                </data_fim>
+                <id_formacao name="p_id_formacao" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_formacao"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Doloremque ipsum elit mollit s</nome>
+                        <data_inicio name="p_data_inicio">Iste ut stract laudantium anim</data_inicio>
+                        <data_fim name="p_data_fim">Magna ipsum elit natus dolor</data_fim>
+                        <id_formacao name="p_id_formacao" tag="id_formacao">hidden-b376_e9db</id_formacao>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Ipsum labore omnis anim ut</nome>
+                        <data_inicio name="p_data_inicio">Deserunt natus rem deserunt st</data_inicio>
+                        <data_fim name="p_data_fim">Labore sit labore natus accusa</data_fim>
+                        <id_formacao name="p_id_formacao" tag="id_formacao">hidden-e374_fc39</id_formacao>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Labore elit voluptatem consect</nome>
+                        <data_inicio name="p_data_inicio">Ut officia adipiscing sit labo</data_inicio>
+                        <data_fim name="p_data_fim">Natus labore stract omnis anim</data_fim>
+                        <id_formacao name="p_id_formacao" tag="id_formacao">hidden-d834_94a7</id_formacao>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Labore doloremque ut unde elit</nome>
+                        <data_inicio name="p_data_inicio">Sit iste aliqua sit laudantium</data_inicio>
+                        <data_fim name="p_data_fim">Sed natus omnis officia natus</data_fim>
+                        <id_formacao name="p_id_formacao" tag="id_formacao">hidden-bc2f_91a3</id_formacao>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <nome name="p_nome">Totam magna natus unde sit</nome>
+                        <data_inicio name="p_data_inicio">Rem laudantium natus sit deser</data_inicio>
+                        <data_fim name="p_data_fim">Sit labore mollit ipsum iste</data_fim>
+                        <id_formacao name="p_id_formacao" tag="id_formacao">hidden-fed7_5c77</id_formacao>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_d1a3_e373" type="specific" code="" class="grey" rel="realizar_avaliacao" refresh_components="">
+                        <title>Realizar Avaliação</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Questoes_gerais</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/questoes_gerais/Questoes_gerais.xml?</parameter>
+                        <target>submit</target>
+                        <img>grey|fa-file-text</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/questoes_gerais/Questoes_gerais.xml</preview>
+                    </item>
+                    <item id="button_abcf_05cc" type="specific" code="" flg_transaction="true" class="warning" rel="editar" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Criacao_formacao</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_formacao/Criacao_formacao.xml?</parameter>
+                        <target>modal|refresh</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_formacao/Criacao_formacao.xml</preview>
+                    </item>
+                    <item id="button_8031_262e" type="specific" code="" flg_transaction="true" class="danger" rel="eliminar" refresh_components="">
+                        <title>Eliminar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Gestao_de_formacoes</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/gestao_de_formacoes/Gestao_de_formacoes.xml?</parameter>
+                        <target>alert_submit</target>
+                        <img>danger|fa-trash-o</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/gestao_de_formacoes/Gestao_de_formacoes.xml</preview>
+                    </item>
+                    <item id="button_266d_a9ce" type="specific" code="" class="purple" rel="resultado_teste" refresh_components="">
+                        <title>Resultado Teste</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Informacoes</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/informacoes/Informacoes.xml?</parameter>
+                        <target>modal</target>
+                        <img>purple|fa-check-circle</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/informacoes/Informacoes.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="dao">FormacaoTbl</import>
+        </imports>
+        <xml>
+            <block type="listar_table_1" id="table_1" inline="true" x="638" y="63">
+                <mutation order="order_by_asc" limit="TODOSS" count="NaN"></mutation>
+                <field name="dao">FormacaoTbl</field>
+                <field name="FILL">FALSE</field>
+                <field name="orderdrop">order_by_asc</field>
+                <field name="find">TODOSS</field>
+                <field name="limit"></field>
+                <value name="order_value">
+                    <block type="get-dao-FormacaoTbl" id="w:m~@o*d1`)vpAC6_;M~">
+                        <mutation hover_type="LocalDate::dataIn"></mutation>
+                        <field name="DAO_FIELD">LocalDate::dataIn</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="rowtablenome" id="String::nome">
+                        <value name="fields_model">
+                            <block type="get-dao-FormacaoTbl" id="Pay)4=)B,ciV6XC[^B|P">
+                                <mutation hover_type="String::nome"></mutation>
+                                <field name="DAO_FIELD">String::nome</field>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="rowtabledata_inicio" id="String::data_inicio">
+                                <value name="fields_model">
+                                    <block type="get-dao-FormacaoTbl" id="l-ILdT}:iUxJa=D6%GeR">
+                                        <mutation hover_type="LocalDate::dataIn"></mutation>
+                                        <field name="DAO_FIELD">LocalDate::dataIn</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="rowtabledata_fim" id="String::data_fim">
+                                        <value name="fields_model">
+                                            <block type="get-dao-FormacaoTbl" id="76I#wYeNNfYVC~@1eoUT">
+                                                <mutation hover_type="LocalDate::dataFim"></mutation>
+                                                <field name="DAO_FIELD">LocalDate::dataFim</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="rowtableid_formacao" id="String::id_formacao">
+                                                <value name="fields_model">
+                                                    <block type="get-dao-FormacaoTbl" id="D7_GFbL+IT6~AWd1PmF;">
+                                                        <mutation hover_type="Integer::id"></mutation>
+                                                        <field name="DAO_FIELD">Integer::id</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+            <block type="controller" id="controller" x="213" y="113">
+                <statement name="realizar_avaliacao">
+                    <block type="enviar_p" id="v}j{%l[=B,z!v0(zYmVF">
+                        <field name="iskey">id_formacao</field>
+                    </block>
+                </statement>
+            </block>
+            <block type="apagar" id="/F)(3FKav!#YY5X}TULZ" inline="true" x="638" y="287">
+                <field name="dao">FormacaoTbl</field>
+                <field name="iskey">id_formacao</field>
+                <value name="valor1">
+                    <block type="get-dao-FormacaoTbl" id="WdUowOy|kz8USp(28F|E">
+                        <mutation hover_type="Integer::id"></mutation>
+                        <field name="DAO_FIELD">Integer::id</field>
+                    </block>
+                </value>
+            </block>
+            <block type="enviar_p" id="|Q8b]-%f(/LOKZ`N*y}T" x="588" y="387">
+                <field name="iskey">id_formacao</field>
+                <next>
+                    <block type="editar_dao" id="0NdWz6Xv~;u=}=sz4Q|Y"></block>
+                </next>
+            </block>
+        </xml>
+    </blockly>
+</rows>

@@ -55,7 +55,7 @@
                 </foto>
                 <nome name="p_nome" type="text" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Nome</label>
-                    <value>Unde deserunt ipsum magna unde</value>
+                    <value>Voluptatem aperiam adipiscing rem sit</value>
                 </nome>
                 <ilha_natural name="p_ilha_natural" type="select" multiple="false" tags="false" domain="ilha « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
                     <label>Ilha Natural</label>
@@ -99,7 +99,31 @@
                         </option>
                     </list>
                 </ilha_natural>
-                <edicao_de_nosiakademia name="p_edicao_de_nosiakademia" type="select" multiple="false" tags="false" domain="edicao « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
+                <instituicao name="p_instituicao" type="select" multiple="false" tags="false" domain="intituicoes « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
+                    <label>Instituição</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Ministério das Finanças </text>
+                            <value>fin</value>
+                        </option>
+                        <option>
+                            <text>Câmara Municipal da Praia </text>
+                            <value>cmp </value>
+                        </option>
+                        <option>
+                            <text>Nosi Akademia </text>
+                            <value>akad</value>
+                        </option>
+                    </list>
+                    <rules/>
+                    <validations>
+                        <validation>
+                            <annotation>@NotNull</annotation>
+                        </validation>
+                    </validations>
+                </instituicao>
+                <edicao_de_nosiakademia name="p_edicao_de_nosiakademia" type="select" multiple="false" tags="false" domain="edicao « sistema_de_avaliacao_igrpweb" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
                     <label>Edição de NosiAkademia</label>
                     <list>
                         <option/>
@@ -150,7 +174,7 @@
                 </formacao>
                 <outra_formacao name="p_outra_formacao" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Outra Formação</label>
-                    <value>Aliqua perspiciatis elit officia perspiciatis</value>
+                    <value>Magna amet natus aperiam voluptatem</value>
                 </outra_formacao>
                 <universidade name="p_universidade" type="select" multiple="false" tags="false" domain="universidade « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
                     <label>Universidade</label>
@@ -181,94 +205,30 @@
                 </universidade>
                 <outra_universidade name="p_outra_universidade" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Outra Universidade</label>
-                    <value>Aliqua sit perspiciatis aperiam sit</value>
+                    <value>Ipsum aliqua elit adipiscing aliqua</value>
                 </outra_universidade>
-                <formador name="p_formador" type="select" multiple="false" tags="false" domain="avaliadores « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
-                    <label>Formador</label>
-                    <list>
-                        <option/>
-                        <option>
-                            <text>Rodney Felisberto Fernandes</text>
-                            <value>RFF</value>
-                        </option>
-                        <option>
-                            <text>Francisco Lopes Horta</text>
-                            <value>FLH</value>
-                        </option>
-                        <option>
-                            <text>Iekini Marcel M. Fernandes</text>
-                            <value>IMMF</value>
-                        </option>
-                        <option>
-                            <text>Isaias de Pina Nunes</text>
-                            <value>IPN</value>
-                        </option>
-                    </list>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </formador>
                 <contacto name="p_contacto" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="7" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
                     <label>Contacto</label>
                     <value>4</value>
                 </contacto>
                 <email name="p_email" type="email" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
                     <label>Email</label>
-                    <value>movej@example.com</value>
+                    <value>fo@example.com</value>
                 </email>
-                <nivel name="p_nivel" type="select" multiple="false" tags="false" domain="nivel « sistema_de_avaliacao_igrpweb" maxlength="250" required="true" change="false" disabled="false" right="false" java-type="">
-                    <label>Teste Nivel</label>
-                    <list>
-                        <option/>
-                        <option>
-                            <text>Nível 1</text>
-                            <value>1</value>
-                        </option>
-                        <option>
-                            <text>Nível 2</text>
-                            <value>2</value>
-                        </option>
-                        <option>
-                            <text>Nível 3</text>
-                            <value>3</value>
-                        </option>
-                    </list>
-                </nivel>
-                <horas name="p_horas" type="number" min="" max="" calculation="false" mathcal="" numberformat="" maxlength="250" required="true" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false" java-type="">
-                    <label>Horas de Formação</label>
-                    <value>34</value>
-                    <validations>
-                        <validation>
-                            <annotation>@NotNull</annotation>
-                        </validation>
-                    </validations>
-                </horas>
             </fields>
             <tools-bar>
-                <item id="button_813b_afd5" type="form" code="" class="primary" rel="seguinte" refresh_components="">
-                    <title>Seguinte</title>
+                <item id="button_813b_afd5" type="form" code="" class="primary" rel="salvar" refresh_components="">
+                    <title>Salvar</title>
                     <app>sistema_de_avaliacao_igrpweb</app>
-                    <page>Questoes_gerais</page>
+                    <page>Formulario_de_inscricao</page>
                     <link>index</link>
-                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/questoes_gerais/Questoes_gerais.xml?</parameter>
-                    <target>alert_submit</target>
-                    <img>primary|fa-arrow-circle-right</img>
-                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/questoes_gerais/Questoes_gerais.xml</preview>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml?</parameter>
+                    <target>submit</target>
+                    <img>primary|fa-save</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml</preview>
                 </item>
             </tools-bar>
         </form_1>
-        <paragraph_1 type="paragraph" xml-type="form" gen-type="container" gen-group="">
-            <fields>
-                <paragraph_1_text type="text" name="p_paragraph_1_text" persist="true" maxlength="4000">
-                    <value>
-                        <![CDATA[<p>* N&iacute;vel 1 - Amador / N&iacute;vel 2 - Interm&eacute;dio / N&iacute;vel 3 - Profissional.</p>
-]]>
-                    </value>
-                </paragraph_1_text>
-            </fields>
-        </paragraph_1>
     </content>
     <blockly>
         <imports></imports>

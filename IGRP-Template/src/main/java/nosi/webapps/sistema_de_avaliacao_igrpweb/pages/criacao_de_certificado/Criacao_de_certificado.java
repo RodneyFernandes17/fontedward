@@ -16,17 +16,26 @@ public class Criacao_de_certificado extends Model{
 	@RParam(rParamName = "p_nome")
 	private String nome;
 
-	@RParam(rParamName = "p_avaliador")
-	private String avaliador;
+	@RParam(rParamName = "p_titulo")
+	private String titulo;
+
+	@RParam(rParamName = "p_data")
+	private String data;
 
 	@RParam(rParamName = "p_chave_de_validacao")
 	private String chave_de_validacao;
 
-	@RParam(rParamName = "p_horas_de_formacao")
-	private Integer horas_de_formacao;
+	@RParam(rParamName = "p_callback_url")
+	private String callback_url;
 
-	@RParam(rParamName = "p_data")
-	private String data;
+	@RParam(rParamName = "p_texto_1")
+	private String texto_1;
+
+	@RParam(rParamName = "p_texto_2")
+	private String texto_2;
+
+	@RParam(rParamName = "p_texto_3")
+	private String texto_3;
 
 	@RParam(rParamName = "p_id_avaliado")
 	private String id_avaliado;
@@ -68,11 +77,18 @@ public class Criacao_de_certificado extends Model{
 		return this.nome;
 	}
 	
-	public void setAvaliador(String avaliador){
-		this.avaliador = avaliador;
+	public void setTitulo(String titulo){
+		this.titulo = titulo;
 	}
-	public String getAvaliador(){
-		return this.avaliador;
+	public String getTitulo(){
+		return this.titulo;
+	}
+	
+	public void setData(String data){
+		this.data = data;
+	}
+	public String getData(){
+		return this.data;
 	}
 	
 	public void setChave_de_validacao(String chave_de_validacao){
@@ -82,18 +98,32 @@ public class Criacao_de_certificado extends Model{
 		return this.chave_de_validacao;
 	}
 	
-	public void setHoras_de_formacao(Integer horas_de_formacao){
-		this.horas_de_formacao = horas_de_formacao;
+	public void setCallback_url(String callback_url){
+		this.callback_url = callback_url;
 	}
-	public Integer getHoras_de_formacao(){
-		return this.horas_de_formacao;
+	public String getCallback_url(){
+		return this.callback_url;
 	}
 	
-	public void setData(String data){
-		this.data = data;
+	public void setTexto_1(String texto_1){
+		this.texto_1 = texto_1;
 	}
-	public String getData(){
-		return this.data;
+	public String getTexto_1(){
+		return this.texto_1;
+	}
+	
+	public void setTexto_2(String texto_2){
+		this.texto_2 = texto_2;
+	}
+	public String getTexto_2(){
+		return this.texto_2;
+	}
+	
+	public void setTexto_3(String texto_3){
+		this.texto_3 = texto_3;
+	}
+	public String getTexto_3(){
+		return this.texto_3;
 	}
 	
 	public void setId_avaliado(String id_avaliado){

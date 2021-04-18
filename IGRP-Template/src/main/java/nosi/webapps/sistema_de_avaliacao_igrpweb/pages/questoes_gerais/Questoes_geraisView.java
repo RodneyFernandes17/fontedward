@@ -8,6 +8,7 @@ import static nosi.core.i18n.Translator.gt;
 
 public class Questoes_geraisView extends View {
 
+	public Field sectionheader_1_text;
 	public Field conceitos_de_igrp_studio;
 	public Field pergunta_1_sep;
 	public Field pergunta1;
@@ -138,6 +139,8 @@ public class Questoes_geraisView extends View {
 	public Field resposta40;
 	public Field id_avaliado;
 	public Field nivel;
+	public Field formacao;
+	public IGRPSectionHeader sectionheader_1;
 	public IGRPForm form_1;
 
 	public IGRPButton btn_finalizar;
@@ -146,8 +149,15 @@ public class Questoes_geraisView extends View {
 
 		this.setPageTitle("Teste de Avaliação");
 			
+		sectionheader_1 = new IGRPSectionHeader("sectionheader_1","");
+
 		form_1 = new IGRPForm("form_1","");
 
+		sectionheader_1_text = new TextField(model,"sectionheader_1_text");
+		sectionheader_1_text.setLabel(gt(""));
+		sectionheader_1_text.setValue(gt("<p>Teste&nbsp;de Avalia&ccedil;&atilde;o</p>"));
+		sectionheader_1_text.propertie().add("type","text").add("name","p_sectionheader_1_text").add("maxlength","4000");
+		
 		conceitos_de_igrp_studio = new SeparatorField(model,"conceitos_de_igrp_studio");
 		conceitos_de_igrp_studio.setLabel(gt("CONCEITOS DE IGRP STUDIO"));
 		conceitos_de_igrp_studio.propertie().add("name","p_conceitos_de_igrp_studio").add("type","separator").add("maxlength","250").add("placeholder",gt("")).add("desclabel","false");
@@ -668,10 +678,14 @@ public class Questoes_geraisView extends View {
 		nivel.setLabel(gt(""));
 		nivel.propertie().add("name","p_nivel").add("type","hidden").add("maxlength","250").add("java-type","").add("tag","nivel");
 		
+		formacao = new HiddenField(model,"formacao");
+		formacao.setLabel(gt(""));
+		formacao.propertie().add("name","p_formacao").add("type","hidden").add("maxlength","250").add("java-type","").add("tag","formacao");
+		
 
 
-		btn_finalizar = new IGRPButton("Finalizar","sistema_de_avaliacao_igrpweb","Questoes_gerais","finalizar","alert_submit","primary|fa-power-off","","");
-		btn_finalizar.propertie.add("id","button_ed7a_da39").add("type","form").add("class","primary").add("rel","finalizar").add("refresh_components","");
+		btn_finalizar = new IGRPButton("Finalizar","sistema_de_avaliacao_igrpweb","Questoes_gerais","finalizar","submit","primary|fa-power-off","","");
+		btn_finalizar.propertie.add("id","button_ed7a_da39").add("type","form").add("class","primary").add("rel","finalizar").add("refresh_components","form_1");
 
 		
 	}
@@ -679,6 +693,8 @@ public class Questoes_geraisView extends View {
 	@Override
 	public void render(){
 		
+		sectionheader_1.addField(sectionheader_1_text);
+
 		form_1.addField(conceitos_de_igrp_studio);
 		form_1.addField(pergunta_1_sep);
 		form_1.addField(pergunta1);
@@ -809,8 +825,10 @@ public class Questoes_geraisView extends View {
 		form_1.addField(resposta40);
 		form_1.addField(id_avaliado);
 		form_1.addField(nivel);
+		form_1.addField(formacao);
 
 		form_1.addButton(btn_finalizar);
+		this.addToPage(sectionheader_1);
 		this.addToPage(form_1);
 	}
 		
@@ -946,7 +964,8 @@ public class Questoes_geraisView extends View {
 		pergunta_40.setValue(model);
 		resposta40.setValue(model);
 		id_avaliado.setValue(model);
-		nivel.setValue(model);	
+		nivel.setValue(model);
+		formacao.setValue(model);	
 
 		}
 }

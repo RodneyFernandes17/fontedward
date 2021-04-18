@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_teste/Parametrizacao_teste.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Parametrizacao_teste</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Parametrizacao_teste</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=120</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Parametrização Teste</title>
+        <form_1 type="form" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <nome_do_teste name="p_nome_do_teste" type="text" maxlength="250" required="false" change="false" readonly="false" disabled="false" placeholder="" desclabel="false" right="false">
+                    <label>Nome do Teste</label>
+                    <value>Natus omnis aperiam ipsum anim</value>
+                </nome_do_teste>
+                <hidden name="p_id_teste" type="hidden" maxlength="250" java-type="" tag="id_teste"/>
+            </fields>
+            <tools-bar>
+                <item id="button_b7b2_a4a0" type="form" code="" class="primary" rel="salvar" refresh_components="">
+                    <title>Salvar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Parametrizacao_teste</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_teste/Parametrizacao_teste.xml?</parameter>
+                    <target>submit</target>
+                    <img>primary|fa-save</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_teste/Parametrizacao_teste.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
+        <table_1 type="table" xml-type="table" gen-type="container" gen-group="true">
+            <fields>
+                <teste_tbl name="p_teste_tbl" type="text" maxlength="30" showLabel="true" align="center" lookup_parser="false" iskey="true" group_in="">
+                    <label>Teste</label>
+                </teste_tbl>
+                <id_teste_tbl name="p_id_teste_tbl" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_teste_tbl"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <teste_tbl name="p_teste_tbl">Iste anim lorem stract consect</teste_tbl>
+                        <id_teste_tbl name="p_id_teste_tbl" tag="id_teste_tbl">hidden-5767_9fb1</id_teste_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <teste_tbl name="p_teste_tbl">Perspiciatis sit stract volupt</teste_tbl>
+                        <id_teste_tbl name="p_id_teste_tbl" tag="id_teste_tbl">hidden-b9ad_5888</id_teste_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <teste_tbl name="p_teste_tbl">Aliqua sed ut lorem adipiscing</teste_tbl>
+                        <id_teste_tbl name="p_id_teste_tbl" tag="id_teste_tbl">hidden-fae1_8a41</id_teste_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <teste_tbl name="p_teste_tbl">Aliqua magna sit ipsum perspic</teste_tbl>
+                        <id_teste_tbl name="p_id_teste_tbl" tag="id_teste_tbl">hidden-2067_d6f1</id_teste_tbl>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <teste_tbl name="p_teste_tbl">Sit anim sit aperiam anim</teste_tbl>
+                        <id_teste_tbl name="p_id_teste_tbl" tag="id_teste_tbl">hidden-52dc_84f2</id_teste_tbl>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_f30d_e817" type="specific" code="" class="warning" rel="editar" refresh_components="">
+                        <title>Editar</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Parametrizacao_teste</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_teste/Parametrizacao_teste.xml?</parameter>
+                        <target>submit</target>
+                        <img>warning|fa-pencil</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/parametrizacao_teste/Parametrizacao_teste.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="inserir_dao">Inserir Daos</import>
+            <import type="dao">EnunciadoTbl</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13">
+                <statement name="index">
+                    <block type="formuu_form_1" id="NA;q]?K+pz-PKT0Aflyu" inline="true">
+                        <mutation order="null" limit="null" count="0"></mutation>
+                        <field name="dao">EnunciadoTbl</field>
+                        <value name="get_pa">
+                            <block type="core_get_param" id="g+h#0;aL%o0,%?.D}cPA">
+                                <field name="param">id_teste_tbl</field>
+                            </block>
+                        </value>
+                        <statement name="value2">
+                            <block type="model_form_nome_do_teste" id="String::nome_do_teste">
+                                <value name="value1">
+                                    <block type="get-dao-EnunciadoTbl" id=")J@;fFp8;PL/7:38^O-K">
+                                        <mutation hover_type="String::descricao"></mutation>
+                                        <field name="DAO_FIELD">String::descricao</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="model_form_id_teste" id="String::id_teste">
+                                        <value name="value1">
+                                            <block type="get-dao-EnunciadoTbl" id="4jA~(Oy{|YP~37Ihk%h,">
+                                                <mutation hover_type="Integer::id"></mutation>
+                                                <field name="DAO_FIELD">Integer::id</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="add_isedit" id="TV#Hkg9usXO~vbd6.gfN">
+                                                <field name="button">salvar</field>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                        <next>
+                            <block type="listar_table_1" id="table_1" inline="true">
+                                <mutation order="" limit="TODOSS" count="NaN"></mutation>
+                                <field name="dao">EnunciadoTbl</field>
+                                <field name="FILL">FALSE</field>
+                                <field name="orderdrop"></field>
+                                <field name="find">TODOSS</field>
+                                <field name="limit"></field>
+                                <statement name="value2">
+                                    <block type="rowtableteste_tbl" id="String::teste_tbl">
+                                        <value name="fields_model">
+                                            <block type="get-dao-EnunciadoTbl" id="6r*G+2Q}tpqqrV]u/!f.">
+                                                <mutation hover_type="String::descricao"></mutation>
+                                                <field name="DAO_FIELD">String::descricao</field>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="rowtableid_teste_tbl" id="String::id_teste_tbl">
+                                                <value name="fields_model">
+                                                    <block type="get-dao-EnunciadoTbl" id="UI=(^;r*yY!O;!I]mdx1">
+                                                        <mutation hover_type="Integer::id"></mutation>
+                                                        <field name="DAO_FIELD">Integer::id</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <statement name="salvar">
+                    <block type="save_formu_form_1" id="ze]L`,AcnPJ:+NEz(/L=" inline="true">
+                        <mutation count="NaN" pxchecked="true"></mutation>
+                        <field name="dao">EnunciadoTbl</field>
+                        <field name="EDIT">TRUE</field>
+                        <value name="param_id">
+                            <block type="mod_formform_1" id="RKCeBg8!][X*=vClD_}R">
+                                <field name="get_model">String::id_teste</field>
+                            </block>
+                        </value>
+                        <statement name="value2">
+                            <block type="set-dao-EnunciadoTbl" id="a}@dvB4X#6v4=eV|E|Ut" inline="false">
+                                <mutation hover_type="String::descricao"></mutation>
+                                <field name="DAO_FIELD">String::descricao</field>
+                                <value name="value1">
+                                    <block type="mod_formform_1" id="_{.OWg1xFVhTr~eP*6Oo">
+                                        <field name="get_model">String::nome_do_teste</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </statement>
+                    </block>
+                </statement>
+                <statement name="editar">
+                    <block type="enviar_p" id="0|]~@~F8?FqDDv2qv{C,">
+                        <field name="iskey">id_teste_tbl</field>
+                        <next>
+                            <block type="editar_dao" id=":U;r4d@?gH/].K2*[9}h"></block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>

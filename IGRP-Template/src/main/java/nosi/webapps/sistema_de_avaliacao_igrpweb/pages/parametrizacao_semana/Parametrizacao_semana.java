@@ -50,6 +50,8 @@ public class Parametrizacao_semana extends Model{
 	public static class Table_1 extends IGRPTable.Table{
 		private int semana_tbl;
 		private String atual_tbl;
+		private String data_atualizacao;
+		private String modificador;
 		public void setSemana_tbl(int semana_tbl){
 			this.semana_tbl = semana_tbl;
 		}
@@ -62,6 +64,20 @@ public class Parametrizacao_semana extends Model{
 		}
 		public String getAtual_tbl(){
 			return this.atual_tbl;
+		}
+
+		public void setData_atualizacao(String data_atualizacao){
+			this.data_atualizacao = data_atualizacao;
+		}
+		public String getData_atualizacao(){
+			return this.data_atualizacao;
+		}
+
+		public void setModificador(String modificador){
+			this.modificador = modificador;
+		}
+		public String getModificador(){
+			return this.modificador;
 		}
 
 	}
