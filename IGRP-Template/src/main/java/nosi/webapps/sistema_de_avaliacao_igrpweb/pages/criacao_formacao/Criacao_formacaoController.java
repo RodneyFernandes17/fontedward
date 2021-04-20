@@ -27,21 +27,22 @@ import java.util.List; //block import
 import java.util.LinkedHashMap; //block import
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.EnunciadoTbl; //block import
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.FormacaoTbl; //block import
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.Formando; //block import
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.FormandoTbl; //block import
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl; //block import
 /*----#end-code----*/
-
+		
 public class Criacao_formacaoController extends Controller {
-	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException {
+	public Response actionIndex() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Criacao_formacao model = new Criacao_formacao();
 		model.load();
-		// model.setLink_upload_img(this.getConfig().getResolveUrl("igrp","file","save-image-txt&p_page_name="+Core.getCurrentPage()));
+		 //model.setLink_upload_img(this.getConfig().getResolveUrl("igrp","file","save-image-txt&p_page_name="+Core.getCurrentPage()));
 		Criacao_formacaoView view = new Criacao_formacaoView();
-		view.formadores.loadDomain("avaliadores", "sistema_de_avaliacao_igrpweb", "-- Selecionar --");
+		view.formadores.loadDomain("avaliadores","sistema_de_avaliacao_igrpweb","-- Selecionar --");
+		view.instituicao.loadDomain("intituicoes","sistema_de_avaliacao_igrpweb","-- Selecionar --");
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadSeparatorlist_1(Core.query(null,"SELECT '' as procurar_avaliado,'Deserunt perspiciatis accusantium voluptatem deserunt' as nome_avaliado,'hidden-1454_cff6' as id_avaliado "));
+		model.loadSeparatorlist_1(Core.query(null,"SELECT '' as procurar_avaliado,'Rem perspiciatis ut accusantium omnis' as nome_avaliado,'hidden-d0e9_e1b2' as id_avaliado "));
 		view.teste_de_avaliacao.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
@@ -62,28 +63,29 @@ public class Criacao_formacaoController extends Controller {
 					model.setData_fim(Core.convertLocalDateToString(formacaotbl.getDataFim(), "dd-MM-yyyy"));
 					model.setLocal(formacaotbl.getLocal());
 					model.setTopicos(formacaotbl.getTopicos());
+                 	model.setInstituicao(formacaotbl.getInstituicao());
 					model.setId_formacao(formacaotbl.getId().toString());
 					model.setTeste_de_avaliacao(formacaotbl.getEnunciadoId() != null?formacaotbl.getEnunciadoId().getId()+"":"");
 					model.setCodigo_do_teste(formacaotbl.getCodigoEnun());
 
 					view.btn_criar_formacao.addParameter("isEdit", "true");
 
-					Formando formandofilter = new Formando().find();
+					FormandoTbl formandofilter = new FormandoTbl().find();
 					if (Core.isNotNullOrZero(Core.toInt(model.getId_formacao()))) {
-						formandofilter.andWhere("formacao", "=", Core.toInt(model.getId_formacao()));
+						formandofilter.andWhere("formacaoId", "=", Core.toInt(model.getId_formacao()));
 					}
-					List<Formando> formandoList = formandofilter.all();
+					List<FormandoTbl> formandoList = formandofilter.all();
 					if (Core.isNotNull(formandoList)) {
 						List<Criacao_formacao.Separatorlist_1> separatorlistDocs = new ArrayList<>();
 						formandoList.forEach(formando -> {
 							Criacao_formacao.Separatorlist_1 row = new Criacao_formacao.Separatorlist_1();
 
-							row.setProcurar_avaliado(new Pair(formando.getFormando().getNome().toString(),
-									formando.getFormando().getNome().toString()));
-							row.setNome_avaliado(new Pair(formando.getFormando().getNome().toString(),
-									formando.getFormando().getNome().toString()));
-							row.setId_avaliado(new Pair(formando.getFormando().getIdAvaliado().toString(),
-									formando.getFormando().getIdAvaliado().toString()));
+							row.setProcurar_avaliado(new Pair(formando.getAvaliadoId().getNome().toString(),
+									formando.getAvaliadoId().getNome().toString()));
+							row.setNome_avaliado(new Pair(formando.getAvaliadoId().getNome().toString(),
+									formando.getAvaliadoId().getNome().toString()));
+							row.setId_avaliado(new Pair(formando.getAvaliadoId().getIdAvaliado().toString(),
+									formando.getAvaliadoId().getIdAvaliado().toString()));
 							row.setSeparatorlist_1_id(
 									new Pair(formando.getId().toString(), formando.getId().toString()));
 							separatorlistDocs.add(row);
@@ -97,10 +99,10 @@ public class Criacao_formacaoController extends Controller {
 		}
 		/*----#end-code----*/
 		view.setModel(model);
-		return this.renderView(view);
+		return this.renderView(view);	
 	}
-
-	public Response actionCriar_formacao() throws IOException, IllegalArgumentException, IllegalAccessException {
+	
+	public Response actionCriar_formacao() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Criacao_formacao model = new Criacao_formacao();
 		model.load();
 		/*----#gen-example
@@ -129,6 +131,7 @@ public class Criacao_formacaoController extends Controller {
 					formacaotbl.setHora(model.getHoras_de_formacao());
 					formacaotbl.setDataIn(Core.convertStringToLocalDate(model.getData_inicio(), "dd-MM-yyyy"));
 					formacaotbl.setDataFim(Core.convertStringToLocalDate(model.getData_fim(), "dd-MM-yyyy"));
+                  	formacaotbl.setInstituicao(model.getInstituicao());
 					formacaotbl.setLocal(model.getLocal());
 					formacaotbl.setGformadores(
 							model.getFormadores() != null ? String.join(";", model.getFormadores()) : null);
@@ -144,30 +147,30 @@ public class Criacao_formacaoController extends Controller {
 					formandoeditList = new ArrayList<>(Arrays.asList(model.getP_separatorlist_1_edit()));
 				}
 				for (Criacao_formacao.Separatorlist_1 row : model.getSeparatorlist_1()) {
-					Formando formando = new Formando();
+					FormandoTbl formando = new FormandoTbl();
 					if (Core.isNotNullOrZero(row.getSeparatorlist_1_id().getKey())) {
 						if (!formandoeditList.isEmpty()
 								&& formandoeditList.remove(row.getSeparatorlist_1_id().getKey())) {
-							formando = session.find(Formando.class, Core.toInt(row.getSeparatorlist_1_id().getKey()));
+							formando = session.find(FormandoTbl.class, Core.toInt(row.getSeparatorlist_1_id().getKey()));
 						} else
 							continue;
 					}
 
-					formando.setFormacao(formacaotbl);
+					formando.setFormacaoId(formacaotbl);
 					AvaliadoTbl avaliadotbl_foreign = session.find(AvaliadoTbl.class,
 							Core.toInt(row.getId_avaliado().getKey()));
 					String ano = Core.getCurrentYear().toString();
 					String code_ano = String.valueOf(ano).substring(2);
 					String chave_aut = code_ano.concat(avaliadotbl_foreign.getIdAvaliado().toString());
 					formando.setChaveAut(chave_aut);
-					formando.setFormando(avaliadotbl_foreign);
+					formando.setAvaliadoId(avaliadotbl_foreign);
 					session.persist(formando);
 				}
 				String[] formandodeletedIdsArray = model.getP_separatorlist_1_del();
 				if (Core.isNotNull(formandodeletedIdsArray)) {
 					for (String docId : formandodeletedIdsArray) {
 						if (Core.isNotNull(docId) && !docId.isEmpty()) {
-							Formando formando = session.find(Formando.class, Core.toInt(docId));
+							FormandoTbl formando = session.find(FormandoTbl.class, Core.toInt(docId));
 							session.delete(formando);
 						}
 					}
@@ -193,10 +196,12 @@ public class Criacao_formacaoController extends Controller {
 			return this.forward("sistema_de_avaliacao_igrpweb", "Criacao_formacao", "index", this.queryString());
 		}
 		/*----#end-code----*/
-		return this.redirect("sistema_de_avaliacao_igrpweb", "Criacao_formacao", "index", this.queryString());
+		return this.redirect("sistema_de_avaliacao_igrpweb","Criacao_formacao","index", this.queryString());	
 	}
-
-	/*----#start-code(custom_actions)----*/
+	
+		
+		
+/*----#start-code(custom_actions)----*/
 
 	/*----#end-code----*/
 }

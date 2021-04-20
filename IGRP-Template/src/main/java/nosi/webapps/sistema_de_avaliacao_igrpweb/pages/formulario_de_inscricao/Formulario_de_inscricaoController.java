@@ -34,46 +34,50 @@ public class Formulario_de_inscricaoController extends Controller {
 		/*----#start-code(index)----*/
 	
 		try {
-			String isEdit;
-			AvaliadoTbl avaliadotbl;
-			AvaliadoTbl registado = new AvaliadoTbl().find().where("idUtilizador","=",Core.getCurrentUser().getId()).one();
 			
-			if(Core.isNotNull(registado)) {
-				isEdit = "true";
-				avaliadotbl = registado;
-			}else {
-				isEdit = Core.getParam("isEdit");
-				avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
-			}
-	
-			if (Core.isNotNull(isEdit)) {	
-				if (avaliadotbl != null && !avaliadotbl.hasError()) {
-					view.foto.setValue(Core.getLinkFileByUuid(avaliadotbl.getIdFoto()));
-					model.setNome(avaliadotbl.getNome());
-					model.setIlha_natural(avaliadotbl.getIlha());
-					model.setEdicao_de_nosiakademia(avaliadotbl.getEdicao());
-					model.setFormacao(avaliadotbl.getFormacao());
-					model.setOutra_formacao(avaliadotbl.getOutraForm());
-					model.setUniversidade(avaliadotbl.getUniversidade());
-					model.setOutra_universidade(avaliadotbl.getOutraUniv());
-					model.setContacto(avaliadotbl.getContacto());
-					model.setEmail(avaliadotbl.getEmail());
-					model.setInstituicao(avaliadotbl.getInstituicao());
-					view.nome.propertie().add("disabled", "true");
-					view.foto.propertie().add("disabled", "true");
-					view.ilha_natural.propertie().add("disabled", "true");
-					view.edicao_de_nosiakademia.propertie().add("disabled", "true");
-					view.formacao.propertie().add("disabled", "true");
-					view.outra_formacao.propertie().add("disabled", "true");
-					view.universidade.propertie().add("disabled", "true");
-					view.outra_universidade.propertie().add("disabled", "true");
-					view.contacto.propertie().add("disabled", "true");
-					view.email.propertie().add("disabled", "true");
-					view.instituicao.propertie().add("disabled", "true");
-					view.btn_salvar.setVisible(false);
+			AvaliadoTbl avaliadotbl;
+			String jaInscrito="NAO";
 
-				}
+			if(Core.isNotNull(Core.getParam("p_id_avaliado"))) {
+				avaliadotbl = new AvaliadoTbl().findOne(Core.getParamInt("p_id_avaliado"));
+				jaInscrito="SIM";
 			}
+			else {
+				avaliadotbl = new AvaliadoTbl().find().where("idUtilizador","=",Core.getCurrentUser().getId()).one();
+				if(avaliadotbl!=null)
+					jaInscrito="SIM";
+			}
+			
+			if (avaliadotbl != null && !avaliadotbl.hasError()) {
+				view.foto.setValue(Core.getLinkFileByUuid(avaliadotbl.getIdFoto()));
+				model.setNome(avaliadotbl.getNome());
+				model.setIlha_natural(avaliadotbl.getIlha());
+				model.setEdicao_de_nosiakademia(avaliadotbl.getEdicao());
+				model.setFormacao(avaliadotbl.getFormacao());
+				model.setOutra_formacao(avaliadotbl.getOutraForm());
+				model.setUniversidade(avaliadotbl.getUniversidade());
+				model.setOutra_universidade(avaliadotbl.getOutraUniv());
+				model.setContacto(avaliadotbl.getContacto());
+				model.setEmail(avaliadotbl.getEmail());
+				model.setInstituicao(avaliadotbl.getInstituicao());
+				view.btn_salvar.addParameter("isEdit", "true");
+			}
+			
+			if (jaInscrito.equals("SIM")) {
+				view.nome.propertie().add("disabled", "true");
+				view.foto.propertie().add("disabled", "true");
+				view.ilha_natural.propertie().add("disabled", "true");
+				view.edicao_de_nosiakademia.propertie().add("disabled", "true");
+				view.formacao.propertie().add("disabled", "true");
+				view.outra_formacao.propertie().add("disabled", "true");
+				view.universidade.propertie().add("disabled", "true");
+				view.outra_universidade.propertie().add("disabled", "true");
+				view.contacto.propertie().add("disabled", "true");
+				view.email.propertie().add("disabled", "true");
+				view.instituicao.propertie().add("disabled", "true");
+				view.btn_salvar.setVisible(false);
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

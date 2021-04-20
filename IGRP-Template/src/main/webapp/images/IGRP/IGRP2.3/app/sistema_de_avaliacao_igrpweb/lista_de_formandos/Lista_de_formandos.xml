@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_formandos/Lista_de_formandos.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Lista_de_formandos</page>
+    <app>sistema_de_avaliacao_igrpweb</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.sistema_de_avaliacao_igrpweb.pages</package_db>
+        <package_html>Lista_de_formandos</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=132</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Lista de Formandos</title>
+        <table_1 type="table" xml-type="table" title="Lista de Classificados em formação igrpweb" gen-type="container" gen-group="true">
+            <fields>
+                <foto name="p_foto" type="img" persist="true" img="../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg" width="" height="" croppie="false" rounded="false" autoupload="false" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Foto</label>
+                </foto>
+                <nome name="p_nome" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="true" iskey="false" group_in="">
+                    <label>Nome</label>
+                </nome>
+                <formacao name="p_formacao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Formação</label>
+                </formacao>
+                <edicao name="p_edicao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Edição</label>
+                </edicao>
+                <chave_autenticacao name="p_chave_autenticacao" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="true" group_in="">
+                    <label>Chave Autenticação</label>
+                </chave_autenticacao>
+                <id_formando name="p_id_formando" type="hidden" maxlength="30" showLabel="true" iskey="true" group_in="" java-type="" tag="id_formando"/>
+            </fields>
+            <table>
+                <value>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Magna rem sit elit lorem sit a</nome>
+                        <formacao name="p_formacao">Elit magna mollit labore sit a</formacao>
+                        <edicao name="p_edicao">Ipsum dolor laudantium totam i</edicao>
+                        <chave_autenticacao name="p_chave_autenticacao">Sed officia omnis mollit persp</chave_autenticacao>
+                        <id_formando name="p_id_formando" tag="id_formando">hidden-ac2b_562f</id_formando>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Aliqua dolor elit doloremque a</nome>
+                        <formacao name="p_formacao">Accusantium omnis aliqua strac</formacao>
+                        <edicao name="p_edicao">Magna unde voluptatem deserunt</edicao>
+                        <chave_autenticacao name="p_chave_autenticacao">Rem perspiciatis deserunt aper</chave_autenticacao>
+                        <id_formando name="p_id_formando" tag="id_formando">hidden-6cf6_9d05</id_formando>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Stract adipiscing iste laudant</nome>
+                        <formacao name="p_formacao">Adipiscing labore deserunt und</formacao>
+                        <edicao name="p_edicao">Totam omnis dolor ut perspicia</edicao>
+                        <chave_autenticacao name="p_chave_autenticacao">Deserunt ut labore dolor aperi</chave_autenticacao>
+                        <id_formando name="p_id_formando" tag="id_formando">hidden-7f10_8801</id_formando>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Laudantium stract elit natus t</nome>
+                        <formacao name="p_formacao">Anim perspiciatis magna iste a</formacao>
+                        <edicao name="p_edicao">Elit aliqua mollit amet ut omn</edicao>
+                        <chave_autenticacao name="p_chave_autenticacao">Stract omnis stract omnis magn</chave_autenticacao>
+                        <id_formando name="p_id_formando" tag="id_formando">hidden-d916_97f2</id_formando>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Lorem accusantium unde adipisc</nome>
+                        <formacao name="p_formacao">Iste magna lorem aperiam dolor</formacao>
+                        <edicao name="p_edicao">Aliqua sit mollit adipiscing e</edicao>
+                        <chave_autenticacao name="p_chave_autenticacao">Lorem doloremque adipiscing si</chave_autenticacao>
+                        <id_formando name="p_id_formando" tag="id_formando">hidden-cddf_c47d</id_formando>
+                    </row>
+                </value>
+                <context-menu>
+                    <item id="button_3ef4_b061" type="specific" code="" class="warning" rel="ver" refresh_components="">
+                        <title>Ver</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Formulario_de_inscricao</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml?</parameter>
+                        <target>_blank</target>
+                        <img>warning|fa-eye</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/formulario_de_inscricao/Formulario_de_inscricao.xml</preview>
+                    </item>
+                    <item id="button_c93d_97f1" type="specific" code="" flg_transaction="true" class="danger" rel="emitir_certificado" custom_return="true" refresh_components="">
+                        <title>Emitir Certificado</title>
+                        <app>sistema_de_avaliacao_igrpweb</app>
+                        <page>Criacao_de_certificado</page>
+                        <link>index</link>
+                        <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_de_certificado/Criacao_de_certificado.xml?</parameter>
+                        <target>mpsubmit</target>
+                        <img>danger|fa-graduation-cap</img>
+                        <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/criacao_de_certificado/Criacao_de_certificado.xml</preview>
+                    </item>
+                </context-menu>
+            </table>
+        </table_1>
+    </content>
+    <blockly>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="dao">Formando</import>
+            <import type="dao">AvaliadoTbl</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="388" y="13"></block>
+            <block type="listar_table_1" id="table_1" inline="true" x="763" y="112">
+                <mutation order="" limit="TODOSS" count="NaN"></mutation>
+                <field name="dao">Formando</field>
+                <field name="FILL">FALSE</field>
+                <field name="orderdrop"></field>
+                <field name="find">TODOSS</field>
+                <field name="limit"></field>
+                <statement name="value2">
+                    <block type="rowtablefoto" id="Image::foto">
+                        <value name="fields_model">
+                            <block type="get-dao-Formando" id="e.z4b9sFr:=0E~5#f+m*">
+                                <mutation hover_type="AvaliadoTbl_FK#::formandoId"></mutation>
+                                <field name="DAO_FIELD">AvaliadoTbl_FK#::formandoId</field>
+                                <value name="dao_rela">
+                                    <block type="get-dao-AvaliadoTbl" id="Q![ymL_j@fdw)|;aCs5E">
+                                        <mutation hover_type="String::idFoto"></mutation>
+                                        <field name="DAO_FIELD">String::idFoto</field>
+                                    </block>
+                                </value>
+                            </block>
+                        </value>
+                        <next>
+                            <block type="rowtablenome" id="String::nome">
+                                <value name="fields_model">
+                                    <block type="get-dao-Formando" id="WaEx@q4#,C(Zx8MX{n~v">
+                                        <mutation hover_type="AvaliadoTbl_FK#::formandoId"></mutation>
+                                        <field name="DAO_FIELD">AvaliadoTbl_FK#::formandoId</field>
+                                        <value name="dao_rela">
+                                            <block type="get-dao-AvaliadoTbl" id="URD80wZsNxiu{1gw2k((">
+                                                <mutation hover_type="String::nome"></mutation>
+                                                <field name="DAO_FIELD">String::nome</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="rowtableformacao" id="String::formacao">
+                                        <value name="fields_model">
+                                            <block type="get-dao-Formando" id="p2vOiYpvihO1p37k6b!}">
+                                                <mutation hover_type="AvaliadoTbl_FK#::formandoId"></mutation>
+                                                <field name="DAO_FIELD">AvaliadoTbl_FK#::formandoId</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-AvaliadoTbl" id="|%l?^(}bFFEMmCt.gI1c">
+                                                        <mutation hover_type="String::formacao"></mutation>
+                                                        <field name="DAO_FIELD">String::formacao</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="rowtableedicao" id="String::edicao">
+                                                <value name="fields_model">
+                                                    <block type="get-dao-Formando" id="hC4@M7.EYHUMMHDSM{MD">
+                                                        <mutation hover_type="AvaliadoTbl_FK#::formandoId"></mutation>
+                                                        <field name="DAO_FIELD">AvaliadoTbl_FK#::formandoId</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-AvaliadoTbl" id="5|IE@OM3]^T(t3S(X9ta">
+                                                                <mutation hover_type="String::edicao"></mutation>
+                                                                <field name="DAO_FIELD">String::edicao</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="rowtableid_formando" id="String::id_formando">
+                                                        <value name="fields_model">
+                                                            <block type="get-dao-Formando" id="_M+kZw;6j~p-va?j.vLP">
+                                                                <mutation hover_type="Integer::id"></mutation>
+                                                                <field name="DAO_FIELD">Integer::id</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>

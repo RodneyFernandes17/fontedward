@@ -40,6 +40,10 @@ public class Criacao_formacao extends Model{
 	@RParam(rParamName = "p_topicos")
 	private String topicos;
 
+	@NotNull()
+	@RParam(rParamName = "p_instituicao")
+	private String instituicao;
+
 	@RParam(rParamName = "p_teste_de_avaliacao")
 	private String teste_de_avaliacao;
 
@@ -133,6 +137,13 @@ public class Criacao_formacao extends Model{
 	}
 	public String getTopicos(){
 		return this.topicos;
+	}
+	
+	public void setInstituicao(String instituicao){
+		this.instituicao = instituicao;
+	}
+	public String getInstituicao(){
+		return this.instituicao;
 	}
 	
 	public void setTeste_de_avaliacao(String teste_de_avaliacao){

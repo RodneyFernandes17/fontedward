@@ -7,12 +7,16 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
+import java.util.ArrayList; //block import
+import java.util.List; //block import
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TesteTbl; //block import
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl; //block import
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 import java.util.ArrayList;
 import java.util.List;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.Formando;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.FormandoTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TesteTbl;
 import nosi.core.webapp.Report;
 /*----#end-code----*/
@@ -24,17 +28,25 @@ public class Lista_de_classificacaoController extends Controller {
 		Lista_de_classificacaoView view = new Lista_de_classificacaoView();
 		view.id_teste.setParam(true);
 		view.id_avaliado.setParam(true);
+		view.instituicao_flt.loadDomain("intituicoes","sistema_de_avaliacao_igrpweb","-- Selecionar --");
+		view.edicao_flt.loadDomain("edicao","sistema_de_avaliacao_igrpweb","-- Selecionar --");
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT '3' as aprovacao,'../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Sit aliqua deserunt voluptatem' as nome,'Ipsum elit ut amet deserunt do' as formacao,'Perspiciatis lorem sit adipisc' as edicao,'02-04-2011' as data_de_realizacao,'Aperiam sit deserunt doloremqu' as classificacao,'hidden-64b4_679b' as id_teste,'hidden-c057_9b23' as id_avaliado "));
+		model.loadTable_1(Core.query(null,"SELECT '1' as aprovacao,'../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg' as foto,'Sed adipiscing magna accusanti' as nome,'Totam lorem anim rem voluptate' as formacao,'Sed anim sit stract accusantiu' as instituicao,'Laudantium mollit dolor ut sed' as edicao,'05-02-2017' as data_de_realizacao,'Doloremque natus deserunt amet' as classificacao,'hidden-2279_7d99' as id_teste,'hidden-1f9a_7172' as id_avaliado "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		try {
 
 			TesteTbl testetblfilter = new TesteTbl().find();
-			List<TesteTbl> testetblList = testetblfilter.orderByDesc("valorFinal").all();
-			List<Lista_de_classificacao.Table_1> testetblTable = new ArrayList<>();
+			if(Core.isNotNullOrZero(model.getInstituicao_flt())){
+				testetblfilter.andWhere("idAvaliadoFk.instituicao","=",model.getInstituicao_flt());
+			}
+			if(Core.isNotNullOrZero(Core.toInt(model.getEdicao_flt()))){
+				testetblfilter.andWhere("idAvaliadoFk.edicao","=",model.getEdicao_flt());
+			}
+	List<TesteTbl> testetblList = testetblfilter.orderByDesc("valorFinal").all();
+	List<Lista_de_classificacao.Table_1> testetblTable = new ArrayList<>();
 			if (testetblList != null) {
 				for (TesteTbl testetbl : testetblList) {
 					Lista_de_classificacao.Table_1 row = new Lista_de_classificacao.Table_1();
@@ -47,9 +59,10 @@ public class Lista_de_classificacaoController extends Controller {
 					row.setNome(testetbl.getIdAvaliadoFk() != null ? testetbl.getIdAvaliadoFk().getNome() : null);
 					row.setFormacao(Core.findDomainDescByKey("formacao", testetbl.getIdAvaliadoFk().getFormacao()));
 					row.setClassificacao(testetbl.getValorFinal() + " Pontos");
+                    row.setInstituicao(Core.findDomainDescByKey("intituicoes", testetbl.getIdAvaliadoFk().getInstituicao()) );
 					row.setId_teste("" + testetbl.getIdTeste());
 					row.setAprovacao(testetbl.getAprovacao() + "");
-					row.setData_de_realizacao(testetbl.getDataRealizacao() + "");
+					row.setData_de_realizacao(Core.convertLocalDateTimeToString(testetbl.getDataRealizacao(), "dd-MM-yyyy - HH:mm"));
 					row.setEdicao(Core.findDomainDescByKey("edicao",
 							testetbl.getIdAvaliadoFk() != null ? testetbl.getIdAvaliadoFk().getEdicao() : null));
 					testetblTable.add(row);
@@ -65,6 +78,25 @@ public class Lista_de_classificacaoController extends Controller {
 		return this.renderView(view);	
 	}
 	
+	public Response actionFiltrar() throws IOException, IllegalArgumentException, IllegalAccessException{
+		Lista_de_classificacao model = new Lista_de_classificacao();
+		model.load();
+		/*----#gen-example
+		  EXAMPLES COPY/PASTE:
+		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
+		  this.addQueryString("p_id","12"); //to send a query string in the URL
+		  this.addQueryString("p_id_teste",Core.getParam("p_id_teste"));
+		  this.addQueryString("p_id_avaliado",Core.getParam("p_id_avaliado"));
+		  return this.forward("sistema_de_avaliacao_igrpweb","Lista_de_classificacao","index",this.queryString()); //if submit, loads the values
+		  Use model.validate() to validate your model
+		  ----#gen-example */
+		/*----#start-code(filtrar)----*/
+		return this.forward("sistema_de_avaliacao_igrpweb","Lista_de_classificacao","index",this.queryString()); 
+		
+		/*----#end-code----*/
+			
+	}
+	
 	public Response actionVer() throws IOException, IllegalArgumentException, IllegalAccessException{
 		Lista_de_classificacao model = new Lista_de_classificacao();
 		model.load();
@@ -78,7 +110,6 @@ public class Lista_de_classificacaoController extends Controller {
 		  Use model.validate() to validate your model
 		  ----#gen-example */
 		/*----#start-code(ver)----*/
-		this.addQueryString("isEdit", "true");
 		this.addQueryString("p_id_avaliado", Core.getParam("p_id_avaliado"));
 		/*----#end-code----*/
 		return this.redirect("sistema_de_avaliacao_igrpweb","Formulario_de_inscricao","index", this.queryString());	
@@ -99,18 +130,24 @@ public class Lista_de_classificacaoController extends Controller {
 		/*----#start-code(emitir_certificado)----*/
 
 		TesteTbl teste = new TesteTbl().findOne(Core.getParamInt("p_id_teste"));
-		
-		Core.setMessageSuccess(""+teste.getIdAvaliadoFk().getIdAvaliado());
-		
-		
-		Formando contraprov = new Formando().where("formando.idAvaliado","=", teste.getIdAvaliadoFk().getIdAvaliado())
-				.andWhere("formacao.id","=", teste.getFormacaoId().getId()).one();
-		
-		Core.setMessageSuccess(""+contraprov.getChaveAut());
-		String contraprova = contraprov.getChaveAut();
 
-		return Core.getLinkReport("certificado_igrpweb", new Report()
-				.addParam("value_array", contraprov.getId()).setContraProva("IGRPWEB_" + contraprova));
+		Core.setMessageSuccess("avaliado " + teste.getIdAvaliadoFk().getIdAvaliado());
+		Core.setMessageSuccess("formacao " + teste.getFormacaoId().getId());
+		
+		FormandoTbl contraprov = new FormandoTbl().where("formandoId", "=", teste.getIdAvaliadoFk().getIdAvaliado())
+				.andWhere("formacaoId", "=", teste.getFormacaoId().getId()).one();
+
+		String contraprova = "";
+		Integer formando = 0;
+		if (contraprov != null) {
+			Core.setMessageSuccess("" + contraprov.getChaveAut());
+			contraprova = contraprov.getChaveAut();
+			formando = contraprov.getId();
+		} else
+			Core.setMessageError("Não foi encontrado o formando!");
+
+		return Core.getLinkReport("certificado_igrpweb",
+				new Report().addParam("value_array", formando).setContraProva("IGRPWEB_" + contraprova));
 
 		/*----#end-code----*/
 			

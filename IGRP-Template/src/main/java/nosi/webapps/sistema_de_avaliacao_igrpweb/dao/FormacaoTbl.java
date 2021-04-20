@@ -1,23 +1,23 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import javax.persistence.ManyToOne;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Column;
-import javax.persistence.GenerationType;
-import javax.persistence.Entity;
-import javax.validation.constraints.Size;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.ForeignKey;
 import javax.validation.constraints.NotNull;
+import javax.persistence.Column;
+import javax.persistence.NamedQuery;
+import javax.validation.constraints.Size;
+import javax.persistence.Id;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
+import javax.persistence.ForeignKey;
+import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.GenerationType;
 import java.time.LocalDate;
+import nosi.base.ActiveRecord.BaseActiveRecord;
 
 /**
- * @author: Nositeste 15-04-2021
+ * @author: Nositeste 19-04-2021
 */
 
 @Entity
@@ -64,6 +64,9 @@ public class FormacaoTbl extends BaseActiveRecord<FormacaoTbl> {
 	@Size(max = 2147483647)
 	@Column(name = "codigo_enun")
 	private String codigoEnun;
+	@Size(max = 2147483647)
+	@Column(name = "instituicao")
+	private String instituicao;
 
 	public String getNome() { 
 		return this.nome;
@@ -143,6 +146,14 @@ public class FormacaoTbl extends BaseActiveRecord<FormacaoTbl> {
 
 	public void setCodigoEnun(String codigoEnun) {
 		 this.codigoEnun = codigoEnun;
+	}
+
+	public String getInstituicao() { 
+		return this.instituicao;
+	}
+
+	public void setInstituicao(String instituicao) {
+		 this.instituicao = instituicao;
 	}
 
 }

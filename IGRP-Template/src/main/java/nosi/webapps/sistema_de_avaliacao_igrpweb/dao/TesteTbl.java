@@ -1,21 +1,21 @@
 package nosi.webapps.sistema_de_avaliacao_igrpweb.dao;
 
-import java.time.LocalDateTime;
-import javax.persistence.ManyToOne;
-import nosi.base.ActiveRecord.BaseActiveRecord;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Column;
-import javax.persistence.GenerationType;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.persistence.ForeignKey;
 import javax.validation.constraints.NotNull;
+import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
+import javax.persistence.Id;
+import javax.persistence.GenerationType;
+import java.time.LocalDateTime;
+import javax.persistence.Table;
+import javax.persistence.Entity;
+import nosi.base.ActiveRecord.BaseActiveRecord;
+import javax.persistence.Column;
 
 /**
- * @author: Nositeste 15-04-2021
+ * @author: Nositeste 18-04-2021
 */
 
 @Entity
@@ -58,7 +58,7 @@ public class TesteTbl extends BaseActiveRecord<TesteTbl> {
 	@Column(name = "aprovacao")
 	private Integer aprovacao;
 	@ManyToOne
-	@JoinColumn(name = "formacao_id", foreignKey = @ForeignKey(name = "formacao_fkeyy"))
+	@JoinColumn(name = "formacao_id", foreignKey = @ForeignKey(name = "formacao_fk"))
 	private FormacaoTbl formacaoId;
 
 	public Integer getIdTeste() { 

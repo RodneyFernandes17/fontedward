@@ -21,6 +21,7 @@ public class Gestao_de_formacoes extends Model{
 
 	public static class Table_1 extends IGRPTable.Table{
 		private String nome;
+		private String instituicao;
 		private String data_inicio;
 		private String data_fim;
 		private String id_formacao;
@@ -29,6 +30,13 @@ public class Gestao_de_formacoes extends Model{
 		}
 		public String getNome(){
 			return this.nome;
+		}
+
+		public void setInstituicao(String instituicao){
+			this.instituicao = instituicao;
+		}
+		public String getInstituicao(){
+			return this.instituicao;
 		}
 
 		public void setData_inicio(String data_inicio){

@@ -40,8 +40,8 @@
 		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.MentorTbl"/>
 		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.SemanaTbl"/>
 		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.FormacaoTbl"/>
-		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.Formando"/>
 		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.EnunciadoTbl"/>
+		<mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.FormandoTbl"/>
 		<!-- Mapping your class here... 
 		Ex: <mapping class="nosi.webapps.sistema_de_avaliacao_igrpweb.dao.Employee"/> 		-->
 	</session-factory>

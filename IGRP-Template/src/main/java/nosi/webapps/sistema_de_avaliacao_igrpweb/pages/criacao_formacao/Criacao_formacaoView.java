@@ -15,6 +15,7 @@ public class Criacao_formacaoView extends View {
 	public Field data_fim;
 	public Field local;
 	public Field topicos;
+	public Field instituicao;
 	public Field teste_de_avaliacao;
 	public Field codigo_do_teste;
 	public Field id_formacao;
@@ -63,6 +64,10 @@ public class Criacao_formacaoView extends View {
 		topicos.setLabel(gt("Tópico Abordados na Formação"));
 		topicos.propertie().add("name","p_topicos").add("type","texteditor").add("maxlength","5000").add("required","true").add("readonly","false").add("disabled","false").add("placeholder",gt("")).add("desclabel","false");
 		
+		instituicao = new ListField(model,"instituicao");
+		instituicao.setLabel(gt("Instituição"));
+		instituicao.propertie().add("name","p_instituicao").add("type","select").add("multiple","false").add("tags","false").add("domain","intituicoes « sistema_de_avaliacao_igrpweb").add("maxlength","250").add("required","true").add("disabled","false").add("java-type","");
+		
 		teste_de_avaliacao = new ListField(model,"teste_de_avaliacao");
 		teste_de_avaliacao.setLabel(gt("Teste de Avaliação"));
 		teste_de_avaliacao.propertie().add("name","p_teste_de_avaliacao").add("type","select").add("multiple","false").add("tags","false").add("domain","").add("maxlength","250").add("required","false").add("disabled","false").add("java-type","");
@@ -110,6 +115,7 @@ public class Criacao_formacaoView extends View {
 		form_1.addField(data_fim);
 		form_1.addField(local);
 		form_1.addField(topicos);
+		form_1.addField(instituicao);
 		form_1.addField(teste_de_avaliacao);
 		form_1.addField(codigo_do_teste);
 		form_1.addField(id_formacao);
@@ -135,6 +141,7 @@ public class Criacao_formacaoView extends View {
 		data_fim.setValue(model);
 		local.setValue(model);
 		topicos.setValue(model);
+		instituicao.setValue(model);
 		teste_de_avaliacao.setValue(model);
 		codigo_do_teste.setValue(model);
 		id_formacao.setValue(model);

@@ -9,6 +9,7 @@ import static nosi.core.i18n.Translator.gt;
 public class Gestao_de_formacoesView extends View {
 
 	public Field nome;
+	public Field instituicao;
 	public Field data_inicio;
 	public Field data_fim;
 	public Field id_formacao;
@@ -30,6 +31,10 @@ public class Gestao_de_formacoesView extends View {
 		nome = new TextField(model,"nome");
 		nome.setLabel(gt("Nome"));
 		nome.propertie().add("name","p_nome").add("type","text").add("maxlength","30").add("showLabel","true").add("group_in","");
+		
+		instituicao = new TextField(model,"instituicao");
+		instituicao.setLabel(gt("Instituição"));
+		instituicao.propertie().add("name","p_instituicao").add("type","text").add("maxlength","30").add("showLabel","true").add("group_in","");
 		
 		data_inicio = new TextField(model,"data_inicio");
 		data_inicio.setLabel(gt("Data início"));
@@ -69,6 +74,7 @@ public class Gestao_de_formacoesView extends View {
 		
 
 		table_1.addField(nome);
+		table_1.addField(instituicao);
 		table_1.addField(data_inicio);
 		table_1.addField(data_fim);
 		table_1.addField(id_formacao);
@@ -86,6 +92,7 @@ public class Gestao_de_formacoesView extends View {
 	public void setModel(Model model) {
 		
 		nome.setValue(model);
+		instituicao.setValue(model);
 		data_inicio.setValue(model);
 		data_fim.setValue(model);
 		id_formacao.setValue(model);	

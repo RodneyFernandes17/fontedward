@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lista_de_classificacao extends Model{		
+
+	@RParam(rParamName = "p_instituicao_flt")
+	private String instituicao_flt;
+
+	@RParam(rParamName = "p_edicao_flt")
+	private String edicao_flt;
 	
 	private List<Table_1> table_1 = new ArrayList<>();	
 	public void setTable_1(List<Table_1> table_1){
@@ -17,6 +23,20 @@ public class Lista_de_classificacao extends Model{
 		return this.table_1;
 	}
 
+	
+	public void setInstituicao_flt(String instituicao_flt){
+		this.instituicao_flt = instituicao_flt;
+	}
+	public String getInstituicao_flt(){
+		return this.instituicao_flt;
+	}
+	
+	public void setEdicao_flt(String edicao_flt){
+		this.edicao_flt = edicao_flt;
+	}
+	public String getEdicao_flt(){
+		return this.edicao_flt;
+	}
 
 
 	public static class Table_1 extends IGRPTable.Table{
@@ -25,6 +45,7 @@ public class Lista_de_classificacao extends Model{
 		private String foto_uuid;
 		private String nome;
 		private String formacao;
+		private String instituicao;
 		private String edicao;
 		private String data_de_realizacao;
 		private String classificacao;
@@ -62,6 +83,13 @@ public class Lista_de_classificacao extends Model{
 		}
 		public String getFormacao(){
 			return this.formacao;
+		}
+
+		public void setInstituicao(String instituicao){
+			this.instituicao = instituicao;
+		}
+		public String getInstituicao(){
+			return this.instituicao;
 		}
 
 		public void setEdicao(String edicao){

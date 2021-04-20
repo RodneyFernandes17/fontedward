@@ -37,6 +37,55 @@
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
     <content>
         <title>Lista de Classificação</title>
+        <form_1 type="form" xml-type="form" title="Filtro" gen-type="container" gen-group="">
+            <fields>
+                <instituicao_flt name="p_instituicao_flt" type="select" multiple="false" tags="false" domain="intituicoes « sistema_de_avaliacao_igrpweb" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Instituição</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>Ministério das Finanças </text>
+                            <value>fin</value>
+                        </option>
+                        <option>
+                            <text>Câmara Municipal da Praia </text>
+                            <value>cmp </value>
+                        </option>
+                        <option>
+                            <text>Nosi Akademia </text>
+                            <value>akad</value>
+                        </option>
+                    </list>
+                    <rules/>
+                </instituicao_flt>
+                <edicao_flt name="p_edicao_flt" type="select" multiple="false" tags="false" domain="edicao « sistema_de_avaliacao_igrpweb" maxlength="250" required="false" change="false" disabled="false" right="false" java-type="">
+                    <label>Edição</label>
+                    <list>
+                        <option/>
+                        <option>
+                            <text>02/2020</text>
+                            <value>02_2020</value>
+                        </option>
+                        <option>
+                            <text>03/2020</text>
+                            <value>03_2020</value>
+                        </option>
+                    </list>
+                </edicao_flt>
+            </fields>
+            <tools-bar>
+                <item id="button_eddc_3bb5" type="form" code="" class="primary" rel="filtrar" custom_return="true" refresh_components="table_1">
+                    <title>Filtrar</title>
+                    <app>sistema_de_avaliacao_igrpweb</app>
+                    <page>Lista_de_classificacao</page>
+                    <link>index</link>
+                    <parameter>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_classificacao/Lista_de_classificacao.xml?</parameter>
+                    <target>submit_ajax</target>
+                    <img>primary|fa-filter</img>
+                    <preview>../images/IGRP/IGRP2.3/app/sistema_de_avaliacao_igrpweb/lista_de_classificacao/Lista_de_classificacao.xml</preview>
+                </item>
+            </tools-bar>
+        </form_1>
         <table_1 type="table" xml-type="table" title="Lista de Classificados em formação igrpweb" gen-type="container" gen-group="true">
             <fields>
                 <aprovacao name="p_aprovacao" type="color" format="hex" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
@@ -51,6 +100,9 @@
                 <formacao name="p_formacao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
                     <label>Formação</label>
                 </formacao>
+                <instituicao name="p_instituicao" type="text" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
+                    <label>Instituição</label>
+                </instituicao>
                 <edicao name="p_edicao" type="plaintext" disable_output_escaping="false" html_class="" maxlength="30" showLabel="true" align="left" lookup_parser="false" iskey="false" group_in="">
                     <label>Edição</label>
                 </edicao>
@@ -70,60 +122,48 @@
                             <param>p1=linha1</param>
                             <param>p2=linha1</param>
                         </context-menu>
-                        <aprovacao name="p_aprovacao">4</aprovacao>
-                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Natus mollit laudantium lorem</nome>
-                        <formacao name="p_formacao">Laudantium ut rem amet deserun</formacao>
-                        <edicao name="p_edicao">Accusantium omnis aperiam magn</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">06-07-2010</data_de_realizacao>
-                        <classificacao name="p_classificacao">Magna dolor adipiscing officia</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-6378_9935</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-b401_4cdf</id_avaliado>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
-                        <aprovacao name="p_aprovacao">2</aprovacao>
-                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Perspiciatis amet totam unde a</nome>
-                        <formacao name="p_formacao">Perspiciatis iste sit omnis se</formacao>
-                        <edicao name="p_edicao">Anim laudantium ut dolor amet</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">04-08-2016</data_de_realizacao>
-                        <classificacao name="p_classificacao">Aperiam omnis labore aperiam d</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-9746_624d</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-bf5c_fd40</id_avaliado>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
-                        <aprovacao name="p_aprovacao">1</aprovacao>
-                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Voluptatem consectetur sed mag</nome>
-                        <formacao name="p_formacao">Unde iste sit stract unde accu</formacao>
-                        <edicao name="p_edicao">Doloremque unde totam officia</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">08-01-2013</data_de_realizacao>
-                        <classificacao name="p_classificacao">Elit ut lorem sit doloremque</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-f160_5727</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-ed4d_edb3</id_avaliado>
-                    </row>
-                    <row>
-                        <context-menu>
-                            <param>p1=linha1</param>
-                            <param>p2=linha1</param>
-                        </context-menu>
                         <aprovacao name="p_aprovacao">3</aprovacao>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Ut labore omnis adipiscing lor</nome>
-                        <formacao name="p_formacao">Natus consectetur stract rem a</formacao>
-                        <edicao name="p_edicao">Lorem rem officia mollit omnis</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">06-03-2017</data_de_realizacao>
-                        <classificacao name="p_classificacao">Ut doloremque omnis accusantiu</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-a443_cbd6</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-c206_1ff7</id_avaliado>
+                        <nome name="p_nome">Totam magna ipsum lorem dolor</nome>
+                        <formacao name="p_formacao">Anim ut unde anim lorem sit ac</formacao>
+                        <instituicao name="p_instituicao">Sit aliqua anim ipsum lorem</instituicao>
+                        <edicao name="p_edicao">Sit adipiscing perspiciatis co</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">03-08-2016</data_de_realizacao>
+                        <classificacao name="p_classificacao">Labore anim accusantium aperia</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-5055_a97f</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-0d05_9b7f</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <aprovacao name="p_aprovacao">4</aprovacao>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Aperiam deserunt mollit ut ist</nome>
+                        <formacao name="p_formacao">Deserunt totam amet magna sed</formacao>
+                        <instituicao name="p_instituicao">Lorem doloremque stract deseru</instituicao>
+                        <edicao name="p_edicao">Ipsum labore unde accusantium</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">03-03-2011</data_de_realizacao>
+                        <classificacao name="p_classificacao">Anim mollit officia accusantiu</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-69ea_7a45</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-2ad2_678f</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <aprovacao name="p_aprovacao">4</aprovacao>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Perspiciatis sit aperiam lorem</nome>
+                        <formacao name="p_formacao">Voluptatem totam deserunt moll</formacao>
+                        <instituicao name="p_instituicao">Sit adipiscing mollit ipsum is</instituicao>
+                        <edicao name="p_edicao">Sit doloremque deserunt natus</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">01-07-2010</data_de_realizacao>
+                        <classificacao name="p_classificacao">Stract sit ut voluptatem iste</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-eb2b_9517</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-0142_1aaa</id_avaliado>
                     </row>
                     <row>
                         <context-menu>
@@ -132,13 +172,30 @@
                         </context-menu>
                         <aprovacao name="p_aprovacao">2</aprovacao>
                         <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
-                        <nome name="p_nome">Mollit lorem consectetur iste</nome>
-                        <formacao name="p_formacao">Voluptatem aperiam iste sit ma</formacao>
-                        <edicao name="p_edicao">Natus deserunt accusantium str</edicao>
-                        <data_de_realizacao name="p_data_de_realizacao">07-02-2016</data_de_realizacao>
-                        <classificacao name="p_classificacao">Consectetur iste labore aliqua</classificacao>
-                        <id_teste name="p_id_teste" tag="id_teste">hidden-9ab9_f870</id_teste>
-                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-e7c8_1a37</id_avaliado>
+                        <nome name="p_nome">Dolor sit sit labore lorem eli</nome>
+                        <formacao name="p_formacao">Omnis totam laudantium unde de</formacao>
+                        <instituicao name="p_instituicao">Adipiscing totam aliqua laudan</instituicao>
+                        <edicao name="p_edicao">Consectetur sit iste ipsum off</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">07-03-2016</data_de_realizacao>
+                        <classificacao name="p_classificacao">Sit unde lorem adipiscing aper</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-ef25_c9b6</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-3fd2_7f5e</id_avaliado>
+                    </row>
+                    <row>
+                        <context-menu>
+                            <param>p1=linha1</param>
+                            <param>p2=linha1</param>
+                        </context-menu>
+                        <aprovacao name="p_aprovacao">4</aprovacao>
+                        <foto name="p_foto">../images/IGRP/IGRP2.3/assets/img/jon_doe.jpg</foto>
+                        <nome name="p_nome">Mollit aliqua voluptatem ut am</nome>
+                        <formacao name="p_formacao">Rem natus rem perspiciatis acc</formacao>
+                        <instituicao name="p_instituicao">Omnis voluptatem labore ipsum</instituicao>
+                        <edicao name="p_edicao">Unde doloremque sit aperiam pe</edicao>
+                        <data_de_realizacao name="p_data_de_realizacao">08-06-2010</data_de_realizacao>
+                        <classificacao name="p_classificacao">Lorem unde sit consectetur ips</classificacao>
+                        <id_teste name="p_id_teste" tag="id_teste">hidden-d204_c971</id_teste>
+                        <id_avaliado name="p_id_avaliado" tag="id_avaliado">hidden-b7c0_73cb</id_avaliado>
                     </row>
                 </value>
                 <legend_color>
@@ -189,8 +246,126 @@
         </table_1>
     </content>
     <blockly>
-        <imports></imports>
+        <imports>
+            <import type="listar">Listar</import>
+            <import type="dao">TesteTbl</import>
+            <import type="dao">AvaliadoTbl</import>
+        </imports>
         <xml>
+            <block type="listar_table_1" id="table_1" inline="true" x="513" y="62">
+                <mutation order="order_by_desc" limit="TODOSS" count="2" mutation-1="andWhere" mutation-2="andWhere"></mutation>
+                <field name="dao">TesteTbl</field>
+                <field name="FILL">FALSE</field>
+                <field name="orderdrop">order_by_desc</field>
+                <field name="find">TODOSS</field>
+                <field name="limit"></field>
+                <field name="ADD1FILTER">andWhere</field>
+                <field name="ADD1WHERE">WHERE_EQ</field>
+                <field name="ADD2FILTER">andWhere</field>
+                <field name="ADD2WHERE">WHERE_EQ</field>
+                <value name="order_value">
+                    <block type="get-dao-TesteTbl" id="4.zCZI1QsZOrKaNA_lbO">
+                        <mutation hover_type="Integer::valorFinal"></mutation>
+                        <field name="DAO_FIELD">Integer::valorFinal</field>
+                    </block>
+                </value>
+                <statement name="value2">
+                    <block type="rowtableaprovacao" id="color::aprovacao">
+                        <next>
+                            <block type="rowtablefoto" id="Image::foto">
+                                <next>
+                                    <block type="rowtablenome" id="String::nome">
+                                        <next>
+                                            <block type="rowtableformacao" id="String::formacao">
+                                                <next>
+                                                    <block type="rowtableinstituicao" id="String::instituicao">
+                                                        <value name="fields_model">
+                                                            <block type="core_fun_get" id="XD-d#)6Pw!k?tCj2Mbvy">
+                                                                <mutation hover_type="get_domain"></mutation>
+                                                                <field name="CORE_FUNCTION">get_domain</field>
+                                                                <value name="value1">
+                                                                    <block type="text" id="ba/f`f%lh3fZBAnAOE[M">
+                                                                        <field name="TEXT">intituicoes</field>
+                                                                    </block>
+                                                                </value>
+                                                                <value name="value2">
+                                                                    <block type="get-dao-TesteTbl" id="D3R0KB9sg`*c,.-H]!vH">
+                                                                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                                                                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                                                                        <value name="dao_rela">
+                                                                            <block type="get-dao-AvaliadoTbl" id="r78LS.@5@Y*_D0BELDU4">
+                                                                                <mutation hover_type="String::instituicao"></mutation>
+                                                                                <field name="DAO_FIELD">String::instituicao</field>
+                                                                            </block>
+                                                                        </value>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                        <next>
+                                                            <block type="rowtableedicao" id="String::edicao">
+                                                                <next>
+                                                                    <block type="rowtabledata_de_realizacao" id="String::data_de_realizacao">
+                                                                        <next>
+                                                                            <block type="rowtableclassificacao" id="String::classificacao">
+                                                                                <next>
+                                                                                    <block type="rowtableid_teste" id="String::id_teste">
+                                                                                        <next>
+                                                                                            <block type="rowtableid_avaliado" id="String::id_avaliado"></block>
+                                                                                        </next>
+                                                                                    </block>
+                                                                                </next>
+                                                                            </block>
+                                                                        </next>
+                                                                    </block>
+                                                                </next>
+                                                            </block>
+                                                        </next>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
+                    </block>
+                </statement>
+                <value name="ADD1">
+                    <block type="get-dao-TesteTbl" id="Yy4iY7DrY(UoXax[+|ye">
+                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                        <value name="dao_rela">
+                            <block type="get-dao-AvaliadoTbl" id="%pat`+,:l:S|,X^h;W5n">
+                                <mutation hover_type="String::instituicao"></mutation>
+                                <field name="DAO_FIELD">String::instituicao</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <value name="ADD1STATE2">
+                    <block type="mod_formform_1" id="gwl*sm04Fe61c49tRCh~">
+                        <field name="get_model">String::instituicao_flt</field>
+                    </block>
+                </value>
+                <value name="ADD2">
+                    <block type="get-dao-TesteTbl" id="holHkc.!a8J_wzkmgkSB">
+                        <mutation hover_type="AvaliadoTbl_FK#::idAvaliadoFk"></mutation>
+                        <field name="DAO_FIELD">AvaliadoTbl_FK#::idAvaliadoFk</field>
+                        <value name="dao_rela">
+                            <block type="get-dao-AvaliadoTbl" id="dVokk?cZxM9rk9~MvKPz">
+                                <mutation hover_type="String::edicao"></mutation>
+                                <field name="DAO_FIELD">String::edicao</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <value name="ADD2STATE2">
+                    <block type="mod_formform_1" id="N!=Y@3J,*orP=3KeA@Vf">
+                        <field name="get_model">String::edicao_flt</field>
+                    </block>
+                </value>
+            </block>
             <block type="controller" id="controller" x="287" y="88"></block>
         </xml>
     </blockly>

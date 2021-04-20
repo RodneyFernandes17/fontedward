@@ -17,7 +17,7 @@ import java.util.List;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.FormacaoTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.TesteTbl;
 import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.AvaliadoTbl;
-import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.Formando;
+import nosi.webapps.sistema_de_avaliacao_igrpweb.dao.FormandoTbl;
 /*----#end-code----*/
 		
 public class Gestao_de_formacoesController extends Controller {
@@ -29,7 +29,7 @@ public class Gestao_de_formacoesController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT 'Aperiam sit consectetur volupt' as nome,'Deserunt elit rem adipiscing m' as data_inicio,'Sit officia sit amet lorem' as data_fim,'hidden-5c07_8172' as id_formacao "));
+		model.loadTable_1(Core.query(null,"SELECT 'Perspiciatis dolor mollit lore' as nome,'Elit adipiscing deserunt ipsum' as instituicao,'Consectetur aliqua aperiam vol' as data_inicio,'Iste ipsum voluptatem dolor de' as data_fim,'hidden-2449_e970' as id_formacao "));
 		  ----#gen-example */
 		/*----#start-code(index)----*/
 		try {
@@ -44,7 +44,7 @@ public class Gestao_de_formacoesController extends Controller {
 					row.setData_inicio(Core.convertLocalDateToString(formacaotbl.getDataIn(), "dd-MM-yyyy"));
 					row.setData_fim(Core.convertLocalDateToString(formacaotbl.getDataFim(), "dd-MM-yyyy"));
 					row.setId_formacao(formacaotbl.getId().toString());
-
+					row.setInstituicao(Core.findDomainDescByKey("intituicoes", formacaotbl.getInstituicao()) );
 					AvaliadoTbl esta_inscrito = new AvaliadoTbl().find()
 							.andWhere("idUtilizador", "=", Core.getCurrentUser().getId()).one();
 					if (Core.isNull(esta_inscrito))
@@ -57,9 +57,9 @@ public class Gestao_de_formacoesController extends Controller {
 					else
 						row.hiddenButton(view.btn_resultado_teste);
 
-					Formando inscrito_formacao = new Formando().find()
-							.andWhere("formacao", "=", Core.toInt(row.getId_formacao()))
-							.andWhere("formando.idUtilizador", "=", Core.getCurrentUser().getId()).one();
+					FormandoTbl inscrito_formacao = new FormandoTbl().find()
+							.andWhere("formacaoId", "=", Core.toInt(row.getId_formacao()))
+							.andWhere("avaliadoId.idUtilizador", "=", Core.getCurrentUser().getId()).one();
 					if (Core.isNull(inscrito_formacao)) {
 						row.hiddenButton(view.btn_realizar_avaliacao);
 						row.hiddenButton(view.btn_resultado_teste);
